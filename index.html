@@ -114,6 +114,10 @@
   .boton:active { transform: scale(.98); }
   .boton.secundario { background: transparent; color: var(--accent-dark); }
   .boton.secundario:hover { background: var(--surface-2); }
+  .boton:disabled, .boton[aria-disabled="true"] {
+    background: #d8cec0; border-color: #cbbfae; color: #665c50;
+    cursor: not-allowed; transform: none;
+  }
   .confianza { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
   .confianza li { display: flex; gap: 8px; align-items: flex-start; font-size: .9rem; color: var(--muted); }
   .confianza li::before { content: "✓"; color: var(--green); font-weight: 800; line-height: 1.5; }
@@ -345,7 +349,7 @@
           <dl class="datos-producto">
             <div class="dato"><dt>Medidas</dt><dd>30 × 40 cm (luz 300 × 400 mm)</dd></div>
             <div class="dato"><dt>Materiales</dt><dd>PLA, papel verjurado, HDF de 3 mm y pino natural</dd></div>
-            <div class="dato"><dt>Acabado</dt><dd>Pino natural, sin cristal</dd></div>
+            <div class="dato"><dt>Acabado</dt><dd>Pino natural, sin cristal; no hay otras variantes</dd></div>
             <div class="dato"><dt>Plazo</dt><dd>7-10 días laborables desde la aprobación</dd></div>
             <div class="dato"><dt>Envío</dt><dd>Incluido en península</dd></div>
             <div class="dato"><dt>Garantía</dt><dd>Garantía legal de 3 años (TRLGDCU)</dd></div>
@@ -354,7 +358,7 @@
         <div>
           <h3>Antes de comprar</h3>
           <p class="nota">Precio con IVA incluido. La señal es 44,70 €; el resto se paga cuando apruebas la prueba y antes de imprimir.</p>
-          <p class="nota" style="margin-top: 10px;">El relieve no supera los 12 mm para que cierre el marco. La personalización es la que apruebas: apellidos, linaje y composición.</p>
+          <p class="nota" style="margin-top: 10px;">El relieve no supera los 12 mm para que cierre el marco. La personalización es la que apruebas: apellidos, linaje y composición. No incluye cristal ni envío fuera de península sin consultar.</p>
           <div class="aviso-legal" style="margin-top: 14px;">Interpretación artística; no acredita nobleza ni parentesco. Un apellido puede tener varios blasones según el linaje.</div>
         </div>
       </div>
@@ -373,7 +377,7 @@
           <p>Papel o lienzo con una imagen plana. Sin relieve y, a menudo, sin marco ni montaje.</p>
         </article>
         <article class="destacado">
-          <h3>Este cuadro <span class="precio-comp">149 €</span></h3>
+          <h3>Este cuadro <span class="precio-comp">149 € IVA incluido</span></h3>
           <p>Cuatro piezas en relieve, lámina, marco de pino, montaje y envío incluido. Precio con IVA.</p>
         </article>
         <article>
@@ -381,6 +385,7 @@
           <p>Una sola pieza tallada. Sin composición de cuatro apellidos ni prueba previa.</p>
         </article>
       </div>
+      <p class="nota" style="margin-top: var(--space-3);"><strong>Por qué este:</strong> reúne cuatro apellidos, relieve, marco, montaje y prueba previa en un solo precio; la lámina es plana y la talla es una sola pieza.</p>
       <p class="referencia">Referencias de mercado orientativas, aportadas por coordinación; no son ofertas de esta tienda. El único precio de esta página es 149 € con IVA incluido.</p>
     </div>
   </section>
