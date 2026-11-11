@@ -3,1371 +3,1412 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Configurador de cuadros heráldicos · Impresión 3D</title>
+<title>Cuadro heráldico de 4 escudos, 30×40 cm, impreso en relieve · 149 € IVA incluido</title>
+<meta name="description" content="Cuadro heráldico de 4 escudos, 30×40 cm, lámina impresa y relieve 3D. 149 € IVA incluido. Eliges apellidos, apruebas la prueba y se imprime.">
 <style>
   :root {
-    --tinta: #1c1a17;
-    --papel: #faf7f0;
-    --papel-2: #f2ece0;
-    --linea: #ddd2bf;
-    --acento: #8b5a2b;
-    --acento-oscuro: #6d441f;
-    --oro: #c9a227;
-    --azul: #1f4e9c;
-    --verde: #1e7a46;
-    --rojo: #a51c30;
-    --sombra: 0 18px 40px rgba(28, 26, 23, .16);
-    --radio: 14px;
+    --ink: #211c16;
+    --muted: #665c50;
+    --paper: #fbf8f2;
+    --surface: #fffdf8;
+    --surface-2: #f3ebdd;
+    --line: #dfd3c1;
+    --accent: #8a4f2a;
+    --accent-dark: #6d3b1f;
+    --gold: #b98a2e;
+    --green: #245c45;
+    --focus: #1d4f91;
+    --danger: #8a2f2f;
+    --radius: 14px;
+    --radius-sm: 9px;
+    --shadow: 0 18px 44px rgba(40, 30, 18, .10);
+    --space-1: .35rem;
+    --space-2: .65rem;
+    --space-3: 1rem;
+    --space-4: 1.5rem;
+    --space-5: 2.25rem;
+    --space-6: 3.5rem;
+    --serif: Georgia, "Times New Roman", serif;
+    --sans: "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
   }
-  * { box-sizing: border-box; }
-  html, body { margin: 0; padding: 0; }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
   body {
-    background:
-      radial-gradient(circle at 12% 8%, rgba(201, 162, 39, .12), transparent 34%),
-      radial-gradient(circle at 88% 4%, rgba(31, 78, 156, .10), transparent 32%),
-      var(--papel);
-    color: var(--tinta);
-    font-family: "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
     line-height: 1.55;
     -webkit-font-smoothing: antialiased;
   }
-  h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; font-weight: 600; letter-spacing: .2px; }
+  img, svg { max-width: 100%; display: block; }
+  h1, h2, h3 { font-family: var(--serif); font-weight: 600; letter-spacing: .01em; line-height: 1.1; margin: 0; }
+  h1 { font-size: clamp(1.8rem, 5.2vw, 3.35rem); }
+  h2 { font-size: clamp(1.55rem, 3.6vw, 2.3rem); }
+  h3 { font-size: 1.12rem; }
+  p { margin: 0; }
+  a { color: var(--accent-dark); }
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 3px;
+  }
+  .contenedor { width: min(1120px, 100% - 2 * var(--space-3)); margin-inline: auto; }
+  .skip {
+    position: absolute; left: -999px; top: 0; z-index: 100;
+    background: var(--ink); color: #fff; padding: 12px 16px; border-radius: 0 0 8px 0;
+  }
+  .skip:focus { left: 0; }
+
   .cabecera {
-    max-width: 1180px;
-    margin: 0 auto;
-    padding: 40px 24px 12px;
+    border-bottom: 1px solid var(--line);
+    background: rgba(251, 248, 242, .94);
   }
-  .marca {
-    display: flex; align-items: center; gap: 12px;
-    font-size: 12px; letter-spacing: .18em; text-transform: uppercase;
-    color: var(--acento); font-weight: 700;
+  .cabecera .contenedor {
+    display: flex; align-items: center; justify-content: space-between; gap: var(--space-3);
+    min-height: 64px; padding-block: 8px; flex-wrap: wrap;
   }
-  .marca .punto {
-    width: 10px; height: 10px; border-radius: 50%;
-    background: linear-gradient(135deg, var(--oro), var(--acento));
-    box-shadow: 0 0 0 4px rgba(201, 162, 39, .18);
+  .marca { display: inline-flex; align-items: baseline; gap: 7px; text-decoration: none; color: var(--ink); min-height: 44px; align-items: center; }
+  .marca strong { font-family: var(--serif); font-size: 1.08rem; letter-spacing: .01em; }
+  .marca span { color: var(--muted); font-size: .82rem; }
+  .nav { display: flex; gap: 4px; flex-wrap: wrap; }
+  .nav a {
+    display: inline-flex; align-items: center; min-height: 44px; padding: 0 10px;
+    border-radius: var(--radius-sm); color: var(--muted); text-decoration: none; font-size: .9rem;
   }
-  .cabecera h1 { margin: 14px 0 6px; font-size: clamp(30px, 4vw, 46px); line-height: 1.08; }
-  .cabecera p.subtitulo { margin: 0; max-width: 640px; color: #5b5347; font-size: 17px; }
-  .insignias { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
-  .insignia {
-    font-size: 12px; font-weight: 600; letter-spacing: .04em;
-    border: 1px solid var(--linea); background: #fffdf8;
-    padding: 5px 11px; border-radius: 999px; color: #5b5347;
+  .nav a:hover { color: var(--ink); background: var(--surface-2); }
+
+  .hero { padding: var(--space-4) 0 var(--space-5); }
+  .hero-grid { display: grid; gap: var(--space-4); align-items: center; }
+  .foto-marco {
+    position: relative; width: 100%; aspect-ratio: 3 / 4; max-height: 430px;
+    border-radius: var(--radius); overflow: hidden;
+    background: linear-gradient(145deg, #d8c3a1, #c2a176 46%, #d7bd97);
+    box-shadow: var(--shadow);
+    display: grid; place-items: center;
   }
-  .insignia.oro { border-color: rgba(201, 162, 39, .55); color: var(--acento-oscuro); background: rgba(201, 162, 39, .10); }
-  main.disposicion {
-    max-width: 1180px;
-    margin: 0 auto;
-    padding: 12px 24px 56px;
-    display: grid;
-    grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
-    gap: 34px;
-    align-items: start;
+  .foto-marco::after {
+    content: ""; position: absolute; inset: 14px; border: 1px solid rgba(33, 28, 22, .26);
+    border-radius: 6px; pointer-events: none;
   }
-  .vista { position: sticky; top: 20px; }
-  .marco {
-    border-radius: 10px;
-    padding: 18px;
-    background: linear-gradient(135deg, #c9a06a, #a97c45 46%, #c9a06a 72%, #8f6533);
-    box-shadow: var(--sombra);
-    transition: background .25s ease;
+  .foto-marco svg { width: 100%; height: 100%; }
+  .foto-etiqueta {
+    position: absolute; left: 50%; bottom: 16px; transform: translateX(-50%);
+    background: rgba(251, 248, 242, .92); color: var(--muted); border: 1px dashed var(--line);
+    border-radius: 999px; padding: 6px 12px; font-size: .78rem; white-space: nowrap;
   }
-  .marco[data-marco="negro"] { background: linear-gradient(135deg, #2c2c2c, #191919 48%, #2c2c2c 74%, #0f0f0f); }
-  .marco[data-marco="roble"] { background: linear-gradient(135deg, #9a6a3a, #7a4f26 46%, #9a6a3a 72%, #5f3c1c); }
-  .marco[data-marco="sin-marco"] { background: transparent; box-shadow: none; padding: 0; }
-  .marco svg { display: block; width: 100%; height: auto; border-radius: 6px; }
-  .vista .nota {
-    margin: 14px 2px 0; font-size: 13px; color: #6b6255;
-    display: flex; gap: 8px; align-items: baseline;
-  }
-  .vista .nota strong { color: var(--tinta); }
-  .controles {
-    background: #fffdf8;
-    border: 1px solid var(--linea);
-    border-radius: var(--radio);
-    padding: 24px;
-    box-shadow: 0 8px 26px rgba(28, 26, 23, .06);
-  }
-  .grupo { border: 0; padding: 0; margin: 0 0 22px; min-width: 0; }
-  .grupo > legend {
-    font-family: Georgia, serif; font-size: 18px; font-weight: 600;
-    padding: 0; margin-bottom: 10px; display: flex; align-items: baseline; gap: 8px;
-  }
-  .grupo > legend small { font-family: "Segoe UI", sans-serif; font-size: 12px; color: #7a7060; font-weight: 500; letter-spacing: .02em; }
-  .opciones { display: grid; gap: 8px; }
-  .opciones.dos { grid-template-columns: 1fr 1fr; }
-  .opciones.cuatro { grid-template-columns: repeat(4, 1fr); }
-  .opcion { position: relative; display: block; }
-  .opcion input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
-  .opcion span {
-    display: block; text-align: center; padding: 10px 8px;
-    border: 1px solid var(--linea); border-radius: 10px;
-    background: #fff; font-size: 14px; font-weight: 600; color: #4d463b;
-    transition: border-color .15s ease, background .15s ease, transform .15s ease;
-  }
-  .opcion span em { display: block; font-style: normal; font-weight: 500; font-size: 11px; color: #8a7f6d; margin-top: 2px; }
-  .opcion:hover span { border-color: var(--acento); transform: translateY(-1px); }
-  .opcion input:checked + span {
-    border-color: var(--acento); background: rgba(139, 90, 43, .09);
-    box-shadow: inset 0 0 0 1px var(--acento);
-  }
-  .opcion input:focus-visible + span { outline: 2px solid var(--azul); outline-offset: 2px; }
-  .escudos-slots { display: grid; gap: 10px; grid-template-columns: 1fr; }
-  .slot {
-    display: flex; align-items: center; gap: 10px;
-    border: 1px solid var(--linea); border-radius: 10px; padding: 8px;
-    background: #fff;
-  }
-  .slot .numero {
-    width: 22px; height: 22px; flex: 0 0 22px; border-radius: 50%;
-    display: grid; place-items: center; font-size: 11px; font-weight: 700;
-    background: var(--papel-2); color: #6b6255;
-  }
-  .slot .mini { width: 46px; flex: 0 0 46px; }
-  .slot .mini svg { display: block; width: 100%; height: auto; }
-  .slot label { flex: 1; min-width: 0; }
-  .slot select {
-    width: 100%; font: inherit; font-size: 13px; color: var(--tinta);
-    border: 1px solid var(--linea); border-radius: 7px; padding: 6px 8px; background: #fffdf8;
-  }
-  .slot select:focus-visible { outline: 2px solid var(--azul); outline-offset: 1px; }
-  .cantidad-fila { display: flex; align-items: center; gap: 10px; }
-  .cantidad-fila input {
-    width: 76px; font: inherit; font-size: 16px; font-weight: 600; text-align: center;
-    border: 1px solid var(--linea); border-radius: 9px; padding: 8px; background: #fff;
-  }
-  .paso {
-    width: 40px; height: 40px; border-radius: 9px; border: 1px solid var(--linea);
-    background: #fff; font-size: 19px; line-height: 1; cursor: pointer; color: var(--tinta);
-  }
-  .paso:hover { border-color: var(--acento); background: var(--papel-2); }
-  .pista { font-size: 13px; color: #7a7060; }
-  .caja-precio {
-    margin: 22px -24px 0; padding: 18px 24px;
-    border-top: 1px solid var(--linea); border-bottom: 1px solid var(--linea);
-    background: var(--papel-2);
-  }
-  .linea-precio { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; }
-  .linea-precio .etiqueta { font-size: 14px; color: #5b5347; }
-  .linea-precio output { font-family: Georgia, serif; font-size: clamp(28px, 3.4vw, 38px); font-weight: 600; }
-  .linea-total { display: flex; justify-content: space-between; margin-top: 8px; font-size: 14px; color: #5b5347; }
-  .linea-total output { font-weight: 700; color: var(--tinta); }
-  .taller { margin-top: 18px; }
-  .taller label { display: flex; gap: 9px; align-items: center; font-size: 14px; cursor: pointer; color: #4d463b; }
-  .taller input { width: 17px; height: 17px; accent-color: var(--acento); }
-  .detalle { margin-top: 12px; border: 1px dashed var(--linea); border-radius: 10px; padding: 12px 14px; background: #fff; }
-  .detalle table { width: 100%; border-collapse: collapse; font-size: 13px; }
-  .detalle td { padding: 3px 0; }
-  .detalle td:last-child { text-align: right; font-variant-numeric: tabular-nums; }
-  .detalle tr.separador td { border-top: 1px solid var(--linea); padding-top: 8px; font-weight: 700; }
-  .detalle tr.margen td { color: var(--verde); font-weight: 700; }
-  .detalle .aviso { margin: 8px 0 0; font-size: 11px; color: #8a7f6d; }
-  .acciones { display: flex; gap: 10px; margin-top: 18px; flex-wrap: wrap; }
+  .foto-pie { color: var(--muted); font-size: .8rem; margin-top: var(--space-2); }
+  .hero-copy { display: grid; gap: var(--space-3); align-content: start; }
+  .hero-copy .entrada { font-size: 1.03rem; color: var(--muted); max-width: 34em; }
+  .precio-fila { display: flex; align-items: baseline; flex-wrap: wrap; gap: var(--space-2) var(--space-3); }
+  .precio { font-family: var(--serif); font-size: clamp(2.25rem, 5.4vw, 3.1rem); font-weight: 600; line-height: 1; }
+  .precio small { font-family: var(--sans); font-size: .85rem; color: var(--muted); font-weight: 500; }
+  .senal { color: var(--muted); font-size: .9rem; }
+  .senal strong { color: var(--ink); }
   .boton {
-    font: inherit; font-weight: 600; cursor: pointer; border-radius: 10px;
-    padding: 12px 20px; border: 1px solid var(--acento); color: #fff;
-    background: linear-gradient(180deg, #9a6532, var(--acento-oscuro));
+    display: inline-flex; align-items: center; justify-content: center; min-height: 48px;
+    padding: 0 20px; border: 1px solid var(--accent); border-radius: var(--radius-sm);
+    background: var(--accent); color: #fff; text-decoration: none; font-weight: 650;
+    font-size: 1rem; transition: transform 160ms ease-out, background-color 160ms ease-out;
   }
-  .boton:hover { filter: brightness(1.06); }
-  .boton.secundario { background: #fff; color: var(--acento-oscuro); border-color: var(--linea); }
-  .boton.secundario:hover { border-color: var(--acento); }
-  .aviso-legal { margin-top: 16px; font-size: 12px; color: #8a7f6d; }
-  footer {
-    border-top: 1px solid var(--linea);
-    background: #fffdf8;
+  .boton:hover { background: var(--accent-dark); }
+  .boton:active { transform: scale(.98); }
+  .boton.secundario { background: transparent; color: var(--accent-dark); }
+  .boton.secundario:hover { background: var(--surface-2); }
+  .confianza { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+  .confianza li { display: flex; gap: 8px; align-items: flex-start; font-size: .9rem; color: var(--muted); }
+  .confianza li::before { content: "✓"; color: var(--green); font-weight: 800; line-height: 1.5; }
+  .nota { color: var(--muted); font-size: .85rem; }
+
+  section { padding: var(--space-5) 0; }
+  .seccion-cabecera { display: grid; gap: var(--space-2); max-width: 44rem; margin-bottom: var(--space-4); }
+  .seccion-cabecera p { color: var(--muted); }
+  .pasos { display: grid; gap: var(--space-3); }
+  .paso { border-top: 1px solid var(--line); padding-top: var(--space-3); display: grid; gap: 6px; }
+  .paso-numero { font-family: var(--serif); color: var(--gold); font-size: 1.35rem; }
+  .paso p { color: var(--muted); font-size: .95rem; }
+
+  .config { background: var(--surface); border-block: 1px solid var(--line); }
+  .config-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-2); }
+  .posicion {
+    border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--paper);
+    padding: var(--space-2); min-width: 0; display: grid; gap: 5px; align-content: start;
   }
-  footer .interior {
-    max-width: 1180px; margin: 0 auto; padding: 22px 24px 30px;
-    display: flex; flex-wrap: wrap; gap: 14px 28px; justify-content: space-between;
-    font-size: 12.5px; color: #7a7060;
+  .posicion-cabecera { display: flex; align-items: center; gap: 6px; }
+  .posicion-numero {
+    display: inline-grid; place-items: center; width: 24px; height: 24px; flex: 0 0 24px;
+    border-radius: 50%; background: var(--surface-2); color: var(--accent-dark);
+    font-size: .75rem; font-weight: 700;
   }
-  footer strong { color: #4d463b; }
-  @media (max-width: 900px) {
-    main.disposicion { grid-template-columns: 1fr; }
-    .vista { position: static; }
-    .opciones.cuatro { grid-template-columns: 1fr 1fr; }
-    .escudos-slots { grid-template-columns: 1fr; }
+  .posicion label { font-size: .82rem; color: var(--muted); line-height: 1.25; }
+  .posicion input, .posicion select {
+    width: 100%; min-height: 44px; font: inherit; font-size: 16px; color: var(--ink);
+    background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 8px 9px;
+  }
+  .posicion select { padding-right: 6px; }
+  .fuente { font-size: .76rem; color: var(--muted); line-height: 1.35; min-height: 2.7em; overflow-wrap: anywhere; }
+  .fuente strong { color: var(--ink); font-weight: 600; }
+  .config-pie { display: flex; flex-wrap: wrap; gap: var(--space-2); align-items: center; justify-content: space-between; margin-top: var(--space-3); }
+  .config-estado { color: var(--muted); font-size: .86rem; }
+  .manual { display: inline-flex; align-items: center; min-height: 44px; color: var(--accent-dark); font-weight: 600; font-size: .9rem; }
+  .manual:hover { text-decoration-thickness: 2px; }
+
+  .ficha-grid { display: grid; gap: var(--space-4); }
+  .datos-producto { display: grid; gap: 0; border-top: 1px solid var(--line); }
+  .dato { display: grid; gap: 2px; padding: 10px 0; border-bottom: 1px solid var(--line); }
+  .dato dt { font-size: .8rem; color: var(--muted); }
+  .dato dd { margin: 0; font-weight: 600; font-size: .95rem; }
+  .incluye { list-style: none; padding: 0; margin: 0; display: grid; gap: 7px; }
+  .incluye li { display: flex; gap: 7px; font-size: .92rem; color: var(--muted); }
+  .incluye li::before { content: "•"; color: var(--gold); font-weight: 800; }
+  .aviso-legal {
+    border-left: 3px solid var(--gold); background: var(--surface-2); padding: 10px 12px;
+    font-size: .82rem; color: var(--muted); border-radius: 0 8px 8px 0;
+  }
+
+  .comparativa { display: grid; gap: var(--space-2); }
+  .comparativa article { border: 1px solid var(--line); border-radius: var(--radius-sm); padding: var(--space-3); background: var(--surface); }
+  .comparativa article.destacado { border-color: var(--accent); box-shadow: 0 8px 22px rgba(138, 79, 42, .10); }
+  .comparativa h3 { display: flex; justify-content: space-between; gap: 8px; align-items: baseline; }
+  .comparativa h3 span { font-family: var(--sans); font-size: .82rem; color: var(--muted); font-weight: 500; text-align: right; }
+  .comparativa p { font-size: .88rem; color: var(--muted); margin-top: 5px; }
+  .comparativa .precio-comp { font-family: var(--serif); font-size: 1.5rem; color: var(--ink); white-space: nowrap; }
+  .referencia { font-size: .76rem; color: var(--muted); margin-top: var(--space-2); }
+  .destacado .precio-comp { color: var(--accent-dark); }
+
+  .faq { display: grid; gap: 0; border-top: 1px solid var(--line); }
+  .faq details { border-bottom: 1px solid var(--line); }
+  .faq summary {
+    list-style: none; cursor: pointer; min-height: 48px; display: flex; align-items: center;
+    justify-content: space-between; gap: var(--space-3); padding: 10px 0; font-weight: 600;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: "+"; color: var(--accent); font-size: 1.3rem; line-height: 1; }
+  .faq details[open] summary::after { content: "−"; }
+  .faq details p { color: var(--muted); font-size: .92rem; padding: 0 0 12px; max-width: 62ch; }
+
+  .contacto { background: var(--surface-2); border-top: 1px solid var(--line); }
+  .contacto-grid { display: grid; gap: var(--space-3); align-items: start; }
+  .contacto a { display: inline-flex; align-items: center; min-height: 44px; font-weight: 650; overflow-wrap: anywhere; }
+  .pie { border-top: 1px solid var(--line); padding: var(--space-3) 0; font-size: .8rem; color: var(--muted); }
+  .pie .contenedor { display: flex; flex-wrap: wrap; gap: 6px 18px; justify-content: space-between; }
+
+  @media (min-width: 760px) {
+    .hero { padding: var(--space-5) 0 var(--space-6); }
+    .hero-grid { grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); gap: var(--space-5); }
+    .foto-marco { max-height: 620px; }
+    .pasos { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-4); }
+    .paso { border-top: 0; border-left: 1px solid var(--line); padding: 0 0 0 var(--space-3); }
+    .config-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-2); max-width: 760px; }
+    .ficha-grid { grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: var(--space-5); }
+    .comparativa { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .contacto-grid { grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); }
+  }
+  @media (max-width: 700px) {
+    .cabecera .contenedor { flex-wrap: nowrap; min-height: 56px; padding-block: 4px; }
+    .marca span { display: none; }
+    .nav a[href="#ficha"] { display: none; }
+    .nav a { padding-inline: 8px; font-size: .85rem; }
+  }
+  @media (max-width: 420px) {
+    .nav a { padding-inline: 7px; font-size: .82rem; }
+    .hero { padding-top: var(--space-3); }
+    .foto-marco { max-height: 330px; }
+    .config-grid { gap: 6px; }
+    .posicion { padding: 8px; }
+    .posicion label { font-size: .76rem; }
+    .fuente { font-size: .7rem; }
   }
   @media (prefers-reduced-motion: reduce) {
-    * { transition: none !important; }
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition: none !important; animation: none !important; }
   }
 </style>
-<meta name="robots" content="noindex">
 </head>
 <body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
 <header class="cabecera">
-  <div class="marca"><span class="punto"></span><span>Impresión 3D · Heráldica</span></div>
-  <h1>Configura tu cuadro heráldico</h1>
-  <p class="subtitulo">Elige los escudos, el tamaño del marco y cuántos quieres. El precio se recalcula al instante con el mismo modelo que fija la lista de precios.</p>
-  <div class="insignias">
-    <span class="insignia oro">Escudos de dibujo propio</span>
-    <span class="insignia">Envío incluido</span>
-    <span class="insignia">Precios sin IVA</span>
-    <span class="insignia">Prototipo · Fase 2</span>
+  <div class="contenedor">
+    <a class="marca" href="#inicio" aria-label="Heráldica, inicio">
+      <strong>Heráldica</strong><span>Impresión 3D</span>
+    </a>
+    <nav class="nav" aria-label="Navegación principal">
+      <a href="#como-funciona">Cómo funciona</a>
+      <a href="#configurador">Diseñar</a>
+      <a href="#ficha">Ficha</a>
+      <a href="#preguntas">Preguntas</a>
+    </nav>
   </div>
 </header>
 
-<main class="disposicion">
-  <section class="vista" aria-label="Vista previa del cuadro">
-    <div class="marco" id="marco-preview" data-marco="pino">
-      <svg id="preview-svg" viewBox="0 0 420 420" role="img" aria-label="Vista previa del cuadro con los escudos elegidos"></svg>
+<main id="contenido">
+  <section class="hero" id="inicio" aria-labelledby="titulo-portada">
+    <div class="contenedor hero-grid">
+      <div>
+        <div class="foto-marco" role="img" aria-label="Hueco para la foto frontal del cuadro de 30 × 40 cm; pendiente de foto real">
+          <svg viewBox="0 0 420 560" aria-hidden="true" focusable="false">
+            <rect width="420" height="560" fill="#c9a06a"/>
+            <rect x="22" y="22" width="376" height="516" fill="#f7f2e6"/>
+            <g fill="#1f4e9c"><path d="M58 86h118v118c0 56-34 86-59 99-25-13-59-43-59-99Z"/></g>
+            <g fill="#a51c30"><path d="M244 86h118v118c0 56-34 86-59 99-25-13-59-43-59-99Z"/></g>
+            <g fill="#1e7a46"><path d="M58 310h118v118c0 56-34 86-59 99-25-13-59-43-59-99Z"/></g>
+            <g fill="#f2f2f2"><path d="M244 310h118v118c0 56-34 86-59 99-25-13-59-43-59-99Z"/></g>
+            <g fill="#e8c34a">
+              <path d="M112 190l8 18 20 2-15 13 5 20-18-11-18 11 5-20-15-13 20-2Z"/>
+              <path d="M300 190l8 18 20 2-15 13 5 20-18-11-18 11 5-20-15-13 20-2Z"/>
+            </g>
+            <g fill="#e8c34a"><path d="M112 430l8 18 20 2-15 13 5 20-18-11-18 11 5-20-15-13 20-2Z"/></g>
+            <path d="M262 410h16v24h24v16h-24v24h-16v-24h-24v-16h24Z" fill="#1c1a17"/>
+          </svg>
+          <span class="foto-etiqueta">Foto frontal pendiente · pieza real</span>
+        </div>
+        <p class="foto-pie">Hueco reservado para la foto del producto. La medida es 30 × 40 cm.</p>
+      </div>
+
+      <div class="hero-copy">
+        <h1 id="titulo-portada">Cuadro heráldico de 4 escudos, 30×40 cm, impreso en relieve</h1>
+        <p class="entrada">Cuatro apellidos, una lámina impresa y un marco de pino. Te enseñamos la prueba antes de imprimir para que no haya sorpresas.</p>
+        <div class="precio-fila">
+          <p class="precio">149 € <small>IVA incluido</small></p>
+          <p class="senal">Señal <strong>44,70 €</strong></p>
+        </div>
+        <div>
+          <a class="boton" href="#configurador">Diseñar mi cuadro</a>
+        </div>
+        <ul class="confianza">
+          <li>Plazo estimado: 7-10 días laborables desde que apruebas la prueba</li>
+          <li>Envío incluido en península</li>
+          <li>Apruebas la prueba antes de imprimir</li>
+        </ul>
+      </div>
     </div>
-    <p class="nota" id="nota-vista"><strong>4 escudos</strong> · marco de pino natural · 40 × 40 cm</p>
   </section>
 
-  <section class="controles" aria-label="Opciones del cuadro">
-    <fieldset class="grupo" id="composicion">
-      <legend>Composición <small>cuántos escudos</small></legend>
-      <div class="opciones dos" id="opciones-composicion"></div>
-    </fieldset>
-
-    <fieldset class="grupo" id="tamano">
-      <legend>Tamaño <small>lado del marco</small></legend>
-      <div class="opciones cuatro" id="opciones-tamano"></div>
-    </fieldset>
-
-    <fieldset class="grupo" id="marco">
-      <legend>Marco <small>acabado</small></legend>
-      <div class="opciones cuatro" id="opciones-marco"></div>
-    </fieldset>
-
-    <div class="grupo">
-      <legend>Los escudos <small>uno por hueco</small></legend>
-      <div class="escudos-slots" id="escudos-slots"></div>
-    </div>
-
-    <div class="grupo">
-      <legend>Cantidad <small>mismo cuadro repetido</small></legend>
-      <div class="cantidad-fila">
-        <button type="button" class="paso" id="cantidad-menos" aria-label="Quitar una unidad">−</button>
-        <input id="cantidad" name="cantidad" type="number" min="1" max="10" step="1" value="1" inputmode="numeric" aria-label="Cantidad de cuadros">
-        <button type="button" class="paso" id="cantidad-mas" aria-label="Añadir una unidad">+</button>
-        <span class="pista">Envío incluido para 1–10 unidades</span>
+  <section id="como-funciona" aria-labelledby="titulo-como">
+    <div class="contenedor">
+      <div class="seccion-cabecera">
+        <h2 id="titulo-como">Cómo funciona</h2>
+        <p>Tres pasos y una prueba en tus manos antes de fabricar.</p>
+      </div>
+      <div class="pasos">
+        <article class="paso">
+          <span class="paso-numero">1</span>
+          <h3>Escribes los apellidos</h3>
+          <p>Los dos del padre arriba y los dos de la madre abajo. Si uno se repite, no pasa nada: lo revisamos contigo.</p>
+        </article>
+        <article class="paso">
+          <span class="paso-numero">2</span>
+          <h3>Elegimos el blasón documentado</h3>
+          <p>Cada linaje lleva su fuente. Si no encontramos una referencia fiable, lo revisamos a mano antes de dibujar.</p>
+        </article>
+        <article class="paso">
+          <span class="paso-numero">3</span>
+          <h3>Apruebas la prueba y se imprime</h3>
+          <p>Recibes la composición. No se imprime nada hasta que das el visto bueno.</p>
+        </article>
       </div>
     </div>
+  </section>
 
-    <div class="caja-precio" aria-live="polite">
-      <div class="linea-precio">
-        <span class="etiqueta">Precio por cuadro</span>
-        <output id="precio">139,00 €</output>
+  <section class="config" id="configurador" aria-labelledby="titulo-config">
+    <div class="contenedor">
+      <div class="seccion-cabecera">
+        <h2 id="titulo-config">Elige los cuatro apellidos</h2>
+        <p>Escribe cada apellido. Verás el linaje disponible y su fuente; si no hay, te lo decimos y lo revisamos a mano.</p>
       </div>
-      <div class="linea-total">
-        <span id="etiqueta-total">Total 1 × 139,00 €</span>
-        <output id="total">139,00 €</output>
+
+      <div class="config-grid" id="config-grid"></div>
+      <p class="config-estado" id="config-estado" aria-live="polite">Escribe un apellido para empezar.</p>
+      <div class="config-pie">
+        <a class="manual" href="mailto:davidpeve01@gmail.com?subject=Revisi%C3%B3n%20manual%20de%20linaje&amp;body=Hola%2C%20no%20s%C3%A9%20qu%C3%A9%20blas%C3%B3n%20elegir%20para%20mi%20cuadro.%20Apellidos%3A%20">No sé qué escudo elegir · revisión manual</a>
+        <p class="nota">La revisión manual se hace antes de dibujar; si no hay fuente, se propone un diseño original.</p>
       </div>
     </div>
+  </section>
 
-    <div class="taller">
-      <label><input type="checkbox" id="ver-coste"> Ver coste y margen (modo taller)</label>
-      <div class="detalle" id="detalle-coste" hidden></div>
+  <section id="ficha" aria-labelledby="titulo-ficha">
+    <div class="contenedor">
+      <div class="seccion-cabecera">
+        <h2 id="titulo-ficha">Ficha del producto</h2>
+        <p>Lo que recibes, cómo está hecho y cuánto tarda.</p>
+      </div>
+      <div class="ficha-grid">
+        <div>
+          <h3>Qué incluye</h3>
+          <ul class="incluye">
+            <li>Cuatro piezas en relieve de 110 × 125 mm, impresas en PLA y montadas sobre la lámina.</li>
+            <li>Lámina impresa a color sobre papel verjurado, pegada a HDF de 3 mm.</li>
+            <li>Marco cajón de pino natural de 30 × 40 cm, perfil 20 × 30 mm, sin cristal.</li>
+            <li>Montaje, control de calidad, embalaje reforzado y envío a península.</li>
+            <li>Prueba previa con apellidos y linaje para aprobar antes de imprimir.</li>
+          </ul>
+          <dl class="datos-producto">
+            <div class="dato"><dt>Medidas</dt><dd>30 × 40 cm (luz 300 × 400 mm)</dd></div>
+            <div class="dato"><dt>Materiales</dt><dd>PLA, papel verjurado, HDF de 3 mm y pino natural</dd></div>
+            <div class="dato"><dt>Acabado</dt><dd>Pino natural, sin cristal</dd></div>
+            <div class="dato"><dt>Plazo</dt><dd>7-10 días laborables desde la aprobación</dd></div>
+            <div class="dato"><dt>Envío</dt><dd>Incluido en península</dd></div>
+            <div class="dato"><dt>Garantía</dt><dd>Garantía legal de 3 años (TRLGDCU)</dd></div>
+          </dl>
+        </div>
+        <div>
+          <h3>Antes de comprar</h3>
+          <p class="nota">Precio con IVA incluido. La señal es 44,70 €; el resto se paga cuando apruebas la prueba y antes de imprimir.</p>
+          <p class="nota" style="margin-top: 10px;">El relieve no supera los 12 mm para que cierre el marco. La personalización es la que apruebas: apellidos, linaje y composición.</p>
+          <div class="aviso-legal" style="margin-top: 14px;">Interpretación artística; no acredita nobleza ni parentesco. Un apellido puede tener varios blasones según el linaje.</div>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <div class="acciones">
-      <button type="button" class="boton" id="pedir">Pedir este cuadro</button>
-      <button type="button" class="boton secundario" id="reiniciar">Reiniciar</button>
+  <section id="comparativa" aria-labelledby="titulo-comparativa">
+    <div class="contenedor">
+      <div class="seccion-cabecera">
+        <h2 id="titulo-comparativa">Comparativa honesta</h2>
+        <p>Tres formas de tener un blasón en casa. Cada una resuelve algo distinto.</p>
+      </div>
+      <div class="comparativa">
+        <article>
+          <h3>Lámina impresa <span class="precio-comp">47-67 €</span></h3>
+          <p>Papel o lienzo con una imagen plana. Sin relieve y, a menudo, sin marco ni montaje.</p>
+        </article>
+        <article class="destacado">
+          <h3>Este cuadro <span class="precio-comp">149 €</span></h3>
+          <p>Cuatro piezas en relieve, lámina, marco de pino, montaje y envío incluido. Precio con IVA.</p>
+        </article>
+        <article>
+          <h3>Talla en madera <span class="precio-comp">247 €</span></h3>
+          <p>Una sola pieza tallada. Sin composición de cuatro apellidos ni prueba previa.</p>
+        </article>
+      </div>
+      <p class="referencia">Referencias de mercado orientativas, aportadas por coordinación; no son ofertas ni incluyen necesariamente las mismas condiciones.</p>
     </div>
-    <p class="aviso-legal">Solo la configuración base (4 escudos, 40 × 40, marco de pino) está validada con presupuesto real de proveedor; el resto de combinaciones son orientativas, calculadas con el mismo margen. Plazo estimado: 7–10 días laborables.</p>
+  </section>
+
+  <section id="preguntas" aria-labelledby="titulo-preguntas">
+    <div class="contenedor">
+      <div class="seccion-cabecera">
+        <h2 id="titulo-preguntas">Preguntas frecuentes</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>¿Qué recibo exactamente?</summary>
+          <p>Un cuadro montado de 30 × 40 cm: cuatro piezas en relieve, lámina impresa, marco de pino y embalaje. El envío a península está incluido.</p>
+        </details>
+        <details>
+          <summary>¿Cuánto tarda?</summary>
+          <p>Entre 7 y 10 días laborables desde que apruebas la prueba. El plazo empieza con tu aprobación, no con el pago de la señal.</p>
+        </details>
+        <details>
+          <summary>¿El envío está incluido?</summary>
+          <p>Sí, en península. Para Baleares, Canarias, Ceuta o Melilla, escríbeme antes de pedir para calcularlo.</p>
+        </details>
+        <details>
+          <summary>¿De dónde sale el blasón?</summary>
+          <p>De un linaje con fuente citada. Si tu apellido no tiene una referencia fiable, te lo digo y propongo un diseño original o una revisión manual.</p>
+        </details>
+        <details>
+          <summary>¿Puedo cambiar algo después de aprobar?</summary>
+          <p>Antes de aprobar tienes dos revisiones incluidas. Después de aprobar, un cambio de apellidos o linaje obliga a rehacer la prueba y retrasa la producción.</p>
+        </details>
+        <details>
+          <summary>¿Qué garantía tiene?</summary>
+          <p>Garantía legal de 3 años desde la entrega. Al ser un producto personalizado, no hay desistimiento de 14 días; si llega dañado o no coincide con la prueba aprobada, escríbeme y lo revisamos.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="contacto" id="contacto" aria-labelledby="titulo-contacto">
+    <div class="contenedor contacto-grid">
+      <div>
+        <h2 id="titulo-contacto">¿Hablamos?</h2>
+        <p class="nota">Cuéntame los apellidos, la ocasión y cualquier duda sobre el linaje. Te respondo por correo.</p>
+      </div>
+      <div>
+        <a href="mailto:davidpeve01@gmail.com?subject=Cuadro%20her%C3%A1ldico%2030%C3%9740">davidpeve01@gmail.com</a>
+        <p class="nota">Salamanca, España</p>
+      </div>
+    </div>
   </section>
 </main>
 
-<footer>
-  <div class="interior">
-    <span><strong>Datos:</strong> datos/catalogo.json · <strong>Modelo:</strong> modelo/catalogo.py</span>
-    <span><strong>Precio anclado:</strong> 139,00 € (4 escudos, 40 × 40, pino)</span>
-    <span><strong>Aviso:</strong> pedido simulado, no se cobra nada.</span>
+<footer class="pie">
+  <div class="contenedor">
+    <span>Precio con IVA incluido. Envío incluido en península. Plazo estimado: 7-10 días laborables desde la aprobación.</span>
+    <span>Interpretación artística; no acredita nobleza ni parentesco.</span>
   </div>
 </footer>
 
-<script id="datos-configurador" type="application/json">{
-  "titulo": "Configura tu cuadro heráldico",
-  "subtitulo": "Elige los escudos, el tamaño y el marco. El precio se actualiza en el momento.",
-  "escudos": [
-    {
-      "id": "azur-lises",
-      "nombre": "Azur, tres lises de oro",
-      "campo": "#1f4e9c",
-      "figura": "#e8c34a",
-      "carga": "lises"
-    },
-    {
-      "id": "gules-castillo",
-      "nombre": "Gules, castillo de oro",
-      "campo": "#a51c30",
-      "figura": "#e8c34a",
-      "carga": "castillo"
-    },
-    {
-      "id": "jaquelado",
-      "nombre": "Jaquelado de plata y sable",
-      "campo": "#f2f2f2",
-      "figura": "#1a1a1a",
-      "carga": "jaquelado"
-    },
-    {
-      "id": "palado",
-      "nombre": "Palado de oro y sinople",
-      "campo": "#e8c34a",
-      "figura": "#1e7a46",
-      "carga": "palado"
-    },
-    {
-      "id": "fajado",
-      "nombre": "Fajado de plata y gules",
-      "campo": "#f2f2f2",
-      "figura": "#a51c30",
-      "carga": "fajado"
-    },
-    {
-      "id": "aspa",
-      "nombre": "Azur, aspa de plata",
-      "campo": "#1f4e9c",
-      "figura": "#f2f2f2",
-      "carga": "aspa"
-    },
-    {
-      "id": "cruz",
-      "nombre": "Plata, cruz de sable",
-      "campo": "#f2f2f2",
-      "figura": "#1a1a1a",
-      "carga": "cruz"
-    },
-    {
-      "id": "chevron",
-      "nombre": "Sinople, chevrón de oro",
-      "campo": "#1e7a46",
-      "figura": "#e8c34a",
-      "carga": "chevron"
-    },
-    {
-      "id": "banda",
-      "nombre": "Oro, banda de azur",
-      "campo": "#e8c34a",
-      "figura": "#1f4e9c",
-      "carga": "banda"
-    },
-    {
-      "id": "estrellas",
-      "nombre": "Azur, tres estrellas de plata",
-      "campo": "#1f4e9c",
-      "figura": "#f2f2f2",
-      "carga": "estrellas"
-    },
-    {
-      "id": "luna",
-      "nombre": "Púrpura, luna de plata",
-      "campo": "#5b2a86",
-      "figura": "#f2f2f2",
-      "carga": "luna"
-    },
-    {
-      "id": "roeles",
-      "nombre": "Gules, tres roeles de oro",
-      "campo": "#a51c30",
-      "figura": "#e8c34a",
-      "carga": "roeles"
-    }
-  ],
-  "composiciones": [
-    {
-      "escudos": 4,
-      "etiqueta": "4 escudos",
-      "disposicion": "2x2"
-    },
-    {
-      "escudos": 8,
-      "etiqueta": "8 escudos",
-      "disposicion": "2x4"
-    }
-  ],
-  "tamanos": [
-    {
-      "id": "30x30",
-      "etiqueta": "30 × 30 cm",
-      "lado_cm": 30
-    },
-    {
-      "id": "40x40",
-      "etiqueta": "40 × 40 cm",
-      "lado_cm": 40
-    },
-    {
-      "id": "50x50",
-      "etiqueta": "50 × 50 cm",
-      "lado_cm": 50
-    },
-    {
-      "id": "60x60",
-      "etiqueta": "60 × 60 cm",
-      "lado_cm": 60
-    }
-  ],
-  "marcos": [
-    {
-      "id": "pino",
-      "nombre": "Pino natural",
-      "descripcion": "Madera de pino sin barnizar",
-      "tipo": "base"
-    },
-    {
-      "id": "negro",
-      "nombre": "Negro mate",
-      "descripcion": "Marco negro mate, acabado moderno",
-      "tipo": "base"
-    },
-    {
-      "id": "roble",
-      "nombre": "Roble barnizado",
-      "descripcion": "Roble con barniz satinado",
-      "tipo": "recargo",
-      "recargo": 4.0
-    },
-    {
-      "id": "sin-marco",
-      "nombre": "Sin marco",
-      "descripcion": "Solo la pieza impresa, para colgar o enmarcar tú",
-      "tipo": "sin_marco"
-    }
-  ],
-  "cantidad": {
-    "min": 1,
-    "max": 10,
-    "por_defecto": 1
+<script id="datos-venta" type="application/json">{
+ "oferta": {
+  "meta": {
+   "fecha": "2026-11-11",
+   "moneda": "EUR",
+   "iva_pct": 0.21,
+   "nota": "Oferta única de lanzamiento. No hay otras tallas, composiciones ni acabados a la venta en el configurador. El PVP es con IVA incluido; la señal es el 30 %."
   },
-  "base": {
-    "escudos": 4,
-    "tamano": "40x40",
-    "marco": "pino",
-    "precio": 139.0,
-    "coste": 77.67,
-    "margen": 61.33,
-    "margen_pct": 44.1,
-    "detalle": {
-      "impresion": 34.0,
-      "marco": 18.0,
-      "mano_obra": 9.0,
-      "gestion": 4.5,
-      "envio": 6.0,
-      "embalaje": 2.0,
-      "comision": 4.17
-    }
+  "producto": {
+   "id": "cuadro-4-escudos-30x40",
+   "nombre": "Cuadro heráldico de 4 escudos 30×40",
+   "formato": "4 escudos",
+   "medidas_cm": {
+    "ancho": 30,
+    "alto": 40
+   },
+   "medidas_luz_mm": {
+    "ancho": 300,
+    "alto": 400
+   },
+   "construccion": "Lámina impresa + relieve 3D",
+   "precio_iva": 149.0,
+   "senal": 44.7,
+   "resto": 104.3,
+   "senal_pct": 0.3
   },
-  "combinaciones": [
-    {
-      "escudos": 4,
-      "tamano": "30x30",
-      "marco": "pino",
-      "precio": 133.0,
-      "coste": 74.49,
-      "margen": 58.51,
-      "margen_pct": 44.0,
-      "detalle": {
-        "impresion": 34.0,
-        "marco": 15.0,
-        "mano_obra": 9.0,
-        "gestion": 4.5,
-        "envio": 6.0,
-        "embalaje": 2.0,
-        "comision": 3.99
-      }
-    },
-    {
-      "escudos": 4,
-      "tamano": "30x30",
-      "marco": "negro",
-      "precio": 133.0,
-      "coste": 74.49,
-      "margen": 58.51,
-      "margen_pct": 44.0,
-      "detalle": {
-        "impresion": 34.0,
-        "marco": 15.0,
-        "mano_obra": 9.0,
-        "gestion": 4.5,
-        "envio": 6.0,
-        "embalaje": 2.0,
-        "comision": 3.99
-      }
-    },
-    {
-      "escudos": 4,
-      "tamano": "30x30",
-      "marco": "roble",
-      "precio": 141.0,
-      "coste": 78.73,
-      "margen": 62.27,
-      "margen_pct": 44.2,
-      "detalle": {
-        "impresion": 34.0,
-        "marco": 19.0,
-        "mano_obra": 9.0,
-        "gestion": 4.5,
-        "envio": 6.0,
-        "embalaje": 2.0,
-        "comision": 4.23
-      }
-    },
-    {
-      "escudos": 4,
-      "tamano": "30x30",
-      "marco": "sin-marco",
-      "precio": 105.0,
-      "coste": 58.65,
-      "margen": 46.35,
-      "margen_pct": 44.1,
-      "detalle": {
-        "impresion": 34.0,
-        "marco": 0.0,
-        "mano_obra": 9.0,
-        "gestion": 4.5,
-        "envio": 6.0,
-        "embalaje": 2.0,
-        "comision": 3.15
-      }
-    },
-    {
-      "escudos": 4,
-      "tamano": "40x40",
-      "marco": "pino",
-      "precio": 139.0,
-      "coste": 77.67,
-      "margen": 61.33,
-      "margen_pct": 44.1,
-      "detalle": {
-        "impresion": 34.0,
-        "marco": 18.0,
-        "mano_obra": 9.0,
-        "gestion": 4.5,
-        "envio": 6.0,
-        "embalaje": 2.0,
-        "comision": 4.17
-      }
-    },
-    {
-      "escudos": 4,
-      "tamano": "40x40",
-      "marco": "negro",
-      "precio": 139.0,
-      "coste": 77.67,
-      "margen": 61.33,
-      "margen_pct": 44.1,
-      "detalle": {
-        "impresion": 34.0,
-        "marco": 18.0,
-        "mano_obra": 9.0,
-        "gestion": 4.5,
-        "envio": 6.0,
-        "embalaje": 2.0,
-        "comision": 4.17
-      }
-    },
-    {
-      "escudos": 4,
-      "tamano": "40x40",
-      "marco": "roble",
-      "precio": 147.0,
-      "coste": 81.91,
-      "margen": 65.09,
-      "margen_pct": 44.3,
-      "detalle": {
-        "impresion": 34.0,
-        "marco": 22.0,
-        "mano_obra": 9.0,
-        "gestion": 4.5,
-        "envio": 6.0,
-        "embalaje": 2.0,
-        "comision": 4.41
-      }
-    },
-    {
-      "escudos": 4,
-      "tamano": "40x40",
-      "marco": "sin-marco",
-      "precio": 105.0,
-      "coste": 58.65,
-      "margen": 46.35,
-      "margen_pct": 44.1,
-      "detalle": {
-        "impresion": 34.0,
-        "marco": 0.0,
-        "mano_obra": 9.0,
-        "gestion": 4.5,
-        "envio": 6.0,
-        "embalaje": 2.0,
-        "comision": 3.15
-      }
-    },
-    {
-      "escudos": 4,
-      "tamano": "50x50",
-      "marco": "pino",
-      "precio": 148.0,
-      "coste": 82.94,
-      "margen": 65.06,
-      "margen_pct": 44.0,
-      "detalle": {
-        "impresion": 34.0,
-        "marco": 21.0,
-        "mano_obra": 9.0,
-        "gestion": 4.5,
-        "envio": 8.0,
-        "embalaje": 2.0,
-        "comision": 4.44
-      }
-    },
-    {
-      "escudos": 4,
-      "tamano": "50x50",
-      "marco": "negro",
-      "precio": 148.0,
-      "coste": 82.94,
-      "margen": 65.06,
-      "margen_pct": 44.0,
-      "detalle": {
-        "impresion": 34.0,
-        "marco": 21.0,
-        "mano_obra": 9.0,
-        "gestion": 4.5,
-        "envio": 8.0,
-        "embalaje": 2.0,
-        "comision": 4.44
-      }
-    },
-    {
-      "escudos": 4,
-      "tamano": "50x50",
-      "marco": "roble",
-      "precio": 156.0,
-      "coste": 87.18,
-      "margen": 68.82,
-      "margen_pct": 44.1,
-      "detalle": {
-        "impresion": 34.0,
-        "marco": 25.0,
-        "mano_obra": 9.0,
-        "gestion": 4.5,
-        "envio": 8.0,
-        "embalaje": 2.0,
-        "comision": 4.68
-      }
-    },
-    {
-      "escudos": 4,
-      "tamano": "50x50",
-      "marco": "sin-marco",
-      "precio": 109.0,
-      "coste": 60.77,
-      "margen": 48.23,
-      "margen_pct": 44.2,
-      "detalle": {
-        "impresion": 34.0,
-        "marco": 0.0,
-        "mano_obra": 9.0,
-        "gestion": 4.5,
-        "envio": 8.0,
-        "embalaje": 2.0,
-        "comision": 3.27
-      }
-    },
-    {
-      "escudos": 4,
-      "tamano": "60x60",
-      "marco": "pino",
-      "precio": 156.0,
-      "coste": 87.18,
-      "margen": 68.82,
-      "margen_pct": 44.1,
-      "detalle": {
-        "impresion": 34.0,
-        "marco": 25.0,
-        "mano_obra": 9.0,
-        "gestion": 4.5,
-        "envio": 8.0,
-        "embalaje": 2.0,
-        "comision": 4.68
-      }
-    },
-    {
-      "escudos": 4,
-      "tamano": "60x60",
-      "marco": "negro",
-      "precio": 156.0,
-      "coste": 87.18,
-      "margen": 68.82,
-      "margen_pct": 44.1,
-      "detalle": {
-        "impresion": 34.0,
-        "marco": 25.0,
-        "mano_obra": 9.0,
-        "gestion": 4.5,
-        "envio": 8.0,
-        "embalaje": 2.0,
-        "comision": 4.68
-      }
-    },
-    {
-      "escudos": 4,
-      "tamano": "60x60",
-      "marco": "roble",
-      "precio": 164.0,
-      "coste": 91.42,
-      "margen": 72.58,
-      "margen_pct": 44.3,
-      "detalle": {
-        "impresion": 34.0,
-        "marco": 29.0,
-        "mano_obra": 9.0,
-        "gestion": 4.5,
-        "envio": 8.0,
-        "embalaje": 2.0,
-        "comision": 4.92
-      }
-    },
-    {
-      "escudos": 4,
-      "tamano": "60x60",
-      "marco": "sin-marco",
-      "precio": 109.0,
-      "coste": 60.77,
-      "margen": 48.23,
-      "margen_pct": 44.2,
-      "detalle": {
-        "impresion": 34.0,
-        "marco": 0.0,
-        "mano_obra": 9.0,
-        "gestion": 4.5,
-        "envio": 8.0,
-        "embalaje": 2.0,
-        "comision": 3.27
-      }
-    },
-    {
-      "escudos": 8,
-      "tamano": "30x30",
-      "marco": "pino",
-      "precio": 213.0,
-      "coste": 118.89,
-      "margen": 94.11,
-      "margen_pct": 44.2,
-      "detalle": {
-        "impresion": 67.0,
-        "marco": 15.0,
-        "mano_obra": 18.0,
-        "gestion": 4.5,
-        "envio": 6.0,
-        "embalaje": 2.0,
-        "comision": 6.39
-      }
-    },
-    {
-      "escudos": 8,
-      "tamano": "30x30",
-      "marco": "negro",
-      "precio": 213.0,
-      "coste": 118.89,
-      "margen": 94.11,
-      "margen_pct": 44.2,
-      "detalle": {
-        "impresion": 67.0,
-        "marco": 15.0,
-        "mano_obra": 18.0,
-        "gestion": 4.5,
-        "envio": 6.0,
-        "embalaje": 2.0,
-        "comision": 6.39
-      }
-    },
-    {
-      "escudos": 8,
-      "tamano": "30x30",
-      "marco": "roble",
-      "precio": 220.0,
-      "coste": 123.1,
-      "margen": 96.9,
-      "margen_pct": 44.0,
-      "detalle": {
-        "impresion": 67.0,
-        "marco": 19.0,
-        "mano_obra": 18.0,
-        "gestion": 4.5,
-        "envio": 6.0,
-        "embalaje": 2.0,
-        "comision": 6.6
-      }
-    },
-    {
-      "escudos": 8,
-      "tamano": "30x30",
-      "marco": "sin-marco",
-      "precio": 184.0,
-      "coste": 103.02,
-      "margen": 80.98,
-      "margen_pct": 44.0,
-      "detalle": {
-        "impresion": 67.0,
-        "marco": 0.0,
-        "mano_obra": 18.0,
-        "gestion": 4.5,
-        "envio": 6.0,
-        "embalaje": 2.0,
-        "comision": 5.52
-      }
-    },
-    {
-      "escudos": 8,
-      "tamano": "40x40",
-      "marco": "pino",
-      "precio": 218.0,
-      "coste": 122.04,
-      "margen": 95.96,
-      "margen_pct": 44.0,
-      "detalle": {
-        "impresion": 67.0,
-        "marco": 18.0,
-        "mano_obra": 18.0,
-        "gestion": 4.5,
-        "envio": 6.0,
-        "embalaje": 2.0,
-        "comision": 6.54
-      }
-    },
-    {
-      "escudos": 8,
-      "tamano": "40x40",
-      "marco": "negro",
-      "precio": 218.0,
-      "coste": 122.04,
-      "margen": 95.96,
-      "margen_pct": 44.0,
-      "detalle": {
-        "impresion": 67.0,
-        "marco": 18.0,
-        "mano_obra": 18.0,
-        "gestion": 4.5,
-        "envio": 6.0,
-        "embalaje": 2.0,
-        "comision": 6.54
-      }
-    },
-    {
-      "escudos": 8,
-      "tamano": "40x40",
-      "marco": "roble",
-      "precio": 226.0,
-      "coste": 126.28,
-      "margen": 99.72,
-      "margen_pct": 44.1,
-      "detalle": {
-        "impresion": 67.0,
-        "marco": 22.0,
-        "mano_obra": 18.0,
-        "gestion": 4.5,
-        "envio": 6.0,
-        "embalaje": 2.0,
-        "comision": 6.78
-      }
-    },
-    {
-      "escudos": 8,
-      "tamano": "40x40",
-      "marco": "sin-marco",
-      "precio": 184.0,
-      "coste": 103.02,
-      "margen": 80.98,
-      "margen_pct": 44.0,
-      "detalle": {
-        "impresion": 67.0,
-        "marco": 0.0,
-        "mano_obra": 18.0,
-        "gestion": 4.5,
-        "envio": 6.0,
-        "embalaje": 2.0,
-        "comision": 5.52
-      }
-    },
-    {
-      "escudos": 8,
-      "tamano": "50x50",
-      "marco": "pino",
-      "precio": 228.0,
-      "coste": 127.34,
-      "margen": 100.66,
-      "margen_pct": 44.1,
-      "detalle": {
-        "impresion": 67.0,
-        "marco": 21.0,
-        "mano_obra": 18.0,
-        "gestion": 4.5,
-        "envio": 8.0,
-        "embalaje": 2.0,
-        "comision": 6.84
-      }
-    },
-    {
-      "escudos": 8,
-      "tamano": "50x50",
-      "marco": "negro",
-      "precio": 228.0,
-      "coste": 127.34,
-      "margen": 100.66,
-      "margen_pct": 44.1,
-      "detalle": {
-        "impresion": 67.0,
-        "marco": 21.0,
-        "mano_obra": 18.0,
-        "gestion": 4.5,
-        "envio": 8.0,
-        "embalaje": 2.0,
-        "comision": 6.84
-      }
-    },
-    {
-      "escudos": 8,
-      "tamano": "50x50",
-      "marco": "roble",
-      "precio": 235.0,
-      "coste": 131.55,
-      "margen": 103.45,
-      "margen_pct": 44.0,
-      "detalle": {
-        "impresion": 67.0,
-        "marco": 25.0,
-        "mano_obra": 18.0,
-        "gestion": 4.5,
-        "envio": 8.0,
-        "embalaje": 2.0,
-        "comision": 7.05
-      }
-    },
-    {
-      "escudos": 8,
-      "tamano": "50x50",
-      "marco": "sin-marco",
-      "precio": 188.0,
-      "coste": 105.14,
-      "margen": 82.86,
-      "margen_pct": 44.1,
-      "detalle": {
-        "impresion": 67.0,
-        "marco": 0.0,
-        "mano_obra": 18.0,
-        "gestion": 4.5,
-        "envio": 8.0,
-        "embalaje": 2.0,
-        "comision": 5.64
-      }
-    },
-    {
-      "escudos": 8,
-      "tamano": "60x60",
-      "marco": "pino",
-      "precio": 235.0,
-      "coste": 131.55,
-      "margen": 103.45,
-      "margen_pct": 44.0,
-      "detalle": {
-        "impresion": 67.0,
-        "marco": 25.0,
-        "mano_obra": 18.0,
-        "gestion": 4.5,
-        "envio": 8.0,
-        "embalaje": 2.0,
-        "comision": 7.05
-      }
-    },
-    {
-      "escudos": 8,
-      "tamano": "60x60",
-      "marco": "negro",
-      "precio": 235.0,
-      "coste": 131.55,
-      "margen": 103.45,
-      "margen_pct": 44.0,
-      "detalle": {
-        "impresion": 67.0,
-        "marco": 25.0,
-        "mano_obra": 18.0,
-        "gestion": 4.5,
-        "envio": 8.0,
-        "embalaje": 2.0,
-        "comision": 7.05
-      }
-    },
-    {
-      "escudos": 8,
-      "tamano": "60x60",
-      "marco": "roble",
-      "precio": 243.0,
-      "coste": 135.79,
-      "margen": 107.21,
-      "margen_pct": 44.1,
-      "detalle": {
-        "impresion": 67.0,
-        "marco": 29.0,
-        "mano_obra": 18.0,
-        "gestion": 4.5,
-        "envio": 8.0,
-        "embalaje": 2.0,
-        "comision": 7.29
-      }
-    },
-    {
-      "escudos": 8,
-      "tamano": "60x60",
-      "marco": "sin-marco",
-      "precio": 188.0,
-      "coste": 105.14,
-      "margen": 82.86,
-      "margen_pct": 44.1,
-      "detalle": {
-        "impresion": 67.0,
-        "marco": 0.0,
-        "mano_obra": 18.0,
-        "gestion": 4.5,
-        "envio": 8.0,
-        "embalaje": 2.0,
-        "comision": 5.64
-      }
-    }
+  "incluye": [
+   "4 escudos heráldicos impresos en 3D (PLA), con el relieve montado sobre la lámina",
+   "Lámina impresa a color sobre papel verjurado, pegada a tablero HDF de 3 mm",
+   "Marco cajón de pino natural de 30 × 40 cm (perfil 20 × 30 mm), sin cristal",
+   "Montaje, control de calidad, embalaje reforzado y envío a península",
+   "Boceto previo con los apellidos y el linaje para aprobar antes de imprimir"
   ],
-  "resumen": {
-    "combinaciones": 32,
-    "precio_minimo": 105.0,
-    "precio_maximo": 243.0,
-    "margen_minimo": 46.35,
-    "margen_pct_minimo": 44.0
+  "envio": {
+   "incluido": true,
+   "domicilio_iva": 17.1,
+   "punto_iva": 5.4,
+   "nota": "Envío incluido en península. Domicilio con Correos Paq Estándar (17,10 € con IVA); punto de recogida SEUR (5,40 €). Baleares, Canarias, Ceuta y Melilla: consultar."
+  },
+  "plazo": {
+   "dias_laborables": "7-10",
+   "desde": "la aprobación del boceto",
+   "detalle": "3-7 días de impresión del proveedor + 1-3 días de transporte; el montaje se hace al recibir la impresión.",
+   "nota": "Si el proveedor se retrasa, se avisa al cliente en 24 h con una fecha nueva."
+  },
+  "especificaciones": {
+   "escudos": 4,
+   "escudo_mm": [
+    110,
+    125
+   ],
+   "relieve_max_mm": 12,
+   "base_escudo_mm": 2.5,
+   "peso_aproximado_kg": 0.9,
+   "marco": "Cajón de pino natural, 30 × 40 cm, perfil 20 × 30 mm, sin cristal",
+   "fondo": "HDF de 3 mm con lámina impresa"
+  },
+  "procedencia_blason": {
+   "regla": "Se vende «armas del linaje X, que lleva el apellido Y», nunca «el escudo de tu apellido». Si no hay linaje documentado, se ofrece un diseño heráldico original.",
+   "ejemplo": "Rodríguez de Fonseca (Toro, s. XV): de oro, cinco estrellas de gules puestas en sotuer.",
+   "fuente": "Revista RAHA (Universidad de Oviedo) y BSAA (Universidad de Valladolid) sobre los tapices de Fonseca; ver docs/APELLIDOS-INDICE.md.",
+   "nota": "El blasón es un dato histórico y se cita; el dibujo y el modelo 3D son propios. No se copian ilustraciones de otras webs."
+  },
+  "comparativa": [
+   {
+    "oferta": "Lámina impresa",
+    "precio": "47-67 €",
+    "que_es": "Escudo impreso en papel o lienzo, sin relieve, normalmente sin marco ni montaje.",
+    "fuente": "Referencia de mercado aportada por coordinación (11/11/2026)."
+   },
+   {
+    "oferta": "Nuestro cuadro",
+    "precio": "149 € IVA incl.",
+    "que_es": "Cuatro escudos en relieve 3D, lámina impresa, marco, montaje y envío incluido.",
+    "fuente": "Esta oferta."
+   },
+   {
+    "oferta": "Talla de madera",
+    "precio": "247 €",
+    "que_es": "Escudo tallado en madera; una sola pieza, sin composición de cuatro apellidos.",
+    "fuente": "Referencia de mercado aportada por coordinación (11/11/2026)."
+   }
+  ],
+  "reserva": {
+   "senal": 44.7,
+   "resto": 104.3,
+   "condiciones": [
+    "Señal de 44,70 € al confirmar el pedido; el resto (104,30 €) se paga al aprobar el boceto y antes de imprimir.",
+    "Dos revisiones del boceto incluidas; los cambios de apellidos o de linaje antes de aprobar no tienen coste.",
+    "Si el cliente cancela antes de aprobar el boceto, se devuelve la señal íntegra.",
+    "Una vez aprobado el boceto empieza la producción: la señal cubre material y encargo al proveedor y no se devuelve.",
+    "Si el escudo tiene derechos o no se puede documentar, se rechaza el pedido y se devuelve la señal."
+   ]
+  },
+  "plazo_entrega": "7-10 días laborables desde la aprobación del boceto",
+  "nota_legal": "Interpretación artística; no acredita nobleza ni parentesco. Un apellido puede tener varios blasones según el linaje."
+ },
+ "apellidos": [
+  {
+   "nombre": "Aguilar",
+   "normalizado": "aguilar",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Alonso",
+   "normalizado": "alonso",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Álvarez",
+   "normalizado": "alvarez",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Andrés",
+   "normalizado": "andres",
+   "ambito": "provincial"
+  },
+  {
+   "nombre": "Antón",
+   "normalizado": "anton",
+   "ambito": "provincial"
+  },
+  {
+   "nombre": "Arias",
+   "normalizado": "arias",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Arranz",
+   "normalizado": "arranz",
+   "ambito": "provincial"
+  },
+  {
+   "nombre": "Barbero",
+   "normalizado": "barbero",
+   "ambito": "provincial"
+  },
+  {
+   "nombre": "Benítez",
+   "normalizado": "benitez",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Benito",
+   "normalizado": "benito",
+   "ambito": "provincial"
+  },
+  {
+   "nombre": "Bernal",
+   "normalizado": "bernal",
+   "ambito": "provincial"
+  },
+  {
+   "nombre": "Blanco",
+   "normalizado": "blanco",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Blazquez",
+   "normalizado": "blazquez",
+   "ambito": "provincial"
+  },
+  {
+   "nombre": "Bravo",
+   "normalizado": "bravo",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Caballero",
+   "normalizado": "caballero",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Cabrera",
+   "normalizado": "cabrera",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Calvo",
+   "normalizado": "calvo",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Campos",
+   "normalizado": "campos",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Cano",
+   "normalizado": "cano",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Carmona",
+   "normalizado": "carmona",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Carrasco",
+   "normalizado": "carrasco",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Casado",
+   "normalizado": "casado",
+   "ambito": "provincial"
+  },
+  {
+   "nombre": "Castillo",
+   "normalizado": "castillo",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Castro",
+   "normalizado": "castro",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Cortés",
+   "normalizado": "cortes",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Crespo",
+   "normalizado": "crespo",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Cruz",
+   "normalizado": "cruz",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "De la Fuente",
+   "normalizado": "de la fuente",
+   "ambito": "provincial"
+  },
+  {
+   "nombre": "Delgado",
+   "normalizado": "delgado",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Díaz",
+   "normalizado": "diaz",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Díez",
+   "normalizado": "diez",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Domínguez",
+   "normalizado": "dominguez",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Durán",
+   "normalizado": "duran",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Escudero",
+   "normalizado": "escudero",
+   "ambito": "provincial"
+  },
+  {
+   "nombre": "Esteban",
+   "normalizado": "esteban",
+   "ambito": "provincial"
+  },
+  {
+   "nombre": "Fernández",
+   "normalizado": "fernandez",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Ferrer",
+   "normalizado": "ferrer",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Ferrero",
+   "normalizado": "ferrero",
+   "ambito": "provincial"
+  },
+  {
+   "nombre": "Flores",
+   "normalizado": "flores",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Fraile",
+   "normalizado": "fraile",
+   "ambito": "provincial"
+  },
+  {
+   "nombre": "Fuentes",
+   "normalizado": "fuentes",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Gago",
+   "normalizado": "gago",
+   "ambito": "provincial"
+  },
+  {
+   "nombre": "Gallego",
+   "normalizado": "gallego",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "García",
+   "normalizado": "garcia",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Garrido",
+   "normalizado": "garrido",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Gil",
+   "normalizado": "gil",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Giménez",
+   "normalizado": "gimenez",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Gómez",
+   "normalizado": "gomez",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "González",
+   "normalizado": "gonzalez",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Guerrero",
+   "normalizado": "guerrero",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Gutiérrez",
+   "normalizado": "gutierrez",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Hernández",
+   "normalizado": "hernandez",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Herrera",
+   "normalizado": "herrera",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Herrero",
+   "normalizado": "herrero",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Hidalgo",
+   "normalizado": "hidalgo",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Ibáñez",
+   "normalizado": "ibanez",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Iglesias",
+   "normalizado": "iglesias",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Jiménez",
+   "normalizado": "jimenez",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "León",
+   "normalizado": "leon",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "López",
+   "normalizado": "lopez",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Lorenzo",
+   "normalizado": "lorenzo",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Lozano",
+   "normalizado": "lozano",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Marcos",
+   "normalizado": "marcos",
+   "ambito": "provincial"
+  },
+  {
+   "nombre": "Marín",
+   "normalizado": "marin",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Márquez",
+   "normalizado": "marquez",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Martín",
+   "normalizado": "martin",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Martínez",
+   "normalizado": "martinez",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Mateos",
+   "normalizado": "mateos",
+   "ambito": "provincial"
+  },
+  {
+   "nombre": "Medina",
+   "normalizado": "medina",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Méndez",
+   "normalizado": "mendez",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Mendoza",
+   "normalizado": "mendoza",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Merino",
+   "normalizado": "merino",
+   "ambito": "provincial"
+  },
+  {
+   "nombre": "Miguel",
+   "normalizado": "miguel",
+   "ambito": "provincial"
+  },
+  {
+   "nombre": "Molina",
+   "normalizado": "molina",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Montero",
+   "normalizado": "montero",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Mora",
+   "normalizado": "mora",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Morales",
+   "normalizado": "morales",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Morán",
+   "normalizado": "moran",
+   "ambito": "provincial"
+  },
+  {
+   "nombre": "Moreno",
+   "normalizado": "moreno",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Moro",
+   "normalizado": "moro",
+   "ambito": "provincial"
+  },
+  {
+   "nombre": "Moya",
+   "normalizado": "moya",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Muñoz",
+   "normalizado": "munoz",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Navarro",
+   "normalizado": "navarro",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Nieto",
+   "normalizado": "nieto",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Núñez",
+   "normalizado": "nunez",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Ortega",
+   "normalizado": "ortega",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Ortiz",
+   "normalizado": "ortiz",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Parra",
+   "normalizado": "parra",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Pascual",
+   "normalizado": "pascual",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Pastor",
+   "normalizado": "pastor",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Peña",
+   "normalizado": "pena",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Pérez",
+   "normalizado": "perez",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Prieto",
+   "normalizado": "prieto",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Ramírez",
+   "normalizado": "ramirez",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Ramos",
+   "normalizado": "ramos",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Redondo",
+   "normalizado": "redondo",
+   "ambito": "provincial"
+  },
+  {
+   "nombre": "Reyes",
+   "normalizado": "reyes",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Rivas",
+   "normalizado": "rivas",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Rivera",
+   "normalizado": "rivera",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Rodríguez",
+   "normalizado": "rodriguez",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Rojas",
+   "normalizado": "rojas",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Román",
+   "normalizado": "roman",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Romero",
+   "normalizado": "romero",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Rubio",
+   "normalizado": "rubio",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Ruiz",
+   "normalizado": "ruiz",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Salazar",
+   "normalizado": "salazar",
+   "ambito": "provincial"
+  },
+  {
+   "nombre": "San José",
+   "normalizado": "san jose",
+   "ambito": "provincial"
+  },
+  {
+   "nombre": "Sánchez",
+   "normalizado": "sanchez",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Santana",
+   "normalizado": "santana",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Santiago",
+   "normalizado": "santiago",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Santos",
+   "normalizado": "santos",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Sanz",
+   "normalizado": "sanz",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Serrano",
+   "normalizado": "serrano",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Silva",
+   "normalizado": "silva",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Soto",
+   "normalizado": "soto",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Suárez",
+   "normalizado": "suarez",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Torres",
+   "normalizado": "torres",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Vaquero",
+   "normalizado": "vaquero",
+   "ambito": "provincial"
+  },
+  {
+   "nombre": "Vara",
+   "normalizado": "vara",
+   "ambito": "provincial"
+  },
+  {
+   "nombre": "Vargas",
+   "normalizado": "vargas",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Vázquez",
+   "normalizado": "vazquez",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Vega",
+   "normalizado": "vega",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Velasco",
+   "normalizado": "velasco",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Vicente",
+   "normalizado": "vicente",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Vidal",
+   "normalizado": "vidal",
+   "ambito": "nacional"
+  },
+  {
+   "nombre": "Villar",
+   "normalizado": "villar",
+   "ambito": "provincial"
   }
+ ],
+ "linajes": {
+  "lopez": [
+   {
+    "nombre": "López de Haro — armas primitivas",
+    "procedencia": "Señores de Vizcaya, primeras armas",
+    "blason": "De plata, dos lobos de sable pasantes, puestos en palo.",
+    "fuente": "Wikimedia Commons, «House of Haro COA»; Heraldry of the World, El Carpio; RAMHG (Salazar)",
+    "referencia": "Haro primitivo",
+    "estado": "verificado"
+   },
+   {
+    "nombre": "López de Haro — desde Diego López de Haro «el Bueno»",
+    "procedencia": "Diego López de Haro III, s. XIII",
+    "blason": "Lobos cebados de un cordero y bordura de gules con ocho aspas de oro.",
+    "fuente": "Wikimedia Commons, «House of Haro COA»; Heraldry of the World, El Carpio; RAMHG (Salazar)",
+    "referencia": "Haro el Bueno",
+    "estado": "verificado"
+   }
+  ],
+  "rodriguez": [
+   {
+    "nombre": "Rodríguez de Fonseca (Toro, s. XV)",
+    "procedencia": "Toro, obispo Juan Rodríguez de Fonseca",
+    "blason": "De oro, cinco estrellas de gules puestas en sotuer.",
+    "fuente": "Revista RAHA (Univ. de Oviedo); BSAA (UVa) 1946-47, tapices de Fonseca",
+    "referencia": "Fonseca",
+    "estado": "verificado"
+   }
+  ],
+  "fernandez": [
+   {
+    "nombre": "Fernández de Córdoba (Baena, Aguilar; el Gran Capitán)",
+    "procedencia": "Mismo escudo que Hernández de Córdoba: se reutilizan STL.",
+    "blason": "",
+    "fuente": "Blason.es (A. Salmerón), Fernández de Córdoba y Carrillo",
+    "referencia": "fernandez-cordoba",
+    "estado": "verificado"
+   }
+  ],
+  "hernandez": [
+   {
+    "nombre": "Hernández de Córdoba (Hernández es variante de Fernández)",
+    "procedencia": "El vínculo Hernández→Córdoba es PROPUESTA: no se ofrece como «el escudo de Hernández» hasta verificar. Cartela más larga del catálogo (61,8 mm a 7 mm).",
+    "blason": "",
+    "fuente": "Wikipedia (es), «Hernández (apellido)»: vínculo con Fernández de Córdoba",
+    "referencia": "hernandez-cordoba",
+    "estado": "por-verificar"
+   }
+  ],
+  "gomez": [
+   {
+    "nombre": "Gómez de Sandoval (duques de Lerma)",
+    "procedencia": "Aviso: los Carvajal llevan el mismo blasón; se rotula con el nombre del linaje.",
+    "blason": "",
+    "fuente": "FOTW citando a Herrera Casado; armorial de la ULPGC (Sandoval)",
+    "referencia": "gomez-sandoval",
+    "estado": "verificado"
+   }
+  ],
+  "jimenez": [
+   {
+    "nombre": "Jiménez (Ximénez) de Cisneros",
+    "procedencia": "Conflicto: el armorial de la ULPGC da a los Cisneros las armas de Reinoso. Se ofrece la versión de 1514 y se cita.",
+    "blason": "",
+    "fuente": "Blason.es, armas del cardenal Cisneros según la Biblia Políglota Complutense (1514)",
+    "referencia": "jimenez-cisneros",
+    "estado": "verificado"
+   }
+  ],
+  "ruiz": [
+   {
+    "nombre": "Ruiz de Castro (Casa de Castro; Fernán Ruiz de Castro)",
+    "procedencia": "Seis roeles: figuras dispersas que se unen con placa oculta en el bloque.",
+    "blason": "",
+    "fuente": "RAMHG, J. M.ª de Francisco Olmos, escudo del conde de Andrade",
+    "referencia": "ruiz-castro",
+    "estado": "verificado"
+   }
+  ],
+  "diaz": [
+   {
+    "nombre": "Díaz de Mendoza (Casa de Mendoza)",
+    "procedencia": "Blasón verificado; vincular «Díaz» a Mendoza es PROPUESTA (solo Díaz de Mendoza). Versión posterior cuartelada en sotuer con lema AVE MARIA.",
+    "blason": "",
+    "fuente": "Heraldry of the World: Durón y Tamajón (Guadalajara), armas de Mendoza",
+    "referencia": "diaz-mendoza",
+    "estado": "verificado"
+   }
+  ]
+ },
+ "contacto": {
+  "email": "davidpeve01@gmail.com",
+  "lugar": "Salamanca"
+ }
 }</script>
 <script>
 (function () {
   "use strict";
+  var datos = JSON.parse(document.getElementById("datos-venta").textContent);
+  var grid = document.getElementById("config-grid");
+  var estado = document.getElementById("config-estado");
+  var posiciones = [
+    { id: "padre-1", label: "Primer apellido del padre" },
+    { id: "padre-2", label: "Segundo apellido del padre" },
+    { id: "madre-1", label: "Primer apellido de la madre" },
+    { id: "madre-2", label: "Segundo apellido de la madre" }
+  ];
 
-  var datos = JSON.parse(document.getElementById("datos-configurador").textContent);
-  var porId = function (lista) {
-    var mapa = {};
-    lista.forEach(function (elemento) { mapa[elemento.id] = elemento; });
-    return mapa;
-  };
-  var escudos = porId(datos.escudos);
-  var tamanos = porId(datos.tamanos);
-  var marcos = porId(datos.marcos);
-  var combinaciones = {};
-  datos.combinaciones.forEach(function (c) {
-    combinaciones[c.escudos + "|" + c.tamano + "|" + c.marco] = c;
+  function normalizar(texto) {
+    return (texto || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
+  }
+
+  var porApellido = {};
+  datos.apellidos.forEach(function (a) { porApellido[a.normalizado] = a; });
+
+  var datalist = document.createElement("datalist");
+  datalist.id = "lista-apellidos";
+  datos.apellidos.forEach(function (a) {
+    var opcion = document.createElement("option");
+    opcion.value = a.nombre;
+    datalist.appendChild(opcion);
+  });
+  document.body.appendChild(datalist);
+
+  var tarjetas = [];
+  posiciones.forEach(function (posicion, i) {
+    var tarjeta = document.createElement("div");
+    tarjeta.className = "posicion";
+    tarjeta.innerHTML =
+      '<div class="posicion-cabecera"><span class="posicion-numero">' + (i + 1) + '</span>' +
+      '<label for="apellido-' + i + '">' + posicion.label + '</label></div>' +
+      '<input id="apellido-' + i + '" type="text" list="lista-apellidos" autocomplete="off" ' +
+      'placeholder="Escribe el apellido" aria-describedby="fuente-' + i + '">' +
+      '<label for="linaje-' + i + '">Linaje</label>' +
+      '<select id="linaje-' + i + '" aria-describedby="fuente-' + i + '" disabled>' +
+      '<option>Escribe un apellido</option></select>' +
+      '<p class="fuente" id="fuente-' + i + '">Escribe el apellido para ver su fuente.</p>';
+    grid.appendChild(tarjeta);
+    var input = tarjeta.querySelector("input");
+    var select = tarjeta.querySelector("select");
+    var fuente = tarjeta.querySelector(".fuente");
+    var tarjetaObj = { input: input, select: select, fuente: fuente, i: i };
+    tarjetas.push(tarjetaObj);
+
+    input.addEventListener("input", function () { actualizar(tarjetaObj); });
+    select.addEventListener("change", function () { pintarFuente(tarjetaObj); });
   });
 
-  var estado = {
-    composicion: datos.base.escudos,
-    tamano: datos.base.tamano,
-    marco: datos.base.marco,
-    cantidad: datos.cantidad.por_defecto,
-    escudosElegidos: []
-  };
-
-  var COLORES_MARCO = {
-    pino: { madera: "#c9a06a", maderaOscura: "#8f6533", fondo: "#f7f2e6" },
-    negro: { madera: "#232323", maderaOscura: "#0f0f0f", fondo: "#f4f1ea" },
-    roble: { madera: "#9a6a3a", maderaOscura: "#5f3c1c", fondo: "#f7f2e6" },
-    "sin-marco": null
-  };
-
-  var ESCUDO = "M6 4 H94 V50 C94 78 74 96 50 104 C26 96 6 78 6 50 Z";
-  var LIS = "M0 -30 C8 -30 10 -22 7 -17 C15 -20 21 -14 18 -6 C15 0 8 1 4 -3 C5 7 3 14 0 18 C-3 14 -5 7 -4 -3 C-8 1 -15 0 -18 -6 C-21 -14 -15 -20 -7 -17 C-10 -22 -8 -30 0 -30 Z";
-  var contador = 0;
-
-  function idUnico() {
-    contador += 1;
-    return "recorte" + contador;
+  function limpiarSelect(select, texto) {
+    select.innerHTML = "";
+    var opcion = document.createElement("option");
+    opcion.textContent = texto;
+    select.appendChild(opcion);
+    select.disabled = true;
   }
 
-  function estrella(cx, cy, r) {
-    var puntos = [];
-    for (var i = 0; i < 10; i += 1) {
-      var radio = i % 2 === 0 ? r : r * 0.42;
-      var angulo = -Math.PI / 2 + i * Math.PI / 5;
-      puntos.push((cx + Math.cos(angulo) * radio).toFixed(2) + "," + (cy + Math.sin(angulo) * radio).toFixed(2));
+  function actualizar(t) {
+    var clave = normalizar(t.input.value);
+    var apellido = porApellido[clave];
+    var linajes = datos.linajes[clave] || [];
+    t.select.innerHTML = "";
+    if (!clave) {
+      limpiarSelect(t.select, "Elige apellido");
+      t.fuente.textContent = "Escribe el apellido para ver su fuente.";
+      actualizarEstado();
+      return;
     }
-    return "M" + puntos.join(" L") + " Z";
-  }
-
-  function carga(escudo) {
-    var f = escudo.figura;
-    var c = escudo.campo;
-    switch (escudo.carga) {
-      case "lises":
-        return '<g fill="' + f + '">' +
-          '<path transform="translate(50,52) scale(0.52)" d="' + LIS + '"/>' +
-          '<path transform="translate(26,78) scale(0.52)" d="' + LIS + '"/>' +
-          '<path transform="translate(74,78) scale(0.52)" d="' + LIS + '"/>' +
-          '</g>';
-      case "castillo":
-        return '<g fill="' + f + '">' +
-          '<rect x="30" y="42" width="40" height="42"/>' +
-          '<rect x="26" y="34" width="10" height="10"/><rect x="45" y="34" width="10" height="10"/><rect x="64" y="34" width="10" height="10"/>' +
-          '<rect x="30" y="28" width="8" height="8"/><rect x="46" y="28" width="8" height="8"/><rect x="62" y="28" width="8" height="8"/>' +
-          '<path d="M46 84 V62 A4 4 0 0 1 54 62 V84 Z" fill="' + c + '"/>' +
-          '</g>';
-      case "jaquelado":
-        var jaq = "";
-        for (var y = 0; y < 110; y += 20) {
-          for (var x = 0; x < 100; x += 20) {
-            if (((x / 20) + (y / 20)) % 2 === 0) {
-              jaq += '<rect x="' + x + '" y="' + y + '" width="20" height="20" fill="' + f + '"/>';
-            }
-          }
-        }
-        return jaq;
-      case "palado":
-        var pal = "";
-        for (var px = 0; px < 100; px += 25) {
-          pal += '<rect x="' + px + '" y="0" width="12.5" height="110" fill="' + f + '"/>';
-        }
-        return pal;
-      case "fajado":
-        var faj = "";
-        for (var py = 0; py < 110; py += 22) {
-          faj += '<rect x="0" y="' + py + '" width="100" height="11" fill="' + f + '"/>';
-        }
-        return faj;
-      case "aspa":
-        return '<path d="M18 30 L30 20 L82 82 L70 92 Z" fill="' + f + '"/>' +
-               '<path d="M82 30 L70 20 L18 82 L30 92 Z" fill="' + f + '"/>';
-      case "cruz":
-        return '<rect x="43" y="14" width="14" height="82" fill="' + f + '"/>' +
-               '<rect x="22" y="44" width="56" height="14" fill="' + f + '"/>';
-      case "chevron":
-        return '<path d="M18 78 L50 34 L82 78 L67 78 L50 55 L33 78 Z" fill="' + f + '"/>';
-      case "banda":
-        return '<path d="M14 86 L78 12 L92 24 L28 98 Z" fill="' + f + '"/>';
-      case "estrellas":
-        return '<g fill="' + f + '">' +
-          '<path d="' + estrella(30, 42, 15) + '"/>' +
-          '<path d="' + estrella(70, 42, 15) + '"/>' +
-          '<path d="' + estrella(50, 80, 15) + '"/>' +
-          '</g>';
-      case "luna":
-        return '<circle cx="50" cy="55" r="26" fill="' + f + '"/>' +
-               '<circle cx="60" cy="46" r="21" fill="' + c + '"/>';
-      case "roeles":
-        return '<g fill="' + f + '">' +
-          '<circle cx="30" cy="44" r="13"/><circle cx="70" cy="44" r="13"/><circle cx="50" cy="80" r="13"/>' +
-          '</g>';
-      default:
-        return "";
+    if (!apellido) {
+      limpiarSelect(t.select, "Sin linaje documentado");
+      t.fuente.textContent = "Fuera del índice del INE. Lo revisamos a mano: no se inventa un blasón.";
+      actualizarEstado();
+      return;
     }
-  }
-
-  function piezaEscudo(escudo) {
-    var recorte = idUnico();
-    return '<defs><clipPath id="' + recorte + '"><path d="' + ESCUDO + '"/></clipPath></defs>' +
-      '<path d="' + ESCUDO + '" fill="' + escudo.campo + '"/>' +
-      '<g clip-path="url(#' + recorte + ')">' + carga(escudo) + '</g>' +
-      '<path d="' + ESCUDO + '" fill="none" stroke="rgba(0,0,0,.38)" stroke-width="2.4"/>';
-  }
-
-  function svgMini(escudo) {
-    return '<svg viewBox="0 0 100 110" aria-hidden="true">' + piezaEscudo(escudo) + '</svg>';
-  }
-
-  function fmt(valor) {
-    return new Intl.NumberFormat("es-ES", {
-      style: "currency", currency: "EUR", minimumFractionDigits: 2
-    }).format(valor);
-  }
-
-  function combinacionActual() {
-    return combinaciones[estado.composicion + "|" + estado.tamano + "|" + estado.marco];
-  }
-
-  function nombreMarco() {
-    return marcos[estado.marco].nombre.toLowerCase();
-  }
-
-  function dibujarVista() {
-    var svg = document.getElementById("preview-svg");
-    var colores = COLORES_MARCO[estado.marco];
-    var partes = [];
-    if (colores) {
-      partes.push('<rect x="0" y="0" width="420" height="420" rx="8" fill="' + colores.madera + '"/>');
-      partes.push('<rect x="0" y="0" width="420" height="420" rx="8" fill="none" stroke="' + colores.maderaOscura + '" stroke-width="3"/>');
-      partes.push('<rect x="26" y="26" width="368" height="368" fill="' + colores.fondo + '"/>');
-      partes.push('<rect x="26" y="26" width="368" height="368" fill="none" stroke="rgba(0,0,0,.18)" stroke-width="2"/>');
+    if (!linajes.length) {
+      limpiarSelect(t.select, "Sin linaje documentado");
+      t.fuente.textContent = "No hay un linaje con fuente para este apellido. Revisión manual o diseño original.";
+      actualizarEstado();
+      return;
+    }
+    if (linajes.length === 1) {
+      linajes.forEach(function (l, idx) {
+        var opcion = document.createElement("option");
+        opcion.value = String(idx);
+        opcion.textContent = l.nombre;
+        t.select.appendChild(opcion);
+      });
+      t.select.disabled = false;
+      t.select.value = "0";
     } else {
-      partes.push('<rect x="0" y="0" width="420" height="420" rx="8" fill="#f7f2e6"/>');
-      partes.push('<rect x="0" y="0" width="420" height="420" rx="8" fill="none" stroke="rgba(0,0,0,.14)" stroke-width="2"/>');
-    }
-    var area = colores ? { x: 44, y: 44, w: 332, h: 332 } : { x: 8, y: 8, w: 404, h: 404 };
-    var filas = estado.composicion === 4 ? 2 : 4;
-    var columnas = 2;
-    var hueco = 14;
-    var ancho = (area.w - hueco * (columnas - 1)) / columnas;
-    var alto = (area.h - hueco * (filas - 1)) / filas;
-    var escala = Math.min(ancho / 100, alto / 110) * 0.94;
-    for (var i = 0; i < estado.composicion; i += 1) {
-      var fila = Math.floor(i / columnas);
-      var columna = i % columnas;
-      var x = area.x + columna * (ancho + hueco) + (ancho - escala * 100) / 2;
-      var y = area.y + fila * (alto + hueco) + (alto - escala * 110) / 2;
-      var escudo = escudos[estado.escudosElegidos[i]];
-      partes.push('<g transform="translate(' + x.toFixed(1) + ',' + y.toFixed(1) + ') scale(' + escala.toFixed(3) + ')">' + piezaEscudo(escudo) + '</g>');
-    }
-    svg.innerHTML = partes.join("");
-    svg.setAttribute("aria-label", "Vista previa: " + estado.composicion + " escudos, marco de " + nombreMarco() + ", " + tamanos[estado.tamano].etiqueta);
-    document.getElementById("marco-preview").setAttribute("data-marco", estado.marco);
-    document.getElementById("nota-vista").innerHTML =
-      "<strong>" + estado.composicion + " escudos</strong> · marco de " + nombreMarco() +
-      " · " + tamanos[estado.tamano].etiqueta;
-  }
-
-  function dibujarSlots() {
-    var contenedor = document.getElementById("escudos-slots");
-    var piezas = [];
-    for (var i = 0; i < estado.composicion; i += 1) {
-      var elegido = estado.escudosElegidos[i];
-      var opciones = datos.escudos.map(function (e) {
-        return '<option value="' + e.id + '"' + (e.id === elegido ? " selected" : "") + ">" + e.nombre + "</option>";
-      }).join("");
-      piezas.push(
-        '<div class="slot">' +
-          '<span class="numero">' + (i + 1) + '</span>' +
-          '<span class="mini">' + svgMini(escudos[elegido]) + '</span>' +
-          '<label><select data-slot="' + i + '" aria-label="Escudo ' + (i + 1) + '">' + opciones + '</select></label>' +
-        '</div>'
-      );
-    }
-    contenedor.innerHTML = piezas.join("");
-    contenedor.querySelectorAll("select[data-slot]").forEach(function (select) {
-      select.addEventListener("change", function (evento) {
-        estado.escudosElegidos[Number(evento.target.getAttribute("data-slot"))] = evento.target.value;
-        dibujarSlots();
-        dibujarVista();
+      var vacia = document.createElement("option");
+      vacia.value = "";
+      vacia.textContent = "Elige una variante";
+      t.select.appendChild(vacia);
+      linajes.forEach(function (l, idx) {
+        var opcion = document.createElement("option");
+        opcion.value = String(idx);
+        opcion.textContent = l.nombre;
+        t.select.appendChild(opcion);
       });
-    });
-  }
-
-  function dibujarOpciones(contenedorId, lista, campo, etiquetaCompleta) {
-    var contenedor = document.getElementById(contenedorId);
-    contenedor.innerHTML = lista.map(function (elemento) {
-      var valor = campo === "escudos" ? elemento.escudos : elemento.id;
-      var activo = String(estado[campo === "escudos" ? "composicion" : campo]) === String(valor);
-      return '<label class="opcion"><input type="radio" name="' + campo + '" value="' + valor + '"' +
-        (activo ? " checked" : "") + '><span>' + etiquetaCompleta(elemento) + '</span></label>';
-    }).join("");
-    contenedor.querySelectorAll("input").forEach(function (input) {
-      input.addEventListener("change", function (evento) {
-        estado[campo === "escudos" ? "composicion" : campo] = campo === "escudos" ? Number(evento.target.value) : evento.target.value;
-        if (campo === "escudos") {
-          ajustarEscudos();
-          dibujarSlots();
-        }
-        dibujarVista();
-        actualizarPrecio();
-      });
-    });
-  }
-
-  function ajustarEscudos() {
-    var seleccion = estado.escudosElegidos.slice(0, estado.composicion);
-    while (seleccion.length < estado.composicion) {
-      seleccion.push(datos.escudos[seleccion.length % datos.escudos.length].id);
+      t.select.disabled = false;
+      t.select.value = "";
     }
-    estado.escudosElegidos = seleccion;
+    pintarFuente(t);
   }
 
-  function actualizarPrecio() {
-    var combo = combinacionActual();
-    var precioBase = combo.precio;
-    var total = precioBase * estado.cantidad;
-    document.getElementById("precio").textContent = fmt(precioBase);
-    document.getElementById("total").textContent = fmt(total);
-    document.getElementById("etiqueta-total").textContent =
-      "Total " + estado.cantidad + " × " + fmt(precioBase);
-    document.getElementById("cantidad").value = estado.cantidad;
-    dibujarDetalle(combo);
-  }
-
-  function dibujarDetalle(combo) {
-    var contenedor = document.getElementById("detalle-coste");
-    var visible = document.getElementById("ver-coste").checked;
-    contenedor.hidden = !visible;
-    if (!visible) { return; }
-    var d = combo.detalle;
-    var filas = [
-      ["Impresión (5 €/h + material)", d.impresion],
-      ["Marco", d.marco],
-      ["Montaje", d.mano_obra],
-      ["Gestión", d.gestion],
-      ["Envío", d.envio],
-      ["Embalaje", d.embalaje]
-    ];
-    var html = '<table><tbody>' + filas.map(function (fila) {
-      return "<tr><td>" + fila[0] + "</td><td>" + fmt(fila[1]) + "</td></tr>";
-    }).join("");
-    html += '<tr><td>Coste fijo</td><td>' + fmt(combo.coste - d.comision) + "</td></tr>";
-    html += '<tr><td>Comisión plataforma (3 %)</td><td>' + fmt(d.comision) + "</td></tr>";
-    html += '<tr class="separador"><td>Coste total</td><td>' + fmt(combo.coste) + "</td></tr>";
-    html += '<tr class="margen"><td>Margen</td><td>' + fmt(combo.margen) + " · " + combo.margen_pct.toFixed(1).replace(".", ",") + " %</td></tr>";
-    html += "</tbody></table>";
-    html += '<p class="aviso">Combinación ' + combo.escudos + " escudos · " + tamanos[combo.tamano].etiqueta + " · " + marcos[combo.marco].nombre + ". Modo taller: solo para uso interno.</p>";
-    contenedor.innerHTML = html;
-  }
-
-  function reiniciar() {
-    estado.composicion = datos.base.escudos;
-    estado.tamano = datos.base.tamano;
-    estado.marco = datos.base.marco;
-    estado.cantidad = datos.cantidad.por_defecto;
-    estado.escudosElegidos = datos.escudos.slice(0, estado.composicion).map(function (e) { return e.id; });
-    document.querySelectorAll('input[name="escudos"]').forEach(function (input) {
-      input.checked = Number(input.value) === estado.composicion;
-    });
-    document.querySelectorAll('input[name="tamano"]').forEach(function (input) {
-      input.checked = input.value === estado.tamano;
-    });
-    document.querySelectorAll('input[name="marco"]').forEach(function (input) {
-      input.checked = input.value === estado.marco;
-    });
-    document.getElementById("ver-coste").checked = false;
-    dibujarSlots();
-    dibujarVista();
-    actualizarPrecio();
-  }
-
-  function cambiarCantidad(delta) {
-    var nueva = estado.cantidad + delta;
-    estado.cantidad = Math.min(datos.cantidad.max, Math.max(datos.cantidad.min, nueva));
-    actualizarPrecio();
-  }
-
-  // Arranque
-  estado.escudosElegidos = datos.escudos.slice(0, estado.composicion).map(function (e) { return e.id; });
-  dibujarOpciones("opciones-composicion", datos.composiciones, "escudos", function (c) {
-    return c.etiqueta + (c.escudos === 8 ? "<em>pieza grande</em>" : "<em>el más vendido</em>");
-  });
-  dibujarOpciones("opciones-tamano", datos.tamanos, "tamano", function (t) { return t.etiqueta; });
-  dibujarOpciones("opciones-marco", datos.marcos, "marco", function (m) { return m.nombre; });
-  document.getElementById("cantidad").addEventListener("input", function (evento) {
-    var valor = parseInt(evento.target.value, 10);
-    if (!isNaN(valor) && valor >= datos.cantidad.min && valor <= datos.cantidad.max) {
-      estado.cantidad = valor;
-      actualizarPrecio();
+  function pintarFuente(t) {
+    var clave = normalizar(t.input.value);
+    var linajes = datos.linajes[clave] || [];
+    if (t.select.disabled || !linajes.length) {
+      actualizarEstado();
+      return;
     }
-  });
-  document.getElementById("cantidad-menos").addEventListener("click", function () { cambiarCantidad(-1); });
-  document.getElementById("cantidad-mas").addEventListener("click", function () { cambiarCantidad(1); });
-  document.getElementById("ver-coste").addEventListener("change", function () {
-    dibujarDetalle(combinacionActual());
-  });
-  document.getElementById("reiniciar").addEventListener("click", reiniciar);
-  document.getElementById("pedir").addEventListener("click", function () {
-    var combo = combinacionActual();
-    window.alert("Pedido simulado: " + estado.composicion + " escudos · " + tamanos[estado.tamano].etiqueta +
-      " · " + marcos[estado.marco].nombre + " · " + estado.cantidad + " uds. Total " + fmt(combo.precio * estado.cantidad) +
-      " (sin IVA). Este prototipo no cobra ni envía datos.");
-  });
-  dibujarSlots();
-  dibujarVista();
-  actualizarPrecio();
+    var idx = t.select.value === "" ? -1 : Number(t.select.value);
+    if (idx < 0) {
+      t.fuente.textContent = "Elige una variante: cada una conserva su fuente.";
+    } else {
+      var l = linajes[idx];
+      var partes = [];
+      if (l.procedencia) partes.push(l.procedencia);
+      if (l.blason) partes.push(l.blason);
+      partes.push("Fuente: " + l.fuente);
+      partes.push("Estado: " + l.estado);
+      t.fuente.textContent = partes.join(" · ");
+    }
+    actualizarEstado();
+  }
+
+  function actualizarEstado() {
+    var conLinaje = tarjetas.filter(function (t) {
+      return t.input.value.trim() && !t.select.disabled && t.select.value !== "";
+    }).length;
+    var conNombre = tarjetas.filter(function (t) { return t.input.value.trim(); }).length;
+    if (!conNombre) {
+      estado.textContent = "Escribe un apellido para empezar.";
+    } else if (conLinaje === 0) {
+      estado.textContent = "Ninguna posición tiene linaje documentado todavía. Podemos revisarlo a mano.";
+    } else {
+      estado.textContent = conLinaje + " de 4 posiciones con linaje documentado.";
+    }
+  }
 })();
 </script>
 </body>
