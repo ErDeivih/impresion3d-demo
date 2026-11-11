@@ -1,1420 +1,193 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cuadro heráldico de 4 escudos, 30×40 cm, impreso en relieve · 149 € IVA incluido</title>
-<meta name="description" content="Cuadro heráldico de 4 escudos, 30×40 cm, lámina impresa y relieve 3D. 149 € IVA incluido. Eliges apellidos, apruebas la prueba y se imprime.">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cuadro de 4 escudos en relieve · 149 € IVA incluido</title>
+<meta name="description" content="Cuadro de 30×40 cm con los escudos de cuatro apellidos, impreso en relieve. 149 € IVA incluido. Ves y apruebas la prueba antes de imprimir.">
 <style>
-  :root {
-    --ink: #211c16;
-    --muted: #665c50;
-    --paper: #fbf8f2;
-    --surface: #fffdf8;
-    --surface-2: #f3ebdd;
-    --line: #dfd3c1;
-    --accent: #8a4f2a;
-    --accent-dark: #6d3b1f;
-    --gold: #b98a2e;
-    --green: #245c45;
-    --focus: #1d4f91;
-    --danger: #8a2f2f;
-    --radius: 14px;
-    --radius-sm: 9px;
-    --shadow: 0 18px 44px rgba(40, 30, 18, .10);
-    --space-1: .35rem;
-    --space-2: .65rem;
-    --space-3: 1rem;
-    --space-4: 1.5rem;
-    --space-5: 2.25rem;
-    --space-6: 3.5rem;
-    --serif: Georgia, "Times New Roman", serif;
-    --sans: "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
-  }
-  *, *::before, *::after { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    margin: 0;
-    background: var(--paper);
-    color: var(--ink);
-    font-family: var(--sans);
-    line-height: 1.55;
-    -webkit-font-smoothing: antialiased;
-  }
-  img, svg { max-width: 100%; display: block; }
-  h1, h2, h3 { font-family: var(--serif); font-weight: 600; letter-spacing: .01em; line-height: 1.1; margin: 0; }
-  h1 { font-size: clamp(1.8rem, 5.2vw, 3.35rem); }
-  h2 { font-size: clamp(1.55rem, 3.6vw, 2.3rem); }
-  h3 { font-size: 1.12rem; }
-  p { margin: 0; }
-  a { color: var(--accent-dark); }
-  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-visible {
-    outline: 3px solid var(--focus);
-    outline-offset: 3px;
-  }
-  .contenedor { width: min(1120px, 100% - 2 * var(--space-3)); margin-inline: auto; }
-  .skip {
-    position: absolute; left: -999px; top: 0; z-index: 100;
-    background: var(--ink); color: #fff; padding: 12px 16px; border-radius: 0 0 8px 0;
-  }
-  .skip:focus { left: 0; }
-
-  .cabecera {
-    border-bottom: 1px solid var(--line);
-    background: rgba(251, 248, 242, .94);
-  }
-  .cabecera .contenedor {
-    display: flex; align-items: center; justify-content: space-between; gap: var(--space-3);
-    min-height: 64px; padding-block: 8px; flex-wrap: wrap;
-  }
-  .marca { display: inline-flex; align-items: baseline; gap: 7px; text-decoration: none; color: var(--ink); min-height: 44px; align-items: center; }
-  .marca strong { font-family: var(--serif); font-size: 1.08rem; letter-spacing: .01em; }
-  .marca span { color: var(--muted); font-size: .82rem; }
-  .nav { display: flex; gap: 4px; flex-wrap: wrap; }
-  .nav a {
-    display: inline-flex; align-items: center; min-height: 44px; padding: 0 10px;
-    border-radius: var(--radius-sm); color: var(--muted); text-decoration: none; font-size: .9rem;
-  }
-  .nav a:hover { color: var(--ink); background: var(--surface-2); }
-
-  .hero { padding: var(--space-4) 0 var(--space-5); }
-  .hero-grid { display: grid; gap: var(--space-4); align-items: center; }
-  .foto-marco {
-    position: relative; width: 100%; aspect-ratio: 3 / 4; max-height: 430px;
-    border-radius: var(--radius); overflow: hidden;
-    background: linear-gradient(145deg, #d8c3a1, #c2a176 46%, #d7bd97);
-    box-shadow: var(--shadow);
-    display: grid; place-items: center;
-  }
-  .foto-marco::after {
-    content: ""; position: absolute; inset: 14px; border: 1px solid rgba(33, 28, 22, .26);
-    border-radius: 6px; pointer-events: none;
-  }
-  .foto-marco svg { width: 100%; height: 100%; }
-  .foto-etiqueta {
-    position: absolute; left: 50%; bottom: 16px; transform: translateX(-50%);
-    background: rgba(251, 248, 242, .92); color: var(--muted); border: 1px dashed var(--line);
-    border-radius: 999px; padding: 6px 12px; font-size: .78rem; white-space: nowrap;
-  }
-  .foto-pie { color: var(--muted); font-size: .8rem; margin-top: var(--space-2); }
-  .hero-copy { display: grid; gap: var(--space-3); align-content: start; }
-  .hero-copy .entrada { font-size: 1.03rem; color: var(--muted); max-width: 34em; }
-  .precio-fila { display: flex; align-items: baseline; flex-wrap: wrap; gap: var(--space-2) var(--space-3); }
-  .precio { font-family: var(--serif); font-size: clamp(2.25rem, 5.4vw, 3.1rem); font-weight: 600; line-height: 1; }
-  .precio small { font-family: var(--sans); font-size: .85rem; color: var(--muted); font-weight: 500; }
-  .senal { color: var(--muted); font-size: .9rem; }
-  .senal strong { color: var(--ink); }
-  .boton {
-    display: inline-flex; align-items: center; justify-content: center; min-height: 48px;
-    padding: 0 20px; border: 1px solid var(--accent); border-radius: var(--radius-sm);
-    background: var(--accent); color: #fff; text-decoration: none; font-weight: 650;
-    font-size: 1rem; transition: transform 160ms ease-out, background-color 160ms ease-out;
-  }
-  .boton:hover { background: var(--accent-dark); }
-  .boton:active { transform: scale(.98); }
-  .boton.secundario { background: transparent; color: var(--accent-dark); }
-  .boton.secundario:hover { background: var(--surface-2); }
-  .boton:disabled, .boton[aria-disabled="true"] {
-    background: #d8cec0; border-color: #cbbfae; color: #665c50;
-    cursor: not-allowed; transform: none;
-  }
-  .confianza { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
-  .confianza li { display: flex; gap: 8px; align-items: flex-start; font-size: .9rem; color: var(--muted); }
-  .confianza li::before { content: "✓"; color: var(--green); font-weight: 800; line-height: 1.5; }
-  .nota { color: var(--muted); font-size: .85rem; }
-
-  section { padding: var(--space-5) 0; }
-  .seccion-cabecera { display: grid; gap: var(--space-2); max-width: 44rem; margin-bottom: var(--space-4); }
-  .seccion-cabecera p { color: var(--muted); }
-  .pasos { display: grid; gap: var(--space-3); }
-  .paso { border-top: 1px solid var(--line); padding-top: var(--space-3); display: grid; gap: 6px; }
-  .paso-numero { font-family: var(--serif); color: var(--gold); font-size: 1.35rem; }
-  .paso p { color: var(--muted); font-size: .95rem; }
-
-  .config { background: var(--surface); border-block: 1px solid var(--line); }
-  .config-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-2); }
-  .posicion {
-    border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--paper);
-    padding: var(--space-2); min-width: 0; display: grid; gap: 5px; align-content: start;
-  }
-  .posicion-cabecera { display: flex; align-items: center; gap: 6px; }
-  .posicion-numero {
-    display: inline-grid; place-items: center; width: 24px; height: 24px; flex: 0 0 24px;
-    border-radius: 50%; background: var(--surface-2); color: var(--accent-dark);
-    font-size: .75rem; font-weight: 700;
-  }
-  .posicion label { font-size: .82rem; color: var(--muted); line-height: 1.25; }
-  .posicion input, .posicion select {
-    width: 100%; min-height: 44px; font: inherit; font-size: 16px; color: var(--ink);
-    background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 8px 9px;
-  }
-  .posicion select { padding-right: 6px; }
-  .fuente { font-size: .76rem; color: var(--muted); line-height: 1.35; min-height: 2.7em; overflow-wrap: anywhere; }
-  .fuente strong { color: var(--ink); font-weight: 600; }
-  .config-pie { display: flex; flex-wrap: wrap; gap: var(--space-2); align-items: center; justify-content: space-between; margin-top: var(--space-3); }
-  .config-estado { color: var(--muted); font-size: .86rem; }
-  .manual { display: inline-flex; align-items: center; min-height: 44px; color: var(--accent-dark); font-weight: 600; font-size: .9rem; }
-  .manual:hover { text-decoration-thickness: 2px; }
-
-  .ficha-grid { display: grid; gap: var(--space-4); }
-  .datos-producto { display: grid; gap: 0; border-top: 1px solid var(--line); }
-  .dato { display: grid; gap: 2px; padding: 10px 0; border-bottom: 1px solid var(--line); }
-  .dato dt { font-size: .8rem; color: var(--muted); }
-  .dato dd { margin: 0; font-weight: 600; font-size: .95rem; }
-  .incluye { list-style: none; padding: 0; margin: 0; display: grid; gap: 7px; }
-  .incluye li { display: flex; gap: 7px; font-size: .92rem; color: var(--muted); }
-  .incluye li::before { content: "•"; color: var(--gold); font-weight: 800; }
-  .aviso-legal {
-    border-left: 3px solid var(--gold); background: var(--surface-2); padding: 10px 12px;
-    font-size: .82rem; color: var(--muted); border-radius: 0 8px 8px 0;
-  }
-
-  .comparativa { display: grid; gap: var(--space-2); }
-  .comparativa article { border: 1px solid var(--line); border-radius: var(--radius-sm); padding: var(--space-3); background: var(--surface); }
-  .comparativa article.destacado { border-color: var(--accent); box-shadow: 0 8px 22px rgba(138, 79, 42, .10); }
-  .comparativa h3 { display: flex; justify-content: space-between; gap: 8px; align-items: baseline; }
-  .comparativa h3 span { font-family: var(--sans); font-size: .82rem; color: var(--muted); font-weight: 500; text-align: right; }
-  .comparativa p { font-size: .88rem; color: var(--muted); margin-top: 5px; }
-  .comparativa .precio-comp { font-family: var(--serif); font-size: 1.5rem; color: var(--ink); white-space: nowrap; }
-  .referencia { font-size: .76rem; color: var(--muted); margin-top: var(--space-2); }
-  .destacado .precio-comp { color: var(--accent-dark); }
-
-  .faq { display: grid; gap: 0; border-top: 1px solid var(--line); }
-  .faq details { border-bottom: 1px solid var(--line); }
-  .faq summary {
-    list-style: none; cursor: pointer; min-height: 48px; display: flex; align-items: center;
-    justify-content: space-between; gap: var(--space-3); padding: 10px 0; font-weight: 600;
-  }
-  .faq summary::-webkit-details-marker { display: none; }
-  .faq summary::after { content: "+"; color: var(--accent); font-size: 1.3rem; line-height: 1; }
-  .faq details[open] summary::after { content: "−"; }
-  .faq details p { color: var(--muted); font-size: .92rem; padding: 0 0 12px; max-width: 62ch; }
-
-  .contacto { background: var(--surface-2); border-top: 1px solid var(--line); }
-  .contacto-grid { display: grid; gap: var(--space-3); align-items: start; }
-  .contacto a { display: inline-flex; align-items: center; min-height: 44px; font-weight: 650; overflow-wrap: anywhere; }
-  .pie { border-top: 1px solid var(--line); padding: var(--space-3) 0; font-size: .8rem; color: var(--muted); }
-  .pie .contenedor { display: flex; flex-wrap: wrap; gap: 6px 18px; justify-content: space-between; }
-
-  @media (min-width: 760px) {
-    .hero { padding: var(--space-5) 0 var(--space-6); }
-    .hero-grid { grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); gap: var(--space-5); }
-    .foto-marco { max-height: 620px; }
-    .pasos { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-4); }
-    .paso { border-top: 0; border-left: 1px solid var(--line); padding: 0 0 0 var(--space-3); }
-    .config-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-2); max-width: 760px; }
-    .ficha-grid { grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: var(--space-5); }
-    .comparativa { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    .contacto-grid { grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); }
-  }
-  @media (max-width: 700px) {
-    .cabecera .contenedor { flex-wrap: nowrap; min-height: 56px; padding-block: 4px; }
-    .marca span { display: none; }
-    .nav a[href="#ficha"] { display: none; }
-    .nav a { padding-inline: 8px; font-size: .85rem; }
-  }
-  @media (max-width: 420px) {
-    .nav a { padding-inline: 7px; font-size: .82rem; }
-    .hero { padding-top: var(--space-3); }
-    .foto-marco { max-height: 330px; }
-    .config-grid { gap: 6px; }
-    .posicion { padding: 8px; }
-    .posicion label { font-size: .76rem; }
-    .fuente { font-size: .7rem; }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-    *, *::before, *::after { transition: none !important; animation: none !important; }
-  }
+:root{--f-tit:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;--f-txt:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+--t1:34px;--t2:22px;--t3:17px;--e1:4px;--e2:8px;--e3:16px;--e4:24px;--e5:40px;--e6:64px;
+--papel:#f5efe4;--tinta:#1f1b16;--piedra:#5a5248;--granate:#7b1e2b;--oro:#9a7a2c}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--papel);color:var(--tinta);font:400 var(--t3)/1.55 var(--f-txt)}
+a{color:var(--granate)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 var(--e3)}
+h1,h2{font-family:var(--f-tit);font-weight:600;line-height:1.15;margin:0 0 var(--e3)}
+h1{font-size:var(--t1)}h2{font-size:var(--t2)}
+p{margin:0 0 var(--e3);max-width:62ch}
+.sec{color:var(--piedra)}
+section{padding:var(--e5) 0;border-top:1px solid var(--oro)}
+/* cabecera */
+.cab{display:flex;justify-content:space-between;align-items:center;min-height:56px}
+.marca{min-height:44px;display:inline-flex;align-items:center;font:600 var(--t3)/1 var(--f-tit);text-decoration:none;color:var(--tinta);letter-spacing:.02em}
+.cab a.lnk{min-height:44px;display:inline-flex;align-items:center;padding:0 var(--e2)}
+/* héroe */
+.heroe{display:grid;gap:var(--e4);padding:var(--e3) var(--e3) var(--e5)}
+.cuadro{width:100%;max-width:320px;margin:0 auto;display:block}
+.precio{font:600 var(--t2)/1.2 var(--f-tit);margin:0 0 var(--e1)}
+.btn{display:flex;align-items:center;justify-content:center;min-height:48px;padding:0 var(--e4);border-radius:4px;
+  background:var(--granate);color:#fff;font-weight:600;text-decoration:none;border:2px solid var(--granate);margin:var(--e3) 0 var(--e2)}
+.btn:hover{background:#5f1621}.btn:focus-visible{outline:3px solid var(--tinta);outline-offset:3px}
+.garantia{display:flex;gap:var(--e2);align-items:flex-start;color:var(--piedra);margin:0}
+.garantia svg{flex:none;margin-top:3px}
+/* pasos */
+ol.pasos{list-style:none;margin:0;padding:0;display:grid;gap:var(--e4);counter-reset:p}
+ol.pasos li{counter-increment:p;display:grid;grid-template-columns:40px 1fr;gap:var(--e3)}
+ol.pasos li::before{content:counter(p);width:40px;height:40px;border:1px solid var(--oro);border-radius:50%;
+  display:grid;place-items:center;font:600 var(--t3)/1 var(--f-tit)}
+ol.pasos b{display:block}
+/* incluye */
+ul.lista{margin:0;padding:0;list-style:none;display:grid;gap:var(--e2)}
+ul.lista li{padding-left:28px;position:relative}
+ul.lista li::before{content:"";position:absolute;left:4px;top:.55em;width:12px;height:6px;border:solid var(--granate);border-width:0 0 2px 2px;transform:rotate(-45deg)}
+/* prueba social honesta */
+.honesta{background:#fff;border:1px solid #e2d9cb;border-radius:4px;padding:var(--e4)}
+.pruebas{display:grid;grid-template-columns:1fr 1fr;gap:var(--e3);margin-top:var(--e3)}
+.pruebas figure{margin:0}
+.pruebas figcaption{color:var(--piedra)}
+/* faq */
+details{border-bottom:1px solid #e2d9cb}
+summary{min-height:48px;display:flex;align-items:center;justify-content:space-between;gap:var(--e3);cursor:pointer;font-weight:600;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font:400 var(--t2)/1 var(--f-txt);color:var(--granate)}
+details[open] summary::after{content:"−"}
+details p{padding-bottom:var(--e3)}
+/* pie */
+footer{border-top:1px solid var(--oro);padding:var(--e5) 0 var(--e6);color:var(--piedra)}
+footer nav{display:flex;flex-wrap:wrap;gap:0 var(--e3)}
+footer nav a{min-height:44px;display:inline-flex;align-items:center}
+.pend{background:#fff3cd;color:#5a3d00;padding:0 var(--e1);border-radius:2px}
+/* barra fija móvil: el mismo CTA, no uno nuevo */
+.fija{position:fixed;left:0;right:0;bottom:0;background:var(--papel);border-top:1px solid var(--oro);padding:var(--e2) var(--e3);display:flex;gap:var(--e3);align-items:center}
+.fija .btn{flex:1;margin:0}
+.fija span{font:600 var(--t3)/1.2 var(--f-tit);white-space:nowrap}
+body{padding-bottom:72px}
+@media(min-width:820px){
+  .heroe{grid-template-columns:1.1fr .9fr;align-items:center;padding:var(--e5) var(--e3) var(--e6)}
+  .heroe .btn{display:inline-flex}
+  ol.pasos{grid-template-columns:repeat(4,1fr)}
+  ol.pasos li{grid-template-columns:1fr}
+  .fija{display:none}body{padding-bottom:0}
+  .dos{display:grid;grid-template-columns:1fr 1fr;gap:var(--e5)}
+}
 </style>
 </head>
 <body>
-<a class="skip" href="#contenido">Saltar al contenido</a>
+<nav class="wrap" aria-label="Prototipos de venta" style="display:flex;flex-wrap:wrap;gap:4px 14px;padding-top:12px;padding-bottom:12px;border-bottom:1px solid #9a7a2c;font-size:14px">
+<a href="escudos-portada.html">Portada</a>
+<a href="escudos-configurador.html">Configurador</a>
+<a href="escudos-ficha.html">Ficha</a>
+<a href="escudos-sistema.html">Sistema de diseño</a>
+</nav>
 
-<header class="cabecera">
-  <div class="contenedor">
-    <a class="marca" href="#inicio" aria-label="Heráldica, inicio">
-      <strong>Heráldica</strong><span>Impresión 3D</span>
-    </a>
-    <nav class="nav" aria-label="Navegación principal">
-      <a href="#como-funciona">Cómo funciona</a>
-      <a href="#configurador">Diseñar</a>
-      <a href="#ficha">Ficha</a>
-      <a href="#preguntas">Preguntas</a>
-    </nav>
-  </div>
+<header class="wrap cab">
+  <a class="marca" href="#">[NOMBRE DE MARCA]</a>
+  <a class="lnk" href="escudos-ficha.html">Detalles y precio</a>
 </header>
 
-<main id="contenido">
-  <section class="hero" id="inicio" aria-labelledby="titulo-portada">
-    <div class="contenedor hero-grid">
-      <div>
-        <div class="foto-marco" role="img" aria-label="Hueco para la foto frontal del cuadro de 30 × 40 cm; pendiente de foto real">
-          <svg viewBox="0 0 420 560" aria-hidden="true" focusable="false">
-            <rect width="420" height="560" fill="#c9a06a"/>
-            <rect x="22" y="22" width="376" height="516" fill="#f7f2e6"/>
-            <g fill="#1f4e9c"><path d="M58 86h118v118c0 56-34 86-59 99-25-13-59-43-59-99Z"/></g>
-            <g fill="#a51c30"><path d="M244 86h118v118c0 56-34 86-59 99-25-13-59-43-59-99Z"/></g>
-            <g fill="#1e7a46"><path d="M58 310h118v118c0 56-34 86-59 99-25-13-59-43-59-99Z"/></g>
-            <g fill="#f2f2f2"><path d="M244 310h118v118c0 56-34 86-59 99-25-13-59-43-59-99Z"/></g>
-            <g fill="#e8c34a">
-              <path d="M112 190l8 18 20 2-15 13 5 20-18-11-18 11 5-20-15-13 20-2Z"/>
-              <path d="M300 190l8 18 20 2-15 13 5 20-18-11-18 11 5-20-15-13 20-2Z"/>
-            </g>
-            <g fill="#e8c34a"><path d="M112 430l8 18 20 2-15 13 5 20-18-11-18 11 5-20-15-13 20-2Z"/></g>
-            <path d="M262 410h16v24h24v16h-24v24h-16v-24h-24v-16h24Z" fill="#1c1a17"/>
-          </svg>
-          <span class="foto-etiqueta">Foto frontal pendiente · pieza real</span>
-        </div>
-        <p class="foto-pie">Hueco reservado para la foto del producto. La medida es 30 × 40 cm.</p>
-      </div>
+<main>
+<div class="wrap heroe">
+  <div>
+    <h1>Los escudos de vuestras cuatro familias, en relieve y en un solo cuadro</h1>
+    <p class="sec">Cuadro de 30×40 cm con las armas de los cuatro apellidos que elijáis, impreso en relieve y pieza a pieza por colores. Lo veis y lo aprobáis antes de que se imprima.</p>
+    <p class="precio">149 € <span class="sec" style="font:400 var(--t3) var(--f-txt)">IVA incluido</span></p>
+    <p class="sec" style="margin:0">Para empezar, una señal de 44,70 €. El resto, cuando apruebes la prueba.</p>
+    <a class="btn" href="escudos-configurador.html">Empezar con vuestros apellidos</a>
+    <p class="garantia"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1 2 3v5c0 3.5 2.6 6 6 7 3.4-1 6-3.5 6-7V3z" fill="none" stroke="#7b1e2b" stroke-width="1.5"/></svg>
+    <span>No se imprime nada sin tu aprobación. Plazo de entrega: <span class="pend">por confirmar</span>.</span></p>
+  </div>
+  <!-- Ilustración original: escudos genéricos, no son armas reales de ningún linaje -->
+  <svg class="cuadro" viewBox="0 0 300 400" role="img" aria-label="Ilustración de un cuadro con cuatro escudos en dos filas">
+    <rect x="4" y="4" width="292" height="392" fill="#3a2a1c"/>
+    <rect x="18" y="18" width="264" height="364" fill="#efe6d6"/>
+    <rect x="26" y="26" width="248" height="348" fill="none" stroke="#9a7a2c" stroke-width="1"/>
+    <defs><clipPath id="e"><path d="M0 0h90v62c0 26-20 42-45 50C20 104 0 88 0 62z"/></clipPath>
+      <path id="b" d="M0 0h90v62c0 26-20 42-45 50C20 104 0 88 0 62z"/></defs>
+    <g transform="translate(45 60)"><g clip-path="url(#e)"><rect width="90" height="120" fill="#8f2a2a"/><path d="M-10 10 100 110v-20L10-10z" fill="#d7b65a"/></g><use href="#b" fill="none" stroke="#1f1b16" stroke-width="2"/></g>
+    <g transform="translate(165 60)"><g clip-path="url(#e)"><rect width="90" height="120" fill="#2c4a7a"/><rect x="33" width="24" height="120" fill="#e8e1d3"/></g><use href="#b" fill="none" stroke="#1f1b16" stroke-width="2"/></g>
+    <g transform="translate(45 210)"><g clip-path="url(#e)"><rect width="90" height="120" fill="#d7b65a"/><path d="M0 80 45 35 90 80v-22L45 13 0 58z" fill="#8f2a2a"/></g><use href="#b" fill="none" stroke="#1f1b16" stroke-width="2"/></g>
+    <g transform="translate(165 210)"><g clip-path="url(#e)"><rect width="90" height="120" fill="#2f5a3a"/><path d="M27 78V42h8v8h7v-8h6v8h7v-8h8v36z" fill="#d7b65a"/></g><use href="#b" fill="none" stroke="#1f1b16" stroke-width="2"/></g>
+    <text x="150" y="358" text-anchor="middle" font-family="Georgia,serif" font-size="13" fill="#1f1b16">PÉREZ · VELASCO · GARCÍA · MARTÍN</text>
+  </svg>
+</div>
 
-      <div class="hero-copy">
-        <h1 id="titulo-portada">Cuadro heráldico de 4 escudos, 30×40 cm, impreso en relieve</h1>
-        <p class="entrada">Cuatro apellidos, una lámina impresa y un marco de pino. Te enseñamos la prueba antes de imprimir para que no haya sorpresas.</p>
-        <div class="precio-fila">
-          <p class="precio">149 € <small>IVA incluido</small></p>
-          <p class="senal">Señal <strong>44,70 €</strong></p>
-        </div>
-        <div>
-          <a class="boton" href="#configurador">Diseñar mi cuadro</a>
-        </div>
-        <ul class="confianza">
-          <li>Plazo estimado: 7-10 días laborables desde que apruebas la prueba</li>
-          <li>Envío incluido en península</li>
-          <li>Apruebas la prueba antes de imprimir</li>
-        </ul>
-      </div>
+<section class="wrap" aria-labelledby="como">
+  <h2 id="como">Cómo funciona</h2>
+  <ol class="pasos">
+    <li><div><b>Escribe los cuatro apellidos</b><span class="sec">Para una boda, dos de cada familia.</span></div></li>
+    <li><div><b>Elige el linaje de cada uno</b><span class="sec">Un apellido puede tener varios escudos; te enseñamos de dónde sale cada uno.</span></div></li>
+    <li><div><b>Paga la señal y recibe la prueba</b><span class="sec">44,70 €. Te mandamos la prueba del cuadro completo para que la revises.</span></div></li>
+    <li><div><b>Apruébala y lo imprimimos</b><span class="sec">Pagas los 104,30 € que faltan y te lo enviamos.</span></div></li>
+  </ol>
+</section>
+
+<section class="wrap dos" aria-labelledby="inc">
+  <div>
+    <h2 id="inc">Qué recibes</h2>
+    <ul class="lista">
+      <li>Cuadro de 30×40 cm con 4 escudos en relieve</li>
+      <li>Cada color, impreso como una pieza aparte (hasta 5 por escudo)</li>
+      <li>El nombre de cada apellido bajo su escudo</li>
+      <li>Una hoja con la fuente de cada blasón</li>
+      <li>Marco y acabado: <span class="pend">por confirmar</span></li>
+    </ul>
+  </div>
+  <div>
+    <h2 style="margin-top:var(--e5)">Lo que no es</h2>
+    <p>Son las armas de un linaje que lleva tu apellido, tal como aparecen en la fuente que citamos. No acreditan nobleza ni parentesco. El dibujo es original nuestro: no copiamos ilustraciones de nadie.</p>
+  </div>
+</section>
+
+<section class="wrap" aria-labelledby="hon">
+  <div class="honesta">
+    <h2 id="hon">Todavía no tenemos reseñas</h2>
+    <p>Estamos con los primeros encargos y preferimos no enseñaros opiniones que no existen. Lo que sí os enseñamos es cómo trabajamos:</p>
+    <div class="pruebas">
+      <figure>
+        <svg viewBox="0 0 120 120" width="100%" role="img" aria-label="Piezas de un escudo separadas por color">
+          <rect width="120" height="120" fill="#efe6d6"/>
+          <path d="M20 20h40v28c0 12-9 19-20 23-11-4-20-11-20-23z" fill="#8f2a2a"/>
+          <path d="M66 26 102 62v-9L75 26z" fill="#d7b65a"/>
+          <path d="M60 70h40v28c0 12-9 19-20 23" fill="none" stroke="#1f1b16" stroke-width="2" stroke-dasharray="4 3"/>
+        </svg>
+        <figcaption>Cada color sale en una pieza</figcaption>
+      </figure>
+      <figure>
+        <svg viewBox="0 0 120 120" width="100%" role="img" aria-label="Prueba digital con marcas de revisión">
+          <rect width="120" height="120" fill="#fff"/><rect x="14" y="10" width="92" height="100" fill="none" stroke="#1f1b16"/>
+          <path d="M30 26h24v18c0 8-5 12-12 14-7-2-12-6-12-14z" fill="#2c4a7a"/>
+          <path d="M66 26h24v18c0 8-5 12-12 14-7-2-12-6-12-14z" fill="#2f5a3a"/>
+          <circle cx="78" cy="40" r="14" fill="none" stroke="#7b1e2b" stroke-width="2"/>
+          <path d="M24 80h72M24 90h50" stroke="#5a5248" stroke-width="2"/>
+        </svg>
+        <figcaption>Prueba para aprobar antes de imprimir</figcaption>
+      </figure>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="como-funciona" aria-labelledby="titulo-como">
-    <div class="contenedor">
-      <div class="seccion-cabecera">
-        <h2 id="titulo-como">Cómo funciona</h2>
-        <p>Tres pasos y una prueba en tus manos antes de fabricar.</p>
-      </div>
-      <div class="pasos">
-        <article class="paso">
-          <span class="paso-numero">1</span>
-          <h3>Escribes los apellidos</h3>
-          <p>Los dos del padre arriba y los dos de la madre abajo. Si uno se repite, no pasa nada: lo revisamos contigo.</p>
-        </article>
-        <article class="paso">
-          <span class="paso-numero">2</span>
-          <h3>Elegimos el blasón documentado</h3>
-          <p>Cada linaje lleva su fuente. Si no encontramos una referencia fiable, lo revisamos a mano antes de dibujar.</p>
-        </article>
-        <article class="paso">
-          <span class="paso-numero">3</span>
-          <h3>Apruebas la prueba y se imprime</h3>
-          <p>Recibes la composición. No se imprime nada hasta que das el visto bueno.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="config" id="configurador" aria-labelledby="titulo-config">
-    <div class="contenedor">
-      <div class="seccion-cabecera">
-        <h2 id="titulo-config">Elige los cuatro apellidos</h2>
-        <p>Escribe cada apellido. Verás el linaje disponible y su fuente; si no hay, te lo decimos y lo revisamos a mano.</p>
-      </div>
-
-      <div class="config-grid" id="config-grid"></div>
-      <p class="config-estado" id="config-estado" aria-live="polite">Escribe un apellido para empezar.</p>
-      <div class="config-pie">
-        <a class="manual" href="mailto:davidpeve01@gmail.com?subject=Revisi%C3%B3n%20manual%20de%20linaje&amp;body=Hola%2C%20no%20s%C3%A9%20qu%C3%A9%20blas%C3%B3n%20elegir%20para%20mi%20cuadro.%20Apellidos%3A%20">No sé qué escudo elegir · revisión manual</a>
-        <p class="nota">La revisión manual se hace antes de dibujar; si no hay fuente, se propone un diseño original.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="ficha" aria-labelledby="titulo-ficha">
-    <div class="contenedor">
-      <div class="seccion-cabecera">
-        <h2 id="titulo-ficha">Ficha del producto</h2>
-        <p>Lo que recibes, cómo está hecho y cuánto tarda.</p>
-      </div>
-      <div class="ficha-grid">
-        <div>
-          <h3>Qué incluye</h3>
-          <ul class="incluye">
-            <li>Cuatro piezas en relieve de 110 × 125 mm, impresas en PLA y montadas sobre la lámina.</li>
-            <li>Lámina impresa a color sobre papel verjurado, pegada a HDF de 3 mm.</li>
-            <li>Marco cajón de pino natural de 30 × 40 cm, perfil 20 × 30 mm, sin cristal.</li>
-            <li>Montaje, control de calidad, embalaje reforzado y envío a península.</li>
-            <li>Prueba previa con apellidos y linaje para aprobar antes de imprimir.</li>
-          </ul>
-          <dl class="datos-producto">
-            <div class="dato"><dt>Medidas</dt><dd>30 × 40 cm (luz 300 × 400 mm)</dd></div>
-            <div class="dato"><dt>Materiales</dt><dd>PLA, papel verjurado, HDF de 3 mm y pino natural</dd></div>
-            <div class="dato"><dt>Acabado</dt><dd>Pino natural, sin cristal; no hay otras variantes</dd></div>
-            <div class="dato"><dt>Plazo</dt><dd>7-10 días laborables desde la aprobación</dd></div>
-            <div class="dato"><dt>Envío</dt><dd>Incluido en península</dd></div>
-            <div class="dato"><dt>Garantía</dt><dd>Garantía legal de 3 años (TRLGDCU)</dd></div>
-          </dl>
-        </div>
-        <div>
-          <h3>Antes de comprar</h3>
-          <p class="nota">Precio con IVA incluido. La señal es 44,70 €; el resto se paga cuando apruebas la prueba y antes de imprimir.</p>
-          <p class="nota" style="margin-top: 10px;">El relieve no supera los 12 mm para que cierre el marco. La personalización es la que apruebas: apellidos, linaje y composición. No incluye cristal ni envío fuera de península sin consultar.</p>
-          <div class="aviso-legal" style="margin-top: 14px;">Interpretación artística; no acredita nobleza ni parentesco. Un apellido puede tener varios blasones según el linaje.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="comparativa" aria-labelledby="titulo-comparativa">
-    <div class="contenedor">
-      <div class="seccion-cabecera">
-        <h2 id="titulo-comparativa">Comparativa honesta</h2>
-        <p>Tres formas de tener un blasón en casa. Cada una resuelve algo distinto.</p>
-      </div>
-      <div class="comparativa">
-        <article>
-          <h3>Lámina impresa <span class="precio-comp">47-67 €</span></h3>
-          <p>Papel o lienzo con una imagen plana. Sin relieve y, a menudo, sin marco ni montaje.</p>
-        </article>
-        <article class="destacado">
-          <h3>Este cuadro <span class="precio-comp">149 € IVA incluido</span></h3>
-          <p>Cuatro piezas en relieve, lámina, marco de pino, montaje y envío incluido. Precio con IVA.</p>
-        </article>
-        <article>
-          <h3>Talla en madera <span class="precio-comp">247 €</span></h3>
-          <p>Una sola pieza tallada. Sin composición de cuatro apellidos ni prueba previa.</p>
-        </article>
-      </div>
-      <p class="nota" style="margin-top: var(--space-3);"><strong>Por qué este:</strong> reúne cuatro apellidos, relieve, marco, montaje y prueba previa en un solo precio; la lámina es plana y la talla es una sola pieza.</p>
-      <p class="referencia">Referencias de mercado orientativas, aportadas por coordinación; no son ofertas de esta tienda. El único precio de esta página es 149 € con IVA incluido.</p>
-    </div>
-  </section>
-
-  <section id="preguntas" aria-labelledby="titulo-preguntas">
-    <div class="contenedor">
-      <div class="seccion-cabecera">
-        <h2 id="titulo-preguntas">Preguntas frecuentes</h2>
-      </div>
-      <div class="faq">
-        <details>
-          <summary>¿Qué recibo exactamente?</summary>
-          <p>Un cuadro montado de 30 × 40 cm: cuatro piezas en relieve, lámina impresa, marco de pino y embalaje. El envío a península está incluido.</p>
-        </details>
-        <details>
-          <summary>¿Cuánto tarda?</summary>
-          <p>Entre 7 y 10 días laborables desde que apruebas la prueba. El plazo empieza con tu aprobación, no con el pago de la señal.</p>
-        </details>
-        <details>
-          <summary>¿El envío está incluido?</summary>
-          <p>Sí, en península. Para Baleares, Canarias, Ceuta o Melilla, escríbeme antes de pedir para calcularlo.</p>
-        </details>
-        <details>
-          <summary>¿De dónde sale el blasón?</summary>
-          <p>De un linaje con fuente citada. Si tu apellido no tiene una referencia fiable, te lo digo y propongo un diseño original o una revisión manual.</p>
-        </details>
-        <details>
-          <summary>¿Puedo cambiar algo después de aprobar?</summary>
-          <p>Antes de aprobar tienes dos revisiones incluidas. Después de aprobar, un cambio de apellidos o linaje obliga a rehacer la prueba y retrasa la producción.</p>
-        </details>
-        <details>
-          <summary>¿Qué garantía tiene?</summary>
-          <p>Garantía legal de 3 años desde la entrega. Al ser un producto personalizado, no hay desistimiento de 14 días; si llega dañado o no coincide con la prueba aprobada, escríbeme y lo revisamos.</p>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <section class="contacto" id="contacto" aria-labelledby="titulo-contacto">
-    <div class="contenedor contacto-grid">
-      <div>
-        <h2 id="titulo-contacto">¿Hablamos?</h2>
-        <p class="nota">Cuéntame los apellidos, la ocasión y cualquier duda sobre el linaje. Te respondo por correo.</p>
-      </div>
-      <div>
-        <a href="mailto:davidpeve01@gmail.com?subject=Cuadro%20her%C3%A1ldico%2030%C3%9740">davidpeve01@gmail.com</a>
-        <p class="nota">Salamanca, España</p>
-      </div>
-    </div>
-  </section>
+<section class="wrap" aria-labelledby="faq">
+  <h2 id="faq">Preguntas frecuentes</h2>
+  <details><summary>¿Mi apellido tiene un único escudo?</summary><p>Casi nunca. Un mismo apellido puede tener varios linajes, cada uno con sus armas. Te enseñamos los que encontramos y la fuente de cada uno, y eliges tú.</p></details>
+  <details><summary>¿Y si no aparece mi apellido?</summary><p>Lo buscamos a mano antes de cobrarte nada. Si no encontramos una fuente, te lo decimos y no seguimos.</p></details>
+  <details><summary>¿Qué pasa si la prueba no me convence?</summary><p>La corregimos antes de imprimir. Cuántas rondas de cambios entran y si devolvemos la señal: <span class="pend">por confirmar</span>.</p></details>
+  <details><summary>¿Cuánto tarda?</summary><p><span class="pend">Por confirmar.</span> Te daremos la fecha cuando apruebes la prueba.</p></details>
+  <details><summary>¿Lo puedo regalar sin que se entere?</summary><p>Sí. Puedes poner otra dirección de entrega. Si va dentro de una caja de regalo: <span class="pend">por confirmar</span>.</p></details>
+  <details><summary>¿Cuánto cuesta el envío?</summary><p><span class="pend">Por confirmar.</span> Te lo diremos antes de que pagues la señal.</p></details>
+</section>
 </main>
 
-<footer class="pie">
-  <div class="contenedor">
-    <span>Precio con IVA incluido. Envío incluido en península. Plazo estimado: 7-10 días laborables desde la aprobación.</span>
-    <span>Interpretación artística; no acredita nobleza ni parentesco.</span>
-  </div>
+<footer class="wrap">
+  <p>[NOMBRE DE MARCA] · Titular: <span class="pend">[PENDIENTE: nombre y NIF]</span> · Contacto: <span class="pend">[PENDIENTE]</span></p>
+  <nav aria-label="Legal"><a href="#">Aviso legal</a><a href="#">Privacidad</a><a href="#">Condiciones de venta y desistimiento</a><a href="#">Cookies</a></nav>
+  <p class="sec">Todos los precios llevan el IVA incluido.</p>
 </footer>
 
-<script id="datos-venta" type="application/json">{
- "oferta": {
-  "meta": {
-   "fecha": "2026-11-11",
-   "moneda": "EUR",
-   "iva_pct": 0.21,
-   "nota": "Oferta única de lanzamiento. No hay otras tallas, composiciones ni acabados a la venta en el configurador. El PVP es con IVA incluido; la señal es el 30 %."
-  },
-  "producto": {
-   "id": "cuadro-4-escudos-30x40",
-   "nombre": "Cuadro heráldico de 4 escudos 30×40",
-   "formato": "4 escudos",
-   "medidas_cm": {
-    "ancho": 30,
-    "alto": 40
-   },
-   "medidas_luz_mm": {
-    "ancho": 300,
-    "alto": 400
-   },
-   "construccion": "Lámina impresa + relieve 3D",
-   "precio_iva": 149.0,
-   "senal": 44.7,
-   "resto": 104.3,
-   "senal_pct": 0.3
-  },
-  "incluye": [
-   "4 escudos heráldicos impresos en 3D (PLA), con el relieve montado sobre la lámina",
-   "Lámina impresa a color sobre papel verjurado, pegada a tablero HDF de 3 mm",
-   "Marco cajón de pino natural de 30 × 40 cm (perfil 20 × 30 mm), sin cristal",
-   "Montaje, control de calidad, embalaje reforzado y envío a península",
-   "Boceto previo con los apellidos y el linaje para aprobar antes de imprimir"
-  ],
-  "envio": {
-   "incluido": true,
-   "domicilio_iva": 17.1,
-   "punto_iva": 5.4,
-   "nota": "Envío incluido en península. Domicilio con Correos Paq Estándar (17,10 € con IVA); punto de recogida SEUR (5,40 €). Baleares, Canarias, Ceuta y Melilla: consultar."
-  },
-  "plazo": {
-   "dias_laborables": "7-10",
-   "desde": "la aprobación del boceto",
-   "detalle": "3-7 días de impresión del proveedor + 1-3 días de transporte; el montaje se hace al recibir la impresión.",
-   "nota": "Si el proveedor se retrasa, se avisa al cliente en 24 h con una fecha nueva."
-  },
-  "especificaciones": {
-   "escudos": 4,
-   "escudo_mm": [
-    110,
-    125
-   ],
-   "relieve_max_mm": 12,
-   "base_escudo_mm": 2.5,
-   "peso_aproximado_kg": 0.9,
-   "marco": "Cajón de pino natural, 30 × 40 cm, perfil 20 × 30 mm, sin cristal",
-   "fondo": "HDF de 3 mm con lámina impresa"
-  },
-  "procedencia_blason": {
-   "regla": "Se vende «armas del linaje X, que lleva el apellido Y», nunca «el escudo de tu apellido». Si no hay linaje documentado, se ofrece un diseño heráldico original.",
-   "ejemplo": "Rodríguez de Fonseca (Toro, s. XV): de oro, cinco estrellas de gules puestas en sotuer.",
-   "fuente": "Revista RAHA (Universidad de Oviedo) y BSAA (Universidad de Valladolid) sobre los tapices de Fonseca; ver docs/APELLIDOS-INDICE.md.",
-   "nota": "El blasón es un dato histórico y se cita; el dibujo y el modelo 3D son propios. No se copian ilustraciones de otras webs."
-  },
-  "comparativa": [
-   {
-    "oferta": "Lámina impresa",
-    "precio": "47-67 €",
-    "que_es": "Escudo impreso en papel o lienzo, sin relieve, normalmente sin marco ni montaje.",
-    "fuente": "Referencia de mercado aportada por coordinación (11/11/2026)."
-   },
-   {
-    "oferta": "Nuestro cuadro",
-    "precio": "149 € IVA incl.",
-    "que_es": "Cuatro escudos en relieve 3D, lámina impresa, marco, montaje y envío incluido.",
-    "fuente": "Esta oferta."
-   },
-   {
-    "oferta": "Talla de madera",
-    "precio": "247 €",
-    "que_es": "Escudo tallado en madera; una sola pieza, sin composición de cuatro apellidos.",
-    "fuente": "Referencia de mercado aportada por coordinación (11/11/2026)."
-   }
-  ],
-  "reserva": {
-   "senal": 44.7,
-   "resto": 104.3,
-   "condiciones": [
-    "Señal de 44,70 € al confirmar el pedido; el resto (104,30 €) se paga al aprobar el boceto y antes de imprimir.",
-    "Dos revisiones del boceto incluidas; los cambios de apellidos o de linaje antes de aprobar no tienen coste.",
-    "Si el cliente cancela antes de aprobar el boceto, se devuelve la señal íntegra.",
-    "Una vez aprobado el boceto empieza la producción: la señal cubre material y encargo al proveedor y no se devuelve.",
-    "Si el escudo tiene derechos o no se puede documentar, se rechaza el pedido y se devuelve la señal."
-   ]
-  },
-  "plazo_entrega": "7-10 días laborables desde la aprobación del boceto",
-  "nota_legal": "Interpretación artística; no acredita nobleza ni parentesco. Un apellido puede tener varios blasones según el linaje."
- },
- "apellidos": [
-  {
-   "nombre": "Aguilar",
-   "normalizado": "aguilar",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Alonso",
-   "normalizado": "alonso",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Álvarez",
-   "normalizado": "alvarez",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Andrés",
-   "normalizado": "andres",
-   "ambito": "provincial"
-  },
-  {
-   "nombre": "Antón",
-   "normalizado": "anton",
-   "ambito": "provincial"
-  },
-  {
-   "nombre": "Arias",
-   "normalizado": "arias",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Arranz",
-   "normalizado": "arranz",
-   "ambito": "provincial"
-  },
-  {
-   "nombre": "Barbero",
-   "normalizado": "barbero",
-   "ambito": "provincial"
-  },
-  {
-   "nombre": "Benítez",
-   "normalizado": "benitez",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Benito",
-   "normalizado": "benito",
-   "ambito": "provincial"
-  },
-  {
-   "nombre": "Bernal",
-   "normalizado": "bernal",
-   "ambito": "provincial"
-  },
-  {
-   "nombre": "Blanco",
-   "normalizado": "blanco",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Blazquez",
-   "normalizado": "blazquez",
-   "ambito": "provincial"
-  },
-  {
-   "nombre": "Bravo",
-   "normalizado": "bravo",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Caballero",
-   "normalizado": "caballero",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Cabrera",
-   "normalizado": "cabrera",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Calvo",
-   "normalizado": "calvo",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Campos",
-   "normalizado": "campos",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Cano",
-   "normalizado": "cano",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Carmona",
-   "normalizado": "carmona",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Carrasco",
-   "normalizado": "carrasco",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Casado",
-   "normalizado": "casado",
-   "ambito": "provincial"
-  },
-  {
-   "nombre": "Castillo",
-   "normalizado": "castillo",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Castro",
-   "normalizado": "castro",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Cortés",
-   "normalizado": "cortes",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Crespo",
-   "normalizado": "crespo",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Cruz",
-   "normalizado": "cruz",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "De la Fuente",
-   "normalizado": "de la fuente",
-   "ambito": "provincial"
-  },
-  {
-   "nombre": "Delgado",
-   "normalizado": "delgado",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Díaz",
-   "normalizado": "diaz",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Díez",
-   "normalizado": "diez",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Domínguez",
-   "normalizado": "dominguez",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Durán",
-   "normalizado": "duran",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Escudero",
-   "normalizado": "escudero",
-   "ambito": "provincial"
-  },
-  {
-   "nombre": "Esteban",
-   "normalizado": "esteban",
-   "ambito": "provincial"
-  },
-  {
-   "nombre": "Fernández",
-   "normalizado": "fernandez",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Ferrer",
-   "normalizado": "ferrer",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Ferrero",
-   "normalizado": "ferrero",
-   "ambito": "provincial"
-  },
-  {
-   "nombre": "Flores",
-   "normalizado": "flores",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Fraile",
-   "normalizado": "fraile",
-   "ambito": "provincial"
-  },
-  {
-   "nombre": "Fuentes",
-   "normalizado": "fuentes",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Gago",
-   "normalizado": "gago",
-   "ambito": "provincial"
-  },
-  {
-   "nombre": "Gallego",
-   "normalizado": "gallego",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "García",
-   "normalizado": "garcia",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Garrido",
-   "normalizado": "garrido",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Gil",
-   "normalizado": "gil",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Giménez",
-   "normalizado": "gimenez",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Gómez",
-   "normalizado": "gomez",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "González",
-   "normalizado": "gonzalez",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Guerrero",
-   "normalizado": "guerrero",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Gutiérrez",
-   "normalizado": "gutierrez",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Hernández",
-   "normalizado": "hernandez",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Herrera",
-   "normalizado": "herrera",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Herrero",
-   "normalizado": "herrero",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Hidalgo",
-   "normalizado": "hidalgo",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Ibáñez",
-   "normalizado": "ibanez",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Iglesias",
-   "normalizado": "iglesias",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Jiménez",
-   "normalizado": "jimenez",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "León",
-   "normalizado": "leon",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "López",
-   "normalizado": "lopez",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Lorenzo",
-   "normalizado": "lorenzo",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Lozano",
-   "normalizado": "lozano",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Marcos",
-   "normalizado": "marcos",
-   "ambito": "provincial"
-  },
-  {
-   "nombre": "Marín",
-   "normalizado": "marin",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Márquez",
-   "normalizado": "marquez",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Martín",
-   "normalizado": "martin",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Martínez",
-   "normalizado": "martinez",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Mateos",
-   "normalizado": "mateos",
-   "ambito": "provincial"
-  },
-  {
-   "nombre": "Medina",
-   "normalizado": "medina",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Méndez",
-   "normalizado": "mendez",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Mendoza",
-   "normalizado": "mendoza",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Merino",
-   "normalizado": "merino",
-   "ambito": "provincial"
-  },
-  {
-   "nombre": "Miguel",
-   "normalizado": "miguel",
-   "ambito": "provincial"
-  },
-  {
-   "nombre": "Molina",
-   "normalizado": "molina",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Montero",
-   "normalizado": "montero",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Mora",
-   "normalizado": "mora",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Morales",
-   "normalizado": "morales",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Morán",
-   "normalizado": "moran",
-   "ambito": "provincial"
-  },
-  {
-   "nombre": "Moreno",
-   "normalizado": "moreno",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Moro",
-   "normalizado": "moro",
-   "ambito": "provincial"
-  },
-  {
-   "nombre": "Moya",
-   "normalizado": "moya",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Muñoz",
-   "normalizado": "munoz",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Navarro",
-   "normalizado": "navarro",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Nieto",
-   "normalizado": "nieto",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Núñez",
-   "normalizado": "nunez",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Ortega",
-   "normalizado": "ortega",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Ortiz",
-   "normalizado": "ortiz",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Parra",
-   "normalizado": "parra",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Pascual",
-   "normalizado": "pascual",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Pastor",
-   "normalizado": "pastor",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Peña",
-   "normalizado": "pena",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Pérez",
-   "normalizado": "perez",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Prieto",
-   "normalizado": "prieto",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Ramírez",
-   "normalizado": "ramirez",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Ramos",
-   "normalizado": "ramos",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Redondo",
-   "normalizado": "redondo",
-   "ambito": "provincial"
-  },
-  {
-   "nombre": "Reyes",
-   "normalizado": "reyes",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Rivas",
-   "normalizado": "rivas",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Rivera",
-   "normalizado": "rivera",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Rodríguez",
-   "normalizado": "rodriguez",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Rojas",
-   "normalizado": "rojas",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Román",
-   "normalizado": "roman",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Romero",
-   "normalizado": "romero",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Rubio",
-   "normalizado": "rubio",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Ruiz",
-   "normalizado": "ruiz",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Salazar",
-   "normalizado": "salazar",
-   "ambito": "provincial"
-  },
-  {
-   "nombre": "San José",
-   "normalizado": "san jose",
-   "ambito": "provincial"
-  },
-  {
-   "nombre": "Sánchez",
-   "normalizado": "sanchez",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Santana",
-   "normalizado": "santana",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Santiago",
-   "normalizado": "santiago",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Santos",
-   "normalizado": "santos",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Sanz",
-   "normalizado": "sanz",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Serrano",
-   "normalizado": "serrano",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Silva",
-   "normalizado": "silva",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Soto",
-   "normalizado": "soto",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Suárez",
-   "normalizado": "suarez",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Torres",
-   "normalizado": "torres",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Vaquero",
-   "normalizado": "vaquero",
-   "ambito": "provincial"
-  },
-  {
-   "nombre": "Vara",
-   "normalizado": "vara",
-   "ambito": "provincial"
-  },
-  {
-   "nombre": "Vargas",
-   "normalizado": "vargas",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Vázquez",
-   "normalizado": "vazquez",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Vega",
-   "normalizado": "vega",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Velasco",
-   "normalizado": "velasco",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Vicente",
-   "normalizado": "vicente",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Vidal",
-   "normalizado": "vidal",
-   "ambito": "nacional"
-  },
-  {
-   "nombre": "Villar",
-   "normalizado": "villar",
-   "ambito": "provincial"
-  }
- ],
- "linajes": {
-  "lopez": [
-   {
-    "nombre": "López de Haro — armas primitivas",
-    "procedencia": "Señores de Vizcaya, primeras armas",
-    "blason": "De plata, dos lobos de sable pasantes, puestos en palo.",
-    "fuente": "Wikimedia Commons, «House of Haro COA»; Heraldry of the World, El Carpio; RAMHG (Salazar)",
-    "referencia": "Haro primitivo",
-    "estado": "verificado"
-   },
-   {
-    "nombre": "López de Haro — desde Diego López de Haro «el Bueno»",
-    "procedencia": "Diego López de Haro III, s. XIII",
-    "blason": "Lobos cebados de un cordero y bordura de gules con ocho aspas de oro.",
-    "fuente": "Wikimedia Commons, «House of Haro COA»; Heraldry of the World, El Carpio; RAMHG (Salazar)",
-    "referencia": "Haro el Bueno",
-    "estado": "verificado"
-   }
-  ],
-  "rodriguez": [
-   {
-    "nombre": "Rodríguez de Fonseca (Toro, s. XV)",
-    "procedencia": "Toro, obispo Juan Rodríguez de Fonseca",
-    "blason": "De oro, cinco estrellas de gules puestas en sotuer.",
-    "fuente": "Revista RAHA (Univ. de Oviedo); BSAA (UVa) 1946-47, tapices de Fonseca",
-    "referencia": "Fonseca",
-    "estado": "verificado"
-   }
-  ],
-  "fernandez": [
-   {
-    "nombre": "Fernández de Córdoba (Baena, Aguilar; el Gran Capitán)",
-    "procedencia": "Mismo escudo que Hernández de Córdoba: se reutilizan STL.",
-    "blason": "",
-    "fuente": "Blason.es (A. Salmerón), Fernández de Córdoba y Carrillo",
-    "referencia": "fernandez-cordoba",
-    "estado": "verificado"
-   }
-  ],
-  "hernandez": [
-   {
-    "nombre": "Hernández de Córdoba (Hernández es variante de Fernández)",
-    "procedencia": "El vínculo Hernández→Córdoba es PROPUESTA: no se ofrece como «el escudo de Hernández» hasta verificar. Cartela más larga del catálogo (61,8 mm a 7 mm).",
-    "blason": "",
-    "fuente": "Wikipedia (es), «Hernández (apellido)»: vínculo con Fernández de Córdoba",
-    "referencia": "hernandez-cordoba",
-    "estado": "por-verificar"
-   }
-  ],
-  "gomez": [
-   {
-    "nombre": "Gómez de Sandoval (duques de Lerma)",
-    "procedencia": "Aviso: los Carvajal llevan el mismo blasón; se rotula con el nombre del linaje.",
-    "blason": "",
-    "fuente": "FOTW citando a Herrera Casado; armorial de la ULPGC (Sandoval)",
-    "referencia": "gomez-sandoval",
-    "estado": "verificado"
-   }
-  ],
-  "jimenez": [
-   {
-    "nombre": "Jiménez (Ximénez) de Cisneros",
-    "procedencia": "Conflicto: el armorial de la ULPGC da a los Cisneros las armas de Reinoso. Se ofrece la versión de 1514 y se cita.",
-    "blason": "",
-    "fuente": "Blason.es, armas del cardenal Cisneros según la Biblia Políglota Complutense (1514)",
-    "referencia": "jimenez-cisneros",
-    "estado": "verificado"
-   }
-  ],
-  "ruiz": [
-   {
-    "nombre": "Ruiz de Castro (Casa de Castro; Fernán Ruiz de Castro)",
-    "procedencia": "Seis roeles: figuras dispersas que se unen con placa oculta en el bloque.",
-    "blason": "",
-    "fuente": "RAMHG, J. M.ª de Francisco Olmos, escudo del conde de Andrade",
-    "referencia": "ruiz-castro",
-    "estado": "verificado"
-   }
-  ],
-  "diaz": [
-   {
-    "nombre": "Díaz de Mendoza (Casa de Mendoza)",
-    "procedencia": "Blasón verificado; vincular «Díaz» a Mendoza es PROPUESTA (solo Díaz de Mendoza). Versión posterior cuartelada en sotuer con lema AVE MARIA.",
-    "blason": "",
-    "fuente": "Heraldry of the World: Durón y Tamajón (Guadalajara), armas de Mendoza",
-    "referencia": "diaz-mendoza",
-    "estado": "verificado"
-   }
-  ]
- },
- "contacto": {
-  "email": "davidpeve01@gmail.com",
-  "lugar": "Salamanca"
- }
-}</script>
-<script>
-(function () {
-  "use strict";
-  var datos = JSON.parse(document.getElementById("datos-venta").textContent);
-  var grid = document.getElementById("config-grid");
-  var estado = document.getElementById("config-estado");
-  var posiciones = [
-    { id: "padre-1", label: "Primer apellido del padre" },
-    { id: "padre-2", label: "Segundo apellido del padre" },
-    { id: "madre-1", label: "Primer apellido de la madre" },
-    { id: "madre-2", label: "Segundo apellido de la madre" }
-  ];
-
-  function normalizar(texto) {
-    return (texto || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
-  }
-
-  var porApellido = {};
-  datos.apellidos.forEach(function (a) { porApellido[a.normalizado] = a; });
-
-  var datalist = document.createElement("datalist");
-  datalist.id = "lista-apellidos";
-  datos.apellidos.forEach(function (a) {
-    var opcion = document.createElement("option");
-    opcion.value = a.nombre;
-    datalist.appendChild(opcion);
-  });
-  document.body.appendChild(datalist);
-
-  var tarjetas = [];
-  posiciones.forEach(function (posicion, i) {
-    var tarjeta = document.createElement("div");
-    tarjeta.className = "posicion";
-    tarjeta.innerHTML =
-      '<div class="posicion-cabecera"><span class="posicion-numero">' + (i + 1) + '</span>' +
-      '<label for="apellido-' + i + '">' + posicion.label + '</label></div>' +
-      '<input id="apellido-' + i + '" type="text" list="lista-apellidos" autocomplete="off" ' +
-      'placeholder="Escribe el apellido" aria-describedby="fuente-' + i + '">' +
-      '<label for="linaje-' + i + '">Linaje</label>' +
-      '<select id="linaje-' + i + '" aria-describedby="fuente-' + i + '" disabled>' +
-      '<option>Elige apellido</option></select>' +
-      '<p class="fuente" id="fuente-' + i + '">Escribe el apellido para ver su fuente.</p>';
-    grid.appendChild(tarjeta);
-    var input = tarjeta.querySelector("input");
-    var select = tarjeta.querySelector("select");
-    var fuente = tarjeta.querySelector(".fuente");
-    var tarjetaObj = { input: input, select: select, fuente: fuente, i: i };
-    tarjetas.push(tarjetaObj);
-
-    input.addEventListener("input", function () { actualizar(tarjetaObj); });
-    select.addEventListener("change", function () { pintarFuente(tarjetaObj); });
-  });
-
-  function limpiarSelect(select, texto) {
-    select.innerHTML = "";
-    var opcion = document.createElement("option");
-    opcion.textContent = texto;
-    select.appendChild(opcion);
-    select.disabled = true;
-  }
-
-  function actualizar(t) {
-    var clave = normalizar(t.input.value);
-    var apellido = porApellido[clave];
-    var linajes = datos.linajes[clave] || [];
-    t.select.innerHTML = "";
-    if (!clave) {
-      limpiarSelect(t.select, "Elige apellido");
-      t.fuente.textContent = "Escribe el apellido para ver su fuente.";
-      actualizarEstado();
-      return;
-    }
-    if (!apellido) {
-      limpiarSelect(t.select, "Sin linaje documentado");
-      t.fuente.textContent = "Fuera del índice del INE. Lo revisamos a mano: no se inventa un blasón.";
-      actualizarEstado();
-      return;
-    }
-    if (!linajes.length) {
-      limpiarSelect(t.select, "Sin linaje documentado");
-      t.fuente.textContent = "No hay un linaje con fuente para este apellido. Revisión manual o diseño original.";
-      actualizarEstado();
-      return;
-    }
-    if (linajes.length === 1) {
-      linajes.forEach(function (l, idx) {
-        var opcion = document.createElement("option");
-        opcion.value = String(idx);
-        opcion.textContent = l.nombre;
-        t.select.appendChild(opcion);
-      });
-      t.select.disabled = false;
-      t.select.value = "0";
-    } else {
-      var vacia = document.createElement("option");
-      vacia.value = "";
-      vacia.textContent = "Elige una variante";
-      t.select.appendChild(vacia);
-      linajes.forEach(function (l, idx) {
-        var opcion = document.createElement("option");
-        opcion.value = String(idx);
-        opcion.textContent = l.nombre;
-        t.select.appendChild(opcion);
-      });
-      t.select.disabled = false;
-      t.select.value = "";
-    }
-    pintarFuente(t);
-  }
-
-  function pintarFuente(t) {
-    var clave = normalizar(t.input.value);
-    var linajes = datos.linajes[clave] || [];
-    if (t.select.disabled || !linajes.length) {
-      actualizarEstado();
-      return;
-    }
-    var idx = t.select.value === "" ? -1 : Number(t.select.value);
-    if (idx < 0) {
-      t.fuente.textContent = "Elige una variante: cada una conserva su fuente.";
-    } else {
-      var l = linajes[idx];
-      var partes = [];
-      if (l.procedencia) partes.push(l.procedencia);
-      if (l.blason) partes.push(l.blason);
-      partes.push("Fuente: " + l.fuente);
-      partes.push("Estado: " + l.estado);
-      t.fuente.textContent = partes.join(" · ");
-    }
-    actualizarEstado();
-  }
-
-  function actualizarEstado() {
-    var conLinaje = tarjetas.filter(function (t) {
-      return t.input.value.trim() && !t.select.disabled && t.select.value !== "";
-    }).length;
-    var conNombre = tarjetas.filter(function (t) { return t.input.value.trim(); }).length;
-    if (!conNombre) {
-      estado.textContent = "Escribe un apellido para empezar.";
-    } else if (conLinaje === 0) {
-      estado.textContent = "Ninguna posición tiene linaje documentado todavía. Podemos revisarlo a mano.";
-    } else {
-      estado.textContent = conLinaje + " de 4 posiciones con linaje documentado.";
-    }
-  }
-})();
-</script>
+<div class="fija" aria-hidden="false">
+  <span>149 €</span>
+  <a class="btn" href="escudos-configurador.html">Empezar</a>
+</div>
 </body>
 </html>

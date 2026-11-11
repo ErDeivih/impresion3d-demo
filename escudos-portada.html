@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cuadro de 4 escudos en relieve · 149 € IVA incluido</title>
+<meta name="description" content="Cuadro de 30×40 cm con los escudos de cuatro apellidos, impreso en relieve. 149 € IVA incluido. Ves y apruebas la prueba antes de imprimir.">
+<style>
+:root{--f-tit:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;--f-txt:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+--t1:34px;--t2:22px;--t3:17px;--e1:4px;--e2:8px;--e3:16px;--e4:24px;--e5:40px;--e6:64px;
+--papel:#f5efe4;--tinta:#1f1b16;--piedra:#5a5248;--granate:#7b1e2b;--oro:#9a7a2c}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--papel);color:var(--tinta);font:400 var(--t3)/1.55 var(--f-txt)}
+a{color:var(--granate)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 var(--e3)}
+h1,h2{font-family:var(--f-tit);font-weight:600;line-height:1.15;margin:0 0 var(--e3)}
+h1{font-size:var(--t1)}h2{font-size:var(--t2)}
+p{margin:0 0 var(--e3);max-width:62ch}
+.sec{color:var(--piedra)}
+section{padding:var(--e5) 0;border-top:1px solid var(--oro)}
+/* cabecera */
+.cab{display:flex;justify-content:space-between;align-items:center;min-height:56px}
+.marca{min-height:44px;display:inline-flex;align-items:center;font:600 var(--t3)/1 var(--f-tit);text-decoration:none;color:var(--tinta);letter-spacing:.02em}
+.cab a.lnk{min-height:44px;display:inline-flex;align-items:center;padding:0 var(--e2)}
+/* héroe */
+.heroe{display:grid;gap:var(--e4);padding:var(--e3) var(--e3) var(--e5)}
+.cuadro{width:100%;max-width:320px;margin:0 auto;display:block}
+.precio{font:600 var(--t2)/1.2 var(--f-tit);margin:0 0 var(--e1)}
+.btn{display:flex;align-items:center;justify-content:center;min-height:48px;padding:0 var(--e4);border-radius:4px;
+  background:var(--granate);color:#fff;font-weight:600;text-decoration:none;border:2px solid var(--granate);margin:var(--e3) 0 var(--e2)}
+.btn:hover{background:#5f1621}.btn:focus-visible{outline:3px solid var(--tinta);outline-offset:3px}
+.garantia{display:flex;gap:var(--e2);align-items:flex-start;color:var(--piedra);margin:0}
+.garantia svg{flex:none;margin-top:3px}
+/* pasos */
+ol.pasos{list-style:none;margin:0;padding:0;display:grid;gap:var(--e4);counter-reset:p}
+ol.pasos li{counter-increment:p;display:grid;grid-template-columns:40px 1fr;gap:var(--e3)}
+ol.pasos li::before{content:counter(p);width:40px;height:40px;border:1px solid var(--oro);border-radius:50%;
+  display:grid;place-items:center;font:600 var(--t3)/1 var(--f-tit)}
+ol.pasos b{display:block}
+/* incluye */
+ul.lista{margin:0;padding:0;list-style:none;display:grid;gap:var(--e2)}
+ul.lista li{padding-left:28px;position:relative}
+ul.lista li::before{content:"";position:absolute;left:4px;top:.55em;width:12px;height:6px;border:solid var(--granate);border-width:0 0 2px 2px;transform:rotate(-45deg)}
+/* prueba social honesta */
+.honesta{background:#fff;border:1px solid #e2d9cb;border-radius:4px;padding:var(--e4)}
+.pruebas{display:grid;grid-template-columns:1fr 1fr;gap:var(--e3);margin-top:var(--e3)}
+.pruebas figure{margin:0}
+.pruebas figcaption{color:var(--piedra)}
+/* faq */
+details{border-bottom:1px solid #e2d9cb}
+summary{min-height:48px;display:flex;align-items:center;justify-content:space-between;gap:var(--e3);cursor:pointer;font-weight:600;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font:400 var(--t2)/1 var(--f-txt);color:var(--granate)}
+details[open] summary::after{content:"−"}
+details p{padding-bottom:var(--e3)}
+/* pie */
+footer{border-top:1px solid var(--oro);padding:var(--e5) 0 var(--e6);color:var(--piedra)}
+footer nav{display:flex;flex-wrap:wrap;gap:0 var(--e3)}
+footer nav a{min-height:44px;display:inline-flex;align-items:center}
+.pend{background:#fff3cd;color:#5a3d00;padding:0 var(--e1);border-radius:2px}
+/* barra fija móvil: el mismo CTA, no uno nuevo */
+.fija{position:fixed;left:0;right:0;bottom:0;background:var(--papel);border-top:1px solid var(--oro);padding:var(--e2) var(--e3);display:flex;gap:var(--e3);align-items:center}
+.fija .btn{flex:1;margin:0}
+.fija span{font:600 var(--t3)/1.2 var(--f-tit);white-space:nowrap}
+body{padding-bottom:72px}
+@media(min-width:820px){
+  .heroe{grid-template-columns:1.1fr .9fr;align-items:center;padding:var(--e5) var(--e3) var(--e6)}
+  .heroe .btn{display:inline-flex}
+  ol.pasos{grid-template-columns:repeat(4,1fr)}
+  ol.pasos li{grid-template-columns:1fr}
+  .fija{display:none}body{padding-bottom:0}
+  .dos{display:grid;grid-template-columns:1fr 1fr;gap:var(--e5)}
+}
+</style>
+</head>
+<body>
+<header class="wrap cab">
+  <a class="marca" href="#">[NOMBRE DE MARCA]</a>
+  <a class="lnk" href="escudos-ficha.html">Detalles y precio</a>
+</header>
+
+<main>
+<div class="wrap heroe">
+  <div>
+    <h1>Los escudos de vuestras cuatro familias, en relieve y en un solo cuadro</h1>
+    <p class="sec">Cuadro de 30×40 cm con las armas de los cuatro apellidos que elijáis, impreso en relieve y pieza a pieza por colores. Lo veis y lo aprobáis antes de que se imprima.</p>
+    <p class="precio">149 € <span class="sec" style="font:400 var(--t3) var(--f-txt)">IVA incluido</span></p>
+    <p class="sec" style="margin:0">Para empezar, una señal de 44,70 €. El resto, cuando apruebes la prueba.</p>
+    <a class="btn" href="escudos-configurador.html">Empezar con vuestros apellidos</a>
+    <p class="garantia"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1 2 3v5c0 3.5 2.6 6 6 7 3.4-1 6-3.5 6-7V3z" fill="none" stroke="#7b1e2b" stroke-width="1.5"/></svg>
+    <span>No se imprime nada sin tu aprobación. Plazo de entrega: <span class="pend">por confirmar</span>.</span></p>
+  </div>
+  <!-- Ilustración original: escudos genéricos, no son armas reales de ningún linaje -->
+  <svg class="cuadro" viewBox="0 0 300 400" role="img" aria-label="Ilustración de un cuadro con cuatro escudos en dos filas">
+    <rect x="4" y="4" width="292" height="392" fill="#3a2a1c"/>
+    <rect x="18" y="18" width="264" height="364" fill="#efe6d6"/>
+    <rect x="26" y="26" width="248" height="348" fill="none" stroke="#9a7a2c" stroke-width="1"/>
+    <defs><clipPath id="e"><path d="M0 0h90v62c0 26-20 42-45 50C20 104 0 88 0 62z"/></clipPath>
+      <path id="b" d="M0 0h90v62c0 26-20 42-45 50C20 104 0 88 0 62z"/></defs>
+    <g transform="translate(45 60)"><g clip-path="url(#e)"><rect width="90" height="120" fill="#8f2a2a"/><path d="M-10 10 100 110v-20L10-10z" fill="#d7b65a"/></g><use href="#b" fill="none" stroke="#1f1b16" stroke-width="2"/></g>
+    <g transform="translate(165 60)"><g clip-path="url(#e)"><rect width="90" height="120" fill="#2c4a7a"/><rect x="33" width="24" height="120" fill="#e8e1d3"/></g><use href="#b" fill="none" stroke="#1f1b16" stroke-width="2"/></g>
+    <g transform="translate(45 210)"><g clip-path="url(#e)"><rect width="90" height="120" fill="#d7b65a"/><path d="M0 80 45 35 90 80v-22L45 13 0 58z" fill="#8f2a2a"/></g><use href="#b" fill="none" stroke="#1f1b16" stroke-width="2"/></g>
+    <g transform="translate(165 210)"><g clip-path="url(#e)"><rect width="90" height="120" fill="#2f5a3a"/><path d="M27 78V42h8v8h7v-8h6v8h7v-8h8v36z" fill="#d7b65a"/></g><use href="#b" fill="none" stroke="#1f1b16" stroke-width="2"/></g>
+    <text x="150" y="358" text-anchor="middle" font-family="Georgia,serif" font-size="13" fill="#1f1b16">PÉREZ · VELASCO · GARCÍA · MARTÍN</text>
+  </svg>
+</div>
+
+<section class="wrap" aria-labelledby="como">
+  <h2 id="como">Cómo funciona</h2>
+  <ol class="pasos">
+    <li><div><b>Escribe los cuatro apellidos</b><span class="sec">Para una boda, dos de cada familia.</span></div></li>
+    <li><div><b>Elige el linaje de cada uno</b><span class="sec">Un apellido puede tener varios escudos; te enseñamos de dónde sale cada uno.</span></div></li>
+    <li><div><b>Paga la señal y recibe la prueba</b><span class="sec">44,70 €. Te mandamos la prueba del cuadro completo para que la revises.</span></div></li>
+    <li><div><b>Apruébala y lo imprimimos</b><span class="sec">Pagas los 104,30 € que faltan y te lo enviamos.</span></div></li>
+  </ol>
+</section>
+
+<section class="wrap dos" aria-labelledby="inc">
+  <div>
+    <h2 id="inc">Qué recibes</h2>
+    <ul class="lista">
+      <li>Cuadro de 30×40 cm con 4 escudos en relieve</li>
+      <li>Cada color, impreso como una pieza aparte (hasta 5 por escudo)</li>
+      <li>El nombre de cada apellido bajo su escudo</li>
+      <li>Una hoja con la fuente de cada blasón</li>
+      <li>Marco y acabado: <span class="pend">por confirmar</span></li>
+    </ul>
+  </div>
+  <div>
+    <h2 style="margin-top:var(--e5)">Lo que no es</h2>
+    <p>Son las armas de un linaje que lleva tu apellido, tal como aparecen en la fuente que citamos. No acreditan nobleza ni parentesco. El dibujo es original nuestro: no copiamos ilustraciones de nadie.</p>
+  </div>
+</section>
+
+<section class="wrap" aria-labelledby="hon">
+  <div class="honesta">
+    <h2 id="hon">Todavía no tenemos reseñas</h2>
+    <p>Estamos con los primeros encargos y preferimos no enseñaros opiniones que no existen. Lo que sí os enseñamos es cómo trabajamos:</p>
+    <div class="pruebas">
+      <figure>
+        <svg viewBox="0 0 120 120" width="100%" role="img" aria-label="Piezas de un escudo separadas por color">
+          <rect width="120" height="120" fill="#efe6d6"/>
+          <path d="M20 20h40v28c0 12-9 19-20 23-11-4-20-11-20-23z" fill="#8f2a2a"/>
+          <path d="M66 26 102 62v-9L75 26z" fill="#d7b65a"/>
+          <path d="M60 70h40v28c0 12-9 19-20 23" fill="none" stroke="#1f1b16" stroke-width="2" stroke-dasharray="4 3"/>
+        </svg>
+        <figcaption>Cada color sale en una pieza</figcaption>
+      </figure>
+      <figure>
+        <svg viewBox="0 0 120 120" width="100%" role="img" aria-label="Prueba digital con marcas de revisión">
+          <rect width="120" height="120" fill="#fff"/><rect x="14" y="10" width="92" height="100" fill="none" stroke="#1f1b16"/>
+          <path d="M30 26h24v18c0 8-5 12-12 14-7-2-12-6-12-14z" fill="#2c4a7a"/>
+          <path d="M66 26h24v18c0 8-5 12-12 14-7-2-12-6-12-14z" fill="#2f5a3a"/>
+          <circle cx="78" cy="40" r="14" fill="none" stroke="#7b1e2b" stroke-width="2"/>
+          <path d="M24 80h72M24 90h50" stroke="#5a5248" stroke-width="2"/>
+        </svg>
+        <figcaption>Prueba para aprobar antes de imprimir</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" aria-labelledby="faq">
+  <h2 id="faq">Preguntas frecuentes</h2>
+  <details><summary>¿Mi apellido tiene un único escudo?</summary><p>Casi nunca. Un mismo apellido puede tener varios linajes, cada uno con sus armas. Te enseñamos los que encontramos y la fuente de cada uno, y eliges tú.</p></details>
+  <details><summary>¿Y si no aparece mi apellido?</summary><p>Lo buscamos a mano antes de cobrarte nada. Si no encontramos una fuente, te lo decimos y no seguimos.</p></details>
+  <details><summary>¿Qué pasa si la prueba no me convence?</summary><p>La corregimos antes de imprimir. Cuántas rondas de cambios entran y si devolvemos la señal: <span class="pend">por confirmar</span>.</p></details>
+  <details><summary>¿Cuánto tarda?</summary><p><span class="pend">Por confirmar.</span> Te daremos la fecha cuando apruebes la prueba.</p></details>
+  <details><summary>¿Lo puedo regalar sin que se entere?</summary><p>Sí. Puedes poner otra dirección de entrega. Si va dentro de una caja de regalo: <span class="pend">por confirmar</span>.</p></details>
+  <details><summary>¿Cuánto cuesta el envío?</summary><p><span class="pend">Por confirmar.</span> Te lo diremos antes de que pagues la señal.</p></details>
+</section>
+</main>
+
+<footer class="wrap">
+  <p>[NOMBRE DE MARCA] · Titular: <span class="pend">[PENDIENTE: nombre y NIF]</span> · Contacto: <span class="pend">[PENDIENTE]</span></p>
+  <nav aria-label="Legal"><a href="#">Aviso legal</a><a href="#">Privacidad</a><a href="#">Condiciones de venta y desistimiento</a><a href="#">Cookies</a></nav>
+  <p class="sec">Todos los precios llevan el IVA incluido.</p>
+</footer>
+
+<div class="fija" aria-hidden="false">
+  <span>149 €</span>
+  <a class="btn" href="escudos-configurador.html">Empezar</a>
+</div>
+</body>
+</html>
