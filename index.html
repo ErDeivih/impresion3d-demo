@@ -115,13 +115,14 @@ ol.pasos li::before{content:counter(p);grid-row:span 2;width:44px;height:44px;bo
 body{padding-bottom:88px}
 @media(min-width:820px){.heroe{grid-template-columns:1.15fr .85fr;align-items:center;padding:var(--e7) var(--e4) var(--e8)}
  .ancho-movil{display:inline-flex;width:auto}ol.pasos{grid-template-columns:repeat(3,1fr)}.solo-movil{display:none}body{padding-bottom:0}.banner{bottom:var(--e4);max-width:560px}}
+.marco-cuadro{background:#3a2a1c;padding:12px;border-radius:5px;box-shadow:0 12px 28px #0002}.cuadro-escudos{display:grid;grid-template-columns:1fr 1fr;gap:8px;background:#efe6d6;padding:12px}.cuadro-escudos img{width:100%;height:auto;display:block;background:#fffdf8;border:1px solid #9a7a2c}
 </style>
 
 </head>
 <body>
 <header class="envoltura cab">
   <a class="marca" href="index.html">[PENDIENTE: MARCA]</a>
-  <nav aria-label="Principal"><a href="precios.html">Precios</a><a href="carrito.html">Carrito</a></nav>
+  <nav aria-label="Principal"><a href="precios.html">Precios</a><a href="galeria.html">Galería</a><a href="carrito.html">Carrito</a></nav>
 </header>
 <main id="contenido">
 
@@ -133,16 +134,15 @@ body{padding-bottom:88px}
     <a class="btn btn-p ancho-movil" href="configurador.html">Diseñar mi cuadro</a>
     <p class="sec nota">Hoy solo se paga la señal: 44,70 € IVA incluido.</p>
   </div>
-  <figure class="foto"><svg viewBox="0 0 300 400" role="img" aria-label="Ilustración del cuadro con cuatro escudos en dos filas">
-  <defs><clipPath id="ea"><path d="M0 0h90v62c0 26-20 42-45 50C20 104 0 88 0 62z"/></clipPath><path id="ba" d="M0 0h90v62c0 26-20 42-45 50C20 104 0 88 0 62z"/></defs>
-  <rect x="4" y="4" width="292" height="392" fill="#3a2a1c"/><rect x="18" y="18" width="264" height="364" fill="#efe6d6"/>
-  <rect x="26" y="26" width="248" height="348" fill="none" stroke="#9a7a2c"/>
-  <g transform="translate(45 60)"><g clip-path="url(#ea)"><rect width="90" height="120" fill="#8f2a2a"/><path d="M-10 10 100 110v-20L10-10z" fill="#d7b65a"/></g><use href="#ba" fill="none" stroke="#1f1b16" stroke-width="2"/></g>
-  <g transform="translate(165 60)"><g clip-path="url(#ea)"><rect width="90" height="120" fill="#2c4a7a"/><rect x="33" width="24" height="120" fill="#e8e1d3"/></g><use href="#ba" fill="none" stroke="#1f1b16" stroke-width="2"/></g>
-  <g transform="translate(45 210)"><g clip-path="url(#ea)"><rect width="90" height="120" fill="#d7b65a"/><path d="M0 80 45 35 90 80v-22L45 13 0 58z" fill="#8f2a2a"/></g><use href="#ba" fill="none" stroke="#1f1b16" stroke-width="2"/></g>
-  <g transform="translate(165 210)"><g clip-path="url(#ea)"><rect width="90" height="120" fill="#2f5a3a"/><path d="M27 78V42h8v8h7v-8h6v8h7v-8h8v36z" fill="#d7b65a"/></g><use href="#ba" fill="none" stroke="#1f1b16" stroke-width="2"/></g>
-  <text x="150" y="358" text-anchor="middle" font-family="Georgia,serif" font-size="12" fill="#1f1b16">PÉREZ · VELASCO · GARCÍA · MARTÍN</text>
-</svg><figcaption class="sec">Ilustración. Foto del primer cuadro terminado: <span class="pend">pendiente</span>.</figcaption></figure>
+  <figure class="foto">
+  <div class="marco-cuadro"><div class="cuadro-escudos">
+    <img src="img/escudos/hero-1.svg" alt="Escudo de Castilla, generado">
+    <img src="img/escudos/hero-2.svg" alt="Escudo de León, generado">
+    <img src="img/escudos/hero-3.svg" alt="Escudo de Castilla y León, generado">
+    <img src="img/escudos/hero-4.svg" alt="Escudo de palos de gules, generado">
+  </div></div>
+  <figcaption class="sec">Ilustración con escudos generados por heraldica.py. Foto del primer cuadro terminado: <span class="pend">pendiente</span>.</figcaption>
+</figure>
 </div>
 
 <section class="envoltura" aria-labelledby="como">

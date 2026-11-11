@@ -232,11 +232,8 @@ function pintarVariantes(){const c=$('#variantes');c.innerHTML='';
     if(!vs.length)h=h.replace('id="v'+i+'-0"','id="v'+i+'-0"');
     c.insertAdjacentHTML('beforeend',h+'</fieldset>')});
   $$('#variantes input').forEach(r=>r.onchange=()=>{E.linajes[+r.name.slice(1)]=r.value;guardar()});}
-function escudo(x,y,i){const l=linaje(E.composicion[i]);const c=l?l.esmaltes.map(e=>COLOR[e]):['#ffffff','#ffffff'];
-  const ape=E.apellidos[E.composicion[i]]||'';
-  return '<g transform="translate('+x+' '+y+')"><path d="M0 0h90v62c0 26-20 42-45 50C20 104 0 88 0 62z" fill="'+c[0]+'" stroke="#1f1b16" stroke-width="2"/>'+
-   (l?'<path d="M10 20h70v22H10z" fill="'+c[1]+'"/>':'<text x="45" y="62" text-anchor="middle" font-size="40" fill="#5a5248">?</text>')+
-   '<text x="45" y="134" text-anchor="middle" font-size="13" font-family="Georgia,serif" fill="#1f1b16">'+ape.toUpperCase().slice(0,14)+'</text></g>'}
+function escudo(x,y,i){const src='img/escudos/hero-'+(i+1)+'.svg';
+  return '<image href="'+src+'" x="'+x+'" y="'+y+'" width="90" height="120"/>'}
 function pintarComposicion(){for(let i=0;i<4;i++){$('#c'+i).innerHTML=E.apellidos.map((a,k)=>'<option value="'+k+'"'+(E.composicion[i]===k?' selected':'')+'>'+a+'</option>').join('')}
   pintarVista()}
 function pintarVista(){for(let i=0;i<4;i++)E.composicion[i]=+$('#c'+i).value;

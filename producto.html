@@ -114,6 +114,7 @@ table.tabla th{font-weight:600}
 .cifra{font:600 var(--t2)/1.2 var(--f-tit);margin-bottom:var(--e2)}
 .nuestra{border:2px solid var(--granate)}
 @media print{.vf{display:block!important}}
+.marco-cuadro{background:#3a2a1c;padding:12px;border-radius:5px;box-shadow:0 12px 28px #0002}.cuadro-escudos{display:grid;grid-template-columns:1fr 1fr;gap:8px;background:#efe6d6;padding:12px}.cuadro-escudos img{width:100%;height:auto;display:block;background:#fffdf8;border:1px solid #9a7a2c}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Product", "name": "Cuadro de cuatro escudos en relieve, 30×40 cm", "description": "Cuadro de 30×40 cm con los escudos de cuatro apellidos impresos en relieve, una pieza por color. Se aprueba una prueba antes de imprimir.", "image": ["https://[PENDIENTE: DOMINIO]/img/cuadro-frontal.jpg"], "sku": "CUADRO-4-30X40", "brand": {"@type": "Brand", "name": "[PENDIENTE: MARCA]"}, "offers": {"@type": "Offer", "url": "https://[PENDIENTE: DOMINIO]/producto.html", "priceCurrency": "EUR", "price": "149.00", "availability": "https://schema.org/MadeToOrder", "itemCondition": "https://schema.org/NewCondition", "seller": {"@type": "Organization", "name": "[PENDIENTE: RAZÓN SOCIAL]"}}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿De qué material es?", "acceptedAnswer": {"@type": "Answer", "text": "Las piezas se imprimen en plástico de impresión 3D. Material exacto y marca del filamento: por confirmar."}}, {"@type": "Question", "name": "¿Qué tamaño tiene cada escudo?", "acceptedAnswer": {"@type": "Answer", "text": "En el prototipo, unos 108×125 mm cada uno, con el nombre debajo. Puede variar unos milímetros según el blasón."}}, {"@type": "Question", "name": "¿Cómo se limpia?", "acceptedAnswer": {"@type": "Answer", "text": "Con un paño seco o un plumero. Sin productos ni agua. No lo pongas al sol directo ni junto a un radiador; temperatura máxima: por confirmar con el material definitivo."}}, {"@type": "Question", "name": "¿Se pueden cambiar los colores del blasón?", "acceptedAnswer": {"@type": "Answer", "text": "No: los colores son los de la fuente citada. Sí podéis elegir otro linaje del mismo apellido si tiene otros colores."}}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://[PENDIENTE: DOMINIO]/index.html"}, {"@type": "ListItem", "position": 2, "name": "Cuadro de cuatro escudos", "item": "https://[PENDIENTE: DOMINIO]/producto.html"}]}</script>
 </head>
@@ -132,16 +133,12 @@ table.tabla th{font-weight:600}
   <div class="galeria">
     <input type="radio" name="vista" id="v1" checked><input type="radio" name="vista" id="v2"><input type="radio" name="vista" id="v3">
     <div class="vistas">
-      <figure class="vf v1"><svg viewBox="0 0 300 400" role="img" aria-label="Vista frontal del cuadro">
-  <defs><clipPath id="ep"><path d="M0 0h90v62c0 26-20 42-45 50C20 104 0 88 0 62z"/></clipPath><path id="bp" d="M0 0h90v62c0 26-20 42-45 50C20 104 0 88 0 62z"/></defs>
-  <rect x="4" y="4" width="292" height="392" fill="#3a2a1c"/><rect x="18" y="18" width="264" height="364" fill="#efe6d6"/>
-  <rect x="26" y="26" width="248" height="348" fill="none" stroke="#9a7a2c"/>
-  <g transform="translate(45 60)"><g clip-path="url(#ep)"><rect width="90" height="120" fill="#8f2a2a"/><path d="M-10 10 100 110v-20L10-10z" fill="#d7b65a"/></g><use href="#bp" fill="none" stroke="#1f1b16" stroke-width="2"/></g>
-  <g transform="translate(165 60)"><g clip-path="url(#ep)"><rect width="90" height="120" fill="#2c4a7a"/><rect x="33" width="24" height="120" fill="#e8e1d3"/></g><use href="#bp" fill="none" stroke="#1f1b16" stroke-width="2"/></g>
-  <g transform="translate(45 210)"><g clip-path="url(#ep)"><rect width="90" height="120" fill="#d7b65a"/><path d="M0 80 45 35 90 80v-22L45 13 0 58z" fill="#8f2a2a"/></g><use href="#bp" fill="none" stroke="#1f1b16" stroke-width="2"/></g>
-  <g transform="translate(165 210)"><g clip-path="url(#ep)"><rect width="90" height="120" fill="#2f5a3a"/><path d="M27 78V42h8v8h7v-8h6v8h7v-8h8v36z" fill="#d7b65a"/></g><use href="#bp" fill="none" stroke="#1f1b16" stroke-width="2"/></g>
-  <text x="150" y="358" text-anchor="middle" font-family="Georgia,serif" font-size="12" fill="#1f1b16">PÉREZ · VELASCO · GARCÍA · MARTÍN</text>
-</svg><figcaption class="sec">Frontal (ilustración)</figcaption></figure>
+      <figure class="vf v1"><div class="marco-cuadro"><div class="cuadro-escudos">
+    <img src="img/escudos/hero-1.svg" alt="Escudo de Castilla, generado">
+    <img src="img/escudos/hero-2.svg" alt="Escudo de León, generado">
+    <img src="img/escudos/hero-3.svg" alt="Escudo de Castilla y León, generado">
+    <img src="img/escudos/hero-4.svg" alt="Escudo de palos de gules, generado">
+  </div></div></figure>
       <figure class="vf v2"><svg viewBox="0 0 300 200" role="img" aria-label="Vista de canto: base, piezas de distinta altura y marco">
   <rect x="10" y="150" width="280" height="30" fill="#3a2a1c"/>
   <rect x="24" y="138" width="252" height="12" fill="#2a221e"/>
