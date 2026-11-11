@@ -1,0 +1,13 @@
+Asunto: Vuestro cuadro ha salido: seguimiento {{seguimiento}}
+
+El pedido {{numero}} salió el {{fecha_envio}} con {{transportista}}.
+Seguimiento: {{seguimiento}}
+Entrega estimada: {{fecha_entrega}}
+Dirección: {{direccion}}
+
+Si llega golpeado, haced una foto y escribidnos.
+
+Seguir el envío: {{url_seguimiento}}
+
+--
+[PENDIENTE: MARCA] · [PENDIENTE: RAZÓN SOCIAL] · NIF [PENDIENTE: NIF] · [PENDIENTE: DIRECCIÓN]

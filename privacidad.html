@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="es-ES">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Privacidad · [PENDIENTE: MARCA]</title>
+<meta name="description" content="Responsable, finalidades, bases jurídicas, plazos de conservación, encargados y derechos.">
+<link rel="canonical" href="https://[PENDIENTE: DOMINIO]/privacidad.html">
+<style>
+:root{
+  --f-tit:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --f-txt:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --t1:32px;--t2:22px;--t3:17px;
+  --e1:4px;--e2:8px;--e3:12px;--e4:16px;--e5:24px;--e6:32px;--e7:48px;--e8:64px;
+  --papel:#f5efe4;--tinta:#1f1b16;--piedra:#5a5248;--granate:#7b1e2b;--oro:#9a7a2c;--campo:#fffdf8;
+  --radio:4px;--toque:48px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:var(--e7)}
+body{margin:0;background:var(--papel);color:var(--tinta);font:400 var(--t3)/1.55 var(--f-txt)}
+img,svg{max-width:100%;height:auto}
+a{color:var(--granate);text-underline-offset:3px}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible,label:focus-within{outline:3px solid var(--tinta);outline-offset:3px}
+.envoltura{max-width:1040px;margin:0 auto;padding:0 var(--e4)}
+.estrecho{max-width:720px;margin:0 auto;padding:0 var(--e4)}
+h1,h2,h3{font-family:var(--f-tit);font-weight:600;line-height:1.15;margin:0 0 var(--e4);text-wrap:balance}
+h1{font-size:var(--t1)}h2{font-size:var(--t2)}h3{font-size:var(--t3);font-family:var(--f-txt)}
+p,ul,ol,dl,table{margin:0 0 var(--e4)}
+p,li{max-width:64ch}
+.sec{color:var(--piedra)}
+code,pre,kbd{font-size:var(--t3)}
+.pend{background:#fff3cd;color:#4a3300;padding:0 var(--e1);border-radius:2px}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+section{padding:var(--e7) 0;border-top:1px solid var(--oro)}
+section.envoltura,section.estrecho{padding:var(--e7) var(--e4)}
+/* cabecera y pie */
+.cab{display:flex;justify-content:space-between;align-items:center;min-height:56px;gap:var(--e4)}
+.marca{font:600 var(--t3)/1 var(--f-tit);color:var(--tinta);text-decoration:none;letter-spacing:.03em;min-height:44px;display:inline-flex;align-items:center}
+.cab nav a{min-height:44px;display:inline-flex;align-items:center;padding:0 var(--e2)}
+.pie{border-top:1px solid var(--oro);padding:var(--e6) var(--e4) var(--e8);color:var(--piedra)}
+.pie nav{display:flex;flex-wrap:wrap;gap:0 var(--e4);margin-bottom:var(--e4)}
+.pie nav a{min-height:44px;display:inline-flex;align-items:center}
+/* botones */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--e2);min-height:var(--toque);padding:0 var(--e5);
+  border-radius:var(--radio);border:2px solid var(--granate);font:600 var(--t3)/1.2 var(--f-txt);text-decoration:none;cursor:pointer;text-align:center}
+.btn-p{background:var(--granate);color:#fff}
+.btn-p:hover{background:#5f1621;border-color:#5f1621}
+.btn-p:active{transform:translateY(1px)}
+.btn-s{background:transparent;color:var(--granate)}
+.btn-s:hover{background:#ecdfd0}
+.btn[disabled],.btn[aria-disabled=true]{background:#e2d9cb;border-color:#e2d9cb;color:var(--piedra);cursor:not-allowed;transform:none}
+.btn[aria-busy=true]{position:relative;color:transparent}
+.btn[aria-busy=true]::after{content:"";position:absolute;width:18px;height:18px;border:2px solid #fff;border-right-color:transparent;border-radius:50%;animation:gira .7s linear infinite}
+@keyframes gira{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.ancho{display:flex;width:100%}
+.enlace{min-height:44px;display:inline-flex;align-items:center}
+/* formularios */
+.campo{margin-bottom:var(--e5)}
+.campo label,.campo legend{display:block;font-weight:600;margin-bottom:var(--e1)}
+.campo .ayuda{color:var(--piedra);margin:0 0 var(--e2)}
+input[type=text],input[type=email],input[type=tel],input[type=search],select,textarea{width:100%;min-height:var(--toque);padding:var(--e2) var(--e3);
+  border:2px solid var(--piedra);border-radius:var(--radio);background:var(--campo);color:var(--tinta);font:400 var(--t3)/1.4 var(--f-txt)}
+textarea{min-height:120px}
+[aria-invalid=true]{border-color:var(--granate)!important;border-width:3px!important}
+.error{color:var(--granate);font-weight:600;margin:var(--e1) 0 0}
+.error:empty{display:none}
+.error::before{content:"✕ "}
+.aviso{border:2px solid var(--granate);border-radius:var(--radio);padding:var(--e4);margin-bottom:var(--e5);background:var(--campo)}
+.aviso:empty{display:none}
+.casilla{display:flex;gap:var(--e3);align-items:flex-start;min-height:44px;padding:var(--e2) 0;cursor:pointer}
+.casilla input{width:24px;height:24px;margin:2px 0 0;flex:none;accent-color:var(--granate)}
+/* tarjetas y listas */
+.tarjeta{border:1px solid #d8ccb9;border-radius:var(--radio);padding:var(--e4);background:var(--campo)}
+.rejilla{display:grid;gap:var(--e4)}
+dl.datos{display:grid;grid-template-columns:auto 1fr;gap:var(--e2) var(--e5)}
+dl.datos dt{font-weight:600}dl.datos dd{margin:0}
+ul.marcas{list-style:none;padding:0}
+ul.marcas li{padding-left:28px;position:relative;margin-bottom:var(--e2)}
+ul.marcas li::before{content:"";position:absolute;left:4px;top:.55em;width:12px;height:6px;border:solid var(--granate);border-width:0 0 2px 2px;transform:rotate(-45deg)}
+details.faq{border-bottom:1px solid #d8ccb9}
+details.faq summary{min-height:52px;display:flex;align-items:center;justify-content:space-between;gap:var(--e4);cursor:pointer;font-weight:600;list-style:none}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::after{content:"+";font-size:var(--t2);color:var(--granate)}
+details.faq[open] summary::after{content:"−"}
+table.tabla{width:100%;border-collapse:collapse}
+table.tabla th,table.tabla td{text-align:left;padding:var(--e3) var(--e2);border-bottom:1px solid #d8ccb9;vertical-align:top}
+table.tabla th{font-weight:600}
+.fuente{border-top:1px solid var(--oro);margin-top:var(--e7);padding-top:var(--e4);color:var(--piedra)}
+/* barra fija móvil */
+.fija{position:fixed;left:0;right:0;bottom:0;background:var(--papel);border-top:1px solid var(--oro);padding:var(--e2) var(--e4);z-index:20}
+.con-fija{padding-bottom:88px}
+@media(min-width:820px){.rejilla.dos{grid-template-columns:1fr 1fr}.rejilla.tres{grid-template-columns:repeat(3,1fr)}.rejilla.cuatro{grid-template-columns:repeat(2,1fr)}}
+@media print{
+  body{background:#fff;color:#000}
+  .cab nav,.fija,.banner,.no-imprimir,button,.btn{display:none!important}
+  .con-fija{padding-bottom:0}
+  a{color:#000}
+  a[href^="http"]::after{content:" (" attr(href) ")";font-size:var(--t3)}
+  section{break-inside:avoid;padding:var(--e5) 0}
+  details{display:block}details>*{display:block}
+  .pend{background:none;border:1px dashed #000}
+}
+
+.legal{padding-bottom:var(--e7)}
+.legal h2{margin-top:var(--e6)}
+.borrador{border-left:4px solid var(--oro);padding-left:var(--e4);color:var(--piedra)}
+.indice{columns:1}.indice a{min-height:44px;display:inline-flex;align-items:center}
+.fuente ol{padding-left:var(--e5)}
+@media(min-width:720px){.indice{columns:2}}
+.desliza{overflow-x:auto;margin-bottom:var(--e4)}.desliza table{min-width:640px}</style>
+
+</head>
+<body>
+<header class="envoltura cab">
+  <a class="marca" href="index.html">[PENDIENTE: MARCA]</a>
+  <nav aria-label="Principal"><a href="precios.html">Precios</a><a href="carrito.html">Carrito</a></nav>
+</header>
+<main id="contenido">
+
+<article class="estrecho legal">
+  <h1>Cómo tratamos tus datos</h1>
+  <p class="sec">Última revisión: 11/11/2026</p>
+  <p class="borrador"><b>Borrador.</b> Redactado a partir de la normativa citada al final. Lo marcado en amarillo depende del NIF y de decisiones pendientes. Que lo revise un profesional antes de publicarlo.</p>
+  
+<nav aria-label="En esta página"><ul class="indice"><li><a href="#responsable">Responsable</a></li><li><a href="#para">Para qué y con qué base</a></li><li><a href="#encargados">Quién más los trata</a></li><li><a href="#derechos">Tus derechos</a></li></ul></nav>
+<h2 id="responsable">Responsable</h2>
+<p><span class="pend">[PENDIENTE: RAZÓN SOCIAL]</span>, NIF <span class="pend">[PENDIENTE: NIF]</span>, <span class="pend">[PENDIENTE: DIRECCIÓN]</span>. Correo para cualquier asunto de privacidad: <span class="pend">[CORREO DE PRIVACIDAD]</span>.</p>
+<p>No hemos designado delegado de protección de datos porque nuestra actividad no lo exige (<span class="pend">verificar con el volumen real de tratamiento</span>).</p>
+
+<h2 id="para">Para qué usamos tus datos, con qué base y cuánto tiempo</h2>
+<div class="desliza" role="region" aria-label="Tabla de tratamientos" tabindex="0">
+<table class="tabla">
+  <thead><tr><th scope="col">Para qué</th><th scope="col">Qué datos</th><th scope="col">Base jurídica</th><th scope="col">Cuánto tiempo</th></tr></thead>
+  <tbody><tr><td>Gestionar tu pedido, la prueba y el envío</td><td>Nombre, correo, teléfono, dirección, apellidos y linajes del diseño</td><td>Ejecución del contrato (art. 6.1.b RGPD)</td><td>Mientras dure el pedido y la garantía de tres años</td></tr><tr><td>Facturar y cumplir obligaciones fiscales y contables</td><td>Nombre, NIF si lo pides, dirección, importes</td><td>Obligación legal (art. 6.1.c RGPD)</td><td>6 años (art. 30 del Código de Comercio); 4 años a efectos tributarios</td></tr><tr><td>Responder a consultas</td><td>Nombre, correo y lo que nos cuentes</td><td>Medidas precontractuales o interés legítimo en contestarte (art. 6.1.b y f RGPD)</td><td>Hasta resolver la consulta y <span class="pend">[PENDIENTE: PLAZO]</span> después</td></tr><tr><td>Enviarte novedades</td><td>Correo</td><td>Solo con tu consentimiento (art. 6.1.a RGPD). Hoy no enviamos publicidad.</td><td>Hasta que lo retires</td></tr></tbody>
+</table></div>
+<p>Los apellidos que escribes en el configurador pueden ser de familiares tuyos. Solo los usamos para hacer el cuadro.</p>
+<p>No tomamos decisiones automatizadas ni elaboramos perfiles sobre ti.</p>
+<p>Los datos de la tarjeta los trata directamente la pasarela de pago; nosotros no los vemos ni los guardamos.</p>
+
+<h2 id="encargados">Quién más trata tus datos por encargo nuestro</h2>
+<ul>
+  <li>Alojamiento de la web y de la tienda: <span class="pend">[PROVEEDOR Y PAÍS]</span></li>
+  <li>Pasarela de pago: <span class="pend">[PASARELA]</span></li>
+  <li>Correo de avisos del pedido: <span class="pend">[PROVEEDOR DE CORREO Y PAÍS]</span></li>
+  <li>Transporte y etiquetas: <span class="pend">[TRANSPORTISTA / PLATAFORMA DE ENVÍOS]</span></li>
+  <li>Asesoría fiscal y contable: <span class="pend">[ASESORÍA]</span></li>
+</ul>
+<p>Si alguno está fuera del Espacio Económico Europeo, lo indicaremos junto a su nombre con la garantía que se aplica: <span class="pend">[decisión de adecuación o cláusulas contractuales tipo]</span>.</p>
+
+<h2 id="derechos">Tus derechos</h2>
+<p>Puedes pedirnos en cualquier momento acceder a tus datos, corregirlos, borrarlos, limitar su uso, oponerte a un tratamiento o recibirlos en un formato que puedas llevarte a otro sitio. Si nos diste tu consentimiento para algo, puedes retirarlo cuando quieras.</p>
+<p>Escríbenos a <span class="pend">[CORREO DE PRIVACIDAD]</span>. Te contestamos en un mes como máximo.</p>
+<p>Si no estás de acuerdo con nuestra respuesta, puedes reclamar ante la Agencia Española de Protección de Datos en <a href="https://www.aepd.es">aepd.es</a>.</p>
+
+  <footer class="fuente"><h2>Fuentes</h2><ol><li>Reglamento (UE) 2016/679, general de protección de datos (RGPD), <a href="https://eur-lex.europa.eu/eli/reg/2016/679/oj">DOUE L 119</a>, arts. 6, 13 y 15 a 22</li><li>Ley Orgánica 3/2018, de protección de datos personales y garantía de los derechos digitales, <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2018-16673">BOE-A-2018-16673</a></li><li>Código de Comercio, art. 30 (conservación de libros y documentos durante seis años), <a href="https://www.boe.es/buscar/act.php?id=BOE-A-1885-6627">BOE-A-1885-6627</a></li><li>Ley 58/2003, General Tributaria, art. 66 (prescripción de cuatro años), <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2003-23186">BOE-A-2003-23186</a></li></ol></footer>
+</article>
+</main>
+<footer class="pie envoltura">
+  <nav aria-label="Información legal"><a href="aviso-legal.html">Aviso legal</a><a href="privacidad.html">Privacidad</a><a href="cookies.html">Cookies</a><a href="condiciones-venta.html">Condiciones de venta</a><a href="desistimiento.html">Desistimiento</a><a href="envios-y-devoluciones.html">Envíos y devoluciones</a></nav>
+  <p>Titular: <span class="pend">[PENDIENTE: RAZÓN SOCIAL]</span> · NIF <span class="pend">[PENDIENTE: NIF]</span> · <span class="pend">[PENDIENTE: DIRECCIÓN]</span></p>
+  <p>Todos los precios de esta web llevan el IVA incluido.</p>
+</footer>
+
+</body>
+</html>

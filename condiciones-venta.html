@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="es-ES">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Condiciones de venta · [PENDIENTE: MARCA]</title>
+<meta name="description" content="Precio con IVA, señal, plazos, desistimiento y su excepción, garantía y reclamaciones.">
+<link rel="canonical" href="https://[PENDIENTE: DOMINIO]/condiciones-venta.html">
+<style>
+:root{
+  --f-tit:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --f-txt:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --t1:32px;--t2:22px;--t3:17px;
+  --e1:4px;--e2:8px;--e3:12px;--e4:16px;--e5:24px;--e6:32px;--e7:48px;--e8:64px;
+  --papel:#f5efe4;--tinta:#1f1b16;--piedra:#5a5248;--granate:#7b1e2b;--oro:#9a7a2c;--campo:#fffdf8;
+  --radio:4px;--toque:48px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:var(--e7)}
+body{margin:0;background:var(--papel);color:var(--tinta);font:400 var(--t3)/1.55 var(--f-txt)}
+img,svg{max-width:100%;height:auto}
+a{color:var(--granate);text-underline-offset:3px}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible,label:focus-within{outline:3px solid var(--tinta);outline-offset:3px}
+.envoltura{max-width:1040px;margin:0 auto;padding:0 var(--e4)}
+.estrecho{max-width:720px;margin:0 auto;padding:0 var(--e4)}
+h1,h2,h3{font-family:var(--f-tit);font-weight:600;line-height:1.15;margin:0 0 var(--e4);text-wrap:balance}
+h1{font-size:var(--t1)}h2{font-size:var(--t2)}h3{font-size:var(--t3);font-family:var(--f-txt)}
+p,ul,ol,dl,table{margin:0 0 var(--e4)}
+p,li{max-width:64ch}
+.sec{color:var(--piedra)}
+code,pre,kbd{font-size:var(--t3)}
+.pend{background:#fff3cd;color:#4a3300;padding:0 var(--e1);border-radius:2px}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+section{padding:var(--e7) 0;border-top:1px solid var(--oro)}
+section.envoltura,section.estrecho{padding:var(--e7) var(--e4)}
+/* cabecera y pie */
+.cab{display:flex;justify-content:space-between;align-items:center;min-height:56px;gap:var(--e4)}
+.marca{font:600 var(--t3)/1 var(--f-tit);color:var(--tinta);text-decoration:none;letter-spacing:.03em;min-height:44px;display:inline-flex;align-items:center}
+.cab nav a{min-height:44px;display:inline-flex;align-items:center;padding:0 var(--e2)}
+.pie{border-top:1px solid var(--oro);padding:var(--e6) var(--e4) var(--e8);color:var(--piedra)}
+.pie nav{display:flex;flex-wrap:wrap;gap:0 var(--e4);margin-bottom:var(--e4)}
+.pie nav a{min-height:44px;display:inline-flex;align-items:center}
+/* botones */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--e2);min-height:var(--toque);padding:0 var(--e5);
+  border-radius:var(--radio);border:2px solid var(--granate);font:600 var(--t3)/1.2 var(--f-txt);text-decoration:none;cursor:pointer;text-align:center}
+.btn-p{background:var(--granate);color:#fff}
+.btn-p:hover{background:#5f1621;border-color:#5f1621}
+.btn-p:active{transform:translateY(1px)}
+.btn-s{background:transparent;color:var(--granate)}
+.btn-s:hover{background:#ecdfd0}
+.btn[disabled],.btn[aria-disabled=true]{background:#e2d9cb;border-color:#e2d9cb;color:var(--piedra);cursor:not-allowed;transform:none}
+.btn[aria-busy=true]{position:relative;color:transparent}
+.btn[aria-busy=true]::after{content:"";position:absolute;width:18px;height:18px;border:2px solid #fff;border-right-color:transparent;border-radius:50%;animation:gira .7s linear infinite}
+@keyframes gira{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.ancho{display:flex;width:100%}
+.enlace{min-height:44px;display:inline-flex;align-items:center}
+/* formularios */
+.campo{margin-bottom:var(--e5)}
+.campo label,.campo legend{display:block;font-weight:600;margin-bottom:var(--e1)}
+.campo .ayuda{color:var(--piedra);margin:0 0 var(--e2)}
+input[type=text],input[type=email],input[type=tel],input[type=search],select,textarea{width:100%;min-height:var(--toque);padding:var(--e2) var(--e3);
+  border:2px solid var(--piedra);border-radius:var(--radio);background:var(--campo);color:var(--tinta);font:400 var(--t3)/1.4 var(--f-txt)}
+textarea{min-height:120px}
+[aria-invalid=true]{border-color:var(--granate)!important;border-width:3px!important}
+.error{color:var(--granate);font-weight:600;margin:var(--e1) 0 0}
+.error:empty{display:none}
+.error::before{content:"✕ "}
+.aviso{border:2px solid var(--granate);border-radius:var(--radio);padding:var(--e4);margin-bottom:var(--e5);background:var(--campo)}
+.aviso:empty{display:none}
+.casilla{display:flex;gap:var(--e3);align-items:flex-start;min-height:44px;padding:var(--e2) 0;cursor:pointer}
+.casilla input{width:24px;height:24px;margin:2px 0 0;flex:none;accent-color:var(--granate)}
+/* tarjetas y listas */
+.tarjeta{border:1px solid #d8ccb9;border-radius:var(--radio);padding:var(--e4);background:var(--campo)}
+.rejilla{display:grid;gap:var(--e4)}
+dl.datos{display:grid;grid-template-columns:auto 1fr;gap:var(--e2) var(--e5)}
+dl.datos dt{font-weight:600}dl.datos dd{margin:0}
+ul.marcas{list-style:none;padding:0}
+ul.marcas li{padding-left:28px;position:relative;margin-bottom:var(--e2)}
+ul.marcas li::before{content:"";position:absolute;left:4px;top:.55em;width:12px;height:6px;border:solid var(--granate);border-width:0 0 2px 2px;transform:rotate(-45deg)}
+details.faq{border-bottom:1px solid #d8ccb9}
+details.faq summary{min-height:52px;display:flex;align-items:center;justify-content:space-between;gap:var(--e4);cursor:pointer;font-weight:600;list-style:none}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::after{content:"+";font-size:var(--t2);color:var(--granate)}
+details.faq[open] summary::after{content:"−"}
+table.tabla{width:100%;border-collapse:collapse}
+table.tabla th,table.tabla td{text-align:left;padding:var(--e3) var(--e2);border-bottom:1px solid #d8ccb9;vertical-align:top}
+table.tabla th{font-weight:600}
+.fuente{border-top:1px solid var(--oro);margin-top:var(--e7);padding-top:var(--e4);color:var(--piedra)}
+/* barra fija móvil */
+.fija{position:fixed;left:0;right:0;bottom:0;background:var(--papel);border-top:1px solid var(--oro);padding:var(--e2) var(--e4);z-index:20}
+.con-fija{padding-bottom:88px}
+@media(min-width:820px){.rejilla.dos{grid-template-columns:1fr 1fr}.rejilla.tres{grid-template-columns:repeat(3,1fr)}.rejilla.cuatro{grid-template-columns:repeat(2,1fr)}}
+@media print{
+  body{background:#fff;color:#000}
+  .cab nav,.fija,.banner,.no-imprimir,button,.btn{display:none!important}
+  .con-fija{padding-bottom:0}
+  a{color:#000}
+  a[href^="http"]::after{content:" (" attr(href) ")";font-size:var(--t3)}
+  section{break-inside:avoid;padding:var(--e5) 0}
+  details{display:block}details>*{display:block}
+  .pend{background:none;border:1px dashed #000}
+}
+
+.legal{padding-bottom:var(--e7)}
+.legal h2{margin-top:var(--e6)}
+.borrador{border-left:4px solid var(--oro);padding-left:var(--e4);color:var(--piedra)}
+.indice{columns:1}.indice a{min-height:44px;display:inline-flex;align-items:center}
+.fuente ol{padding-left:var(--e5)}
+@media(min-width:720px){.indice{columns:2}}
+</style>
+
+</head>
+<body>
+<header class="envoltura cab">
+  <a class="marca" href="index.html">[PENDIENTE: MARCA]</a>
+  <nav aria-label="Principal"><a href="precios.html">Precios</a><a href="carrito.html">Carrito</a></nav>
+</header>
+<main id="contenido">
+
+<article class="estrecho legal">
+  <h1>Condiciones de venta del cuadro</h1>
+  <p class="sec">Última revisión: 11/11/2026</p>
+  <p class="borrador"><b>Borrador.</b> Redactado a partir de la normativa citada al final. Lo marcado en amarillo depende del NIF y de decisiones pendientes. Que lo revise un profesional antes de publicarlo.</p>
+  
+<nav aria-label="En esta página"><ul class="indice">
+<li><a href="#quien">Quién vende</a></li><li><a href="#precio">Precio e IVA</a></li><li><a href="#senal">Señal y resto</a></li>
+<li><a href="#plazos">Plazos</a></li><li><a href="#desistimiento">Desistimiento</a></li><li><a href="#garantia">Garantía</a></li><li><a href="#litigios">Reclamaciones</a></li></ul></nav>
+
+<h2 id="quien">Quién vende y cómo se contrata</h2>
+<p>Vende <span class="pend">[PENDIENTE: RAZÓN SOCIAL]</span>, NIF <span class="pend">[PENDIENTE: NIF]</span>, <span class="pend">[PENDIENTE: DIRECCIÓN]</span>. El contrato se hace en castellano. Se celebra cuando confirmas el pedido y pagas la señal; te enviamos por correo la confirmación con estas condiciones. Guardamos el pedido y puedes pedirnos una copia cuando quieras.</p>
+<p>Antes de confirmar puedes revisar y corregir todos tus datos en el paso «Revisión».</p>
+
+<h2 id="precio">Precio e IVA</h2>
+<p>El cuadro de cuatro escudos cuesta 149 € IVA incluido (123,14 € de base y 25,86 € de IVA al 21 %). El envío se suma aparte: <span class="pend">importe por confirmar</span>; te lo decimos antes de cobrar el resto.</p>
+<p>Para entregas en Canarias, Ceuta y Melilla no se aplica el IVA español; pueden aplicarse impuestos y gastos de despacho del destino (<span class="pend">verificar con el transportista y la asesoría</span>).</p>
+
+<h2 id="senal">Señal y resto del pago</h2>
+<ol>
+  <li>Al hacer el pedido pagas una señal de 44,70 € IVA incluido (30 %) como pago a cuenta.</li>
+  <li>Preparamos la prueba y te la enviamos. No imprimimos nada sin tu aprobación.</li>
+  <li>Al aprobarla pagas 104,30 € IVA incluido más el envío.</li>
+</ol>
+<p>Si decides no seguir antes de aprobar la prueba: <span class="pend">[DECISIÓN PENDIENTE: qué parte de la señal se devuelve y en qué plazo]</span>. Cuántas rondas de cambios entran: <span class="pend">[DECISIÓN PENDIENTE]</span>.</p>
+
+<h2 id="plazos">Plazos de entrega</h2>
+<p>Plazo estimado desde que apruebas la prueba: <span class="pend">[PENDIENTE: PLAZO]</span>. Si no indicamos plazo, la ley nos obliga a entregar en un máximo de 30 días naturales desde el contrato. Si no podemos cumplir el plazo, te avisamos y puedes resolver el contrato y recuperar lo pagado.</p>
+
+<h2 id="desistimiento">Desistimiento</h2>
+<p>En las compras a distancia hay, en general, 14 días para desistir sin dar motivos. <b>Esta regla no se aplica a los bienes confeccionados conforme a las especificaciones del consumidor o claramente personalizados</b>, como un cuadro hecho con tus apellidos y los linajes que eliges. Te lo indicamos antes de pagar y nos lo confirmas en el pedido.</p>
+<p>Si en el futuro vendemos algo que no sea personalizado, en su ficha dirá que tiene 14 días de desistimiento y tendrás el <a href="desistimiento.html">formulario modelo</a>.</p>
+
+<h2 id="garantia">Garantía</h2>
+<p>Tienes la garantía legal de <b>tres años</b> desde la entrega por cualquier falta de conformidad: una pieza rota, un color que no corresponde al blasón aprobado, una medida distinta. Puedes pedir que lo reparemos o lo sustituyamos sin coste para ti, incluidos los portes; si no es posible, una rebaja del precio o la devolución.</p>
+<p>No es falta de conformidad la textura fina de las capas de impresión, que es propia de la técnica y se ve en la ficha.</p>
+<p>Para reclamar, escríbenos a <span class="pend">[PENDIENTE: CORREO]</span> con el número de pedido y una foto.</p>
+
+<h2 id="litigios">Reclamaciones</h2>
+<p>Escríbenos primero: contestamos en <span class="pend">[PENDIENTE: PLAZO]</span>. Si no quedas satisfecho, puedes acudir a los servicios de consumo de tu comunidad autónoma o a la Junta Arbitral de Consumo. Adhesión al arbitraje de consumo: <span class="pend">[SÍ/NO]</span>. Hojas de reclamaciones: <span class="pend">[verificar la obligación para venta a distancia en Castilla y León]</span>.</p>
+<p>La plataforma europea de resolución de litigios en línea dejó de funcionar el 20 de julio de 2025, por eso no la enlazamos.</p>
+<p>Se aplica la ley española y son competentes los tribunales de tu domicilio.</p>
+
+  <footer class="fuente"><h2>Fuentes</h2><ol><li>Real Decreto Legislativo 1/2007, texto refundido de la Ley General para la Defensa de los Consumidores y Usuarios (TRLGDCU), <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2007-20555">BOE-A-2007-20555</a>, arts. 66 bis (entrega), 97 (información precontractual), 102 a 108 (desistimiento; excepción del art. 103.c) y 114 y ss. (garantía)</li><li>Real Decreto-ley 7/2021, que amplía la garantía legal de los bienes a tres años desde el 01/01/2022; nota del Centro Europeo del Consumidor, <a href="https://portal-cec.consumo.gob.es/es/comunicacion/noticias/2022/espana-amplia-la-garantia-legal-minima-de-dos-tres-anos">05/01/2022</a></li><li>Ley 34/2002, de servicios de la sociedad de la información y de comercio electrónico (LSSI), <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2002-13758">BOE-A-2002-13758</a>, arts. 23 a 28 (contratación electrónica)</li><li>Reglamento (UE) 2024/3228, que suprime la plataforma europea de resolución de litigios en línea desde el 20/07/2025, <a href="https://www.boe.es/doue/2024/3228/L00001-00003.pdf">DOUE</a>; nota del Centro Europeo del Consumidor, <a href="https://portal-cec.consumo.gob.es/es/comunicacion/noticias/2025/la-plataforma-europea-para-la-resolucion-de-litigios-en-linea-dejara-de">21/04/2025</a></li><li>Excepción de bienes personalizados, resumen del Ministerio de Consumo: <a href="https://portal-cec.consumo.gob.es/index.php/es/informacion-general/compras-online/devoluciones">CEC, devoluciones</a></li></ol></footer>
+</article>
+</main>
+<footer class="pie envoltura">
+  <nav aria-label="Información legal"><a href="aviso-legal.html">Aviso legal</a><a href="privacidad.html">Privacidad</a><a href="cookies.html">Cookies</a><a href="condiciones-venta.html">Condiciones de venta</a><a href="desistimiento.html">Desistimiento</a><a href="envios-y-devoluciones.html">Envíos y devoluciones</a></nav>
+  <p>Titular: <span class="pend">[PENDIENTE: RAZÓN SOCIAL]</span> · NIF <span class="pend">[PENDIENTE: NIF]</span> · <span class="pend">[PENDIENTE: DIRECCIÓN]</span></p>
+  <p>Todos los precios de esta web llevan el IVA incluido.</p>
+</footer>
+
+</body>
+</html>

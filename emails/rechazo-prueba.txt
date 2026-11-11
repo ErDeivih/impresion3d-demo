@@ -1,0 +1,12 @@
+Asunto: Hemos recibido vuestros cambios en la prueba
+
+Nos habéis pedido estos cambios en el pedido {{numero}}:
+{{cambios}}
+
+Qué cambia: preparamos una prueba nueva y os la mandamos en {{plazo_nueva_prueba}}.
+Qué no se cobra: el resto (104,30 € IVA incluido) no se cobra hasta que aprobéis.
+
+Contarnos qué más cambiar: {{url_prueba}}
+
+--
+[PENDIENTE: MARCA] · [PENDIENTE: RAZÓN SOCIAL] · NIF [PENDIENTE: NIF] · [PENDIENTE: DIRECCIÓN]

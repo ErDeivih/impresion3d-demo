@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="es-ES">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Configurador del cuadro: apellidos, linajes y colocación · [PENDIENTE: MARCA]</title>
+<meta name="description" content="Escribe los cuatro apellidos, elige el linaje de cada uno con su fuente y colócalos en el cuadro.">
+<link rel="canonical" href="https://[PENDIENTE: DOMINIO]/configurador.html">
+<style>
+:root{
+  --f-tit:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --f-txt:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --t1:32px;--t2:22px;--t3:17px;
+  --e1:4px;--e2:8px;--e3:12px;--e4:16px;--e5:24px;--e6:32px;--e7:48px;--e8:64px;
+  --papel:#f5efe4;--tinta:#1f1b16;--piedra:#5a5248;--granate:#7b1e2b;--oro:#9a7a2c;--campo:#fffdf8;
+  --radio:4px;--toque:48px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:var(--e7)}
+body{margin:0;background:var(--papel);color:var(--tinta);font:400 var(--t3)/1.55 var(--f-txt)}
+img,svg{max-width:100%;height:auto}
+a{color:var(--granate);text-underline-offset:3px}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible,label:focus-within{outline:3px solid var(--tinta);outline-offset:3px}
+.envoltura{max-width:1040px;margin:0 auto;padding:0 var(--e4)}
+.estrecho{max-width:720px;margin:0 auto;padding:0 var(--e4)}
+h1,h2,h3{font-family:var(--f-tit);font-weight:600;line-height:1.15;margin:0 0 var(--e4);text-wrap:balance}
+h1{font-size:var(--t1)}h2{font-size:var(--t2)}h3{font-size:var(--t3);font-family:var(--f-txt)}
+p,ul,ol,dl,table{margin:0 0 var(--e4)}
+p,li{max-width:64ch}
+.sec{color:var(--piedra)}
+code,pre,kbd{font-size:var(--t3)}
+.pend{background:#fff3cd;color:#4a3300;padding:0 var(--e1);border-radius:2px}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+section{padding:var(--e7) 0;border-top:1px solid var(--oro)}
+section.envoltura,section.estrecho{padding:var(--e7) var(--e4)}
+/* cabecera y pie */
+.cab{display:flex;justify-content:space-between;align-items:center;min-height:56px;gap:var(--e4)}
+.marca{font:600 var(--t3)/1 var(--f-tit);color:var(--tinta);text-decoration:none;letter-spacing:.03em;min-height:44px;display:inline-flex;align-items:center}
+.cab nav a{min-height:44px;display:inline-flex;align-items:center;padding:0 var(--e2)}
+.pie{border-top:1px solid var(--oro);padding:var(--e6) var(--e4) var(--e8);color:var(--piedra)}
+.pie nav{display:flex;flex-wrap:wrap;gap:0 var(--e4);margin-bottom:var(--e4)}
+.pie nav a{min-height:44px;display:inline-flex;align-items:center}
+/* botones */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--e2);min-height:var(--toque);padding:0 var(--e5);
+  border-radius:var(--radio);border:2px solid var(--granate);font:600 var(--t3)/1.2 var(--f-txt);text-decoration:none;cursor:pointer;text-align:center}
+.btn-p{background:var(--granate);color:#fff}
+.btn-p:hover{background:#5f1621;border-color:#5f1621}
+.btn-p:active{transform:translateY(1px)}
+.btn-s{background:transparent;color:var(--granate)}
+.btn-s:hover{background:#ecdfd0}
+.btn[disabled],.btn[aria-disabled=true]{background:#e2d9cb;border-color:#e2d9cb;color:var(--piedra);cursor:not-allowed;transform:none}
+.btn[aria-busy=true]{position:relative;color:transparent}
+.btn[aria-busy=true]::after{content:"";position:absolute;width:18px;height:18px;border:2px solid #fff;border-right-color:transparent;border-radius:50%;animation:gira .7s linear infinite}
+@keyframes gira{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.ancho{display:flex;width:100%}
+.enlace{min-height:44px;display:inline-flex;align-items:center}
+/* formularios */
+.campo{margin-bottom:var(--e5)}
+.campo label,.campo legend{display:block;font-weight:600;margin-bottom:var(--e1)}
+.campo .ayuda{color:var(--piedra);margin:0 0 var(--e2)}
+input[type=text],input[type=email],input[type=tel],input[type=search],select,textarea{width:100%;min-height:var(--toque);padding:var(--e2) var(--e3);
+  border:2px solid var(--piedra);border-radius:var(--radio);background:var(--campo);color:var(--tinta);font:400 var(--t3)/1.4 var(--f-txt)}
+textarea{min-height:120px}
+[aria-invalid=true]{border-color:var(--granate)!important;border-width:3px!important}
+.error{color:var(--granate);font-weight:600;margin:var(--e1) 0 0}
+.error:empty{display:none}
+.error::before{content:"✕ "}
+.aviso{border:2px solid var(--granate);border-radius:var(--radio);padding:var(--e4);margin-bottom:var(--e5);background:var(--campo)}
+.aviso:empty{display:none}
+.casilla{display:flex;gap:var(--e3);align-items:flex-start;min-height:44px;padding:var(--e2) 0;cursor:pointer}
+.casilla input{width:24px;height:24px;margin:2px 0 0;flex:none;accent-color:var(--granate)}
+/* tarjetas y listas */
+.tarjeta{border:1px solid #d8ccb9;border-radius:var(--radio);padding:var(--e4);background:var(--campo)}
+.rejilla{display:grid;gap:var(--e4)}
+dl.datos{display:grid;grid-template-columns:auto 1fr;gap:var(--e2) var(--e5)}
+dl.datos dt{font-weight:600}dl.datos dd{margin:0}
+ul.marcas{list-style:none;padding:0}
+ul.marcas li{padding-left:28px;position:relative;margin-bottom:var(--e2)}
+ul.marcas li::before{content:"";position:absolute;left:4px;top:.55em;width:12px;height:6px;border:solid var(--granate);border-width:0 0 2px 2px;transform:rotate(-45deg)}
+details.faq{border-bottom:1px solid #d8ccb9}
+details.faq summary{min-height:52px;display:flex;align-items:center;justify-content:space-between;gap:var(--e4);cursor:pointer;font-weight:600;list-style:none}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::after{content:"+";font-size:var(--t2);color:var(--granate)}
+details.faq[open] summary::after{content:"−"}
+table.tabla{width:100%;border-collapse:collapse}
+table.tabla th,table.tabla td{text-align:left;padding:var(--e3) var(--e2);border-bottom:1px solid #d8ccb9;vertical-align:top}
+table.tabla th{font-weight:600}
+.fuente{border-top:1px solid var(--oro);margin-top:var(--e7);padding-top:var(--e4);color:var(--piedra)}
+/* barra fija móvil */
+.fija{position:fixed;left:0;right:0;bottom:0;background:var(--papel);border-top:1px solid var(--oro);padding:var(--e2) var(--e4);z-index:20}
+.con-fija{padding-bottom:88px}
+@media(min-width:820px){.rejilla.dos{grid-template-columns:1fr 1fr}.rejilla.tres{grid-template-columns:repeat(3,1fr)}.rejilla.cuatro{grid-template-columns:repeat(2,1fr)}}
+@media print{
+  body{background:#fff;color:#000}
+  .cab nav,.fija,.banner,.no-imprimir,button,.btn{display:none!important}
+  .con-fija{padding-bottom:0}
+  a{color:#000}
+  a[href^="http"]::after{content:" (" attr(href) ")";font-size:var(--t3)}
+  section{break-inside:avoid;padding:var(--e5) 0}
+  details{display:block}details>*{display:block}
+  .pend{background:none;border:1px dashed #000}
+}
+
+.aviso-ficticio{background:#fff3cd;color:#4a3300;padding:var(--e3) var(--e4);border-radius:var(--radio)}
+ol.progreso{list-style:none;margin:0 0 var(--e5);padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:var(--e1)}
+ol.progreso li{border-top:4px solid #d8ccb9;padding-top:var(--e1);color:var(--piedra)}
+ol.progreso li.hecho{border-color:var(--tinta);color:var(--tinta)}
+ol.progreso li[aria-current]{border-color:var(--granate);color:var(--granate);font-weight:600}
+fieldset.paso{border:0;margin:0;padding:0;min-width:0}
+fieldset.paso legend{padding:0;margin-bottom:var(--e2)}
+fieldset.paso legend h2{margin:0}
+.acciones{display:flex;gap:var(--e4);flex-wrap:wrap;margin-top:var(--e5)}
+.acciones .btn-p{flex:1 1 200px}
+.grupo{border:1px solid #d8ccb9;border-radius:var(--radio);padding:var(--e4);margin:0 0 var(--e5)}
+.grupo legend{font-weight:600;padding:0 var(--e1)}
+.op{display:grid;grid-template-columns:24px 1fr;gap:var(--e3);padding:var(--e3);border:1px solid #d8ccb9;border-radius:var(--radio);margin-bottom:var(--e3);cursor:pointer;background:var(--campo)}
+.op:has(input:checked){border:2px solid var(--granate);padding:calc(var(--e3) - 1px)}
+.op input{width:22px;height:22px;margin:2px 0 0;accent-color:var(--granate)}
+.op .fte{display:block;color:var(--piedra)}
+.compo{display:grid;gap:var(--e4)}
+#vista{width:100%;max-width:240px;justify-self:center}
+.tecnico summary{min-height:44px;display:flex;align-items:center;cursor:pointer}
+pre{white-space:pre-wrap;word-break:break-word;background:var(--campo);border:1px solid #d8ccb9;padding:var(--e3);font:var(--t3)/1.4 ui-monospace,Consolas,monospace}
+@media(min-width:720px){.compo{grid-template-columns:1fr 240px;align-items:start}}
+</style>
+
+</head>
+<body>
+<header class="envoltura cab">
+  <a class="marca" href="index.html">[PENDIENTE: MARCA]</a>
+  <nav aria-label="Principal"><a href="precios.html">Precios</a><a href="carrito.html">Carrito</a></nav>
+</header>
+<main id="contenido">
+
+<div class="estrecho">
+  <h1>Diseña vuestro cuadro en cuatro pasos</h1>
+  <p class="aviso-ficticio"><b>Datos de ejemplo.</b> Los linajes y fuentes de este configurador son ficticios hasta que se cargue el catálogo real.</p>
+  <ol class="progreso" aria-label="Progreso">
+    <li data-p="1">Apellidos</li><li data-p="2">Variantes</li><li data-p="3">Composición</li><li data-p="4">Resumen</li>
+  </ol>
+  <div id="errores" class="aviso" role="alert" tabindex="-1"></div>
+
+  <form id="form" novalidate>
+  <!-- PASO 1 -->
+  <fieldset class="paso" data-paso="1">
+    <legend><h2 tabindex="-1">Paso 1 de 4 · ¿Qué apellidos van en el cuadro?</h2></legend>
+    <p class="sec">Escribid uno por casilla. Para una boda, dos de cada familia.</p>
+    <div class="campo"><label for="a0">Primer apellido</label><input type="text" id="a0" name="a0" autocomplete="off" autocapitalize="words" aria-describedby="e-a0"><p class="error" id="e-a0"></p></div>
+    <div class="campo"><label for="a1">Segundo apellido</label><input type="text" id="a1" name="a1" autocomplete="off" autocapitalize="words" aria-describedby="e-a1"><p class="error" id="e-a1"></p></div>
+    <div class="campo"><label for="a2">Tercer apellido</label><input type="text" id="a2" name="a2" autocomplete="off" autocapitalize="words" aria-describedby="e-a2"><p class="error" id="e-a2"></p></div>
+    <div class="campo"><label for="a3">Cuarto apellido</label><input type="text" id="a3" name="a3" autocomplete="off" autocapitalize="words" aria-describedby="e-a3"><p class="error" id="e-a3"></p></div>
+    <div class="acciones"><button class="btn btn-p" type="button" data-ir="2">Ver las variantes</button></div>
+  </fieldset>
+
+  <!-- PASO 2 -->
+  <fieldset class="paso" data-paso="2" hidden>
+    <legend><h2 tabindex="-1">Paso 2 de 4 · Elegid el linaje de cada apellido</h2></legend>
+    <p class="sec">Cada opción dice de qué fuente sale. Si dudáis, elegid «No sé cuál es el nuestro» y lo revisamos a mano.</p>
+    <div id="variantes"></div>
+    <div class="acciones"><button class="btn btn-s" type="button" data-ir="1">Volver</button><button class="btn btn-p" type="button" data-ir="3">Colocar los escudos</button></div>
+  </fieldset>
+
+  <!-- PASO 3 -->
+  <fieldset class="paso" data-paso="3" hidden>
+    <legend><h2 tabindex="-1">Paso 3 de 4 · ¿Dónde va cada escudo?</h2></legend>
+    <p class="sec">El cuadro lleva dos filas de dos. Lo habitual es poner arriba los de una familia y abajo los de la otra.</p>
+    <div class="compo">
+      <div class="huecos">
+        <div class="campo"><label for="c0">Arriba, izquierda</label><select id="c0" aria-describedby="e-c0"></select><p class="error" id="e-c0"></p></div>
+        <div class="campo"><label for="c1">Arriba, derecha</label><select id="c1" aria-describedby="e-c1"></select><p class="error" id="e-c1"></p></div>
+        <div class="campo"><label for="c2">Abajo, izquierda</label><select id="c2" aria-describedby="e-c2"></select><p class="error" id="e-c2"></p></div>
+        <div class="campo"><label for="c3">Abajo, derecha</label><select id="c3" aria-describedby="e-c3"></select><p class="error" id="e-c3"></p></div>
+      </div>
+      <svg id="vista" viewBox="0 0 300 400" role="img" aria-label="Vista previa de la colocación"></svg>
+    </div>
+    <div class="acciones"><button class="btn btn-s" type="button" data-ir="2">Volver</button><button class="btn btn-p" type="button" data-ir="4">Revisar el diseño</button></div>
+  </fieldset>
+
+  <!-- PASO 4 -->
+  <fieldset class="paso" data-paso="4" hidden>
+    <legend><h2 tabindex="-1">Paso 4 de 4 · Revisad antes de añadirlo</h2></legend>
+    <dl class="datos" id="resumen"></dl>
+    <p>Precio: <b>149 € IVA incluido</b>. Hoy se paga la señal de 44,70 € IVA incluido.</p>
+    <p class="sec" id="nota-revision" hidden>Hay apellidos marcados para revisión manual: os escribiremos antes de preparar la prueba.</p>
+    <details class="tecnico"><summary>Datos del diseño (para el taller)</summary><pre id="json"></pre></details>
+    <div class="acciones"><button class="btn btn-s" type="button" data-ir="3">Volver</button><button class="btn btn-p" type="button" id="anadir">Añadir al carrito</button></div>
+  </fieldset>
+  </form>
+  <p class="sec guardado" aria-live="polite" id="guardado"></p>
+</div>
+
+</main>
+<footer class="pie envoltura">
+  <nav aria-label="Información legal"><a href="aviso-legal.html">Aviso legal</a><a href="privacidad.html">Privacidad</a><a href="cookies.html">Cookies</a><a href="condiciones-venta.html">Condiciones de venta</a><a href="desistimiento.html">Desistimiento</a><a href="envios-y-devoluciones.html">Envíos y devoluciones</a></nav>
+  <p>Titular: <span class="pend">[PENDIENTE: RAZÓN SOCIAL]</span> · NIF <span class="pend">[PENDIENTE: NIF]</span> · <span class="pend">[PENDIENTE: DIRECCIÓN]</span></p>
+  <p>Todos los precios de esta web llevan el IVA incluido.</p>
+</footer>
+<script>
+const LINAJES={"perez": [{"id": "perez-a", "nombre": "Pérez · linaje de ejemplo A", "blason": "De oro, una banda de gules", "esmaltes": ["oro", "gules"], "fuente": "Nobiliario de ejemplo, t. I, p. 00 [FICTICIO]"}, {"id": "perez-b", "nombre": "Pérez · linaje de ejemplo B", "blason": "De azur, un palo de plata", "esmaltes": ["azur", "plata"], "fuente": "Armorial de ejemplo, f. 00 [FICTICIO]"}], "velasco": [{"id": "velasco-a", "nombre": "Velasco · linaje de ejemplo A", "blason": "De plata, tres fajas de azur", "esmaltes": ["plata", "azur"], "fuente": "Nobiliario de ejemplo, t. II, p. 00 [FICTICIO]"}, {"id": "velasco-b", "nombre": "Velasco · linaje de ejemplo B", "blason": "De gules, una torre de oro", "esmaltes": ["gules", "oro"], "fuente": "Archivo de ejemplo, leg. 00 [FICTICIO]"}], "garcia": [{"id": "garcia-a", "nombre": "García · linaje de ejemplo A", "blason": "De oro, un cheurón de gules", "esmaltes": ["oro", "gules"], "fuente": "Nobiliario de ejemplo, t. III, p. 00 [FICTICIO]"}], "martin": [{"id": "martin-a", "nombre": "Martín · linaje de ejemplo A", "blason": "De sinople, un castillo de oro", "esmaltes": ["sinople", "oro"], "fuente": "Armorial de ejemplo, f. 00 [FICTICIO]"}], "lopez": [{"id": "lopez-a", "nombre": "López · linaje de ejemplo A", "blason": "De plata, dos lobos de sable", "esmaltes": ["plata", "sable"], "fuente": "Nobiliario de ejemplo, t. IV, p. 00 [FICTICIO]"}]};
+const COLOR={oro:'#d7b65a',plata:'#e8e1d3',gules:'#8f2a2a',azur:'#2c4a7a',sinople:'#2f5a3a',sable:'#1f1b16',purpura:'#6b2a6b'};
+const POS=['arriba-izquierda','arriba-derecha','abajo-izquierda','abajo-derecha'];
+const CLAVE='cuadro-v1';
+let E={paso:1,apellidos:['','','',''],linajes:[null,null,null,null],composicion:[0,1,2,3]};
+try{const g=JSON.parse(localStorage.getItem(CLAVE)||'null');if(g&&g.apellidos)E=Object.assign(E,g)}catch(e){}
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const norm=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim();
+function guardar(){try{localStorage.setItem(CLAVE,JSON.stringify(E));$('#guardado').textContent='Diseño guardado en este navegador.'}catch(e){$('#guardado').textContent='No se ha podido guardar en este navegador: no cierres la página hasta terminar.'}}
+function variantes(i){return LINAJES[norm(E.apellidos[i])]||[]}
+function linaje(i){const id=E.linajes[i];return variantes(i).find(v=>v.id===id)||null}
+function limpiarErrores(){$('#errores').innerHTML='';$$('.error').forEach(p=>p.textContent='');$$('[aria-invalid]').forEach(x=>x.removeAttribute('aria-invalid'))}
+function mostrarErrores(lista){ // lista: [{id, msg}]
+  if(!lista.length)return true;
+  $('#errores').innerHTML='<p><b>Revisa '+(lista.length===1?'este dato':'estos '+lista.length+' datos')+':</b></p><ul>'+lista.map(e=>'<li><a href="#'+e.id+'">'+e.msg+'</a></li>').join('')+'</ul>';
+  lista.forEach(e=>{const c=document.getElementById(e.id);if(c){c.setAttribute('aria-invalid','true');const p=document.getElementById('e-'+e.id);if(p)p.textContent=e.msg}});
+  $('#errores').focus();return false}
+const RE=/^[\p{L}][\p{L}' -]{1,39}$/u;
+function validar(p){limpiarErrores();const err=[];
+  if(p===1){for(let i=0;i<4;i++){const v=$('#a'+i).value.trim();E.apellidos[i]=v;
+    if(!v)err.push({id:'a'+i,msg:'Falta el '+['primer','segundo','tercer','cuarto'][i]+' apellido.'});
+    else if(!RE.test(v))err.push({id:'a'+i,msg:'«'+v+'» tiene caracteres que no son letras. Usa solo letras, espacios, guiones o apóstrofos.'});}}
+  if(p===2){for(let i=0;i<4;i++){if(!E.linajes[i])err.push({id:'v'+i+'-0',msg:'Elige una opción para '+E.apellidos[i]+'.'})}}
+  if(p===3){const vistos={};for(let i=0;i<4;i++){const k=+$('#c'+i).value;E.composicion[i]=k;if(k in vistos)err.push({id:'c'+i,msg:E.apellidos[k]+' está en dos huecos. Cada apellido va en un solo sitio.'});vistos[k]=1}}
+  guardar();return mostrarErrores(err)}
+function pintarVariantes(){const c=$('#variantes');c.innerHTML='';
+  E.apellidos.forEach((a,i)=>{const vs=variantes(i);if(E.linajes[i]&&E.linajes[i]!=='revision'&&!vs.some(v=>v.id===E.linajes[i]))E.linajes[i]=null;
+    if(!vs.length)E.linajes[i]='revision';
+    let h='<fieldset class="grupo"><legend>'+a+'</legend>';
+    if(!vs.length)h+='<p>No tenemos este apellido en el catálogo todavía. Lo buscaremos a mano.</p>';
+    vs.forEach((v,j)=>{h+='<label class="op"><input type="radio" name="v'+i+'" id="v'+i+'-'+j+'" value="'+v.id+'"'+(E.linajes[i]===v.id?' checked':'')+'><span><b>'+v.nombre+'</b><br>'+v.blason+'<span class="fte">Fuente: '+v.fuente+'</span></span></label>'});
+    h+='<label class="op"><input type="radio" name="v'+i+'" id="v'+i+'-'+vs.length+'" value="revision"'+(E.linajes[i]==='revision'?' checked':'')+'><span><b>No sé cuál es el nuestro</b><br>Lo revisamos a mano antes de preparar la prueba.</span></label>';
+    if(!vs.length)h=h.replace('id="v'+i+'-0"','id="v'+i+'-0"');
+    c.insertAdjacentHTML('beforeend',h+'</fieldset>')});
+  $$('#variantes input').forEach(r=>r.onchange=()=>{E.linajes[+r.name.slice(1)]=r.value;guardar()});}
+function escudo(x,y,i){const l=linaje(E.composicion[i]);const c=l?l.esmaltes.map(e=>COLOR[e]):['#ffffff','#ffffff'];
+  const ape=E.apellidos[E.composicion[i]]||'';
+  return '<g transform="translate('+x+' '+y+')"><path d="M0 0h90v62c0 26-20 42-45 50C20 104 0 88 0 62z" fill="'+c[0]+'" stroke="#1f1b16" stroke-width="2"/>'+
+   (l?'<path d="M10 20h70v22H10z" fill="'+c[1]+'"/>':'<text x="45" y="62" text-anchor="middle" font-size="40" fill="#5a5248">?</text>')+
+   '<text x="45" y="134" text-anchor="middle" font-size="13" font-family="Georgia,serif" fill="#1f1b16">'+ape.toUpperCase().slice(0,14)+'</text></g>'}
+function pintarComposicion(){for(let i=0;i<4;i++){$('#c'+i).innerHTML=E.apellidos.map((a,k)=>'<option value="'+k+'"'+(E.composicion[i]===k?' selected':'')+'>'+a+'</option>').join('')}
+  pintarVista()}
+function pintarVista(){for(let i=0;i<4;i++)E.composicion[i]=+$('#c'+i).value;
+  $('#vista').innerHTML='<rect x="4" y="4" width="292" height="392" fill="#3a2a1c"/><rect x="18" y="18" width="264" height="364" fill="#efe6d6"/>'+escudo(45,40,0)+escudo(165,40,1)+escudo(45,210,2)+escudo(165,210,3)}
+function final(){const colores=[...new Set(E.linajes.flatMap((id,i)=>{const l=linaje(i);return l?l.esmaltes:[]}))];
+  const piezas=[];E.composicion.forEach((k,i)=>{const l=linaje(k);(l?l.esmaltes:['por-revisar']).forEach(es=>piezas.push({posicion:POS[i],apellido:E.apellidos[k],linaje:E.linajes[k],esmalte:es}))});
+  return {apellidos:E.apellidos.slice(),linajes:E.linajes.slice(),colores:colores,formato:'30x40',piezas:piezas}}
+function pintarResumen(){const r=$('#resumen');r.innerHTML=E.composicion.map((k,i)=>{const l=linaje(k);
+  return '<dt>'+['Arriba, izquierda','Arriba, derecha','Abajo, izquierda','Abajo, derecha'][i]+'</dt><dd>'+(l?l.nombre+'<br><span class="sec">Fuente: '+l.fuente+'</span>':E.apellidos[k]+' · revisión manual')+'</dd>'}).join('');
+  $('#nota-revision').hidden=!E.linajes.includes('revision');$('#json').textContent=JSON.stringify(final(),null,1)}
+function ir(p,validarAntes){if(validarAntes&&!validar(E.paso))return;E.paso=p;guardar();
+  $$('.paso').forEach(f=>f.hidden=+f.dataset.paso!==p);
+  $$('.progreso li').forEach(li=>{const n=+li.dataset.p;li.classList.toggle('hecho',n<p);if(n===p)li.setAttribute('aria-current','step');else li.removeAttribute('aria-current')});
+  if(p===2)pintarVariantes();if(p===3)pintarComposicion();if(p===4)pintarResumen();
+  const h=document.querySelector('.paso[data-paso="'+p+'"] h2');if(h)h.focus()}
+$$('[data-ir]').forEach(b=>b.onclick=()=>{const p=+b.dataset.ir;ir(p,p>E.paso)});
+for(let i=0;i<4;i++){$('#a'+i).value=E.apellidos[i];$('#a'+i).oninput=e=>{E.apellidos[i]=e.target.value;guardar()};$('#c'+i).onchange=pintarVista}
+$('#anadir').onclick=()=>{const b=$('#anadir');b.setAttribute('aria-busy','true');
+  try{localStorage.setItem('carrito-v1',JSON.stringify([{producto:'CUADRO-4-30X40',precio:149,diseno:final()}]))}catch(e){}
+  location.href='carrito.html'};
+ir(Math.min(E.paso||1,4),false);
+</script>
+</body>
+</html>

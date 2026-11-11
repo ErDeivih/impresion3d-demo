@@ -1,0 +1,15 @@
+Asunto: Justificante de la señal del pedido {{numero}}: 44,70 € IVA incluido
+
+Hemos recibido la señal del pedido {{numero}} el {{fecha_pago}}.
+
+Base imponible del IVA: 36,94 €
+IVA (21 %): 7,76 €
+Total cobrado: 44,70 € IVA incluido
+Método: {{metodo_pago}}
+
+Pendiente al aprobar la prueba: 104,30 € IVA incluido + envío.
+
+Ver el justificante: {{url_justificante}}
+
+--
+[PENDIENTE: MARCA] · [PENDIENTE: RAZÓN SOCIAL] · NIF [PENDIENTE: NIF] · [PENDIENTE: DIRECCIÓN]

@@ -1,193 +1,205 @@
 <!doctype html>
-<html lang="es">
+<html lang="es-ES">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Cuadro de 4 escudos en relieve · 149 € IVA incluido</title>
-<meta name="description" content="Cuadro de 30×40 cm con los escudos de cuatro apellidos, impreso en relieve. 149 € IVA incluido. Ves y apruebas la prueba antes de imprimir.">
+<title>Cuadro con los escudos de cuatro apellidos en relieve · [PENDIENTE: MARCA]</title>
+<meta name="description" content="Cuadro de 30×40 cm con los escudos de cuatro apellidos impresos en relieve. 149 € IVA incluido; ves la prueba antes de imprimir.">
+<link rel="canonical" href="https://[PENDIENTE: DOMINIO]/index.html">
 <style>
-:root{--f-tit:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;--f-txt:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
---t1:34px;--t2:22px;--t3:17px;--e1:4px;--e2:8px;--e3:16px;--e4:24px;--e5:40px;--e6:64px;
---papel:#f5efe4;--tinta:#1f1b16;--piedra:#5a5248;--granate:#7b1e2b;--oro:#9a7a2c}
-*{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--papel);color:var(--tinta);font:400 var(--t3)/1.55 var(--f-txt)}
-a{color:var(--granate)}
-.wrap{max-width:1040px;margin:0 auto;padding:0 var(--e3)}
-h1,h2{font-family:var(--f-tit);font-weight:600;line-height:1.15;margin:0 0 var(--e3)}
-h1{font-size:var(--t1)}h2{font-size:var(--t2)}
-p{margin:0 0 var(--e3);max-width:62ch}
-.sec{color:var(--piedra)}
-section{padding:var(--e5) 0;border-top:1px solid var(--oro)}
-/* cabecera */
-.cab{display:flex;justify-content:space-between;align-items:center;min-height:56px}
-.marca{min-height:44px;display:inline-flex;align-items:center;font:600 var(--t3)/1 var(--f-tit);text-decoration:none;color:var(--tinta);letter-spacing:.02em}
-.cab a.lnk{min-height:44px;display:inline-flex;align-items:center;padding:0 var(--e2)}
-/* héroe */
-.heroe{display:grid;gap:var(--e4);padding:var(--e3) var(--e3) var(--e5)}
-.cuadro{width:100%;max-width:320px;margin:0 auto;display:block}
-.precio{font:600 var(--t2)/1.2 var(--f-tit);margin:0 0 var(--e1)}
-.btn{display:flex;align-items:center;justify-content:center;min-height:48px;padding:0 var(--e4);border-radius:4px;
-  background:var(--granate);color:#fff;font-weight:600;text-decoration:none;border:2px solid var(--granate);margin:var(--e3) 0 var(--e2)}
-.btn:hover{background:#5f1621}.btn:focus-visible{outline:3px solid var(--tinta);outline-offset:3px}
-.garantia{display:flex;gap:var(--e2);align-items:flex-start;color:var(--piedra);margin:0}
-.garantia svg{flex:none;margin-top:3px}
-/* pasos */
-ol.pasos{list-style:none;margin:0;padding:0;display:grid;gap:var(--e4);counter-reset:p}
-ol.pasos li{counter-increment:p;display:grid;grid-template-columns:40px 1fr;gap:var(--e3)}
-ol.pasos li::before{content:counter(p);width:40px;height:40px;border:1px solid var(--oro);border-radius:50%;
-  display:grid;place-items:center;font:600 var(--t3)/1 var(--f-tit)}
-ol.pasos b{display:block}
-/* incluye */
-ul.lista{margin:0;padding:0;list-style:none;display:grid;gap:var(--e2)}
-ul.lista li{padding-left:28px;position:relative}
-ul.lista li::before{content:"";position:absolute;left:4px;top:.55em;width:12px;height:6px;border:solid var(--granate);border-width:0 0 2px 2px;transform:rotate(-45deg)}
-/* prueba social honesta */
-.honesta{background:#fff;border:1px solid #e2d9cb;border-radius:4px;padding:var(--e4)}
-.pruebas{display:grid;grid-template-columns:1fr 1fr;gap:var(--e3);margin-top:var(--e3)}
-.pruebas figure{margin:0}
-.pruebas figcaption{color:var(--piedra)}
-/* faq */
-details{border-bottom:1px solid #e2d9cb}
-summary{min-height:48px;display:flex;align-items:center;justify-content:space-between;gap:var(--e3);cursor:pointer;font-weight:600;list-style:none}
-summary::-webkit-details-marker{display:none}
-summary::after{content:"+";font:400 var(--t2)/1 var(--f-txt);color:var(--granate)}
-details[open] summary::after{content:"−"}
-details p{padding-bottom:var(--e3)}
-/* pie */
-footer{border-top:1px solid var(--oro);padding:var(--e5) 0 var(--e6);color:var(--piedra)}
-footer nav{display:flex;flex-wrap:wrap;gap:0 var(--e3)}
-footer nav a{min-height:44px;display:inline-flex;align-items:center}
-.pend{background:#fff3cd;color:#5a3d00;padding:0 var(--e1);border-radius:2px}
-/* barra fija móvil: el mismo CTA, no uno nuevo */
-.fija{position:fixed;left:0;right:0;bottom:0;background:var(--papel);border-top:1px solid var(--oro);padding:var(--e2) var(--e3);display:flex;gap:var(--e3);align-items:center}
-.fija .btn{flex:1;margin:0}
-.fija span{font:600 var(--t3)/1.2 var(--f-tit);white-space:nowrap}
-body{padding-bottom:72px}
-@media(min-width:820px){
-  .heroe{grid-template-columns:1.1fr .9fr;align-items:center;padding:var(--e5) var(--e3) var(--e6)}
-  .heroe .btn{display:inline-flex}
-  ol.pasos{grid-template-columns:repeat(4,1fr)}
-  ol.pasos li{grid-template-columns:1fr}
-  .fija{display:none}body{padding-bottom:0}
-  .dos{display:grid;grid-template-columns:1fr 1fr;gap:var(--e5)}
+:root{
+  --f-tit:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --f-txt:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --t1:32px;--t2:22px;--t3:17px;
+  --e1:4px;--e2:8px;--e3:12px;--e4:16px;--e5:24px;--e6:32px;--e7:48px;--e8:64px;
+  --papel:#f5efe4;--tinta:#1f1b16;--piedra:#5a5248;--granate:#7b1e2b;--oro:#9a7a2c;--campo:#fffdf8;
+  --radio:4px;--toque:48px;
 }
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:var(--e7)}
+body{margin:0;background:var(--papel);color:var(--tinta);font:400 var(--t3)/1.55 var(--f-txt)}
+img,svg{max-width:100%;height:auto}
+a{color:var(--granate);text-underline-offset:3px}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible,label:focus-within{outline:3px solid var(--tinta);outline-offset:3px}
+.envoltura{max-width:1040px;margin:0 auto;padding:0 var(--e4)}
+.estrecho{max-width:720px;margin:0 auto;padding:0 var(--e4)}
+h1,h2,h3{font-family:var(--f-tit);font-weight:600;line-height:1.15;margin:0 0 var(--e4);text-wrap:balance}
+h1{font-size:var(--t1)}h2{font-size:var(--t2)}h3{font-size:var(--t3);font-family:var(--f-txt)}
+p,ul,ol,dl,table{margin:0 0 var(--e4)}
+p,li{max-width:64ch}
+.sec{color:var(--piedra)}
+code,pre,kbd{font-size:var(--t3)}
+.pend{background:#fff3cd;color:#4a3300;padding:0 var(--e1);border-radius:2px}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+section{padding:var(--e7) 0;border-top:1px solid var(--oro)}
+section.envoltura,section.estrecho{padding:var(--e7) var(--e4)}
+/* cabecera y pie */
+.cab{display:flex;justify-content:space-between;align-items:center;min-height:56px;gap:var(--e4)}
+.marca{font:600 var(--t3)/1 var(--f-tit);color:var(--tinta);text-decoration:none;letter-spacing:.03em;min-height:44px;display:inline-flex;align-items:center}
+.cab nav a{min-height:44px;display:inline-flex;align-items:center;padding:0 var(--e2)}
+.pie{border-top:1px solid var(--oro);padding:var(--e6) var(--e4) var(--e8);color:var(--piedra)}
+.pie nav{display:flex;flex-wrap:wrap;gap:0 var(--e4);margin-bottom:var(--e4)}
+.pie nav a{min-height:44px;display:inline-flex;align-items:center}
+/* botones */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--e2);min-height:var(--toque);padding:0 var(--e5);
+  border-radius:var(--radio);border:2px solid var(--granate);font:600 var(--t3)/1.2 var(--f-txt);text-decoration:none;cursor:pointer;text-align:center}
+.btn-p{background:var(--granate);color:#fff}
+.btn-p:hover{background:#5f1621;border-color:#5f1621}
+.btn-p:active{transform:translateY(1px)}
+.btn-s{background:transparent;color:var(--granate)}
+.btn-s:hover{background:#ecdfd0}
+.btn[disabled],.btn[aria-disabled=true]{background:#e2d9cb;border-color:#e2d9cb;color:var(--piedra);cursor:not-allowed;transform:none}
+.btn[aria-busy=true]{position:relative;color:transparent}
+.btn[aria-busy=true]::after{content:"";position:absolute;width:18px;height:18px;border:2px solid #fff;border-right-color:transparent;border-radius:50%;animation:gira .7s linear infinite}
+@keyframes gira{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.ancho{display:flex;width:100%}
+.enlace{min-height:44px;display:inline-flex;align-items:center}
+/* formularios */
+.campo{margin-bottom:var(--e5)}
+.campo label,.campo legend{display:block;font-weight:600;margin-bottom:var(--e1)}
+.campo .ayuda{color:var(--piedra);margin:0 0 var(--e2)}
+input[type=text],input[type=email],input[type=tel],input[type=search],select,textarea{width:100%;min-height:var(--toque);padding:var(--e2) var(--e3);
+  border:2px solid var(--piedra);border-radius:var(--radio);background:var(--campo);color:var(--tinta);font:400 var(--t3)/1.4 var(--f-txt)}
+textarea{min-height:120px}
+[aria-invalid=true]{border-color:var(--granate)!important;border-width:3px!important}
+.error{color:var(--granate);font-weight:600;margin:var(--e1) 0 0}
+.error:empty{display:none}
+.error::before{content:"✕ "}
+.aviso{border:2px solid var(--granate);border-radius:var(--radio);padding:var(--e4);margin-bottom:var(--e5);background:var(--campo)}
+.aviso:empty{display:none}
+.casilla{display:flex;gap:var(--e3);align-items:flex-start;min-height:44px;padding:var(--e2) 0;cursor:pointer}
+.casilla input{width:24px;height:24px;margin:2px 0 0;flex:none;accent-color:var(--granate)}
+/* tarjetas y listas */
+.tarjeta{border:1px solid #d8ccb9;border-radius:var(--radio);padding:var(--e4);background:var(--campo)}
+.rejilla{display:grid;gap:var(--e4)}
+dl.datos{display:grid;grid-template-columns:auto 1fr;gap:var(--e2) var(--e5)}
+dl.datos dt{font-weight:600}dl.datos dd{margin:0}
+ul.marcas{list-style:none;padding:0}
+ul.marcas li{padding-left:28px;position:relative;margin-bottom:var(--e2)}
+ul.marcas li::before{content:"";position:absolute;left:4px;top:.55em;width:12px;height:6px;border:solid var(--granate);border-width:0 0 2px 2px;transform:rotate(-45deg)}
+details.faq{border-bottom:1px solid #d8ccb9}
+details.faq summary{min-height:52px;display:flex;align-items:center;justify-content:space-between;gap:var(--e4);cursor:pointer;font-weight:600;list-style:none}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::after{content:"+";font-size:var(--t2);color:var(--granate)}
+details.faq[open] summary::after{content:"−"}
+table.tabla{width:100%;border-collapse:collapse}
+table.tabla th,table.tabla td{text-align:left;padding:var(--e3) var(--e2);border-bottom:1px solid #d8ccb9;vertical-align:top}
+table.tabla th{font-weight:600}
+.fuente{border-top:1px solid var(--oro);margin-top:var(--e7);padding-top:var(--e4);color:var(--piedra)}
+/* barra fija móvil */
+.fija{position:fixed;left:0;right:0;bottom:0;background:var(--papel);border-top:1px solid var(--oro);padding:var(--e2) var(--e4);z-index:20}
+.con-fija{padding-bottom:88px}
+@media(min-width:820px){.rejilla.dos{grid-template-columns:1fr 1fr}.rejilla.tres{grid-template-columns:repeat(3,1fr)}.rejilla.cuatro{grid-template-columns:repeat(2,1fr)}}
+@media print{
+  body{background:#fff;color:#000}
+  .cab nav,.fija,.banner,.no-imprimir,button,.btn{display:none!important}
+  .con-fija{padding-bottom:0}
+  a{color:#000}
+  a[href^="http"]::after{content:" (" attr(href) ")";font-size:var(--t3)}
+  section{break-inside:avoid;padding:var(--e5) 0}
+  details{display:block}details>*{display:block}
+  .pend{background:none;border:1px dashed #000}
+}
+
+.heroe{display:grid;gap:var(--e5);padding:var(--e4) var(--e4) var(--e7)}
+.precio{font:600 var(--t2)/1.2 var(--f-tit);margin:0 0 var(--e3)}
+.nota{margin-top:var(--e2)}
+.foto{margin:0}.foto svg{display:block;max-width:300px;margin:0 auto}
+.ancho-movil{display:flex;width:100%}
+ol.pasos{list-style:none;padding:0;margin:0;display:grid;gap:var(--e5);counter-reset:p}
+ol.pasos li{counter-increment:p;display:grid;grid-template-columns:44px 1fr;column-gap:var(--e4)}
+ol.pasos li::before{content:counter(p);grid-row:span 2;width:44px;height:44px;border:1px solid var(--oro);border-radius:50%;display:grid;place-items:center;font:600 var(--t3)/1 var(--f-tit)}
+.banner{position:fixed;left:var(--e4);right:var(--e4);bottom:96px;background:var(--campo);border:2px solid var(--tinta);border-radius:var(--radio);padding:var(--e4);z-index:30;display:flex;flex-wrap:wrap;gap:var(--e3);align-items:center}
+.banner[hidden]{display:none}.banner p{margin:0;flex:1 1 220px}
+body{padding-bottom:88px}
+@media(min-width:820px){.heroe{grid-template-columns:1.15fr .85fr;align-items:center;padding:var(--e7) var(--e4) var(--e8)}
+ .ancho-movil{display:inline-flex;width:auto}ol.pasos{grid-template-columns:repeat(3,1fr)}.solo-movil{display:none}body{padding-bottom:0}.banner{bottom:var(--e4);max-width:560px}}
 </style>
+
 </head>
 <body>
-<nav class="wrap" aria-label="Prototipos de venta" style="display:flex;flex-wrap:wrap;gap:4px 14px;padding-top:12px;padding-bottom:12px;border-bottom:1px solid #9a7a2c;font-size:14px">
-<a href="escudos-portada.html">Portada</a>
-<a href="escudos-configurador.html">Configurador</a>
-<a href="escudos-ficha.html">Ficha</a>
-<a href="escudos-sistema.html">Sistema de diseño</a>
-</nav>
-
-<header class="wrap cab">
-  <a class="marca" href="#">[NOMBRE DE MARCA]</a>
-  <a class="lnk" href="escudos-ficha.html">Detalles y precio</a>
+<header class="envoltura cab">
+  <a class="marca" href="index.html">[PENDIENTE: MARCA]</a>
+  <nav aria-label="Principal"><a href="precios.html">Precios</a><a href="carrito.html">Carrito</a></nav>
 </header>
+<main id="contenido">
 
-<main>
-<div class="wrap heroe">
+<div class="envoltura heroe">
   <div>
     <h1>Los escudos de vuestras cuatro familias, en relieve y en un solo cuadro</h1>
-    <p class="sec">Cuadro de 30×40 cm con las armas de los cuatro apellidos que elijáis, impreso en relieve y pieza a pieza por colores. Lo veis y lo aprobáis antes de que se imprima.</p>
-    <p class="precio">149 € <span class="sec" style="font:400 var(--t3) var(--f-txt)">IVA incluido</span></p>
-    <p class="sec" style="margin:0">Para empezar, una señal de 44,70 €. El resto, cuando apruebes la prueba.</p>
-    <a class="btn" href="escudos-configurador.html">Empezar con vuestros apellidos</a>
-    <p class="garantia"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1 2 3v5c0 3.5 2.6 6 6 7 3.4-1 6-3.5 6-7V3z" fill="none" stroke="#7b1e2b" stroke-width="1.5"/></svg>
-    <span>No se imprime nada sin tu aprobación. Plazo de entrega: <span class="pend">por confirmar</span>.</span></p>
+    <p class="precio">4 escudos · 30×40 cm · 149 € IVA incluido</p>
+    <p class="sec">Impreso pieza a pieza, un color cada pieza. Antes de imprimir os mandamos la prueba y no seguimos hasta que la aprobéis.</p>
+    <a class="btn btn-p ancho-movil" href="configurador.html">Diseñar mi cuadro</a>
+    <p class="sec nota">Hoy solo se paga la señal: 44,70 € IVA incluido.</p>
   </div>
-  <!-- Ilustración original: escudos genéricos, no son armas reales de ningún linaje -->
-  <svg class="cuadro" viewBox="0 0 300 400" role="img" aria-label="Ilustración de un cuadro con cuatro escudos en dos filas">
-    <rect x="4" y="4" width="292" height="392" fill="#3a2a1c"/>
-    <rect x="18" y="18" width="264" height="364" fill="#efe6d6"/>
-    <rect x="26" y="26" width="248" height="348" fill="none" stroke="#9a7a2c" stroke-width="1"/>
-    <defs><clipPath id="e"><path d="M0 0h90v62c0 26-20 42-45 50C20 104 0 88 0 62z"/></clipPath>
-      <path id="b" d="M0 0h90v62c0 26-20 42-45 50C20 104 0 88 0 62z"/></defs>
-    <g transform="translate(45 60)"><g clip-path="url(#e)"><rect width="90" height="120" fill="#8f2a2a"/><path d="M-10 10 100 110v-20L10-10z" fill="#d7b65a"/></g><use href="#b" fill="none" stroke="#1f1b16" stroke-width="2"/></g>
-    <g transform="translate(165 60)"><g clip-path="url(#e)"><rect width="90" height="120" fill="#2c4a7a"/><rect x="33" width="24" height="120" fill="#e8e1d3"/></g><use href="#b" fill="none" stroke="#1f1b16" stroke-width="2"/></g>
-    <g transform="translate(45 210)"><g clip-path="url(#e)"><rect width="90" height="120" fill="#d7b65a"/><path d="M0 80 45 35 90 80v-22L45 13 0 58z" fill="#8f2a2a"/></g><use href="#b" fill="none" stroke="#1f1b16" stroke-width="2"/></g>
-    <g transform="translate(165 210)"><g clip-path="url(#e)"><rect width="90" height="120" fill="#2f5a3a"/><path d="M27 78V42h8v8h7v-8h6v8h7v-8h8v36z" fill="#d7b65a"/></g><use href="#b" fill="none" stroke="#1f1b16" stroke-width="2"/></g>
-    <text x="150" y="358" text-anchor="middle" font-family="Georgia,serif" font-size="13" fill="#1f1b16">PÉREZ · VELASCO · GARCÍA · MARTÍN</text>
-  </svg>
+  <figure class="foto"><svg viewBox="0 0 300 400" role="img" aria-label="Ilustración del cuadro con cuatro escudos en dos filas">
+  <defs><clipPath id="ea"><path d="M0 0h90v62c0 26-20 42-45 50C20 104 0 88 0 62z"/></clipPath><path id="ba" d="M0 0h90v62c0 26-20 42-45 50C20 104 0 88 0 62z"/></defs>
+  <rect x="4" y="4" width="292" height="392" fill="#3a2a1c"/><rect x="18" y="18" width="264" height="364" fill="#efe6d6"/>
+  <rect x="26" y="26" width="248" height="348" fill="none" stroke="#9a7a2c"/>
+  <g transform="translate(45 60)"><g clip-path="url(#ea)"><rect width="90" height="120" fill="#8f2a2a"/><path d="M-10 10 100 110v-20L10-10z" fill="#d7b65a"/></g><use href="#ba" fill="none" stroke="#1f1b16" stroke-width="2"/></g>
+  <g transform="translate(165 60)"><g clip-path="url(#ea)"><rect width="90" height="120" fill="#2c4a7a"/><rect x="33" width="24" height="120" fill="#e8e1d3"/></g><use href="#ba" fill="none" stroke="#1f1b16" stroke-width="2"/></g>
+  <g transform="translate(45 210)"><g clip-path="url(#ea)"><rect width="90" height="120" fill="#d7b65a"/><path d="M0 80 45 35 90 80v-22L45 13 0 58z" fill="#8f2a2a"/></g><use href="#ba" fill="none" stroke="#1f1b16" stroke-width="2"/></g>
+  <g transform="translate(165 210)"><g clip-path="url(#ea)"><rect width="90" height="120" fill="#2f5a3a"/><path d="M27 78V42h8v8h7v-8h6v8h7v-8h8v36z" fill="#d7b65a"/></g><use href="#ba" fill="none" stroke="#1f1b16" stroke-width="2"/></g>
+  <text x="150" y="358" text-anchor="middle" font-family="Georgia,serif" font-size="12" fill="#1f1b16">PÉREZ · VELASCO · GARCÍA · MARTÍN</text>
+</svg><figcaption class="sec">Ilustración. Foto del primer cuadro terminado: <span class="pend">pendiente</span>.</figcaption></figure>
 </div>
 
-<section class="wrap" aria-labelledby="como">
+<section class="envoltura" aria-labelledby="como">
   <h2 id="como">Cómo funciona</h2>
   <ol class="pasos">
-    <li><div><b>Escribe los cuatro apellidos</b><span class="sec">Para una boda, dos de cada familia.</span></div></li>
-    <li><div><b>Elige el linaje de cada uno</b><span class="sec">Un apellido puede tener varios escudos; te enseñamos de dónde sale cada uno.</span></div></li>
-    <li><div><b>Paga la señal y recibe la prueba</b><span class="sec">44,70 €. Te mandamos la prueba del cuadro completo para que la revises.</span></div></li>
-    <li><div><b>Apruébala y lo imprimimos</b><span class="sec">Pagas los 104,30 € que faltan y te lo enviamos.</span></div></li>
+    <li><b>Escribid los cuatro apellidos</b><span class="sec">Para una boda, dos de cada familia.</span></li>
+    <li><b>Elegid el linaje de cada uno y pagad la señal</b><span class="sec">Cada opción enseña de qué fuente sale el escudo.</span></li>
+    <li><b>Aprobad la prueba y lo imprimimos</b><span class="sec">Al aprobarla pagáis el resto y preparamos el envío.</span></li>
   </ol>
 </section>
 
-<section class="wrap dos" aria-labelledby="inc">
+<section class="envoltura rejilla dos" aria-labelledby="incluye">
   <div>
-    <h2 id="inc">Qué recibes</h2>
-    <ul class="lista">
-      <li>Cuadro de 30×40 cm con 4 escudos en relieve</li>
-      <li>Cada color, impreso como una pieza aparte (hasta 5 por escudo)</li>
-      <li>El nombre de cada apellido bajo su escudo</li>
+    <h2 id="incluye">Qué incluye</h2>
+    <ul class="marcas">
+      <li>Cuadro de 30×40 cm con cuatro escudos en relieve</li>
+      <li>Cada color, una pieza aparte encajada sobre una base común</li>
+      <li>El apellido escrito bajo cada escudo</li>
       <li>Una hoja con la fuente de cada blasón</li>
-      <li>Marco y acabado: <span class="pend">por confirmar</span></li>
+      <li>Marco y colgador: <span class="pend">por confirmar</span></li>
     </ul>
   </div>
   <div>
-    <h2 style="margin-top:var(--e5)">Lo que no es</h2>
-    <p>Son las armas de un linaje que lleva tu apellido, tal como aparecen en la fuente que citamos. No acreditan nobleza ni parentesco. El dibujo es original nuestro: no copiamos ilustraciones de nadie.</p>
+    <h2>Lo que no es</h2>
+    <p>No es un certificado. Las armas son las de un linaje que lleva vuestro apellido según la fuente que citamos, y <b>no acreditan nobleza ni parentesco</b>.</p>
+    <p>El dibujo es nuestro: no copiamos ilustraciones de otros.</p>
   </div>
 </section>
 
-<section class="wrap" aria-labelledby="hon">
-  <div class="honesta">
-    <h2 id="hon">Todavía no tenemos reseñas</h2>
-    <p>Estamos con los primeros encargos y preferimos no enseñaros opiniones que no existen. Lo que sí os enseñamos es cómo trabajamos:</p>
-    <div class="pruebas">
-      <figure>
-        <svg viewBox="0 0 120 120" width="100%" role="img" aria-label="Piezas de un escudo separadas por color">
-          <rect width="120" height="120" fill="#efe6d6"/>
-          <path d="M20 20h40v28c0 12-9 19-20 23-11-4-20-11-20-23z" fill="#8f2a2a"/>
-          <path d="M66 26 102 62v-9L75 26z" fill="#d7b65a"/>
-          <path d="M60 70h40v28c0 12-9 19-20 23" fill="none" stroke="#1f1b16" stroke-width="2" stroke-dasharray="4 3"/>
-        </svg>
-        <figcaption>Cada color sale en una pieza</figcaption>
-      </figure>
-      <figure>
-        <svg viewBox="0 0 120 120" width="100%" role="img" aria-label="Prueba digital con marcas de revisión">
-          <rect width="120" height="120" fill="#fff"/><rect x="14" y="10" width="92" height="100" fill="none" stroke="#1f1b16"/>
-          <path d="M30 26h24v18c0 8-5 12-12 14-7-2-12-6-12-14z" fill="#2c4a7a"/>
-          <path d="M66 26h24v18c0 8-5 12-12 14-7-2-12-6-12-14z" fill="#2f5a3a"/>
-          <circle cx="78" cy="40" r="14" fill="none" stroke="#7b1e2b" stroke-width="2"/>
-          <path d="M24 80h72M24 90h50" stroke="#5a5248" stroke-width="2"/>
-        </svg>
-        <figcaption>Prueba para aprobar antes de imprimir</figcaption>
-      </figure>
-    </div>
+<section class="envoltura" aria-labelledby="resenas">
+  <div class="tarjeta">
+    <h2 id="resenas">Aún no tenemos reseñas</h2>
+    <p>Estamos con los primeros encargos. No vamos a enseñaros opiniones que no existen. Cuando haya clientes que quieran contar su experiencia, aparecerá aquí con su nombre y su permiso.</p>
+    <p class="sec">Mientras tanto, podéis escribirnos y os enseñamos el proceso con un ejemplo: <span class="pend">[PENDIENTE: CORREO]</span>.</p>
   </div>
 </section>
 
-<section class="wrap" aria-labelledby="faq">
-  <h2 id="faq">Preguntas frecuentes</h2>
-  <details><summary>¿Mi apellido tiene un único escudo?</summary><p>Casi nunca. Un mismo apellido puede tener varios linajes, cada uno con sus armas. Te enseñamos los que encontramos y la fuente de cada uno, y eliges tú.</p></details>
-  <details><summary>¿Y si no aparece mi apellido?</summary><p>Lo buscamos a mano antes de cobrarte nada. Si no encontramos una fuente, te lo decimos y no seguimos.</p></details>
-  <details><summary>¿Qué pasa si la prueba no me convence?</summary><p>La corregimos antes de imprimir. Cuántas rondas de cambios entran y si devolvemos la señal: <span class="pend">por confirmar</span>.</p></details>
-  <details><summary>¿Cuánto tarda?</summary><p><span class="pend">Por confirmar.</span> Te daremos la fecha cuando apruebes la prueba.</p></details>
-  <details><summary>¿Lo puedo regalar sin que se entere?</summary><p>Sí. Puedes poner otra dirección de entrega. Si va dentro de una caja de regalo: <span class="pend">por confirmar</span>.</p></details>
-  <details><summary>¿Cuánto cuesta el envío?</summary><p><span class="pend">Por confirmar.</span> Te lo diremos antes de que pagues la señal.</p></details>
+<section class="envoltura" aria-labelledby="preguntas">
+  <h2 id="preguntas">Preguntas frecuentes</h2>
+  <details class="faq"><summary>¿Un apellido tiene un único escudo?</summary><p>Casi nunca. Un mismo apellido puede tener varios linajes, cada uno con sus armas. En el configurador os enseñamos los que tenemos documentados y la fuente de cada uno, y elegís vosotros.</p></details><details class="faq"><summary>¿Y si no encontramos el nuestro?</summary><p>Marcad «No sé cuál es el nuestro». Lo buscamos a mano antes de preparar la prueba; si no encontramos una fuente, os lo decimos y no seguimos.</p></details><details class="faq"><summary>¿Qué quiere decir que no acredita nobleza?</summary><p>Que el cuadro reproduce las armas de un linaje que lleva vuestro apellido, tal como aparecen en la fuente citada. No demuestra que vuestra familia descienda de ese linaje ni ningún título.</p></details><details class="faq"><summary>¿Qué pagáis hoy y qué después?</summary><p>Hoy, una señal de 44,70 € IVA incluido. Los 104,30 € IVA incluido restantes, cuando aprobéis la prueba.</p></details><details class="faq"><summary>¿Cómo es la prueba?</summary><p>Una imagen del cuadro completo, con los cuatro escudos en su sitio y sus colores. Os llega por correo y la aprobáis o pedís cambios desde el enlace.</p></details><details class="faq"><summary>¿Cuántos cambios puedo pedir?</summary><p>Número de rondas incluidas: por confirmar. No imprimimos nada hasta que aprobéis.</p></details><details class="faq"><summary>¿Cuánto tarda en llegar?</summary><p>Plazo de entrega: por confirmar. Os daremos una fecha cuando aprobéis la prueba.</p></details><details class="faq"><summary>¿Cuánto cuesta el envío?</summary><p>Por confirmar. Os lo diremos antes de cobrar nada.</p></details><details class="faq"><summary>¿Se puede devolver?</summary><p>Al estar hecho con vuestros apellidos, la ley excluye el desistimiento de 14 días en productos personalizados. Si llega con un defecto, tenéis la garantía legal de tres años. Lo explicamos en las condiciones de venta.</p></details><details class="faq"><summary>¿Puedo enviarlo a otra dirección para regalarlo?</summary><p>Sí: en el pedido podéis poner una dirección de entrega distinta de la vuestra. Si va en caja de regalo: por confirmar.</p></details>
 </section>
-</main>
 
-<footer class="wrap">
-  <p>[NOMBRE DE MARCA] · Titular: <span class="pend">[PENDIENTE: nombre y NIF]</span> · Contacto: <span class="pend">[PENDIENTE]</span></p>
-  <nav aria-label="Legal"><a href="#">Aviso legal</a><a href="#">Privacidad</a><a href="#">Condiciones de venta y desistimiento</a><a href="#">Cookies</a></nav>
-  <p class="sec">Todos los precios llevan el IVA incluido.</p>
-</footer>
-
-<div class="fija" aria-hidden="false">
-  <span>149 €</span>
-  <a class="btn" href="escudos-configurador.html">Empezar</a>
+<div class="banner no-imprimir" id="aviso-cookies" role="region" aria-label="Aviso de almacenamiento" hidden>
+  <p>Solo guardamos en tu navegador lo necesario para no perder tu diseño. No usamos cookies de terceros. <a href="cookies.html">Más información</a></p>
+  <button class="btn btn-s" type="button" id="cerrar-aviso">Entendido</button>
 </div>
+<div class="fija no-imprimir solo-movil"><a class="btn btn-p ancho" href="configurador.html" aria-hidden="true" tabindex="-1">Diseñar mi cuadro</a></div>
+
+</main>
+<footer class="pie envoltura">
+  <nav aria-label="Información legal"><a href="aviso-legal.html">Aviso legal</a><a href="privacidad.html">Privacidad</a><a href="cookies.html">Cookies</a><a href="condiciones-venta.html">Condiciones de venta</a><a href="desistimiento.html">Desistimiento</a><a href="envios-y-devoluciones.html">Envíos y devoluciones</a></nav>
+  <p>Titular: <span class="pend">[PENDIENTE: RAZÓN SOCIAL]</span> · NIF <span class="pend">[PENDIENTE: NIF]</span> · <span class="pend">[PENDIENTE: DIRECCIÓN]</span></p>
+  <p>Todos los precios de esta web llevan el IVA incluido.</p>
+</footer>
+<script>
+try{var k='aviso-almacenamiento';if(!localStorage.getItem(k)){var b=document.getElementById('aviso-cookies');b.hidden=false;
+document.getElementById('cerrar-aviso').onclick=function(){localStorage.setItem(k,'1');b.hidden=true}}}catch(e){}
+</script>
 </body>
 </html>

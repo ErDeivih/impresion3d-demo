@@ -1,2 +1,12 @@
+# [PENDIENTE: DOMINIO] por el dominio real
 User-agent: *
-Disallow: /
+Disallow: /checkout.html
+Disallow: /carrito.html
+Disallow: /gracias.html
+Disallow: /error-pago.html
+Disallow: /estado-vacio.html
+Disallow: /mantenimiento.html
+Disallow: /sistema.html
+Disallow: /emails/
+
+Sitemap: https://[PENDIENTE: DOMINIO]/sitemap.xml

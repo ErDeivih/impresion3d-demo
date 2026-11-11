@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="es-ES">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pedido: contacto, envío, pago y revisión · [PENDIENTE: MARCA]</title>
+<meta name="description" content="Completa tus datos y paga la señal del cuadro.">
+<link rel="canonical" href="https://[PENDIENTE: DOMINIO]/checkout.html">
+<style>
+:root{
+  --f-tit:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --f-txt:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --t1:32px;--t2:22px;--t3:17px;
+  --e1:4px;--e2:8px;--e3:12px;--e4:16px;--e5:24px;--e6:32px;--e7:48px;--e8:64px;
+  --papel:#f5efe4;--tinta:#1f1b16;--piedra:#5a5248;--granate:#7b1e2b;--oro:#9a7a2c;--campo:#fffdf8;
+  --radio:4px;--toque:48px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:var(--e7)}
+body{margin:0;background:var(--papel);color:var(--tinta);font:400 var(--t3)/1.55 var(--f-txt)}
+img,svg{max-width:100%;height:auto}
+a{color:var(--granate);text-underline-offset:3px}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible,label:focus-within{outline:3px solid var(--tinta);outline-offset:3px}
+.envoltura{max-width:1040px;margin:0 auto;padding:0 var(--e4)}
+.estrecho{max-width:720px;margin:0 auto;padding:0 var(--e4)}
+h1,h2,h3{font-family:var(--f-tit);font-weight:600;line-height:1.15;margin:0 0 var(--e4);text-wrap:balance}
+h1{font-size:var(--t1)}h2{font-size:var(--t2)}h3{font-size:var(--t3);font-family:var(--f-txt)}
+p,ul,ol,dl,table{margin:0 0 var(--e4)}
+p,li{max-width:64ch}
+.sec{color:var(--piedra)}
+code,pre,kbd{font-size:var(--t3)}
+.pend{background:#fff3cd;color:#4a3300;padding:0 var(--e1);border-radius:2px}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+section{padding:var(--e7) 0;border-top:1px solid var(--oro)}
+section.envoltura,section.estrecho{padding:var(--e7) var(--e4)}
+/* cabecera y pie */
+.cab{display:flex;justify-content:space-between;align-items:center;min-height:56px;gap:var(--e4)}
+.marca{font:600 var(--t3)/1 var(--f-tit);color:var(--tinta);text-decoration:none;letter-spacing:.03em;min-height:44px;display:inline-flex;align-items:center}
+.cab nav a{min-height:44px;display:inline-flex;align-items:center;padding:0 var(--e2)}
+.pie{border-top:1px solid var(--oro);padding:var(--e6) var(--e4) var(--e8);color:var(--piedra)}
+.pie nav{display:flex;flex-wrap:wrap;gap:0 var(--e4);margin-bottom:var(--e4)}
+.pie nav a{min-height:44px;display:inline-flex;align-items:center}
+/* botones */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--e2);min-height:var(--toque);padding:0 var(--e5);
+  border-radius:var(--radio);border:2px solid var(--granate);font:600 var(--t3)/1.2 var(--f-txt);text-decoration:none;cursor:pointer;text-align:center}
+.btn-p{background:var(--granate);color:#fff}
+.btn-p:hover{background:#5f1621;border-color:#5f1621}
+.btn-p:active{transform:translateY(1px)}
+.btn-s{background:transparent;color:var(--granate)}
+.btn-s:hover{background:#ecdfd0}
+.btn[disabled],.btn[aria-disabled=true]{background:#e2d9cb;border-color:#e2d9cb;color:var(--piedra);cursor:not-allowed;transform:none}
+.btn[aria-busy=true]{position:relative;color:transparent}
+.btn[aria-busy=true]::after{content:"";position:absolute;width:18px;height:18px;border:2px solid #fff;border-right-color:transparent;border-radius:50%;animation:gira .7s linear infinite}
+@keyframes gira{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.ancho{display:flex;width:100%}
+.enlace{min-height:44px;display:inline-flex;align-items:center}
+/* formularios */
+.campo{margin-bottom:var(--e5)}
+.campo label,.campo legend{display:block;font-weight:600;margin-bottom:var(--e1)}
+.campo .ayuda{color:var(--piedra);margin:0 0 var(--e2)}
+input[type=text],input[type=email],input[type=tel],input[type=search],select,textarea{width:100%;min-height:var(--toque);padding:var(--e2) var(--e3);
+  border:2px solid var(--piedra);border-radius:var(--radio);background:var(--campo);color:var(--tinta);font:400 var(--t3)/1.4 var(--f-txt)}
+textarea{min-height:120px}
+[aria-invalid=true]{border-color:var(--granate)!important;border-width:3px!important}
+.error{color:var(--granate);font-weight:600;margin:var(--e1) 0 0}
+.error:empty{display:none}
+.error::before{content:"✕ "}
+.aviso{border:2px solid var(--granate);border-radius:var(--radio);padding:var(--e4);margin-bottom:var(--e5);background:var(--campo)}
+.aviso:empty{display:none}
+.casilla{display:flex;gap:var(--e3);align-items:flex-start;min-height:44px;padding:var(--e2) 0;cursor:pointer}
+.casilla input{width:24px;height:24px;margin:2px 0 0;flex:none;accent-color:var(--granate)}
+/* tarjetas y listas */
+.tarjeta{border:1px solid #d8ccb9;border-radius:var(--radio);padding:var(--e4);background:var(--campo)}
+.rejilla{display:grid;gap:var(--e4)}
+dl.datos{display:grid;grid-template-columns:auto 1fr;gap:var(--e2) var(--e5)}
+dl.datos dt{font-weight:600}dl.datos dd{margin:0}
+ul.marcas{list-style:none;padding:0}
+ul.marcas li{padding-left:28px;position:relative;margin-bottom:var(--e2)}
+ul.marcas li::before{content:"";position:absolute;left:4px;top:.55em;width:12px;height:6px;border:solid var(--granate);border-width:0 0 2px 2px;transform:rotate(-45deg)}
+details.faq{border-bottom:1px solid #d8ccb9}
+details.faq summary{min-height:52px;display:flex;align-items:center;justify-content:space-between;gap:var(--e4);cursor:pointer;font-weight:600;list-style:none}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::after{content:"+";font-size:var(--t2);color:var(--granate)}
+details.faq[open] summary::after{content:"−"}
+table.tabla{width:100%;border-collapse:collapse}
+table.tabla th,table.tabla td{text-align:left;padding:var(--e3) var(--e2);border-bottom:1px solid #d8ccb9;vertical-align:top}
+table.tabla th{font-weight:600}
+.fuente{border-top:1px solid var(--oro);margin-top:var(--e7);padding-top:var(--e4);color:var(--piedra)}
+/* barra fija móvil */
+.fija{position:fixed;left:0;right:0;bottom:0;background:var(--papel);border-top:1px solid var(--oro);padding:var(--e2) var(--e4);z-index:20}
+.con-fija{padding-bottom:88px}
+@media(min-width:820px){.rejilla.dos{grid-template-columns:1fr 1fr}.rejilla.tres{grid-template-columns:repeat(3,1fr)}.rejilla.cuatro{grid-template-columns:repeat(2,1fr)}}
+@media print{
+  body{background:#fff;color:#000}
+  .cab nav,.fija,.banner,.no-imprimir,button,.btn{display:none!important}
+  .con-fija{padding-bottom:0}
+  a{color:#000}
+  a[href^="http"]::after{content:" (" attr(href) ")";font-size:var(--t3)}
+  section{break-inside:avoid;padding:var(--e5) 0}
+  details{display:block}details>*{display:block}
+  .pend{background:none;border:1px dashed #000}
+}
+
+body{padding-bottom:80px}
+ol.progreso{list-style:none;margin:0 0 var(--e5);padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:var(--e1)}
+ol.progreso li{border-top:4px solid #d8ccb9;padding-top:var(--e1);color:var(--piedra)}
+ol.progreso li.hecho{border-color:var(--tinta);color:var(--tinta)}
+ol.progreso li[aria-current]{border-color:var(--granate);color:var(--granate);font-weight:600}
+fieldset.paso{border:0;margin:0;padding:0;min-width:0}fieldset.paso legend{padding:0}
+.acciones{display:flex;gap:var(--e4);flex-wrap:wrap;margin-top:var(--e5)}.acciones .btn-p{flex:1 1 220px}
+.dos-campos{display:grid;grid-template-columns:120px 1fr;gap:var(--e4)}
+.fila{display:flex;gap:var(--e2)}.fila input{flex:1;min-width:0}
+.pasarela{margin-bottom:var(--e5)}
+.resumen{position:fixed;left:0;right:0;bottom:0;background:var(--papel);border-top:1px solid var(--oro);z-index:20;max-height:70vh;overflow:auto}
+.resumen details{max-width:720px;margin:0 auto;padding:0 var(--e4)}
+.resumen summary{min-height:56px;display:flex;justify-content:space-between;align-items:center;gap:var(--e4);font-weight:600;cursor:pointer}
+dl.lineas{grid-template-columns:1fr auto;padding-bottom:var(--e4)}dl.lineas dd{text-align:right}
+@media(min-width:1000px){body{padding-bottom:0}.resumen{position:fixed;left:auto;right:var(--e5);top:96px;bottom:auto;width:300px;border:1px solid var(--oro)}}
+</style>
+
+<meta name="robots" content="noindex">
+</head>
+<body>
+<header class="envoltura cab">
+  <a class="marca" href="index.html">[PENDIENTE: MARCA]</a>
+  <nav aria-label="Principal"><a href="precios.html">Precios</a><a href="carrito.html">Carrito</a></nav>
+</header>
+<main id="contenido">
+
+<div class="estrecho">
+  <h1>Datos del pedido</h1>
+  <ol class="progreso" aria-label="Pasos del pedido"><li data-p="1">Contacto</li><li data-p="2">Envío</li><li data-p="3">Pago</li><li data-p="4">Revisión</li></ol>
+  <div id="errores" class="aviso" role="alert" tabindex="-1"></div>
+  <form id="f" novalidate>
+
+  <fieldset class="paso" data-paso="1">
+    <legend><h2 tabindex="-1">¿Cómo te avisamos?</h2></legend>
+    <div class="campo"><label for="nombre">Nombre y apellidos</label><input type="text" id="nombre" autocomplete="name" required aria-describedby="e-nombre"><p class="error" id="e-nombre"></p></div>
+    <div class="campo"><label for="correo">Correo electrónico</label><p class="ayuda" id="a-correo">Aquí llegará la prueba para aprobar.</p><input type="email" id="correo" autocomplete="email" inputmode="email" required aria-describedby="a-correo e-correo"><p class="error" id="e-correo"></p></div>
+    <div class="campo"><label for="tel">Teléfono (por si hay un problema con la entrega)</label><input type="tel" id="tel" autocomplete="tel" inputmode="tel" required aria-describedby="e-tel"><p class="error" id="e-tel"></p></div>
+    <button class="btn btn-p ancho" type="button" data-ir="2">Seguir con la dirección</button>
+  </fieldset>
+
+  <fieldset class="paso" data-paso="2" hidden>
+    <legend><h2 tabindex="-1">¿Dónde lo enviamos?</h2></legend>
+    <div class="campo"><label for="dir">Dirección</label><input type="text" id="dir" autocomplete="street-address" required aria-describedby="e-dir"><p class="error" id="e-dir"></p></div>
+    <div class="dos-campos">
+      <div class="campo"><label for="cp">Código postal</label><input type="text" id="cp" autocomplete="postal-code" inputmode="numeric" maxlength="5" required aria-describedby="e-cp"><p class="error" id="e-cp"></p></div>
+      <div class="campo"><label for="loc">Localidad</label><input type="text" id="loc" autocomplete="address-level2" required aria-describedby="e-loc"><p class="error" id="e-loc"></p></div>
+    </div>
+    <div class="campo"><label for="prov">Provincia</label><input type="text" id="prov" autocomplete="address-level1" required aria-describedby="e-prov"><p class="error" id="e-prov"></p></div>
+    <label class="casilla"><input type="checkbox" id="regalo"> Es un regalo: no incluyáis el precio en el paquete</label>
+    <p class="sec" id="zona" aria-live="polite"></p>
+    <div class="acciones"><button class="btn btn-s" type="button" data-ir="1">Volver</button><button class="btn btn-p" type="button" data-ir="3">Seguir con el pago</button></div>
+  </fieldset>
+
+  <fieldset class="paso" data-paso="3" hidden>
+    <legend><h2 tabindex="-1">¿Cómo pagas la señal?</h2></legend>
+    <div class="pasarela tarjeta">
+      <p><b>Aquí irá el formulario de la pasarela de pago.</b></p>
+      <p class="sec">Prototipo sin pasarela real: no escribas datos de tarjeta en esta página. Pasarela y métodos: <span class="pend">por confirmar</span>.</p>
+      <label class="casilla"><input type="checkbox" id="simular"> Simular un pago rechazado (solo para pruebas)</label>
+    </div>
+    <div class="campo cupon">
+      <label for="cupon">Código de descuento (opcional)</label>
+      <div class="fila"><input type="text" id="cupon" autocomplete="off" aria-describedby="e-cupon m-cupon"><button class="btn btn-s" type="button" id="aplicar">Aplicar</button></div>
+      <p class="error" id="e-cupon"></p><p class="sec" id="m-cupon" aria-live="polite"></p>
+    </div>
+    <div class="acciones"><button class="btn btn-s" type="button" data-ir="2">Volver</button><button class="btn btn-p" type="button" data-ir="4">Revisar el pedido</button></div>
+  </fieldset>
+
+  <fieldset class="paso" data-paso="4" hidden>
+    <legend><h2 tabindex="-1">Comprueba que todo está bien</h2></legend>
+    <dl class="datos" id="revision"></dl>
+    <label class="casilla"><input type="checkbox" id="acepto" aria-describedby="e-acepto"> <span>He leído las <a href="condiciones-venta.html">condiciones de venta</a> y la <a href="privacidad.html">política de privacidad</a>.</span></label>
+    <label class="casilla"><input type="checkbox" id="personal" aria-describedby="e-personal"> <span>Entiendo que el cuadro se hace con mis apellidos y que, por eso, no tiene derecho de desistimiento (art. 103.c de la Ley General para la Defensa de los Consumidores). La garantía legal sí se mantiene.</span></label>
+    <p class="error" id="e-acepto"></p><p class="error" id="e-personal"></p>
+    <div class="acciones"><button class="btn btn-s" type="button" data-ir="3">Volver</button><button class="btn btn-p" type="button" id="pagar">Confirmar y pagar 44,70 € IVA incluido</button></div>
+  </fieldset>
+  </form>
+</div>
+
+<aside class="resumen" aria-label="Resumen del pedido">
+  <details id="det"><summary><span>Resumen</span><span>Hoy: 44,70 € IVA incluido</span></summary>
+<dl class="datos lineas">
+  <dt>Cuadro de cuatro escudos</dt><dd>149 € IVA incluido</dd>
+  <dt>Envío</dt><dd><span class="pend">por confirmar</span></dd>
+  <dt>Pagas hoy (señal)</dt><dd><b>44,70 € IVA incluido</b></dd>
+  <dt>Al aprobar la prueba</dt><dd>104,30 € IVA incluido + envío</dd>
+</dl></details>
+</aside>
+
+</main>
+<footer class="pie envoltura">
+  <nav aria-label="Información legal"><a href="aviso-legal.html">Aviso legal</a><a href="privacidad.html">Privacidad</a><a href="cookies.html">Cookies</a><a href="condiciones-venta.html">Condiciones de venta</a><a href="desistimiento.html">Desistimiento</a><a href="envios-y-devoluciones.html">Envíos y devoluciones</a></nav>
+  <p>Titular: <span class="pend">[PENDIENTE: RAZÓN SOCIAL]</span> · NIF <span class="pend">[PENDIENTE: NIF]</span> · <span class="pend">[PENDIENTE: DIRECCIÓN]</span></p>
+  <p>Todos los precios de esta web llevan el IVA incluido.</p>
+</footer>
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+let paso=1;const CLAVE='pedido-v1';let D={};
+try{D=JSON.parse(localStorage.getItem(CLAVE)||'{}')}catch(e){}
+const CAMPOS=['nombre','correo','tel','dir','cp','loc','prov'];
+CAMPOS.forEach(id=>{const c=$('#'+id);if(D[id])c.value=D[id];c.addEventListener('input',()=>{D[id]=c.value;try{localStorage.setItem(CLAVE,JSON.stringify(D))}catch(e){}})});
+const REGLAS={
+ nombre:v=>v.trim().length>=3||'Escribe tu nombre y al menos un apellido.',
+ correo:v=>/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim())||'Este correo no parece completo: revisa que tenga @ y un dominio, como nombre@ejemplo.es.',
+ tel:v=>/^(\+34)?\s?[6789](\s?\d){8}$/.test(v.trim())||'Escribe un teléfono español de 9 cifras; puede empezar por +34.',
+ dir:v=>v.trim().length>=5||'Falta la calle y el número.',
+ cp:v=>/^(0[1-9]|[1-4]\d|5[0-2])\d{3}$/.test(v.trim())||'El código postal tiene 5 cifras y empieza entre 01 y 52.',
+ loc:v=>v.trim().length>=2||'Falta la localidad.',
+ prov:v=>v.trim().length>=2||'Falta la provincia.'};
+const PASOS={1:['nombre','correo','tel'],2:['dir','cp','loc','prov'],3:[],4:[]};
+function limpiar(){$('#errores').innerHTML='';$$('.error').forEach(p=>p.textContent='');$$('[aria-invalid]').forEach(x=>x.removeAttribute('aria-invalid'))}
+function errores(l){if(!l.length)return true;$('#errores').innerHTML='<p><b>Antes de seguir, revisa:</b></p><ul>'+l.map(e=>'<li><a href="#'+e[0]+'">'+e[1]+'</a></li>').join('')+'</ul>';
+ l.forEach(e=>{$('#'+e[0]).setAttribute('aria-invalid','true');$('#e-'+e[0]).textContent=e[1]});$('#errores').focus();return false}
+function validar(p){limpiar();const l=[];PASOS[p].forEach(id=>{const r=REGLAS[id]($('#'+id).value);if(r!==true)l.push([id,r])});return errores(l)}
+function zona(){const cp=$('#cp').value.trim();let z='';if(/^(07)/.test(cp))z='Baleares';else if(/^(35|38)/.test(cp))z='Canarias: el envío y los impuestos se calculan aparte (sin IVA; puede haber IGIC y aduana).';else if(/^(51|52)/.test(cp))z='Ceuta o Melilla: el envío y los impuestos se calculan aparte.';else if(cp.length===5)z='Península';
+ $('#zona').textContent=z?'Zona de envío: '+z:''}
+$('#cp').addEventListener('input',zona);
+function revision(){$('#revision').innerHTML='<dt>Contacto</dt><dd>'+esc(D.nombre)+'<br>'+esc(D.correo)+' · '+esc(D.tel)+'</dd><dt>Entrega</dt><dd>'+esc(D.dir)+'<br>'+esc(D.cp)+' '+esc(D.loc)+' ('+esc(D.prov)+')'+($('#regalo').checked?'<br>Regalo: sin precio en el paquete':'')+'</dd><dt>Hoy pagas</dt><dd>44,70 € IVA incluido</dd>'}
+function esc(s){return String(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+function ir(p){if(p>paso&&!validar(paso))return;paso=p;$$('.paso').forEach(f=>f.hidden=+f.dataset.paso!==p);
+ $$('.progreso li').forEach(li=>{const n=+li.dataset.p;li.classList.toggle('hecho',n<p);n===p?li.setAttribute('aria-current','step'):li.removeAttribute('aria-current')});
+ if(p===4)revision();$('.paso[data-paso="'+p+'"] h2').focus()}
+$$('[data-ir]').forEach(b=>b.onclick=()=>ir(+b.dataset.ir));
+$('#aplicar').onclick=()=>{limpiar();const v=$('#cupon').value.trim();$('#m-cupon').textContent='';
+ if(!v){errores([['cupon','Escribe el código antes de aplicarlo.']]);return}
+ errores([['cupon','El código «'+v+'» no existe o ha caducado. El precio no cambia.']])};
+$('#pagar').onclick=()=>{limpiar();const l=[];if(!$('#acepto').checked)l.push(['acepto','Marca que has leído las condiciones y la privacidad.']);
+ if(!$('#personal').checked)l.push(['personal','Marca que entiendes que, al ser personalizado, no hay desistimiento.']);
+ if(!errores(l))return;const b=$('#pagar');b.setAttribute('aria-busy','true');b.disabled=true;
+ setTimeout(()=>{location.href=$('#simular').checked?'error-pago.html':'gracias.html'},700)};
+ir(1);
+</script>
+</body>
+</html>

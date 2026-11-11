@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Sustituir [PENDIENTE: DOMINIO] por el dominio real antes de publicar -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://[PENDIENTE: DOMINIO]/index.html</loc><lastmod>2026-11-11</lastmod></url>
+  <url><loc>https://[PENDIENTE: DOMINIO]/producto.html</loc><lastmod>2026-11-11</lastmod></url>
+  <url><loc>https://[PENDIENTE: DOMINIO]/precios.html</loc><lastmod>2026-11-11</lastmod></url>
+  <url><loc>https://[PENDIENTE: DOMINIO]/configurador.html</loc><lastmod>2026-11-11</lastmod></url>
+  <url><loc>https://[PENDIENTE: DOMINIO]/aviso-legal.html</loc><lastmod>2026-11-11</lastmod></url>
+  <url><loc>https://[PENDIENTE: DOMINIO]/privacidad.html</loc><lastmod>2026-11-11</lastmod></url>
+  <url><loc>https://[PENDIENTE: DOMINIO]/cookies.html</loc><lastmod>2026-11-11</lastmod></url>
+  <url><loc>https://[PENDIENTE: DOMINIO]/condiciones-venta.html</loc><lastmod>2026-11-11</lastmod></url>
+  <url><loc>https://[PENDIENTE: DOMINIO]/desistimiento.html</loc><lastmod>2026-11-11</lastmod></url>
+  <url><loc>https://[PENDIENTE: DOMINIO]/envios-y-devoluciones.html</loc><lastmod>2026-11-11</lastmod></url>
+</urlset>

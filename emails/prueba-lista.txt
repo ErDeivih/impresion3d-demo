@@ -1,0 +1,12 @@
+Asunto: Vuestra composición está lista para aprobar
+
+La prueba del pedido {{numero}} está lista.
+
+Si os gusta, aprobadla: pagáis los 104,30 € IVA incluido que faltan más el envío ({{envio}}) y la imprimimos.
+Si queréis cambiar algo, decidlo en el mismo enlace.
+Hasta que la aprobéis no se cobra nada más.
+
+Revisar la prueba: {{url_prueba}}
+
+--
+[PENDIENTE: MARCA] · [PENDIENTE: RAZÓN SOCIAL] · NIF [PENDIENTE: NIF] · [PENDIENTE: DIRECCIÓN]

@@ -1,0 +1,84 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Cuadro de cuatro escudos en relieve, 30×40 cm",
+    "description": "Cuadro de 30×40 cm con los escudos de cuatro apellidos impresos en relieve, una pieza por color. Se aprueba una prueba antes de imprimir.",
+    "image": [
+      "https://[PENDIENTE: DOMINIO]/img/cuadro-frontal.jpg"
+    ],
+    "sku": "CUADRO-4-30X40",
+    "brand": {
+      "@type": "Brand",
+      "name": "[PENDIENTE: MARCA]"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": "https://[PENDIENTE: DOMINIO]/producto.html",
+      "priceCurrency": "EUR",
+      "price": "149.00",
+      "availability": "https://schema.org/MadeToOrder",
+      "itemCondition": "https://schema.org/NewCondition",
+      "seller": {
+        "@type": "Organization",
+        "name": "[PENDIENTE: RAZÓN SOCIAL]"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿De qué material es?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Las piezas se imprimen en plástico de impresión 3D. Material exacto y marca del filamento: por confirmar."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué tamaño tiene cada escudo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "En el prototipo, unos 108×125 mm cada uno, con el nombre debajo. Puede variar unos milímetros según el blasón."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cómo se limpia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Con un paño seco o un plumero. Sin productos ni agua. No lo pongas al sol directo ni junto a un radiador; temperatura máxima: por confirmar con el material definitivo."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Se pueden cambiar los colores del blasón?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No: los colores son los de la fuente citada. Sí podéis elegir otro linaje del mismo apellido si tiene otros colores."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://[PENDIENTE: DOMINIO]/index.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Cuadro de cuatro escudos",
+        "item": "https://[PENDIENTE: DOMINIO]/producto.html"
+      }
+    ]
+  }
+]
