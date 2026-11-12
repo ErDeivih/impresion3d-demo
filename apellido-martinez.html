@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="es-ES">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Apellido Martínez: linaje, blasón y fuentes · [PENDIENTE: MARCA]</title>
+<meta name="description" content="Apellido Martínez: no hemos localizado escudo con fuente. Diseño original bajo encargo.">
+<link rel="canonical" href="https://[PENDIENTE: DOMINIO]/apellido-martinez.html">
+<style>
+:root{
+  --f-tit:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --f-txt:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --t1:32px;--t2:22px;--t3:17px;
+  --e1:4px;--e2:8px;--e3:12px;--e4:16px;--e5:24px;--e6:32px;--e7:48px;--e8:64px;
+  --papel:#f5efe4;--tinta:#1f1b16;--piedra:#5a5248;--granate:#7b1e2b;--oro:#9a7a2c;--campo:#fffdf8;
+  --radio:4px;--toque:48px;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:var(--e7)}
+body{margin:0;background:var(--papel);color:var(--tinta);font:400 var(--t3)/1.55 var(--f-txt)}
+img,svg{max-width:100%;height:auto}
+a{color:var(--granate);text-underline-offset:3px}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible,label:focus-within{outline:3px solid var(--tinta);outline-offset:3px}
+.envoltura{max-width:1040px;margin:0 auto;padding:0 var(--e4)}
+.estrecho{max-width:720px;margin:0 auto;padding:0 var(--e4)}
+h1,h2,h3{font-family:var(--f-tit);font-weight:600;line-height:1.15;margin:0 0 var(--e4);text-wrap:balance}
+h1{font-size:var(--t1)}h2{font-size:var(--t2)}h3{font-size:var(--t3);font-family:var(--f-txt)}
+p,ul,ol,dl,table{margin:0 0 var(--e4)}
+p,li{max-width:64ch}
+.sec{color:var(--piedra)}
+code,pre,kbd{font-size:var(--t3)}
+.pend{background:#fff3cd;color:#4a3300;padding:0 var(--e1);border-radius:2px}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+section{padding:var(--e7) 0;border-top:1px solid var(--oro)}
+section.envoltura,section.estrecho{padding:var(--e7) var(--e4)}
+/* cabecera y pie */
+.cab{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;min-height:56px;gap:0 var(--e4)}
+.cab nav{display:flex;flex-wrap:wrap}
+.marca{font:600 var(--t3)/1 var(--f-tit);color:var(--tinta);text-decoration:none;letter-spacing:.03em;min-height:44px;display:inline-flex;align-items:center}
+.cab nav a{min-height:44px;display:inline-flex;align-items:center;padding:0 var(--e2)}
+.pie{border-top:1px solid var(--oro);padding:var(--e6) var(--e4) var(--e8);color:var(--piedra)}
+.pie nav{display:flex;flex-wrap:wrap;gap:0 var(--e4);margin-bottom:var(--e4)}
+.pie nav a{min-height:44px;display:inline-flex;align-items:center}
+.borrador-pie{border-left:4px solid var(--oro);padding-left:var(--e3)}
+/* botones */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--e2);min-height:var(--toque);padding:0 var(--e5);
+  border-radius:var(--radio);border:2px solid var(--granate);font:600 var(--t3)/1.2 var(--f-txt);text-decoration:none;cursor:pointer;text-align:center}
+.btn-p{background:var(--granate);color:#fff}
+.btn-p:hover{background:#5f1621;border-color:#5f1621}
+.btn-p:active{transform:translateY(1px)}
+.btn-s{background:transparent;color:var(--granate)}
+.btn-s:hover{background:#ecdfd0}
+.btn[disabled],.btn[aria-disabled=true]{background:#e2d9cb;border-color:#e2d9cb;color:var(--piedra);cursor:not-allowed;transform:none}
+.btn[aria-busy=true]{position:relative;color:transparent}
+.btn[aria-busy=true]::after{content:"";position:absolute;width:18px;height:18px;border:2px solid #fff;border-right-color:transparent;border-radius:50%;animation:gira .7s linear infinite}
+@keyframes gira{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.ancho{display:flex;width:100%}
+.enlace{min-height:44px;display:inline-flex;align-items:center}
+/* formularios */
+.campo{margin-bottom:var(--e5)}
+.campo label,.campo legend{display:block;font-weight:600;margin-bottom:var(--e1)}
+.campo .ayuda{color:var(--piedra);margin:0 0 var(--e2)}
+input[type=text],input[type=email],input[type=tel],input[type=search],select,textarea{width:100%;min-height:var(--toque);padding:var(--e2) var(--e3);
+  border:2px solid var(--piedra);border-radius:var(--radio);background:var(--campo);color:var(--tinta);font:400 var(--t3)/1.4 var(--f-txt)}
+textarea{min-height:120px}
+[aria-invalid=true]{border-color:var(--granate)!important;border-width:3px!important}
+.error{color:var(--granate);font-weight:600;margin:var(--e1) 0 0}
+.error:empty{display:none}
+.error::before{content:"✕ "}
+.aviso{border:2px solid var(--granate);border-radius:var(--radio);padding:var(--e4);margin-bottom:var(--e5);background:var(--campo)}
+.aviso:empty{display:none}
+.casilla{display:flex;gap:var(--e3);align-items:flex-start;min-height:44px;padding:var(--e2) 0;cursor:pointer}
+.casilla input{width:24px;height:24px;margin:2px 0 0;flex:none;accent-color:var(--granate)}
+/* tarjetas y listas */
+.tarjeta{border:1px solid #d8ccb9;border-radius:var(--radio);padding:var(--e4);background:var(--campo)}
+.rejilla{display:grid;gap:var(--e4)}
+dl.datos{display:grid;grid-template-columns:auto 1fr;gap:var(--e2) var(--e5)}
+dl.datos dt{font-weight:600}dl.datos dd{margin:0}
+ul.marcas{list-style:none;padding:0}
+ul.marcas li{padding-left:28px;position:relative;margin-bottom:var(--e2)}
+ul.marcas li::before{content:"";position:absolute;left:4px;top:.55em;width:12px;height:6px;border:solid var(--granate);border-width:0 0 2px 2px;transform:rotate(-45deg)}
+details.faq{border-bottom:1px solid #d8ccb9}
+details.faq summary{min-height:52px;display:flex;align-items:center;justify-content:space-between;gap:var(--e4);cursor:pointer;font-weight:600;list-style:none}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::after{content:"+";font-size:var(--t2);color:var(--granate)}
+details.faq[open] summary::after{content:"−"}
+table.tabla{width:100%;border-collapse:collapse}
+table.tabla th,table.tabla td{text-align:left;padding:var(--e3) var(--e2);border-bottom:1px solid #d8ccb9;vertical-align:top}
+table.tabla th{font-weight:600}
+.fuente{border-top:1px solid var(--oro);margin-top:var(--e7);padding-top:var(--e4);color:var(--piedra)}
+/* barra fija móvil */
+.fija{position:fixed;left:0;right:0;bottom:0;background:var(--papel);border-top:1px solid var(--oro);padding:var(--e2) var(--e4);z-index:20}
+.con-fija{padding-bottom:88px}
+@media(min-width:820px){.rejilla.dos{grid-template-columns:1fr 1fr}.rejilla.tres{grid-template-columns:repeat(3,1fr)}.rejilla.cuatro{grid-template-columns:repeat(2,1fr)}}
+@media print{
+  body{background:#fff;color:#000}
+  .cab nav,.fija,.banner,.no-imprimir,button,.btn{display:none!important}
+  .con-fija{padding-bottom:0}
+  a{color:#000}
+  a[href^="http"]::after{content:" (" attr(href) ")";font-size:var(--t3)}
+  section{break-inside:avoid;padding:var(--e5) 0}
+  details{display:block}details>*{display:block}
+  .pend{background:none;border:1px dashed #000}
+}
+.migas{padding:var(--e2) 0}.migas a{min-height:44px;display:inline-flex;align-items:center}
+.estado{font-weight:600}.est-ok::before{content:"✓ "}.est-sin,.est-rev{color:var(--piedra)}
+.linaje{display:grid;gap:var(--e4);border:1px solid #d8ccb9;border-radius:var(--radio);padding:var(--e4);margin:var(--e5) 0;background:var(--campo)}
+.linaje h2{margin-bottom:var(--e2)}.dib img{display:block;width:140px;height:auto}
+.sin-dibujo{width:140px;aspect-ratio:200/236;display:grid;place-items:center;text-align:center;border:2px dashed var(--piedra);border-radius:4px 4px 50% 50%/4px 4px 40% 40%;color:var(--piedra);padding:var(--e2)}
+.sello{display:inline-block;border:1px solid currentColor;border-radius:4px;padding:0 var(--e2)}.sello-rev{color:var(--piedra)}
+ul.fuentes{padding-left:var(--e5)}
+@media(min-width:640px){.linaje{grid-template-columns:160px 1fr}}</style>
+
+</head>
+<body>
+<header class="envoltura cab">
+  <a class="marca" href="index.html">[PENDIENTE: MARCA]</a>
+  <nav aria-label="Principal"><a href="formatos.html">Formatos</a><a href="apellidos.html">Apellidos</a><a href="galeria.html">Galería</a><a href="carrito.html">Carrito</a></nav>
+</header>
+<main id="contenido">
+
+<div class="estrecho">
+  <nav aria-label="Migas de pan" class="migas"><a href="apellidos.html">Apellidos</a> <span aria-hidden="true">›</span> <span aria-current="page">Martínez</span></nav>
+  <h1>Apellido Martínez</h1>
+  <p class="estado est-sin">Sin escudo localizado</p>
+  <p class="sec">832.396 personas lo llevan como primer apellido (INE, 1/1/2025).</p>
+  <article class="linaje sin">
+  <div class="dib"><div class="sin-dibujo">Sin escudo localizado</div></div>
+  <div><h2>Sin escudo localizado: diseño original bajo encargo</h2>
+  <p>No hemos encontrado todavía un linaje de este apellido con una fuente que podamos citar. Puedes encargar el cuadro igualmente: antes de la prueba lo buscamos a mano y, si no aparece, te proponemos un <b>diseño original</b> y lo decimos así en la hoja del cuadro. No lo presentamos nunca como histórico.</p></div>
+</article>
+  <section aria-labelledby="encargar">
+    <h2 id="encargar">Qué puedes encargar con Martínez</h2>
+    <ul class="marcas"><li>Cuadro de cuatro escudos 30×40, con Martínez y otros tres apellidos: 149 € IVA incluido.</li>
+    <li>Un escudo, dos escudos o el escudo grande por losetas: <a href="formatos.html">en preparación</a>.</li></ul>
+    <a class="btn btn-p ancho" href="configurador.html?apellido=martinez">Encargar un cuadro con Martínez</a>
+  </section>
+  <p class="sec">Las armas de un linaje no son «el escudo del apellido»: un apellido puede tener varios linajes. No acreditan nobleza ni parentesco.</p>
+</div>
+</main>
+<footer class="pie envoltura">
+  <nav aria-label="Ocasiones"><a href="boda.html">Boda y aniversario</a><a href="navidad.html">Navidad</a><a href="regalo-padres.html">Para padres y abuelos</a><a href="precios.html">Precios y pagos</a></nav>
+  <nav aria-label="Información legal"><a href="aviso-legal.html">Aviso legal</a><a href="privacidad.html">Privacidad</a><a href="cookies.html">Cookies</a><a href="condiciones-venta.html">Condiciones de venta</a><a href="desistimiento.html">Desistimiento</a><a href="envios-y-devoluciones.html">Envíos y devoluciones</a></nav>
+  <p>Titular: <span class="pend">[PENDIENTE: RAZÓN SOCIAL]</span> · NIF <span class="pend">[PENDIENTE: NIF]</span> · <span class="pend">[PENDIENTE: DIRECCIÓN]</span></p>
+  <p class="borrador-pie">Borrador: la web aún no lleva los datos del titular. No se puede vender hasta completarlos.</p>
+  <p>Todos los precios de esta web llevan el IVA incluido.</p>
+</footer>
+
+</body>
+</html>

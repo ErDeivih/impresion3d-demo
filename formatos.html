@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="es-ES">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Formatos: 1, 2 o 4 escudos y escudo grande por losetas · [PENDIENTE: MARCA]</title>
+<meta name="description" content="Todos los formatos del cuadro heráldico en relieve: precio, plazo, peso y qué incluye cada uno, y los ornamentos.">
+<link rel="canonical" href="https://[PENDIENTE: DOMINIO]/formatos.html">
+<style>
+:root{
+  --f-tit:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --f-txt:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --t1:32px;--t2:22px;--t3:17px;
+  --e1:4px;--e2:8px;--e3:12px;--e4:16px;--e5:24px;--e6:32px;--e7:48px;--e8:64px;
+  --papel:#f5efe4;--tinta:#1f1b16;--piedra:#5a5248;--granate:#7b1e2b;--oro:#9a7a2c;--campo:#fffdf8;
+  --radio:4px;--toque:48px;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:var(--e7)}
+body{margin:0;background:var(--papel);color:var(--tinta);font:400 var(--t3)/1.55 var(--f-txt)}
+img,svg{max-width:100%;height:auto}
+a{color:var(--granate);text-underline-offset:3px}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible,label:focus-within{outline:3px solid var(--tinta);outline-offset:3px}
+.envoltura{max-width:1040px;margin:0 auto;padding:0 var(--e4)}
+.estrecho{max-width:720px;margin:0 auto;padding:0 var(--e4)}
+h1,h2,h3{font-family:var(--f-tit);font-weight:600;line-height:1.15;margin:0 0 var(--e4);text-wrap:balance}
+h1{font-size:var(--t1)}h2{font-size:var(--t2)}h3{font-size:var(--t3);font-family:var(--f-txt)}
+p,ul,ol,dl,table{margin:0 0 var(--e4)}
+p,li{max-width:64ch}
+.sec{color:var(--piedra)}
+code,pre,kbd{font-size:var(--t3)}
+.pend{background:#fff3cd;color:#4a3300;padding:0 var(--e1);border-radius:2px}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+section{padding:var(--e7) 0;border-top:1px solid var(--oro)}
+section.envoltura,section.estrecho{padding:var(--e7) var(--e4)}
+/* cabecera y pie */
+.cab{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;min-height:56px;gap:0 var(--e4)}
+.cab nav{display:flex;flex-wrap:wrap}
+.marca{font:600 var(--t3)/1 var(--f-tit);color:var(--tinta);text-decoration:none;letter-spacing:.03em;min-height:44px;display:inline-flex;align-items:center}
+.cab nav a{min-height:44px;display:inline-flex;align-items:center;padding:0 var(--e2)}
+.pie{border-top:1px solid var(--oro);padding:var(--e6) var(--e4) var(--e8);color:var(--piedra)}
+.pie nav{display:flex;flex-wrap:wrap;gap:0 var(--e4);margin-bottom:var(--e4)}
+.pie nav a{min-height:44px;display:inline-flex;align-items:center}
+.borrador-pie{border-left:4px solid var(--oro);padding-left:var(--e3)}
+/* botones */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--e2);min-height:var(--toque);padding:0 var(--e5);
+  border-radius:var(--radio);border:2px solid var(--granate);font:600 var(--t3)/1.2 var(--f-txt);text-decoration:none;cursor:pointer;text-align:center}
+.btn-p{background:var(--granate);color:#fff}
+.btn-p:hover{background:#5f1621;border-color:#5f1621}
+.btn-p:active{transform:translateY(1px)}
+.btn-s{background:transparent;color:var(--granate)}
+.btn-s:hover{background:#ecdfd0}
+.btn[disabled],.btn[aria-disabled=true]{background:#e2d9cb;border-color:#e2d9cb;color:var(--piedra);cursor:not-allowed;transform:none}
+.btn[aria-busy=true]{position:relative;color:transparent}
+.btn[aria-busy=true]::after{content:"";position:absolute;width:18px;height:18px;border:2px solid #fff;border-right-color:transparent;border-radius:50%;animation:gira .7s linear infinite}
+@keyframes gira{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.ancho{display:flex;width:100%}
+.enlace{min-height:44px;display:inline-flex;align-items:center}
+/* formularios */
+.campo{margin-bottom:var(--e5)}
+.campo label,.campo legend{display:block;font-weight:600;margin-bottom:var(--e1)}
+.campo .ayuda{color:var(--piedra);margin:0 0 var(--e2)}
+input[type=text],input[type=email],input[type=tel],input[type=search],select,textarea{width:100%;min-height:var(--toque);padding:var(--e2) var(--e3);
+  border:2px solid var(--piedra);border-radius:var(--radio);background:var(--campo);color:var(--tinta);font:400 var(--t3)/1.4 var(--f-txt)}
+textarea{min-height:120px}
+[aria-invalid=true]{border-color:var(--granate)!important;border-width:3px!important}
+.error{color:var(--granate);font-weight:600;margin:var(--e1) 0 0}
+.error:empty{display:none}
+.error::before{content:"✕ "}
+.aviso{border:2px solid var(--granate);border-radius:var(--radio);padding:var(--e4);margin-bottom:var(--e5);background:var(--campo)}
+.aviso:empty{display:none}
+.casilla{display:flex;gap:var(--e3);align-items:flex-start;min-height:44px;padding:var(--e2) 0;cursor:pointer}
+.casilla input{width:24px;height:24px;margin:2px 0 0;flex:none;accent-color:var(--granate)}
+/* tarjetas y listas */
+.tarjeta{border:1px solid #d8ccb9;border-radius:var(--radio);padding:var(--e4);background:var(--campo)}
+.rejilla{display:grid;gap:var(--e4)}
+dl.datos{display:grid;grid-template-columns:auto 1fr;gap:var(--e2) var(--e5)}
+dl.datos dt{font-weight:600}dl.datos dd{margin:0}
+ul.marcas{list-style:none;padding:0}
+ul.marcas li{padding-left:28px;position:relative;margin-bottom:var(--e2)}
+ul.marcas li::before{content:"";position:absolute;left:4px;top:.55em;width:12px;height:6px;border:solid var(--granate);border-width:0 0 2px 2px;transform:rotate(-45deg)}
+details.faq{border-bottom:1px solid #d8ccb9}
+details.faq summary{min-height:52px;display:flex;align-items:center;justify-content:space-between;gap:var(--e4);cursor:pointer;font-weight:600;list-style:none}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::after{content:"+";font-size:var(--t2);color:var(--granate)}
+details.faq[open] summary::after{content:"−"}
+table.tabla{width:100%;border-collapse:collapse}
+table.tabla th,table.tabla td{text-align:left;padding:var(--e3) var(--e2);border-bottom:1px solid #d8ccb9;vertical-align:top}
+table.tabla th{font-weight:600}
+.fuente{border-top:1px solid var(--oro);margin-top:var(--e7);padding-top:var(--e4);color:var(--piedra)}
+/* barra fija móvil */
+.fija{position:fixed;left:0;right:0;bottom:0;background:var(--papel);border-top:1px solid var(--oro);padding:var(--e2) var(--e4);z-index:20}
+.con-fija{padding-bottom:88px}
+@media(min-width:820px){.rejilla.dos{grid-template-columns:1fr 1fr}.rejilla.tres{grid-template-columns:repeat(3,1fr)}.rejilla.cuatro{grid-template-columns:repeat(2,1fr)}}
+@media print{
+  body{background:#fff;color:#000}
+  .cab nav,.fija,.banner,.no-imprimir,button,.btn{display:none!important}
+  .con-fija{padding-bottom:0}
+  a{color:#000}
+  a[href^="http"]::after{content:" (" attr(href) ")";font-size:var(--t3)}
+  section{break-inside:avoid;padding:var(--e5) 0}
+  details{display:block}details>*{display:block}
+  .pend{background:none;border:1px dashed #000}
+}
+
+.ornamentos{border:0;padding:0;margin:0 0 var(--e5)}.ornamentos legend{font-weight:600;padding:0;margin-bottom:var(--e2)}
+.orn-rejilla{display:grid;grid-template-columns:1fr 1fr;gap:var(--e3)}
+.orn{display:grid;gap:var(--e2);padding:var(--e3);border:1px solid #d8ccb9;border-radius:var(--radio);background:var(--campo);cursor:pointer;position:relative}
+.orn input{position:absolute;opacity:0;width:1px;height:1px}
+.orn:has(input:checked){border:2px solid var(--granate);padding:calc(var(--e3) - 1px)}
+.orn:has(input:focus-visible){outline:3px solid var(--tinta);outline-offset:2px}
+.orn-mini{display:grid;justify-items:center;gap:var(--e1)}
+.ilu{color:var(--piedra);border:1px dashed var(--piedra);border-radius:4px;padding:0 var(--e1)}
+.orn-txt{display:grid;gap:var(--e1)}.efecto{color:var(--granate);font-weight:600}
+@media(min-width:720px){.orn-rejilla{grid-template-columns:repeat(4,1fr)}}
+
+.intro{max-width:62ch}.sin-borde{border-top:0;padding-top:0}
+.desliza{overflow-x:auto;margin-bottom:var(--e3)}.comparativa{min-width:640px}
+.comparativa tr.base{background:var(--campo);outline:2px solid var(--granate)}
+.ancho-movil{display:flex;width:100%}
+.losetas{display:grid;grid-template-columns:1fr 1fr;gap:var(--e4);margin-bottom:var(--e3)}
+.losetas figure{margin:0;text-align:center}.losetas svg{margin:0 auto var(--e2);display:block}
+@media(min-width:720px){.ancho-movil{display:inline-flex;width:auto}}
+</style>
+
+</head>
+<body>
+<header class="envoltura cab">
+  <a class="marca" href="index.html">[PENDIENTE: MARCA]</a>
+  <nav aria-label="Principal"><a href="formatos.html" aria-current="page">Formatos</a><a href="apellidos.html">Apellidos</a><a href="galeria.html">Galería</a><a href="carrito.html">Carrito</a></nav>
+</header>
+<main id="contenido">
+
+<div class="envoltura">
+  <h1>Formatos: de un escudo a un escudo grande por losetas</h1>
+  <p class="sec intro">Hoy solo se puede encargar el cuadro de cuatro escudos. El resto de formatos están en preparación: te enseñamos cómo serán y lo que ya sabemos de cada uno.</p>
+
+  <section aria-labelledby="tabla" class="sin-borde">
+    <h2 id="tabla">Todos los formatos de un vistazo</h2>
+    <div class="desliza" role="region" aria-label="Tabla comparativa de formatos" tabindex="0">
+    <table class="tabla comparativa">
+      <thead><tr><th scope="col">Formato</th><th scope="col">Precio</th><th scope="col">Plazo</th><th scope="col">Peso</th><th scope="col">Qué incluye</th></tr></thead>
+      <tbody><tr><th scope="row">1 escudo<br><span class="sec">20×25 cm</span></th><td><span class="pend">por confirmar</span></td><td><span class="pend">por confirmar</span></td><td>45 g de PLA · paquete por pesar</td><td>Un escudo, apellido, hoja de la fuente, marco</td></tr><tr><th scope="row">1 escudo<br><span class="sec">30×40 cm</span></th><td><span class="pend">por confirmar</span></td><td><span class="pend">por confirmar</span></td><td>70 g de PLA · paquete por pesar</td><td>Igual, más grande</td></tr><tr><th scope="row">1 escudo<br><span class="sec">40×50 cm</span></th><td><span class="pend">por confirmar</span></td><td><span class="pend">por confirmar</span></td><td>95 g de PLA · paquete por pesar</td><td>Igual, el escudo más grande de una pieza</td></tr><tr><th scope="row">2 escudos<br><span class="sec">30×40 cm</span></th><td><span class="pend">por confirmar</span></td><td><span class="pend">por confirmar</span></td><td>140 g de PLA · paquete por pesar</td><td>Dos escudos, un apellido bajo cada uno</td></tr><tr class="base"><th scope="row">4 escudos<br><span class="sec">30×40 cm</span></th><td>149 € IVA incluido</td><td>7–10 días laborables desde que apruebas la prueba</td><td>unos 900 g (estimado, sin pesar)</td><td>Cuatro escudos, lámina, marco, montaje y envío a península</td></tr><tr><th scope="row">Escudo grande en 2 losetas<br><span class="sec">40×50 cm</span></th><td><span class="pend">por confirmar</span></td><td><span class="pend">por confirmar</span></td><td><span class="pend">por calcular</span></td><td>Un escudo de unos 24 cm de ancho, en 2 partes</td></tr><tr><th scope="row">Escudo grande en 4 losetas<br><span class="sec">40×50 cm</span></th><td><span class="pend">por confirmar</span></td><td><span class="pend">por confirmar</span></td><td><span class="pend">por calcular</span></td><td>Un escudo de unos 33 cm de ancho, en 4 partes</td></tr></tbody>
+    </table></div>
+    <p class="sec">El peso en gramos de PLA es una estimación del material de los escudos (datos de producción); el del paquete solo está estimado para el de cuatro.</p>
+    <a class="btn btn-p ancho-movil" href="configurador.html?formato=4-30x40">Encargar el de cuatro escudos</a>
+  </section>
+
+  <section aria-labelledby="uno">
+    <h2 id="uno">Un escudo</h2>
+    <p>Para quien quiere solo su apellido, o el de la casa familiar. Tres tamaños: 20×25 cm para una estantería, 30×40 cm para una pared pequeña y 40×50 cm para el salón o un despacho.</p>
+    <p class="sec">Precio, plazo y peso del paquete: <span class="pend">por confirmar</span>.</p>
+  </section>
+
+  <section aria-labelledby="dos">
+    <h2 id="dos">Dos escudos</h2>
+    <p>Las dos familias de una pareja, una al lado de la otra, en 30×40 cm. Es el formato natural de un regalo de boda o de aniversario.</p>
+    <p class="sec">Precio y plazo: <span class="pend">por confirmar</span>.</p>
+  </section>
+
+  <section aria-labelledby="cuatro">
+    <h2 id="cuatro">Cuatro escudos</h2>
+    <p>Los cuatro apellidos de una persona o de una pareja: arriba una familia y abajo la otra. Es el que ya se puede encargar.</p>
+    <ul class="marcas"><li>7–10 días laborables desde que apruebas la prueba</li><li>Envío incluido a península (a domicilio con Correos o en punto de recogida SEUR). Baleares, Canarias, Ceuta y Melilla: consultar.</li><li>2 rondas de cambios en la prueba incluidas.</li></ul>
+    <p><a href="producto.html">Ficha completa del cuadro de cuatro escudos</a></p>
+  </section>
+
+  <section aria-labelledby="grande">
+    <h2 id="grande">Escudo grande de 40×50 cm, por losetas</h2>
+    <p>Un solo escudo que ocupa casi todo el cuadro. Es demasiado grande para fabricarlo de una vez, así que <b>se fabrica por partes y se une con un encaje invisible</b>: las partes llevan unos salientes por detrás que entran en la parte de al lado, y la junta queda en una línea del dibujo para que no se note.</p>
+    <div class="losetas">
+      <figure><svg viewBox="0 0 140 160" width="140" height="160" role="img" aria-label="Escudo dividido en 2 losetas">
+<path d="M10 6h120v84c0 36-26 58-60 66C36 148 10 126 10 90z" fill="#f2c230" stroke="#1f1b16" stroke-width="2"/>
+<path d="M40 40h60v40H40z" fill="#c8202c"/><path d="M5 64h130" stroke="#7b1e2b" stroke-width="2.5" stroke-dasharray="6 4"/></svg><figcaption><b>2 losetas</b><br>Escudo de unos 24×30 cm. Una sola junta horizontal.</figcaption></figure>
+      <figure><svg viewBox="0 0 140 160" width="140" height="160" role="img" aria-label="Escudo dividido en 4 losetas">
+<path d="M10 6h120v84c0 36-26 58-60 66C36 148 10 126 10 90z" fill="#f2c230" stroke="#1f1b16" stroke-width="2"/>
+<path d="M40 40h60v40H40z" fill="#c8202c"/><path d="M5 64h130M70 6v150" stroke="#7b1e2b" stroke-width="2.5" stroke-dasharray="6 4"/></svg><figcaption><b>4 losetas</b><br>Escudo de unos 33×40 cm, el más grande que cabe. Dos juntas en cruz.</figcaption></figure>
+    </div>
+    <p class="sec">Ilustración. Por qué esos tamaños: nuestra impresora fabrica piezas de hasta 25,6 cm de lado. Precio, plazo y peso: <span class="pend">por confirmar</span>.</p>
+  </section>
+
+  <section aria-labelledby="orn">
+    <h2 id="orn">Ornamentos</h2>
+    <p>Se eligen en el configurador. Así cambia el cuadro y su precio:</p>
+    <form onsubmit="return false"><fieldset class="ornamentos"><legend>Ornamento</legend><div class="orn-rejilla"><label class="orn">
+  <input type="radio" name="orn-demo" value="ninguno" checked>
+  <span class="orn-mini"><svg viewBox="0 0 140 170" width="96" height="116" aria-hidden="true"><path d="M0 0h90v62c0 26-20 42-45 50C20 104 0 88 0 62z" transform="translate(25 34)" fill="#c8202c" stroke="#1f1b16" stroke-width="2"/><path d="M42 58h56v18H42z" fill="#f2c230"/></svg><span class="ilu">Ilustración</span></span>
+  <span class="orn-txt"><b>Sin ornamento</b><span>Solo el escudo y el apellido debajo.</span><span class="efecto">Incluido</span></span>
+</label><label class="orn">
+  <input type="radio" name="orn-demo" value="cartela">
+  <span class="orn-mini"><svg viewBox="0 0 140 170" width="96" height="116" aria-hidden="true"><path d="M24 150h92l-6 8 6 8H24l6-8z" fill="#f2c230" stroke="#1f1b16" stroke-width="2"/><path d="M0 0h90v62c0 26-20 42-45 50C20 104 0 88 0 62z" transform="translate(25 34)" fill="#c8202c" stroke="#1f1b16" stroke-width="2"/><path d="M42 58h56v18H42z" fill="#f2c230"/></svg><span class="ilu">Ilustración</span></span>
+  <span class="orn-txt"><b>Cartela</b><span>Una placa con el apellido en relieve bajo el escudo, de otro color.</span><span class="efecto">Suplemento: por confirmar</span></span>
+</label><label class="orn">
+  <input type="radio" name="orn-demo" value="casco">
+  <span class="orn-mini"><svg viewBox="0 0 140 170" width="96" height="116" aria-hidden="true"><path d="M52 30c0-14 8-24 18-24s18 10 18 24z" fill="#a8a8a2" stroke="#1f1b16" stroke-width="2"/><path d="M58 22h24M58 16h24" stroke="#1f1b16" stroke-width="2"/><path d="M52 26C30 26 10 40 8 66c10-8 14-6 18 2 2-14 8-24 26-30zM88 26c22 0 42 14 44 40-10-8-14-6-18 2-2-14-8-24-26-30z" fill="#1b4fa8" stroke="#1f1b16" stroke-width="2"/><path d="M0 0h90v62c0 26-20 42-45 50C20 104 0 88 0 62z" transform="translate(25 34)" fill="#c8202c" stroke="#1f1b16" stroke-width="2"/><path d="M42 58h56v18H42z" fill="#f2c230"/></svg><span class="ilu">Ilustración</span></span>
+  <span class="orn-txt"><b>Casco con lambrequines</b><span>Un yelmo sobre el escudo con hojas de tela a los lados, como en los escudos antiguos.</span><span class="efecto">Suplemento: por confirmar · aún en diseño</span></span>
+</label><label class="orn">
+  <input type="radio" name="orn-demo" value="hojas">
+  <span class="orn-mini"><svg viewBox="0 0 140 170" width="96" height="116" aria-hidden="true"><ellipse cx="16" cy="50" rx="9" ry="4" transform="rotate(-70 16 50)" fill="#1e8a44" stroke="#1f1b16" stroke-width="1.5"/><ellipse cx="14" cy="72" rx="9" ry="4" transform="rotate(-90 14 72)" fill="#1e8a44" stroke="#1f1b16" stroke-width="1.5"/><ellipse cx="18" cy="96" rx="9" ry="4" transform="rotate(-110 18 96)" fill="#1e8a44" stroke="#1f1b16" stroke-width="1.5"/><ellipse cx="30" cy="118" rx="9" ry="4" transform="rotate(-135 30 118)" fill="#1e8a44" stroke="#1f1b16" stroke-width="1.5"/><ellipse cx="50" cy="138" rx="9" ry="4" transform="rotate(-160 50 138)" fill="#1e8a44" stroke="#1f1b16" stroke-width="1.5"/><ellipse cx="124" cy="50" rx="9" ry="4" transform="rotate(70 124 50)" fill="#1e8a44" stroke="#1f1b16" stroke-width="1.5"/><ellipse cx="126" cy="72" rx="9" ry="4" transform="rotate(90 126 72)" fill="#1e8a44" stroke="#1f1b16" stroke-width="1.5"/><ellipse cx="122" cy="96" rx="9" ry="4" transform="rotate(110 122 96)" fill="#1e8a44" stroke="#1f1b16" stroke-width="1.5"/><ellipse cx="110" cy="118" rx="9" ry="4" transform="rotate(135 110 118)" fill="#1e8a44" stroke="#1f1b16" stroke-width="1.5"/><ellipse cx="90" cy="138" rx="9" ry="4" transform="rotate(160 90 138)" fill="#1e8a44" stroke="#1f1b16" stroke-width="1.5"/><path d="M0 0h90v62c0 26-20 42-45 50C20 104 0 88 0 62z" transform="translate(25 34)" fill="#c8202c" stroke="#1f1b16" stroke-width="2"/><path d="M42 58h56v18H42z" fill="#f2c230"/></svg><span class="ilu">Ilustración</span></span>
+  <span class="orn-txt"><b>Borde de hojas</b><span>Una orla de hojas que rodea el escudo.</span><span class="efecto">Suplemento: por confirmar · aún en diseño</span></span>
+</label></div></fieldset></form>
+    <p class="sec">Los dibujos son ilustraciones: todavía no hay render de ningún ornamento. El casco y el borde de hojas aún no se fabrican.</p>
+  </section>
+</div>
+</main>
+<footer class="pie envoltura">
+  <nav aria-label="Ocasiones"><a href="boda.html">Boda y aniversario</a><a href="navidad.html">Navidad</a><a href="regalo-padres.html">Para padres y abuelos</a><a href="precios.html">Precios y pagos</a></nav>
+  <nav aria-label="Información legal"><a href="aviso-legal.html">Aviso legal</a><a href="privacidad.html">Privacidad</a><a href="cookies.html">Cookies</a><a href="condiciones-venta.html">Condiciones de venta</a><a href="desistimiento.html">Desistimiento</a><a href="envios-y-devoluciones.html">Envíos y devoluciones</a></nav>
+  <p>Titular: <span class="pend">[PENDIENTE: RAZÓN SOCIAL]</span> · NIF <span class="pend">[PENDIENTE: NIF]</span> · <span class="pend">[PENDIENTE: DIRECCIÓN]</span></p>
+  <p class="borrador-pie">Borrador: la web aún no lleva los datos del titular. No se puede vender hasta completarlos.</p>
+  <p>Todos los precios de esta web llevan el IVA incluido.</p>
+</footer>
+
+</body>
+</html>

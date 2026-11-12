@@ -1,12 +1,12 @@
-Asunto: Hemos recibido vuestros cambios en la prueba
+Asunto: Cambios recibidos en la prueba v{{version}}: preparamos la v{{version_siguiente}}
 
-Nos habéis pedido estos cambios en el pedido {{numero}}:
-{{cambios}}
+Has pedido cambios en la prueba v{{version}} del pedido {{numero}}. Motivo:
+{{motivo}}
 
-Qué cambia: preparamos una prueba nueva y os la mandamos en {{plazo_nueva_prueba}}.
-Qué no se cobra: el resto (104,30 € IVA incluido) no se cobra hasta que aprobéis.
+Qué cambia: preparamos la v{{version_siguiente}} y te la mandamos en {{plazo_nueva_prueba}}. La v{{version}} ya no se puede aprobar.
+Qué no se cobra: el resto (104,30 € IVA incluido) no se cobra hasta que apruebes.
 
-Contarnos qué más cambiar: {{url_prueba}}
+Añadir algo más: {{url_prueba}}
 
 --
 [PENDIENTE: MARCA] · [PENDIENTE: RAZÓN SOCIAL] · NIF [PENDIENTE: NIF] · [PENDIENTE: DIRECCIÓN]

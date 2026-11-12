@@ -3,25 +3,77 @@
     "@context": "https://schema.org",
     "@type": "Product",
     "name": "Cuadro de cuatro escudos en relieve, 30×40 cm",
-    "description": "Cuadro de 30×40 cm con los escudos de cuatro apellidos impresos en relieve, una pieza por color. Se aprueba una prueba antes de imprimir.",
+    "description": "Cuadro de 30×40 cm con los escudos de cuatro apellidos impresos en relieve, una pieza por color encajada en una base común. Se aprueba una prueba antes de imprimir.",
     "image": [
-      "https://[PENDIENTE: DOMINIO]/img/cuadro-frontal.jpg"
+      "https://[PENDIENTE: DOMINIO]/img/render/castillo-encaje.webp",
+      "https://[PENDIENTE: DOMINIO]/img/render/roel-montaje-piezas.webp"
     ],
     "sku": "CUADRO-4-30X40",
     "brand": {
       "@type": "Brand",
       "name": "[PENDIENTE: MARCA]"
     },
+    "material": "PLA",
     "offers": {
       "@type": "Offer",
       "url": "https://[PENDIENTE: DOMINIO]/producto.html",
       "priceCurrency": "EUR",
       "price": "149.00",
-      "availability": "https://schema.org/MadeToOrder",
+      "availability": "https://schema.org/InStock",
       "itemCondition": "https://schema.org/NewCondition",
       "seller": {
         "@type": "Organization",
         "name": "[PENDIENTE: RAZÓN SOCIAL]"
+      },
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingRate": {
+          "@type": "MonetaryAmount",
+          "value": "0",
+          "currency": "EUR"
+        },
+        "shippingDestination": {
+          "@type": "DefinedRegion",
+          "addressCountry": "ES",
+          "postalCodeRange": [
+            {
+              "postalCodeBegin": "01000",
+              "postalCodeEnd": "06999"
+            },
+            {
+              "postalCodeBegin": "08000",
+              "postalCodeEnd": "34999"
+            },
+            {
+              "postalCodeBegin": "36000",
+              "postalCodeEnd": "37999"
+            },
+            {
+              "postalCodeBegin": "39000",
+              "postalCodeEnd": "50999"
+            }
+          ]
+        },
+        "deliveryTime": {
+          "@type": "ShippingDeliveryTime",
+          "handlingTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 7,
+            "maxValue": 10,
+            "unitCode": "DAY"
+          },
+          "transitTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 1,
+            "maxValue": 3,
+            "unitCode": "DAY"
+          }
+        }
+      },
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "ES",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
       }
     }
   },
@@ -34,7 +86,7 @@
         "name": "¿De qué material es?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Las piezas se imprimen en plástico de impresión 3D. Material exacto y marca del filamento: por confirmar."
+          "text": "Las piezas se imprimen en PLA, un plástico de impresión 3D de origen vegetal. Marca y acabado del filamento: por confirmar."
         }
       },
       {
@@ -42,7 +94,7 @@
         "name": "¿Qué tamaño tiene cada escudo?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "En el prototipo, unos 108×125 mm cada uno, con el nombre debajo. Puede variar unos milímetros según el blasón."
+          "text": "Unos 110×125 mm cada uno, con el nombre debajo. Puede variar unos milímetros según el blasón."
         }
       },
       {
@@ -50,7 +102,7 @@
         "name": "¿Cómo se limpia?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Con un paño seco o un plumero. Sin productos ni agua. No lo pongas al sol directo ni junto a un radiador; temperatura máxima: por confirmar con el material definitivo."
+          "text": "Con un paño seco o un plumero. Sin productos ni agua. Lejos del sol directo y de radiadores: el PLA se deforma con calor."
         }
       },
       {

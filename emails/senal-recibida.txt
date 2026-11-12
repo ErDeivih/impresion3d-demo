@@ -1,15 +1,20 @@
-Asunto: Justificante de la señal del pedido {{numero}}: 44,70 € IVA incluido
+Asunto: Pedido {{numero}} confirmado: señal de 44,70 € IVA incluido
 
-Hemos recibido la señal del pedido {{numero}} el {{fecha_pago}}.
+Hola, {{nombre}}: hemos cobrado la señal del pedido {{numero}} el {{fecha_pago}}.
+
+Escudos: {{apellidos}}
+Formato: 30x40 cm, piezas encajadas
+Precio del cuadro: 149 € IVA incluido
 
 Base imponible del IVA: 36,94 €
 IVA (21 %): 7,76 €
-Total cobrado: 44,70 € IVA incluido
+Cobrado hoy: 44,70 € IVA incluido
 Método: {{metodo_pago}}
 
-Pendiente al aprobar la prueba: 104,30 € IVA incluido + envío.
+Ahora preparamos la prueba. No imprimimos nada hasta que la apruebes.
+Al aprobarla se cobran 104,30 € IVA incluido; el envío a península va incluido.
 
-Ver el justificante: {{url_justificante}}
+Ver el pedido: {{url_pedido}}
 
 --
 [PENDIENTE: MARCA] · [PENDIENTE: RAZÓN SOCIAL] · NIF [PENDIENTE: NIF] · [PENDIENTE: DIRECCIÓN]

@@ -5,33 +5,38 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="x-apple-disable-message-reformatting">
 <meta name="color-scheme" content="light">
-<title>Justificante de la señal del pedido {{numero}}: 44,70 € IVA incluido</title>
-<!-- ASUNTO: Justificante de la señal del pedido {{numero}}: 44,70 € IVA incluido -->
-<!-- PREHEADER: Hemos cobrado la señal. El resto, solo cuando aprobéis la prueba. -->
+<title>Pedido {{numero}} confirmado: señal de 44,70 € IVA incluido</title>
+<!-- ASUNTO: Pedido {{numero}} confirmado: señal de 44,70 € IVA incluido -->
+<!-- PREHEADER: Tenemos vuestros cuatro escudos. Ahora preparamos la prueba. -->
 <!-- TEXTO ALTERNATIVO (text/plain):
-Hemos recibido la señal del pedido {{numero}} el {{fecha_pago}}.
+Hola, {{nombre}}: hemos cobrado la señal del pedido {{numero}} el {{fecha_pago}}.
+
+Escudos: {{apellidos}}
+Formato: 30x40 cm, piezas encajadas
+Precio del cuadro: 149 € IVA incluido
 
 Base imponible del IVA: 36,94 €
 IVA (21 %): 7,76 €
-Total cobrado: 44,70 € IVA incluido
+Cobrado hoy: 44,70 € IVA incluido
 Método: {{metodo_pago}}
 
-Pendiente al aprobar la prueba: 104,30 € IVA incluido + envío.
+Ahora preparamos la prueba. No imprimimos nada hasta que la apruebes.
+Al aprobarla se cobran 104,30 € IVA incluido; el envío a península va incluido.
 
-Ver el justificante: {{url_justificante}}
+Ver el pedido: {{url_pedido}}
 -->
 </head>
 <body style="margin:0;padding:0;background:#f5efe4;">
-<div style="display:none;max-height:0;overflow:hidden;mso-hide:all;font-size:1px;line-height:1px;color:#f5efe4;">Hemos cobrado la señal. El resto, solo cuando aprobéis la prueba.&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;</div>
+<div style="display:none;max-height:0;overflow:hidden;mso-hide:all;font-size:1px;line-height:1px;color:#f5efe4;">Tenemos vuestros cuatro escudos. Ahora preparamos la prueba.&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#f5efe4;">
 <tr><td align="center" style="padding:16px 8px;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:600px;width:100%;background:#fffdf8;border:1px solid #e2d9cb;">
     <tr><td style="padding:20px 24px;border-bottom:1px solid #9a7a2c;font-family:Georgia,'Times New Roman',serif;font-size:17px;font-weight:bold;color:#1f1b16;letter-spacing:1px;">[PENDIENTE: MARCA]</td></tr>
-    <tr><td style="padding:24px 24px 8px 24px;font-family:Georgia,'Times New Roman',serif;font-size:24px;line-height:30px;font-weight:bold;color:#1f1b16;">Señal cobrada</td></tr>
-    <tr><td style="padding:8px 24px 0 24px;font-family:Arial,Helvetica,sans-serif;font-size:17px;line-height:26px;color:#1f1b16;"><p style="margin:0 0 16px 0;">Hemos recibido el pago de la señal del pedido <b>{{numero}}</b> el {{fecha_pago}}.</p><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 16px 0;"><tr><td style="padding:8px 0;border-bottom:1px solid #e2d9cb;font-family:Arial,Helvetica,sans-serif;font-size:17px;color:#1f1b16;">Base imponible del IVA</td><td align="right" style="padding:8px 0;border-bottom:1px solid #e2d9cb;font-family:Arial,Helvetica,sans-serif;font-size:17px;color:#1f1b16;">36,94 €</td></tr><tr><td style="padding:8px 0;border-bottom:1px solid #e2d9cb;font-family:Arial,Helvetica,sans-serif;font-size:17px;color:#1f1b16;">IVA (21 %)</td><td align="right" style="padding:8px 0;border-bottom:1px solid #e2d9cb;font-family:Arial,Helvetica,sans-serif;font-size:17px;color:#1f1b16;">7,76 €</td></tr><tr><td style="padding:8px 0;border-bottom:1px solid #e2d9cb;font-family:Arial,Helvetica,sans-serif;font-size:17px;color:#1f1b16;">Total cobrado</td><td align="right" style="padding:8px 0;border-bottom:1px solid #e2d9cb;font-family:Arial,Helvetica,sans-serif;font-size:17px;color:#1f1b16;">44,70 € IVA incluido</td></tr><tr><td style="padding:8px 0;border-bottom:1px solid #e2d9cb;font-family:Arial,Helvetica,sans-serif;font-size:17px;color:#1f1b16;">Método</td><td align="right" style="padding:8px 0;border-bottom:1px solid #e2d9cb;font-family:Arial,Helvetica,sans-serif;font-size:17px;color:#1f1b16;">{{metodo_pago}}</td></tr></table><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 16px 0;"><tr><td style="padding:8px 0;border-bottom:1px solid #e2d9cb;font-family:Arial,Helvetica,sans-serif;font-size:17px;color:#1f1b16;">Pendiente al aprobar la prueba</td><td align="right" style="padding:8px 0;border-bottom:1px solid #e2d9cb;font-family:Arial,Helvetica,sans-serif;font-size:17px;color:#1f1b16;">104,30 € IVA incluido + envío</td></tr></table><p style="margin:0 0 16px 0;">Factura: [POR CONFIRMAR cómo y cuándo se emite].</p></td></tr>
+    <tr><td style="padding:24px 24px 8px 24px;font-family:Georgia,'Times New Roman',serif;font-size:24px;line-height:30px;font-weight:bold;color:#1f1b16;">Hola, {{nombre}}: pedido confirmado</td></tr>
+    <tr><td style="padding:8px 24px 0 24px;font-family:Arial,Helvetica,sans-serif;font-size:17px;line-height:26px;color:#1f1b16;"><p style="margin:0 0 16px 0;">Hemos cobrado la señal del pedido <b>{{numero}}</b> el {{fecha_pago}}. Este correo es tu justificante.</p><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 16px 0;"><tr><td style="padding:8px 0;border-bottom:1px solid #e2d9cb;font-family:Arial,Helvetica,sans-serif;font-size:17px;color:#1f1b16;">Escudos</td><td align="right" style="padding:8px 0;border-bottom:1px solid #e2d9cb;font-family:Arial,Helvetica,sans-serif;font-size:17px;color:#1f1b16;">{{apellidos}}</td></tr><tr><td style="padding:8px 0;border-bottom:1px solid #e2d9cb;font-family:Arial,Helvetica,sans-serif;font-size:17px;color:#1f1b16;">Formato</td><td align="right" style="padding:8px 0;border-bottom:1px solid #e2d9cb;font-family:Arial,Helvetica,sans-serif;font-size:17px;color:#1f1b16;">30×40 cm, piezas encajadas</td></tr><tr><td style="padding:8px 0;border-bottom:1px solid #e2d9cb;font-family:Arial,Helvetica,sans-serif;font-size:17px;color:#1f1b16;">Precio del cuadro</td><td align="right" style="padding:8px 0;border-bottom:1px solid #e2d9cb;font-family:Arial,Helvetica,sans-serif;font-size:17px;color:#1f1b16;">149 € IVA incluido</td></tr></table><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 16px 0;"><tr><td style="padding:8px 0;border-bottom:1px solid #e2d9cb;font-family:Arial,Helvetica,sans-serif;font-size:17px;color:#1f1b16;">Base imponible del IVA</td><td align="right" style="padding:8px 0;border-bottom:1px solid #e2d9cb;font-family:Arial,Helvetica,sans-serif;font-size:17px;color:#1f1b16;">36,94 €</td></tr><tr><td style="padding:8px 0;border-bottom:1px solid #e2d9cb;font-family:Arial,Helvetica,sans-serif;font-size:17px;color:#1f1b16;">IVA (21 %)</td><td align="right" style="padding:8px 0;border-bottom:1px solid #e2d9cb;font-family:Arial,Helvetica,sans-serif;font-size:17px;color:#1f1b16;">7,76 €</td></tr><tr><td style="padding:8px 0;border-bottom:1px solid #e2d9cb;font-family:Arial,Helvetica,sans-serif;font-size:17px;color:#1f1b16;">Cobrado hoy</td><td align="right" style="padding:8px 0;border-bottom:1px solid #e2d9cb;font-family:Arial,Helvetica,sans-serif;font-size:17px;color:#1f1b16;">44,70 € IVA incluido</td></tr><tr><td style="padding:8px 0;border-bottom:1px solid #e2d9cb;font-family:Arial,Helvetica,sans-serif;font-size:17px;color:#1f1b16;">Método</td><td align="right" style="padding:8px 0;border-bottom:1px solid #e2d9cb;font-family:Arial,Helvetica,sans-serif;font-size:17px;color:#1f1b16;">{{metodo_pago}}</td></tr></table><p style="margin:0 0 16px 0;"><b>Qué pasa ahora:</b> preparamos la prueba. Si algún escudo está en revisión manual, te escribimos antes. No imprimimos nada hasta que la apruebes.</p><p style="margin:0 0 16px 0;">Al aprobarla se cobran 104,30 € IVA incluido; el envío a península va incluido. Factura: [PENDIENTE: cómo y cuándo se emite].</p></td></tr>
     <tr><td style="padding:16px 24px 24px 24px;">
       <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#7b1e2b" style="border-radius:4px;">
-        <a href="{{url_justificante}}" style="display:inline-block;padding:14px 24px;font-family:Arial,Helvetica,sans-serif;font-size:17px;line-height:20px;font-weight:bold;color:#ffffff;text-decoration:none;border-radius:4px;">Ver el justificante</a>
+        <a href="{{url_pedido}}" style="display:inline-block;padding:14px 24px;font-family:Arial,Helvetica,sans-serif;font-size:17px;line-height:20px;font-weight:bold;color:#ffffff;text-decoration:none;border-radius:4px;">Ver el pedido</a>
       </td></tr></table>
     </td></tr>
     <tr><td style="padding:16px 24px 24px 24px;border-top:1px solid #e2d9cb;font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:24px;color:#5a5248;">

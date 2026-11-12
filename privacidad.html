@@ -16,6 +16,7 @@
   --radio:4px;--toque:48px;
 }
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 html{-webkit-text-size-adjust:100%;scroll-padding-top:var(--e7)}
 body{margin:0;background:var(--papel);color:var(--tinta);font:400 var(--t3)/1.55 var(--f-txt)}
 img,svg{max-width:100%;height:auto}
@@ -34,12 +35,14 @@ code,pre,kbd{font-size:var(--t3)}
 section{padding:var(--e7) 0;border-top:1px solid var(--oro)}
 section.envoltura,section.estrecho{padding:var(--e7) var(--e4)}
 /* cabecera y pie */
-.cab{display:flex;justify-content:space-between;align-items:center;min-height:56px;gap:var(--e4)}
+.cab{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;min-height:56px;gap:0 var(--e4)}
+.cab nav{display:flex;flex-wrap:wrap}
 .marca{font:600 var(--t3)/1 var(--f-tit);color:var(--tinta);text-decoration:none;letter-spacing:.03em;min-height:44px;display:inline-flex;align-items:center}
 .cab nav a{min-height:44px;display:inline-flex;align-items:center;padding:0 var(--e2)}
 .pie{border-top:1px solid var(--oro);padding:var(--e6) var(--e4) var(--e8);color:var(--piedra)}
 .pie nav{display:flex;flex-wrap:wrap;gap:0 var(--e4);margin-bottom:var(--e4)}
 .pie nav a{min-height:44px;display:inline-flex;align-items:center}
+.borrador-pie{border-left:4px solid var(--oro);padding-left:var(--e3)}
 /* botones */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--e2);min-height:var(--toque);padding:0 var(--e5);
   border-radius:var(--radio);border:2px solid var(--granate);font:600 var(--t3)/1.2 var(--f-txt);text-decoration:none;cursor:pointer;text-align:center}
@@ -104,7 +107,7 @@ table.tabla th{font-weight:600}
 
 .legal{padding-bottom:var(--e7)}
 .legal h2{margin-top:var(--e6)}
-.borrador{border-left:4px solid var(--oro);padding-left:var(--e4);color:var(--piedra)}
+.borrador{border:2px solid var(--oro);border-radius:var(--radio);padding:var(--e4);background:var(--campo)}.borrador p{margin:0}
 .indice{columns:1}.indice a{min-height:44px;display:inline-flex;align-items:center}
 .fuente ol{padding-left:var(--e5)}
 @media(min-width:720px){.indice{columns:2}}
@@ -114,18 +117,18 @@ table.tabla th{font-weight:600}
 <body>
 <header class="envoltura cab">
   <a class="marca" href="index.html">[PENDIENTE: MARCA]</a>
-  <nav aria-label="Principal"><a href="precios.html">Precios</a><a href="carrito.html">Carrito</a></nav>
+  <nav aria-label="Principal"><a href="formatos.html">Formatos</a><a href="apellidos.html">Apellidos</a><a href="galeria.html">Galería</a><a href="carrito.html">Carrito</a></nav>
 </header>
 <main id="contenido">
 
 <article class="estrecho legal">
   <h1>Cómo tratamos tus datos</h1>
   <p class="sec">Última revisión: 11/11/2026</p>
-  <p class="borrador"><b>Borrador.</b> Redactado a partir de la normativa citada al final. Lo marcado en amarillo depende del NIF y de decisiones pendientes. Que lo revise un profesional antes de publicarlo.</p>
+  <div class="borrador" role="note"><p><b>Borrador, no válido todavía.</b> Redactado a partir de la normativa citada al final. Faltan los datos del titular: <span class="pend">[PENDIENTE: RAZÓN SOCIAL]</span>, <span class="pend">[PENDIENTE: NIF]</span>, <span class="pend">[PENDIENTE: DIRECCIÓN]</span> y <span class="pend">[PENDIENTE: CORREO]</span>. Lo marcado en amarillo depende de ellos o de decisiones pendientes. Que lo revise un profesional antes de publicarlo.</p></div>
   
 <nav aria-label="En esta página"><ul class="indice"><li><a href="#responsable">Responsable</a></li><li><a href="#para">Para qué y con qué base</a></li><li><a href="#encargados">Quién más los trata</a></li><li><a href="#derechos">Tus derechos</a></li></ul></nav>
 <h2 id="responsable">Responsable</h2>
-<p><span class="pend">[PENDIENTE: RAZÓN SOCIAL]</span>, NIF <span class="pend">[PENDIENTE: NIF]</span>, <span class="pend">[PENDIENTE: DIRECCIÓN]</span>. Correo para cualquier asunto de privacidad: <span class="pend">[CORREO DE PRIVACIDAD]</span>.</p>
+<p><span class="pend">[PENDIENTE: RAZÓN SOCIAL]</span>, NIF <span class="pend">[PENDIENTE: NIF]</span>, <span class="pend">[PENDIENTE: DIRECCIÓN]</span>. Correo para cualquier asunto de privacidad: <span class="pend">[PENDIENTE: CORREO DE PRIVACIDAD]</span>.</p>
 <p>No hemos designado delegado de protección de datos porque nuestra actividad no lo exige (<span class="pend">verificar con el volumen real de tratamiento</span>).</p>
 
 <h2 id="para">Para qué usamos tus datos, con qué base y cuánto tiempo</h2>
@@ -150,15 +153,17 @@ table.tabla th{font-weight:600}
 
 <h2 id="derechos">Tus derechos</h2>
 <p>Puedes pedirnos en cualquier momento acceder a tus datos, corregirlos, borrarlos, limitar su uso, oponerte a un tratamiento o recibirlos en un formato que puedas llevarte a otro sitio. Si nos diste tu consentimiento para algo, puedes retirarlo cuando quieras.</p>
-<p>Escríbenos a <span class="pend">[CORREO DE PRIVACIDAD]</span>. Te contestamos en un mes como máximo.</p>
+<p>Escríbenos a <span class="pend">[PENDIENTE: CORREO DE PRIVACIDAD]</span>. Te contestamos en un mes como máximo.</p>
 <p>Si no estás de acuerdo con nuestra respuesta, puedes reclamar ante la Agencia Española de Protección de Datos en <a href="https://www.aepd.es">aepd.es</a>.</p>
 
   <footer class="fuente"><h2>Fuentes</h2><ol><li>Reglamento (UE) 2016/679, general de protección de datos (RGPD), <a href="https://eur-lex.europa.eu/eli/reg/2016/679/oj">DOUE L 119</a>, arts. 6, 13 y 15 a 22</li><li>Ley Orgánica 3/2018, de protección de datos personales y garantía de los derechos digitales, <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2018-16673">BOE-A-2018-16673</a></li><li>Código de Comercio, art. 30 (conservación de libros y documentos durante seis años), <a href="https://www.boe.es/buscar/act.php?id=BOE-A-1885-6627">BOE-A-1885-6627</a></li><li>Ley 58/2003, General Tributaria, art. 66 (prescripción de cuatro años), <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2003-23186">BOE-A-2003-23186</a></li></ol></footer>
 </article>
 </main>
 <footer class="pie envoltura">
+  <nav aria-label="Ocasiones"><a href="boda.html">Boda y aniversario</a><a href="navidad.html">Navidad</a><a href="regalo-padres.html">Para padres y abuelos</a><a href="precios.html">Precios y pagos</a></nav>
   <nav aria-label="Información legal"><a href="aviso-legal.html">Aviso legal</a><a href="privacidad.html">Privacidad</a><a href="cookies.html">Cookies</a><a href="condiciones-venta.html">Condiciones de venta</a><a href="desistimiento.html">Desistimiento</a><a href="envios-y-devoluciones.html">Envíos y devoluciones</a></nav>
   <p>Titular: <span class="pend">[PENDIENTE: RAZÓN SOCIAL]</span> · NIF <span class="pend">[PENDIENTE: NIF]</span> · <span class="pend">[PENDIENTE: DIRECCIÓN]</span></p>
+  <p class="borrador-pie">Borrador: la web aún no lleva los datos del titular. No se puede vender hasta completarlos.</p>
   <p>Todos los precios de esta web llevan el IVA incluido.</p>
 </footer>
 

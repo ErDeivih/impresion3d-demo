@@ -1,11 +1,11 @@
-Asunto: Vuestro cuadro ha salido: seguimiento {{seguimiento}}
+Asunto: Tu cuadro ha salido: seguimiento {{seguimiento}}
 
 El pedido {{numero}} salió el {{fecha_envio}} con {{transportista}}.
 Seguimiento: {{seguimiento}}
 Entrega estimada: {{fecha_entrega}}
 Dirección: {{direccion}}
 
-Si llega golpeado, haced una foto y escribidnos.
+Si llega golpeado, haz una foto y escríbenos.
 
 Seguir el envío: {{url_seguimiento}}
 

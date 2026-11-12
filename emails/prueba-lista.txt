@@ -1,10 +1,10 @@
-Asunto: Vuestra composición está lista para aprobar
+Asunto: Prueba v{{version}} del pedido {{numero}}: lista para aprobar
 
-La prueba del pedido {{numero}} está lista.
+La prueba v{{version}} del pedido {{numero}} está lista.
 
-Si os gusta, aprobadla: pagáis los 104,30 € IVA incluido que faltan más el envío ({{envio}}) y la imprimimos.
-Si queréis cambiar algo, decidlo en el mismo enlace.
-Hasta que la aprobéis no se cobra nada más.
+Si te gusta, apruébala: se cobran los 104,30 € IVA incluido que faltan y empezamos a imprimir.
+Si quieres cambiar algo, pide cambios en el mismo enlace.
+Solo se puede aprobar la última versión.
 
 Revisar la prueba: {{url_prueba}}
 

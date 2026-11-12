@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Configurador del cuadro: apellidos, linajes y colocación · [PENDIENTE: MARCA]</title>
-<meta name="description" content="Escribe los cuatro apellidos, elige el linaje de cada uno con su fuente y colócalos en el cuadro.">
+<meta name="description" content="Busca los cuatro apellidos en nuestro catálogo, elige el linaje con su fuente, colócalos y revisa precio, señal y plazo.">
 <link rel="canonical" href="https://[PENDIENTE: DOMINIO]/configurador.html">
 <style>
 :root{
@@ -16,6 +16,7 @@
   --radio:4px;--toque:48px;
 }
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 html{-webkit-text-size-adjust:100%;scroll-padding-top:var(--e7)}
 body{margin:0;background:var(--papel);color:var(--tinta);font:400 var(--t3)/1.55 var(--f-txt)}
 img,svg{max-width:100%;height:auto}
@@ -34,12 +35,14 @@ code,pre,kbd{font-size:var(--t3)}
 section{padding:var(--e7) 0;border-top:1px solid var(--oro)}
 section.envoltura,section.estrecho{padding:var(--e7) var(--e4)}
 /* cabecera y pie */
-.cab{display:flex;justify-content:space-between;align-items:center;min-height:56px;gap:var(--e4)}
+.cab{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;min-height:56px;gap:0 var(--e4)}
+.cab nav{display:flex;flex-wrap:wrap}
 .marca{font:600 var(--t3)/1 var(--f-tit);color:var(--tinta);text-decoration:none;letter-spacing:.03em;min-height:44px;display:inline-flex;align-items:center}
 .cab nav a{min-height:44px;display:inline-flex;align-items:center;padding:0 var(--e2)}
 .pie{border-top:1px solid var(--oro);padding:var(--e6) var(--e4) var(--e8);color:var(--piedra)}
 .pie nav{display:flex;flex-wrap:wrap;gap:0 var(--e4);margin-bottom:var(--e4)}
 .pie nav a{min-height:44px;display:inline-flex;align-items:center}
+.borrador-pie{border-left:4px solid var(--oro);padding-left:var(--e3)}
 /* botones */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--e2);min-height:var(--toque);padding:0 var(--e5);
   border-radius:var(--radio);border:2px solid var(--granate);font:600 var(--t3)/1.2 var(--f-txt);text-decoration:none;cursor:pointer;text-align:center}
@@ -102,159 +105,260 @@ table.tabla th{font-weight:600}
   .pend{background:none;border:1px dashed #000}
 }
 
-.aviso-ficticio{background:#fff3cd;color:#4a3300;padding:var(--e3) var(--e4);border-radius:var(--radio)}
+.ornamentos{border:0;padding:0;margin:0 0 var(--e5)}.ornamentos legend{font-weight:600;padding:0;margin-bottom:var(--e2)}
+.orn-rejilla{display:grid;grid-template-columns:1fr 1fr;gap:var(--e3)}
+.orn{display:grid;gap:var(--e2);padding:var(--e3);border:1px solid #d8ccb9;border-radius:var(--radio);background:var(--campo);cursor:pointer;position:relative}
+.orn input{position:absolute;opacity:0;width:1px;height:1px}
+.orn:has(input:checked){border:2px solid var(--granate);padding:calc(var(--e3) - 1px)}
+.orn:has(input:focus-visible){outline:3px solid var(--tinta);outline-offset:2px}
+.orn-mini{display:grid;justify-items:center;gap:var(--e1)}
+.ilu{color:var(--piedra);border:1px dashed var(--piedra);border-radius:4px;padding:0 var(--e1)}
+.orn-txt{display:grid;gap:var(--e1)}.efecto{color:var(--granate);font-weight:600}
+@media(min-width:720px){.orn-rejilla{grid-template-columns:repeat(4,1fr)}}
+
+.aviso-precio{border:2px solid var(--granate);border-radius:var(--radio);padding:var(--e4);margin:var(--e4) 0;background:var(--campo)}
+.hc[hidden]{display:none}
 ol.progreso{list-style:none;margin:0 0 var(--e5);padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:var(--e1)}
 ol.progreso li{border-top:4px solid #d8ccb9;padding-top:var(--e1);color:var(--piedra)}
 ol.progreso li.hecho{border-color:var(--tinta);color:var(--tinta)}
 ol.progreso li[aria-current]{border-color:var(--granate);color:var(--granate);font-weight:600}
-fieldset.paso{border:0;margin:0;padding:0;min-width:0}
-fieldset.paso legend{padding:0;margin-bottom:var(--e2)}
-fieldset.paso legend h2{margin:0}
-.acciones{display:flex;gap:var(--e4);flex-wrap:wrap;margin-top:var(--e5)}
-.acciones .btn-p{flex:1 1 200px}
-.grupo{border:1px solid #d8ccb9;border-radius:var(--radio);padding:var(--e4);margin:0 0 var(--e5)}
+fieldset.paso{border:0;margin:0;padding:0;min-width:0}fieldset.paso legend{padding:0;margin-bottom:var(--e2)}fieldset.paso legend h2{margin:0}
+.hueco{border:1px solid #d8ccb9;border-radius:var(--radio);padding:var(--e3) var(--e4);margin-bottom:var(--e4);background:var(--campo)}
+.hueco .estado{margin:var(--e1) 0 0;color:var(--piedra)}
+.hueco .estado.ok::before{content:"✓ ";color:var(--tinta)}
+.hueco .galeria-elegida{display:grid;grid-template-columns:56px 1fr;gap:var(--e3);align-items:center}
+.hueco .galeria-elegida img{width:56px;height:auto}
+.hueco button.enlace{background:none;border:0;padding:0;color:var(--granate);font:inherit;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.grupo{border:1px solid #d8ccb9;border-radius:var(--radio);padding:var(--e4);margin:0 0 var(--e5);background:var(--campo)}
 .grupo legend{font-weight:600;padding:0 var(--e1)}
-.op{display:grid;grid-template-columns:24px 1fr;gap:var(--e3);padding:var(--e3);border:1px solid #d8ccb9;border-radius:var(--radio);margin-bottom:var(--e3);cursor:pointer;background:var(--campo)}
+.grupo .cols{display:grid;gap:var(--e3)}
+.op{display:grid;grid-template-columns:24px 1fr;gap:var(--e3);padding:var(--e3);border:1px solid #d8ccb9;border-radius:var(--radio);margin-bottom:var(--e3);cursor:pointer;background:#fff}
 .op:has(input:checked){border:2px solid var(--granate);padding:calc(var(--e3) - 1px)}
 .op input{width:22px;height:22px;margin:2px 0 0;accent-color:var(--granate)}
 .op .fte{display:block;color:var(--piedra)}
+.sello{display:inline-block;border:1px solid currentColor;border-radius:4px;padding:0 var(--e1);margin-top:var(--e1)}
+.prev{display:grid;grid-template-columns:72px 1fr;gap:var(--e3);align-items:start;border-top:1px dashed #d8ccb9;padding-top:var(--e3)}
+.prev svg,.prev img{width:72px;height:auto}
 .compo{display:grid;gap:var(--e4)}
-#vista{width:100%;max-width:240px;justify-self:center}
+.vista-cuadro{background:#3a2a1c;padding:10px;border-radius:4px;max-width:260px;justify-self:center;width:100%}
+.vista-cuadro .in{display:grid;grid-template-columns:1fr 1fr;gap:8px;background:#efe6d6;padding:10px}
+.vista-cuadro figure{margin:0;text-align:center}.vista-cuadro img,.vista-cuadro svg{width:100%;height:auto;display:block}
+.vista-cuadro figcaption{font:var(--t3)/1.2 var(--f-tit);word-break:break-word}
+.precio-caja{border:2px solid var(--granate);border-radius:var(--radio);padding:var(--e4);margin:var(--e4) 0;background:var(--campo)}
+.grande{font:600 var(--t2)/1.2 var(--f-tit);margin:0 0 var(--e3)}
+dl.lineas{grid-template-columns:1fr;gap:0}dl.lineas dd{margin-bottom:var(--e3)}
 .tecnico summary{min-height:44px;display:flex;align-items:center;cursor:pointer}
 pre{white-space:pre-wrap;word-break:break-word;background:var(--campo);border:1px solid #d8ccb9;padding:var(--e3);font:var(--t3)/1.4 ui-monospace,Consolas,monospace}
-@media(min-width:720px){.compo{grid-template-columns:1fr 240px;align-items:start}}
+.acciones{position:sticky;bottom:0;background:var(--papel);border-top:1px solid var(--oro);display:flex;gap:var(--e3);padding:var(--e3) 0;margin-top:var(--e5);z-index:5}
+.acciones .btn-p{flex:1}
+.acciones .btn-s[hidden]{display:none}
+@media(min-width:720px){.compo{grid-template-columns:1fr 260px;align-items:start}}
 </style>
 
 </head>
 <body>
 <header class="envoltura cab">
   <a class="marca" href="index.html">[PENDIENTE: MARCA]</a>
-  <nav aria-label="Principal"><a href="precios.html">Precios</a><a href="carrito.html">Carrito</a></nav>
+  <nav aria-label="Principal"><a href="formatos.html">Formatos</a><a href="apellidos.html">Apellidos</a><a href="galeria.html">Galería</a><a href="carrito.html">Carrito</a></nav>
 </header>
 <main id="contenido">
 
 <div class="estrecho">
   <h1>Diseña vuestro cuadro en cuatro pasos</h1>
-  <p class="aviso-ficticio"><b>Datos de ejemplo.</b> Los linajes y fuentes de este configurador son ficticios hasta que se cargue el catálogo real.</p>
-  <ol class="progreso" aria-label="Progreso">
-    <li data-p="1">Apellidos</li><li data-p="2">Variantes</li><li data-p="3">Composición</li><li data-p="4">Resumen</li>
-  </ol>
+  <ol class="progreso" aria-label="Progreso"><li data-p="1">Escudos</li><li data-p="2">Linajes</li><li data-p="3">Colocación</li><li data-p="4">Resumen</li></ol>
   <div id="errores" class="aviso" role="alert" tabindex="-1"></div>
+  <datalist id="apellidos"><option value="García"><option value="Rodríguez"><option value="González"><option value="Fernández"><option value="López"><option value="Martínez"><option value="Sánchez"><option value="Pérez"><option value="Gómez"><option value="Martín"><option value="Jiménez"><option value="Hernández"><option value="Ruiz"><option value="Díaz"><option value="Moreno"><option value="Muñoz"><option value="Álvarez"><option value="Romero"><option value="Gutiérrez"><option value="Alonso"><option value="Torres"><option value="Navarro"><option value="Domínguez"><option value="Ramírez"><option value="Ramos"><option value="Vázquez"><option value="Gil"><option value="Serrano"><option value="Morales"><option value="Molina"><option value="Suárez"><option value="Castro"><option value="Blanco"><option value="Delgado"><option value="Ortega"><option value="Ortiz"><option value="Marín"><option value="Rubio"><option value="Medina"><option value="Núñez"><option value="Castillo"><option value="Cortés"><option value="Sanz"><option value="Iglesias"><option value="Santos"><option value="Garrido"><option value="Guerrero"><option value="Lozano"><option value="Flores"><option value="Cruz"><option value="Herrera"><option value="Cano"><option value="Méndez"><option value="Peña"><option value="León"><option value="Prieto"><option value="Cabrera"><option value="Márquez"><option value="Reyes"><option value="Gallego"><option value="Campos"><option value="Vidal"><option value="Calvo"><option value="Vega"><option value="Fuentes"><option value="Aguilar"><option value="Vargas"><option value="Carrasco"><option value="Caballero"><option value="Nieto"><option value="Díez"><option value="Rojas"><option value="Santana"><option value="Giménez"><option value="Benítez"><option value="Arias"><option value="Hidalgo"><option value="Montero"><option value="Santiago"><option value="Pascual"><option value="Durán"><option value="Mora"><option value="Herrero"><option value="Lorenzo"><option value="Ibáñez"><option value="Ferrer"><option value="Carmona"><option value="Soto"><option value="Vicente"><option value="Rivera"><option value="Silva"><option value="Román"><option value="Parra"><option value="Crespo"><option value="Mendoza"><option value="Velasco"><option value="Pastor"><option value="Bravo"><option value="Rivas"><option value="Moya"><option value="Marcos"><option value="San José"><option value="Arranz"><option value="De la Fuente"><option value="Benito"><option value="Mateos"><option value="Casado"><option value="Merino"><option value="Escudero"><option value="Redondo"><option value="Esteban"><option value="Ferrero"><option value="Blazquez"><option value="Fraile"><option value="Miguel"><option value="Andrés"><option value="Salazar"><option value="Bernal"><option value="Barbero"><option value="Moro"><option value="Vara"><option value="Gago"><option value="Villar"><option value="Vaquero"><option value="Antón"><option value="Morán"></datalist>
 
   <form id="form" novalidate>
-  <!-- PASO 1 -->
   <fieldset class="paso" data-paso="1">
-    <legend><h2 tabindex="-1">Paso 1 de 4 · ¿Qué apellidos van en el cuadro?</h2></legend>
-    <p class="sec">Escribid uno por casilla. Para una boda, dos de cada familia.</p>
-    <div class="campo"><label for="a0">Primer apellido</label><input type="text" id="a0" name="a0" autocomplete="off" autocapitalize="words" aria-describedby="e-a0"><p class="error" id="e-a0"></p></div>
-    <div class="campo"><label for="a1">Segundo apellido</label><input type="text" id="a1" name="a1" autocomplete="off" autocapitalize="words" aria-describedby="e-a1"><p class="error" id="e-a1"></p></div>
-    <div class="campo"><label for="a2">Tercer apellido</label><input type="text" id="a2" name="a2" autocomplete="off" autocapitalize="words" aria-describedby="e-a2"><p class="error" id="e-a2"></p></div>
-    <div class="campo"><label for="a3">Cuarto apellido</label><input type="text" id="a3" name="a3" autocomplete="off" autocapitalize="words" aria-describedby="e-a3"><p class="error" id="e-a3"></p></div>
-    <div class="acciones"><button class="btn btn-p" type="button" data-ir="2">Ver las variantes</button></div>
+    <legend><h2 tabindex="-1">Paso 1 de 4 · ¿Qué escudos lleva el cuadro?</h2></legend>
+    <div class="campo"><label for="formato">Formato</label><select id="formato"><option value="1-20x25">1 escudo · 20×25 cm (sin precio todavía)</option><option value="1-30x40">1 escudo · 30×40 cm (sin precio todavía)</option><option value="1-40x50">1 escudo · 40×50 cm (sin precio todavía)</option><option value="2-30x40">2 escudos · 30×40 cm (sin precio todavía)</option><option value="4-30x40">4 escudos · 30×40 cm</option><option value="grande-2">Escudo grande 40×50 · 2 losetas (sin precio todavía)</option><option value="grande-4">Escudo grande 40×50 · 4 losetas (sin precio todavía)</option></select><p class="sec" id="f-nota" aria-live="polite"></p></div>
+    <p class="sec">Escribe un apellido en cada casilla. También puedes traer escudos de la <a href="galeria.html">galería</a>.</p>
+    <div id="huecos"></div>
+    <button class="btn btn-s ancho" type="button" id="sorpresa">Sorpréndeme con escudos de la galería</button>
+    <p class="sec" id="msg-sorpresa" aria-live="polite"></p>
   </fieldset>
 
-  <!-- PASO 2 -->
   <fieldset class="paso" data-paso="2" hidden>
-    <legend><h2 tabindex="-1">Paso 2 de 4 · Elegid el linaje de cada apellido</h2></legend>
-    <p class="sec">Cada opción dice de qué fuente sale. Si dudáis, elegid «No sé cuál es el nuestro» y lo revisamos a mano.</p>
+    <legend><h2 tabindex="-1">Paso 2 de 4 · Elige el linaje de cada apellido</h2></legend>
+    <p class="sec">Solo enseñamos linajes con una fuente citada. Si el tuyo no está, lo buscamos a mano antes de la prueba, sin coste.</p>
     <div id="variantes"></div>
-    <div class="acciones"><button class="btn btn-s" type="button" data-ir="1">Volver</button><button class="btn btn-p" type="button" data-ir="3">Colocar los escudos</button></div>
   </fieldset>
 
-  <!-- PASO 3 -->
   <fieldset class="paso" data-paso="3" hidden>
-    <legend><h2 tabindex="-1">Paso 3 de 4 · ¿Dónde va cada escudo?</h2></legend>
-    <p class="sec">El cuadro lleva dos filas de dos. Lo habitual es poner arriba los de una familia y abajo los de la otra.</p>
+    <legend><h2 tabindex="-1">Paso 3 de 4 · Colocación y ornamento</h2></legend>
+    <p class="sec" id="c-ayuda">Dos filas de dos. Lo habitual: arriba una familia y abajo la otra.</p>
     <div class="compo">
-      <div class="huecos">
-        <div class="campo"><label for="c0">Arriba, izquierda</label><select id="c0" aria-describedby="e-c0"></select><p class="error" id="e-c0"></p></div>
-        <div class="campo"><label for="c1">Arriba, derecha</label><select id="c1" aria-describedby="e-c1"></select><p class="error" id="e-c1"></p></div>
-        <div class="campo"><label for="c2">Abajo, izquierda</label><select id="c2" aria-describedby="e-c2"></select><p class="error" id="e-c2"></p></div>
-        <div class="campo"><label for="c3">Abajo, derecha</label><select id="c3" aria-describedby="e-c3"></select><p class="error" id="e-c3"></p></div>
+      <div class="huecos-c">
+        <div class="campo hc" data-i="0"><label for="c0" id="lc0">Arriba, izquierda</label><select id="c0" aria-describedby="e-c0"></select><p class="error" id="e-c0"></p></div>
+        <div class="campo hc" data-i="1"><label for="c1" id="lc1">Arriba, derecha</label><select id="c1" aria-describedby="e-c1"></select><p class="error" id="e-c1"></p></div>
+        <div class="campo hc" data-i="2"><label for="c2" id="lc2">Abajo, izquierda</label><select id="c2" aria-describedby="e-c2"></select><p class="error" id="e-c2"></p></div>
+        <div class="campo hc" data-i="3"><label for="c3" id="lc3">Abajo, derecha</label><select id="c3" aria-describedby="e-c3"></select><p class="error" id="e-c3"></p></div>
       </div>
-      <svg id="vista" viewBox="0 0 300 400" role="img" aria-label="Vista previa de la colocación"></svg>
+      <div class="vista-cuadro" id="vista" role="img" aria-label="Vista previa de la colocación"></div>
     </div>
-    <div class="acciones"><button class="btn btn-s" type="button" data-ir="2">Volver</button><button class="btn btn-p" type="button" data-ir="4">Revisar el diseño</button></div>
+    <fieldset class="ornamentos"><legend>Ornamento</legend><div class="orn-rejilla"><label class="orn">
+  <input type="radio" name="ornamento" value="ninguno" checked>
+  <span class="orn-mini"><svg viewBox="0 0 140 170" width="96" height="116" aria-hidden="true"><path d="M0 0h90v62c0 26-20 42-45 50C20 104 0 88 0 62z" transform="translate(25 34)" fill="#c8202c" stroke="#1f1b16" stroke-width="2"/><path d="M42 58h56v18H42z" fill="#f2c230"/></svg><span class="ilu">Ilustración</span></span>
+  <span class="orn-txt"><b>Sin ornamento</b><span>Solo el escudo y el apellido debajo.</span><span class="efecto">Incluido</span></span>
+</label><label class="orn">
+  <input type="radio" name="ornamento" value="cartela">
+  <span class="orn-mini"><svg viewBox="0 0 140 170" width="96" height="116" aria-hidden="true"><path d="M24 150h92l-6 8 6 8H24l6-8z" fill="#f2c230" stroke="#1f1b16" stroke-width="2"/><path d="M0 0h90v62c0 26-20 42-45 50C20 104 0 88 0 62z" transform="translate(25 34)" fill="#c8202c" stroke="#1f1b16" stroke-width="2"/><path d="M42 58h56v18H42z" fill="#f2c230"/></svg><span class="ilu">Ilustración</span></span>
+  <span class="orn-txt"><b>Cartela</b><span>Una placa con el apellido en relieve bajo el escudo, de otro color.</span><span class="efecto">Suplemento: por confirmar</span></span>
+</label><label class="orn">
+  <input type="radio" name="ornamento" value="casco">
+  <span class="orn-mini"><svg viewBox="0 0 140 170" width="96" height="116" aria-hidden="true"><path d="M52 30c0-14 8-24 18-24s18 10 18 24z" fill="#a8a8a2" stroke="#1f1b16" stroke-width="2"/><path d="M58 22h24M58 16h24" stroke="#1f1b16" stroke-width="2"/><path d="M52 26C30 26 10 40 8 66c10-8 14-6 18 2 2-14 8-24 26-30zM88 26c22 0 42 14 44 40-10-8-14-6-18 2-2-14-8-24-26-30z" fill="#1b4fa8" stroke="#1f1b16" stroke-width="2"/><path d="M0 0h90v62c0 26-20 42-45 50C20 104 0 88 0 62z" transform="translate(25 34)" fill="#c8202c" stroke="#1f1b16" stroke-width="2"/><path d="M42 58h56v18H42z" fill="#f2c230"/></svg><span class="ilu">Ilustración</span></span>
+  <span class="orn-txt"><b>Casco con lambrequines</b><span>Un yelmo sobre el escudo con hojas de tela a los lados, como en los escudos antiguos.</span><span class="efecto">Suplemento: por confirmar · aún en diseño</span></span>
+</label><label class="orn">
+  <input type="radio" name="ornamento" value="hojas">
+  <span class="orn-mini"><svg viewBox="0 0 140 170" width="96" height="116" aria-hidden="true"><ellipse cx="16" cy="50" rx="9" ry="4" transform="rotate(-70 16 50)" fill="#1e8a44" stroke="#1f1b16" stroke-width="1.5"/><ellipse cx="14" cy="72" rx="9" ry="4" transform="rotate(-90 14 72)" fill="#1e8a44" stroke="#1f1b16" stroke-width="1.5"/><ellipse cx="18" cy="96" rx="9" ry="4" transform="rotate(-110 18 96)" fill="#1e8a44" stroke="#1f1b16" stroke-width="1.5"/><ellipse cx="30" cy="118" rx="9" ry="4" transform="rotate(-135 30 118)" fill="#1e8a44" stroke="#1f1b16" stroke-width="1.5"/><ellipse cx="50" cy="138" rx="9" ry="4" transform="rotate(-160 50 138)" fill="#1e8a44" stroke="#1f1b16" stroke-width="1.5"/><ellipse cx="124" cy="50" rx="9" ry="4" transform="rotate(70 124 50)" fill="#1e8a44" stroke="#1f1b16" stroke-width="1.5"/><ellipse cx="126" cy="72" rx="9" ry="4" transform="rotate(90 126 72)" fill="#1e8a44" stroke="#1f1b16" stroke-width="1.5"/><ellipse cx="122" cy="96" rx="9" ry="4" transform="rotate(110 122 96)" fill="#1e8a44" stroke="#1f1b16" stroke-width="1.5"/><ellipse cx="110" cy="118" rx="9" ry="4" transform="rotate(135 110 118)" fill="#1e8a44" stroke="#1f1b16" stroke-width="1.5"/><ellipse cx="90" cy="138" rx="9" ry="4" transform="rotate(160 90 138)" fill="#1e8a44" stroke="#1f1b16" stroke-width="1.5"/><path d="M0 0h90v62c0 26-20 42-45 50C20 104 0 88 0 62z" transform="translate(25 34)" fill="#c8202c" stroke="#1f1b16" stroke-width="2"/><path d="M42 58h56v18H42z" fill="#f2c230"/></svg><span class="ilu">Ilustración</span></span>
+  <span class="orn-txt"><b>Borde de hojas</b><span>Una orla de hojas que rodea el escudo.</span><span class="efecto">Suplemento: por confirmar · aún en diseño</span></span>
+</label></div></fieldset>
   </fieldset>
 
-  <!-- PASO 4 -->
   <fieldset class="paso" data-paso="4" hidden>
-    <legend><h2 tabindex="-1">Paso 4 de 4 · Revisad antes de añadirlo</h2></legend>
+    <legend><h2 tabindex="-1">Paso 4 de 4 · Revisa antes de añadirlo</h2></legend>
     <dl class="datos" id="resumen"></dl>
-    <p>Precio: <b>149 € IVA incluido</b>. Hoy se paga la señal de 44,70 € IVA incluido.</p>
-    <p class="sec" id="nota-revision" hidden>Hay apellidos marcados para revisión manual: os escribiremos antes de preparar la prueba.</p>
-    <details class="tecnico"><summary>Datos del diseño (para el taller)</summary><pre id="json"></pre></details>
-    <div class="acciones"><button class="btn btn-s" type="button" data-ir="3">Volver</button><button class="btn btn-p" type="button" id="anadir">Añadir al carrito</button></div>
+    <div class="aviso-precio" id="sin-precio" hidden><p><b>Este formato aún no tiene precio cerrado.</b> Descarga el diseño y escríbenos a <span class="pend">[PENDIENTE: CORREO]</span>: te contestamos con precio y plazo.</p></div>
+    <div class="precio-caja" id="con-precio">
+      <p class="grande">149 € IVA incluido</p>
+      <dl class="datos lineas">
+        <dt>Hoy, señal</dt><dd>44,70 € IVA incluido</dd>
+        <dt>Al aprobar la prueba</dt><dd>104,30 € IVA incluido</dd>
+        <dt>Plazo de entrega</dt><dd>7–10 días laborables desde que apruebas la prueba</dd>
+        <dt>Envío</dt><dd>incluido a península (a domicilio con Correos o en punto de recogida SEUR)</dd>
+      </dl>
+      <p class="sec">Se hace con vuestros apellidos: no tiene desistimiento de 14 días (art. 103.c TRLGDCU). La garantía de tres años, sí.</p>
+    </div>
+    <p class="sec" id="resumen-orn"></p>
+    <p class="sec" id="nota-revision" hidden>Hay escudos marcados para revisión: te escribimos antes de preparar la prueba.</p>
+    <button class="btn btn-s ancho" type="button" id="exportar">Descargar el diseño (JSON)</button>
+    <details class="tecnico"><summary>Ver los datos del diseño</summary><pre id="json"></pre></details>
   </fieldset>
+
+  <div class="acciones">
+    <button class="btn btn-s" type="button" id="atras">Volver</button>
+    <button class="btn btn-p" type="submit" id="siguiente">Elegir los linajes</button>
+  </div>
   </form>
-  <p class="sec guardado" aria-live="polite" id="guardado"></p>
+  <p class="sec" aria-live="polite" id="guardado"></p>
 </div>
 
 </main>
 <footer class="pie envoltura">
+  <nav aria-label="Ocasiones"><a href="boda.html">Boda y aniversario</a><a href="navidad.html">Navidad</a><a href="regalo-padres.html">Para padres y abuelos</a><a href="precios.html">Precios y pagos</a></nav>
   <nav aria-label="Información legal"><a href="aviso-legal.html">Aviso legal</a><a href="privacidad.html">Privacidad</a><a href="cookies.html">Cookies</a><a href="condiciones-venta.html">Condiciones de venta</a><a href="desistimiento.html">Desistimiento</a><a href="envios-y-devoluciones.html">Envíos y devoluciones</a></nav>
   <p>Titular: <span class="pend">[PENDIENTE: RAZÓN SOCIAL]</span> · NIF <span class="pend">[PENDIENTE: NIF]</span> · <span class="pend">[PENDIENTE: DIRECCIÓN]</span></p>
+  <p class="borrador-pie">Borrador: la web aún no lleva los datos del titular. No se puede vender hasta completarlos.</p>
   <p>Todos los precios de esta web llevan el IVA incluido.</p>
 </footer>
 <script>
-const LINAJES={"perez": [{"id": "perez-a", "nombre": "Pérez · linaje de ejemplo A", "blason": "De oro, una banda de gules", "esmaltes": ["oro", "gules"], "fuente": "Nobiliario de ejemplo, t. I, p. 00 [FICTICIO]"}, {"id": "perez-b", "nombre": "Pérez · linaje de ejemplo B", "blason": "De azur, un palo de plata", "esmaltes": ["azur", "plata"], "fuente": "Armorial de ejemplo, f. 00 [FICTICIO]"}], "velasco": [{"id": "velasco-a", "nombre": "Velasco · linaje de ejemplo A", "blason": "De plata, tres fajas de azur", "esmaltes": ["plata", "azur"], "fuente": "Nobiliario de ejemplo, t. II, p. 00 [FICTICIO]"}, {"id": "velasco-b", "nombre": "Velasco · linaje de ejemplo B", "blason": "De gules, una torre de oro", "esmaltes": ["gules", "oro"], "fuente": "Archivo de ejemplo, leg. 00 [FICTICIO]"}], "garcia": [{"id": "garcia-a", "nombre": "García · linaje de ejemplo A", "blason": "De oro, un cheurón de gules", "esmaltes": ["oro", "gules"], "fuente": "Nobiliario de ejemplo, t. III, p. 00 [FICTICIO]"}], "martin": [{"id": "martin-a", "nombre": "Martín · linaje de ejemplo A", "blason": "De sinople, un castillo de oro", "esmaltes": ["sinople", "oro"], "fuente": "Armorial de ejemplo, f. 00 [FICTICIO]"}], "lopez": [{"id": "lopez-a", "nombre": "López · linaje de ejemplo A", "blason": "De plata, dos lobos de sable", "esmaltes": ["plata", "sable"], "fuente": "Nobiliario de ejemplo, t. IV, p. 00 [FICTICIO]"}]};
-const COLOR={oro:'#d7b65a',plata:'#e8e1d3',gules:'#8f2a2a',azur:'#2c4a7a',sinople:'#2f5a3a',sable:'#1f1b16',purpura:'#6b2a6b'};
-const POS=['arriba-izquierda','arriba-derecha','abajo-izquierda','abajo-derecha'];
-const CLAVE='cuadro-v1';
-let E={paso:1,apellidos:['','','',''],linajes:[null,null,null,null],composicion:[0,1,2,3]};
-try{const g=JSON.parse(localStorage.getItem(CLAVE)||'null');if(g&&g.apellidos)E=Object.assign(E,g)}catch(e){}
+const CAT={"garcia":{"apellido":"García","frecuencia":1446937,"variantes":[{"id":"garcia-garcia-de-galicia-asturias-y-burgos","nombre":"García de Galicia Asturias y Burgos","blason":"","fuente":"Wikipedia (es) vía es-academic","estado":"por-verificar"}]},"rodriguez":{"apellido":"Rodríguez","frecuencia":939214,"variantes":[{"id":"rodriguez-fonseca","nombre":"Rodríguez de Fonseca (Toro, s. XV)","blason":"De oro, cinco estrellas de gules puestas en sotuer.","fuente":"Revista RAHA (Univ. de Oviedo); BSAA (UVa) 1946-47, tapices de Fonseca","estado":"verificado"}]},"gonzalez":{"apellido":"González","frecuencia":930137,"variantes":[]},"fernandez":{"apellido":"Fernández","frecuencia":896725,"variantes":[{"id":"fernandez-fernandez-de-cordoba-baena-aguilar","nombre":"Fernández de Córdoba (Baena Aguilar)","blason":"","fuente":"Blason.es (A. Salmerón)","estado":"verificado"}]},"lopez":{"apellido":"López","frecuencia":871380,"variantes":[{"id":"lopez-haro-primitivo","nombre":"López de Haro — armas primitivas","blason":"De plata, dos lobos de sable pasantes, puestos en palo.","fuente":"Wikimedia Commons, «House of Haro COA»; Heraldry of the World, El Carpio; RAMHG (Salazar)","estado":"verificado"},{"id":"lopez-haro-bueno","nombre":"López de Haro — desde Diego López de Haro «el Bueno»","blason":"Lobos cebados de un cordero y bordura de gules con ocho aspas de oro.","fuente":"Wikimedia Commons, «House of Haro COA»; Heraldry of the World, El Carpio; RAMHG (Salazar)","estado":"verificado"}]},"martinez":{"apellido":"Martínez","frecuencia":832396,"variantes":[]},"sanchez":{"apellido":"Sánchez","frecuencia":818287,"variantes":[]},"perez":{"apellido":"Pérez","frecuencia":779313,"variantes":[]},"gomez":{"apellido":"Gómez","frecuencia":496272,"variantes":[{"id":"gomez-gomez-de-sandoval-duques-de-lerma","nombre":"Gómez de Sandoval (duques de Lerma)","blason":"","fuente":"FOTW citando a Herrera Casado","estado":"verificado"}]},"martin":{"apellido":"Martín","frecuencia":475139,"variantes":[]},"jimenez":{"apellido":"Jiménez","frecuencia":399394,"variantes":[{"id":"jimenez-jimenez-ximenez-de-cisneros","nombre":"Jiménez (Ximénez) de Cisneros","blason":"","fuente":"Blason.es armas del cardenal Cisneros 1514","estado":"verificado"}]},"hernandez":{"apellido":"Hernández","frecuencia":380919,"variantes":[{"id":"hernandez-hernandez-de-cordoba-variante-de-fernand","nombre":"Hernández de Córdoba (variante de Fernández)","blason":"","fuente":"Wikipedia (es) Hernández (apellido)","estado":"por-verificar"}]},"ruiz":{"apellido":"Ruiz","frecuencia":366644,"variantes":[{"id":"ruiz-ruiz-de-castro-casa-de-castro","nombre":"Ruiz de Castro (Casa de Castro)","blason":"","fuente":"RAMHG y Wikipedia Casa de Castro","estado":"verificado"}]},"diaz":{"apellido":"Díaz","frecuencia":350246,"variantes":[{"id":"diaz-diaz-de-mendoza-casa-de-mendoza","nombre":"Díaz de Mendoza (Casa de Mendoza)","blason":"","fuente":"Heraldry of the World Durón y Tamajón","estado":"verificado"}]},"moreno":{"apellido":"Moreno","frecuencia":324435,"variantes":[]},"munoz":{"apellido":"Muñoz","frecuencia":284951,"variantes":[]},"alvarez":{"apellido":"Álvarez","frecuencia":281150,"variantes":[]},"romero":{"apellido":"Romero","frecuencia":227391,"variantes":[]},"gutierrez":{"apellido":"Gutiérrez","frecuencia":199928,"variantes":[]},"alonso":{"apellido":"Alonso","frecuencia":189942,"variantes":[]},"torres":{"apellido":"Torres","frecuencia":180723,"variantes":[]},"navarro":{"apellido":"Navarro","frecuencia":176842,"variantes":[]},"dominguez":{"apellido":"Domínguez","frecuencia":156940,"variantes":[]},"ramirez":{"apellido":"Ramírez","frecuencia":156686,"variantes":[]},"ramos":{"apellido":"Ramos","frecuencia":149677,"variantes":[]},"vazquez":{"apellido":"Vázquez","frecuencia":144451,"variantes":[]},"gil":{"apellido":"Gil","frecuencia":139109,"variantes":[]},"serrano":{"apellido":"Serrano","frecuencia":129941,"variantes":[]},"morales":{"apellido":"Morales","frecuencia":127848,"variantes":[]},"molina":{"apellido":"Molina","frecuencia":125316,"variantes":[]},"suarez":{"apellido":"Suárez","frecuencia":124242,"variantes":[]},"castro":{"apellido":"Castro","frecuencia":123156,"variantes":[]},"blanco":{"apellido":"Blanco","frecuencia":121880,"variantes":[]},"delgado":{"apellido":"Delgado","frecuencia":119872,"variantes":[]},"ortega":{"apellido":"Ortega","frecuencia":118777,"variantes":[]},"ortiz":{"apellido":"Ortiz","frecuencia":114447,"variantes":[]},"marin":{"apellido":"Marín","frecuencia":108047,"variantes":[]},"rubio":{"apellido":"Rubio","frecuencia":102390,"variantes":[]},"medina":{"apellido":"Medina","frecuencia":95823,"variantes":[]},"nunez":{"apellido":"Núñez","frecuencia":94702,"variantes":[]},"castillo":{"apellido":"Castillo","frecuencia":94139,"variantes":[]},"cortes":{"apellido":"Cortés","frecuencia":89974,"variantes":[]},"sanz":{"apellido":"Sanz","frecuencia":88939,"variantes":[]},"iglesias":{"apellido":"Iglesias","frecuencia":86084,"variantes":[]},"santos":{"apellido":"Santos","frecuencia":85287,"variantes":[]},"garrido":{"apellido":"Garrido","frecuencia":84187,"variantes":[]},"guerrero":{"apellido":"Guerrero","frecuencia":82949,"variantes":[]},"lozano":{"apellido":"Lozano","frecuencia":80558,"variantes":[]},"flores":{"apellido":"Flores","frecuencia":79715,"variantes":[]},"cruz":{"apellido":"Cruz","frecuencia":78630,"variantes":[]},"herrera":{"apellido":"Herrera","frecuencia":77374,"variantes":[]},"cano":{"apellido":"Cano","frecuencia":77356,"variantes":[]},"mendez":{"apellido":"Méndez","frecuencia":77195,"variantes":[]},"pena":{"apellido":"Peña","frecuencia":74072,"variantes":[]},"leon":{"apellido":"León","frecuencia":73175,"variantes":[]},"prieto":{"apellido":"Prieto","frecuencia":72655,"variantes":[]},"cabrera":{"apellido":"Cabrera","frecuencia":72206,"variantes":[]},"marquez":{"apellido":"Márquez","frecuencia":72097,"variantes":[]},"reyes":{"apellido":"Reyes","frecuencia":71297,"variantes":[]},"gallego":{"apellido":"Gallego","frecuencia":68987,"variantes":[]},"campos":{"apellido":"Campos","frecuencia":67952,"variantes":[]},"vidal":{"apellido":"Vidal","frecuencia":67572,"variantes":[]},"calvo":{"apellido":"Calvo","frecuencia":67348,"variantes":[]},"vega":{"apellido":"Vega","frecuencia":66681,"variantes":[]},"fuentes":{"apellido":"Fuentes","frecuencia":65327,"variantes":[]},"aguilar":{"apellido":"Aguilar","frecuencia":64089,"variantes":[]},"vargas":{"apellido":"Vargas","frecuencia":63921,"variantes":[]},"carrasco":{"apellido":"Carrasco","frecuencia":63091,"variantes":[]},"caballero":{"apellido":"Caballero","frecuencia":61369,"variantes":[]},"nieto":{"apellido":"Nieto","frecuencia":60185,"variantes":[]},"diez":{"apellido":"Díez","frecuencia":59840,"variantes":[]},"rojas":{"apellido":"Rojas","frecuencia":59298,"variantes":[]},"santana":{"apellido":"Santana","frecuencia":58815,"variantes":[]},"gimenez":{"apellido":"Giménez","frecuencia":57495,"variantes":[]},"benitez":{"apellido":"Benítez","frecuencia":56956,"variantes":[]},"arias":{"apellido":"Arias","frecuencia":56875,"variantes":[]},"hidalgo":{"apellido":"Hidalgo","frecuencia":56836,"variantes":[]},"montero":{"apellido":"Montero","frecuencia":56711,"variantes":[]},"santiago":{"apellido":"Santiago","frecuencia":55826,"variantes":[]},"pascual":{"apellido":"Pascual","frecuencia":55673,"variantes":[]},"duran":{"apellido":"Durán","frecuencia":55665,"variantes":[]},"mora":{"apellido":"Mora","frecuencia":55638,"variantes":[]},"herrero":{"apellido":"Herrero","frecuencia":55454,"variantes":[]},"lorenzo":{"apellido":"Lorenzo","frecuencia":55302,"variantes":[]},"ibanez":{"apellido":"Ibáñez","frecuencia":53676,"variantes":[]},"ferrer":{"apellido":"Ferrer","frecuencia":53051,"variantes":[]},"carmona":{"apellido":"Carmona","frecuencia":52749,"variantes":[]},"soto":{"apellido":"Soto","frecuencia":51530,"variantes":[]},"vicente":{"apellido":"Vicente","frecuencia":50880,"variantes":[]},"rivera":{"apellido":"Rivera","frecuencia":49483,"variantes":[]},"silva":{"apellido":"Silva","frecuencia":48968,"variantes":[]},"roman":{"apellido":"Román","frecuencia":48922,"variantes":[]},"parra":{"apellido":"Parra","frecuencia":48813,"variantes":[]},"crespo":{"apellido":"Crespo","frecuencia":48466,"variantes":[]},"mendoza":{"apellido":"Mendoza","frecuencia":47342,"variantes":[]},"velasco":{"apellido":"Velasco","frecuencia":47036,"variantes":[]},"pastor":{"apellido":"Pastor","frecuencia":46323,"variantes":[]},"bravo":{"apellido":"Bravo","frecuencia":46300,"variantes":[]},"rivas":{"apellido":"Rivas","frecuencia":45776,"variantes":[]},"moya":{"apellido":"Moya","frecuencia":45483,"variantes":[]},"marcos":{"apellido":"Marcos","frecuencia":2711,"variantes":[]},"benito":{"apellido":"Benito","frecuencia":2036,"variantes":[]},"mateos":{"apellido":"Mateos","frecuencia":2002,"variantes":[]},"blazquez":{"apellido":"Blazquez","frecuencia":1076,"variantes":[]},"fraile":{"apellido":"Fraile","frecuencia":979,"variantes":[]},"miguel":{"apellido":"Miguel","frecuencia":918,"variantes":[]},"andres":{"apellido":"Andrés","frecuencia":839,"variantes":[]},"salazar":{"apellido":"Salazar","frecuencia":817,"variantes":[]},"bernal":{"apellido":"Bernal","frecuencia":780,"variantes":[]},"barbero":{"apellido":"Barbero","frecuencia":759,"variantes":[]},"moro":{"apellido":"Moro","frecuencia":716,"variantes":[]},"san jose":{"apellido":"San José","frecuencia":2577,"variantes":[]},"arranz":{"apellido":"Arranz","frecuencia":2442,"variantes":[]},"de la fuente":{"apellido":"De la Fuente","frecuencia":2216,"variantes":[]},"casado":{"apellido":"Casado","frecuencia":1694,"variantes":[]},"merino":{"apellido":"Merino","frecuencia":1678,"variantes":[]},"escudero":{"apellido":"Escudero","frecuencia":1606,"variantes":[]},"redondo":{"apellido":"Redondo","frecuencia":1511,"variantes":[]},"esteban":{"apellido":"Esteban","frecuencia":1385,"variantes":[]},"ferrero":{"apellido":"Ferrero","frecuencia":1183,"variantes":[]},"vara":{"apellido":"Vara","frecuencia":609,"variantes":[]},"gago":{"apellido":"Gago","frecuencia":604,"variantes":[]},"villar":{"apellido":"Villar","frecuencia":582,"variantes":[]},"vaquero":{"apellido":"Vaquero","frecuencia":560,"variantes":[]},"anton":{"apellido":"Antón","frecuencia":445,"variantes":[]},"moran":{"apellido":"Morán","frecuencia":414,"variantes":[]}};
+const GAL=[{"id":"g01","nombre":"Castilla","blason":"En campo de gules, un castillo de oro, aclarado de azur.","esmaltes":["azur","gules","oro"],"img":"img/escudos/g01.svg"},{"id":"g05","nombre":"Lises de Francia","blason":"En campo de azur, tres flores de lis de oro, puestas 2 y 1.","esmaltes":["azur","oro"],"img":"img/escudos/g05.svg"},{"id":"g03","nombre":"Castilla y León","blason":"Cuartelado: 1.º y 4.º de gules; 2.º y 3.º de plata; en el 1.º, un castillo de oro, aclarado de azur; en el 2.º, un león rampante de púrpura, armado y lampasado de gules; en el 3.º, un león rampante de púrpura, armado y lampasado de gules; en el 4.º, un castillo de oro, aclarado de azur.","esmaltes":["azur","gules","oro","plata","purpura"],"img":"img/escudos/g03.svg"},{"id":"g04","nombre":"Palos de gules","blason":"Palado de oro y gules, de 9 piezas.","esmaltes":["gules","oro"],"img":"img/escudos/g04.svg"},{"id":"g08","nombre":"Oso y roble","blason":"Partido de plata y oro; en el 1.º, un oso pasante de sable, armado de gules; en el 2.º, un roble arrancado de sinople, frutado de oro.","esmaltes":["oro","plata","sable","sinople"],"img":"img/escudos/g08.svg"},{"id":"g09","nombre":"Villa del puente","blason":"Cortado de azur y plata; en el 1.º, un puente de tres ojos de oro; en el 2.º, un jabalí pasante de sable, defendido de plata.","esmaltes":["azur","oro","plata","sable"],"img":"img/escudos/g09.svg"},{"id":"g12","nombre":"Jaquelado","blason":"Jaquelado de plata y sable, de 6 piezas; bordura de gules.","esmaltes":["gules","plata","sable"],"img":"img/escudos/g12.svg"},{"id":"g13","nombre":"Tronchado marinero","blason":"Tronchado de azur y oro; en el 1.º, un ancla de plata; en el 2.º, una venera de gules.","esmaltes":["azur","gules","oro","plata"],"img":"img/escudos/g13.svg"},{"id":"g14","nombre":"Tajado","blason":"Tajado de sinople y plata; en el 1.º, una llave de oro; en el 2.º, una espada alta de gules, guarnecida de sable.","esmaltes":["gules","oro","plata","sable","sinople"],"img":"img/escudos/g14.svg"},{"id":"g15","nombre":"Encabriado","blason":"Encabriado de oro y azur; en el 1.º, dos estrellas de gules, en faja; en el 2.º, un creciente de plata.","esmaltes":["azur","gules","oro","plata"],"img":"img/escudos/g15.svg"},{"id":"g16","nombre":"Mantelado","blason":"Mantelado de gules y plata; en el 3.º, un pino de sinople, fustado de sable.","esmaltes":["gules","plata","sable","sinople"],"img":"img/escudos/g16.svg"},{"id":"g18","nombre":"Fajado","blason":"Fajado de plata y azur, de 6 piezas; un jefe de gules; una luna llena figurada de oro en jefe.","esmaltes":["azur","gules","oro","plata"],"img":"img/escudos/g18.svg"}];
+const VAR={"1-20x25":{"n":1,"tam":"20x25","precio":null,"nombre":"1 escudo · 20×25 cm"},"1-30x40":{"n":1,"tam":"30x40","precio":null,"nombre":"1 escudo · 30×40 cm"},"1-40x50":{"n":1,"tam":"40x50","precio":null,"nombre":"1 escudo · 40×50 cm"},"2-30x40":{"n":2,"tam":"30x40","precio":null,"nombre":"2 escudos · 30×40 cm"},"4-30x40":{"n":4,"tam":"30x40","precio":149.0,"nombre":"4 escudos · 30×40 cm"},"grande-2":{"n":1,"tam":"40x50","precio":null,"nombre":"Escudo grande 40×50 · 2 losetas"},"grande-4":{"n":1,"tam":"40x50","precio":null,"nombre":"Escudo grande 40×50 · 4 losetas"}};
+const ESM=['oro','plata','gules','azur','sable','sinople','púrpura'];
+const POS4=['arriba-izquierda','arriba-derecha','abajo-izquierda','abajo-derecha'],TXT4=['Arriba, izquierda','Arriba, derecha','Abajo, izquierda','Abajo, derecha'];
+const POSN={1:['centro'],2:['izquierda','derecha'],4:POS4},TXTN={1:['Centro'],2:['Izquierda','Derecha'],4:TXT4};
+const CTA={1:'Elegir los linajes',2:'Colocar los escudos',3:'Ver el resumen',4:'Añadir al carrito'};
+const CLAVE='cuadro-v2';
+const vacio=()=>({texto:'',galeria:null,linaje:null});
+let E={paso:1,formato:'4-30x40',ornamento:'ninguno',huecos:[vacio(),vacio(),vacio(),vacio()],composicion:[0,1,2,3]};
+try{const g=JSON.parse(localStorage.getItem(CLAVE)||'null');if(g&&g.huecos&&g.huecos.length===4)E=Object.assign(E,g)}catch(e){}
+if(!VAR[E.formato])E.formato='4-30x40';
+const N=()=>VAR[E.formato].n,POS=()=>POSN[N()],POSTXT=()=>TXTN[N()],ACT=()=>E.huecos.slice(0,N());
+function ajustarComp(){const n=N();if(E.composicion.length!==n||E.composicion.some(k=>k>=n))E.composicion=[...Array(n).keys()]}
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
-const norm=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim();
+const norm=s=>(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim();
+const esc=s=>String(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const gal=id=>GAL.find(g=>g.id===id);
 function guardar(){try{localStorage.setItem(CLAVE,JSON.stringify(E));$('#guardado').textContent='Diseño guardado en este navegador.'}catch(e){$('#guardado').textContent='No se ha podido guardar en este navegador: no cierres la página hasta terminar.'}}
-function variantes(i){return LINAJES[norm(E.apellidos[i])]||[]}
-function linaje(i){const id=E.linajes[i];return variantes(i).find(v=>v.id===id)||null}
-function limpiarErrores(){$('#errores').innerHTML='';$$('.error').forEach(p=>p.textContent='');$$('[aria-invalid]').forEach(x=>x.removeAttribute('aria-invalid'))}
-function mostrarErrores(lista){ // lista: [{id, msg}]
-  if(!lista.length)return true;
-  $('#errores').innerHTML='<p><b>Revisa '+(lista.length===1?'este dato':'estos '+lista.length+' datos')+':</b></p><ul>'+lista.map(e=>'<li><a href="#'+e.id+'">'+e.msg+'</a></li>').join('')+'</ul>';
-  lista.forEach(e=>{const c=document.getElementById(e.id);if(c){c.setAttribute('aria-invalid','true');const p=document.getElementById('e-'+e.id);if(p)p.textContent=e.msg}});
-  $('#errores').focus();return false}
-const RE=/^[\p{L}][\p{L}' -]{1,39}$/u;
-function validar(p){limpiarErrores();const err=[];
-  if(p===1){for(let i=0;i<4;i++){const v=$('#a'+i).value.trim();E.apellidos[i]=v;
-    if(!v)err.push({id:'a'+i,msg:'Falta el '+['primer','segundo','tercer','cuarto'][i]+' apellido.'});
-    else if(!RE.test(v))err.push({id:'a'+i,msg:'«'+v+'» tiene caracteres que no son letras. Usa solo letras, espacios, guiones o apóstrofos.'});}}
-  if(p===2){for(let i=0;i<4;i++){if(!E.linajes[i])err.push({id:'v'+i+'-0',msg:'Elige una opción para '+E.apellidos[i]+'.'})}}
-  if(p===3){const vistos={};for(let i=0;i<4;i++){const k=+$('#c'+i).value;E.composicion[i]=k;if(k in vistos)err.push({id:'c'+i,msg:E.apellidos[k]+' está en dos huecos. Cada apellido va en un solo sitio.'});vistos[k]=1}}
-  guardar();return mostrarErrores(err)}
-function pintarVariantes(){const c=$('#variantes');c.innerHTML='';
-  E.apellidos.forEach((a,i)=>{const vs=variantes(i);if(E.linajes[i]&&E.linajes[i]!=='revision'&&!vs.some(v=>v.id===E.linajes[i]))E.linajes[i]=null;
-    if(!vs.length)E.linajes[i]='revision';
-    let h='<fieldset class="grupo"><legend>'+a+'</legend>';
-    if(!vs.length)h+='<p>No tenemos este apellido en el catálogo todavía. Lo buscaremos a mano.</p>';
-    vs.forEach((v,j)=>{h+='<label class="op"><input type="radio" name="v'+i+'" id="v'+i+'-'+j+'" value="'+v.id+'"'+(E.linajes[i]===v.id?' checked':'')+'><span><b>'+v.nombre+'</b><br>'+v.blason+'<span class="fte">Fuente: '+v.fuente+'</span></span></label>'});
-    h+='<label class="op"><input type="radio" name="v'+i+'" id="v'+i+'-'+vs.length+'" value="revision"'+(E.linajes[i]==='revision'?' checked':'')+'><span><b>No sé cuál es el nuestro</b><br>Lo revisamos a mano antes de preparar la prueba.</span></label>';
-    if(!vs.length)h=h.replace('id="v'+i+'-0"','id="v'+i+'-0"');
-    c.insertAdjacentHTML('beforeend',h+'</fieldset>')});
-  $$('#variantes input').forEach(r=>r.onchange=()=>{E.linajes[+r.name.slice(1)]=r.value;guardar()});}
-function escudo(x,y,i){const src='img/escudos/hero-'+(i+1)+'.svg';
-  return '<image href="'+src+'" x="'+x+'" y="'+y+'" width="90" height="120"/>'}
-function pintarComposicion(){for(let i=0;i<4;i++){$('#c'+i).innerHTML=E.apellidos.map((a,k)=>'<option value="'+k+'"'+(E.composicion[i]===k?' selected':'')+'>'+a+'</option>').join('')}
-  pintarVista()}
-function pintarVista(){for(let i=0;i<4;i++)E.composicion[i]=+$('#c'+i).value;
-  $('#vista').innerHTML='<rect x="4" y="4" width="292" height="392" fill="#3a2a1c"/><rect x="18" y="18" width="264" height="364" fill="#efe6d6"/>'+escudo(45,40,0)+escudo(165,40,1)+escudo(45,210,2)+escudo(165,210,3)}
-function final(){const colores=[...new Set(E.linajes.flatMap((id,i)=>{const l=linaje(i);return l?l.esmaltes:[]}))];
-  const piezas=[];E.composicion.forEach((k,i)=>{const l=linaje(k);(l?l.esmaltes:['por-revisar']).forEach(es=>piezas.push({posicion:POS[i],apellido:E.apellidos[k],linaje:E.linajes[k],esmalte:es}))});
-  return {apellidos:E.apellidos.slice(),linajes:E.linajes.slice(),colores:colores,formato:'30x40',piezas:piezas}}
-function pintarResumen(){const r=$('#resumen');r.innerHTML=E.composicion.map((k,i)=>{const l=linaje(k);
-  return '<dt>'+['Arriba, izquierda','Arriba, derecha','Abajo, izquierda','Abajo, derecha'][i]+'</dt><dd>'+(l?l.nombre+'<br><span class="sec">Fuente: '+l.fuente+'</span>':E.apellidos[k]+' · revisión manual')+'</dd>'}).join('');
-  $('#nota-revision').hidden=!E.linajes.includes('revision');$('#json').textContent=JSON.stringify(final(),null,1)}
-function ir(p,validarAntes){if(validarAntes&&!validar(E.paso))return;E.paso=p;guardar();
-  $$('.paso').forEach(f=>f.hidden=+f.dataset.paso!==p);
-  $$('.progreso li').forEach(li=>{const n=+li.dataset.p;li.classList.toggle('hecho',n<p);if(n===p)li.setAttribute('aria-current','step');else li.removeAttribute('aria-current')});
-  if(p===2)pintarVariantes();if(p===3)pintarComposicion();if(p===4)pintarResumen();
-  const h=document.querySelector('.paso[data-paso="'+p+'"] h2');if(h)h.focus()}
-$$('[data-ir]').forEach(b=>b.onclick=()=>{const p=+b.dataset.ir;ir(p,p>E.paso)});
-for(let i=0;i<4;i++){$('#a'+i).value=E.apellidos[i];$('#a'+i).oninput=e=>{E.apellidos[i]=e.target.value;guardar()};$('#c'+i).onchange=pintarVista}
-$('#anadir').onclick=()=>{const b=$('#anadir');b.setAttribute('aria-busy','true');
-  try{localStorage.setItem('carrito-v1',JSON.stringify([{producto:'CUADRO-4-30X40',precio:149,diseno:final()}]))}catch(e){}
-  location.href='carrito.html'};
-ir(Math.min(E.paso||1,4),false);
+function entrada(i){return CAT[norm(E.huecos[i].texto)]||null}
+function variantes(i){const a=entrada(i);return a?a.variantes:[]}
+function nombre(i){const h=E.huecos[i];if(h.galeria){const g=gal(h.galeria);return g?g.nombre:'Escudo de la galería'}const a=entrada(i);return a?a.apellido:h.texto.trim()}
+function linajeSel(i){return variantes(i).find(v=>v.id===E.huecos[i].linaje)||null}
+function colores(i){const h=E.huecos[i];if(h.galeria){const g=gal(h.galeria);return g?g.esmaltes.map(e=>e==='purpura'?'púrpura':e):[]}
+ const l=linajeSel(i);if(!l||!l.blason)return [];const t=l.blason.toLowerCase();return ESM.filter(e=>t.includes(e))}
+const ESCUDO='<svg viewBox="0 0 90 112" aria-hidden="true"><path d="M2 2h86v60c0 26-20 42-43 48C22 104 2 88 2 62z" fill="#fffdf8" stroke="#5a5248" stroke-width="3" stroke-dasharray="7 5"/><text x="45" y="62" text-anchor="middle" font-family="Georgia,serif" font-size="13" fill="#5a5248">en la prueba</text></svg>';
+function miniatura(i){const h=E.huecos[i];if(h.galeria){const g=gal(h.galeria);return '<img src="'+g.img+'" width="200" height="236" alt="">'}return ESCUDO}
+// ---------- errores
+function limpiarErr(){$('#errores').innerHTML='';$$('.error').forEach(p=>p.textContent='');$$('[aria-invalid]').forEach(x=>x.removeAttribute('aria-invalid'))}
+function errores(l){if(!l.length)return true;$('#errores').innerHTML='<p><b>'+(l.length===1?'Revisa este dato:':'Revisa estos '+l.length+' datos:')+'</b></p><ul>'+l.map(e=>'<li><a href="#'+e[0]+'">'+e[1]+'</a></li>').join('')+'</ul>';
+ l.forEach(e=>{const c=document.getElementById(e[0]);if(c)c.setAttribute('aria-invalid','true');const p=document.getElementById('e-'+e[0]);if(p)p.textContent=e[1]});$('#errores').focus();return false}
+const RE=/^[\p{L}][\p{L}' -]{1,39}$/u,ORD=['primer','segundo','tercer','cuarto'];
+// ---------- paso 1
+function estadoHueco(i){const p=document.getElementById('s'+i);if(!p)return;const h=E.huecos[i];if(h.galeria||!h.texto.trim()){p.textContent='';p.className='estado';return}
+ const a=entrada(i);if(a&&a.variantes.length){p.textContent='En el catálogo: '+a.variantes.length+(a.variantes.length===1?' linaje con fuente.':' linajes con fuente.');p.className='estado ok'}
+ else if(a){p.textContent='En el catálogo, pero sin linaje con fuente: lo buscamos a mano.';p.className='estado'}
+ else{p.textContent='No está en el catálogo: lo buscamos a mano antes de la prueba.';p.className='estado'}}
+function pintarHuecos(){$('#formato').value=E.formato;const v=VAR[E.formato];$('#f-nota').textContent=v.precio?'':'Este formato aún no tiene precio: puedes diseñarlo y pedirnos presupuesto.';
+ $('#huecos').innerHTML=ACT().map((h,i)=>{
+  if(h.galeria){const g=gal(h.galeria);return '<div class="hueco"><p><b>Escudo '+(i+1)+'</b></p><div class="galeria-elegida"><img src="'+g.img+'" width="200" height="236" alt=""><div><b>'+esc(g.nombre)+'</b><br><span class="sec">De la galería</span><br><button type="button" class="enlace" data-quitar="'+i+'">Cambiar por un apellido</button></div></div></div>'}
+  return '<div class="hueco campo"><label for="a'+i+'">'+(N()===1?'Apellido del escudo':'Escudo '+(i+1)+': apellido')+'</label><input type="text" id="a'+i+'" list="apellidos" autocomplete="off" autocapitalize="words" enterkeyhint="next" value="'+esc(h.texto)+'" aria-describedby="s'+i+' e-a'+i+'"><p class="estado" id="s'+i+'" aria-live="polite"></p><p class="error" id="e-a'+i+'"></p></div>'}).join('');
+ ACT().forEach((h,i)=>{const inp=document.getElementById('a'+i);if(inp){inp.oninput=()=>{E.huecos[i].texto=inp.value;E.huecos[i].linaje=null;guardar();estadoHueco(i)};estadoHueco(i)}});
+ $$('[data-quitar]').forEach(b=>b.onclick=()=>{const i=+b.dataset.quitar;E.huecos[i]=vacio();guardar();pintarHuecos();document.getElementById('a'+i).focus()})}
+$('#sorpresa').onclick=()=>{const n=N(),pool=GAL.slice().sort(()=>Math.random()-.5).slice(0,n);pool.forEach((g,i)=>E.huecos[i]={texto:'',galeria:g.id,linaje:'galeria:'+g.id});ajustarComp();guardar();pintarHuecos();
+ $('#msg-sorpresa').textContent='Hemos puesto '+(n===1?'un escudo':n+' escudos')+' al azar: '+pool.map(g=>g.nombre).join(', ')+'. Puedes cambiar cualquiera por un apellido.'};
+$('#formato').onchange=()=>{E.formato=$('#formato').value;ajustarComp();guardar();pintarHuecos()};
+document.querySelectorAll('input[name=ornamento]').forEach(r=>{r.checked=r.value===E.ornamento;r.onchange=()=>{E.ornamento=r.value;guardar()}});
+// ---------- paso 2
+function pintarVariantes(){$('#variantes').innerHTML=ACT().map((h,i)=>{
+  if(h.galeria){const g=gal(h.galeria);return '<fieldset class="grupo"><legend>Escudo '+(i+1)+': '+esc(g.nombre)+'</legend><div class="prev"><img src="'+g.img+'" width="200" height="236" alt=""><p>'+esc(g.blason)+'<br><span class="sec">De la galería: no hay que elegir linaje.</span></p></div></fieldset>'}
+  const vs=variantes(i);if(!vs.length)E.huecos[i].linaje='revision';
+  let o=vs.map((v,j)=>'<label class="op"><input type="radio" name="v'+i+'" id="v'+i+'-'+j+'" value="'+esc(v.id)+'"'+(h.linaje===v.id?' checked':'')+'><span><b>'+esc(v.nombre)+'</b>'+(v.blason?'<br>'+esc(v.blason):'')+'<span class="fte">Fuente: '+esc(v.fuente)+'</span><span class="sello">'+(v.estado==='verificado'?'Fuente comprobada':'Fuente por comprobar: la revisamos antes de la prueba')+'</span></span></label>').join('');
+  o+='<label class="op"><input type="radio" name="v'+i+'" id="v'+i+'-'+vs.length+'" value="revision"'+(h.linaje==='revision'?' checked':'')+'><span><b>'+(vs.length?'No sé cuál es el nuestro':'No encuentro mi linaje')+'</b><br>Lo buscamos a mano antes de preparar la prueba, sin coste.</span></label>';
+  const aviso=vs.length?'':'<p>No tenemos un linaje con fuente para «'+esc(nombre(i))+'». Lo revisamos a mano.</p>';
+  return '<fieldset class="grupo"><legend>Escudo '+(i+1)+': '+esc(nombre(i))+'</legend>'+aviso+o+'<div class="prev" id="p'+i+'" aria-live="polite"></div></fieldset>'}).join('');
+ ACT().forEach((h,i)=>prevVariante(i));
+ $$('#variantes input').forEach(r=>r.onchange=()=>{const i=+r.name.slice(1);E.huecos[i].linaje=r.value;guardar();prevVariante(i)})}
+function prevVariante(i){const p=document.getElementById('p'+i);if(!p)return;const l=linajeSel(i);
+ p.innerHTML=ESCUDO+'<p><b>'+(l?esc(l.nombre):(E.huecos[i].linaje==='revision'?'Revisión manual':'Sin elegir'))+'</b><br>'+(l&&l.blason?esc(l.blason)+'<br>':'')+'<span class="sec">El dibujo lo verás en la prueba, antes de pagar el resto.</span></p>'}
+// ---------- paso 3
+function pintarComposicion(){ajustarComp();const n=N();
+ $('#c-ayuda').textContent=n===4?'Dos filas de dos. Lo habitual: arriba una familia y abajo la otra.':(n===2?'Uno al lado del otro.':'Un solo escudo: solo queda elegir el ornamento.');
+ $$('.hc').forEach(d=>{const i=+d.dataset.i;d.hidden=i>=n||n===1;if(i<n)document.getElementById('lc'+i).textContent=POSTXT()[i]});
+ for(let i=0;i<n;i++){$('#c'+i).innerHTML=ACT().map((h,k)=>'<option value="'+k+'"'+(E.composicion[i]===k?' selected':'')+'>'+esc(nombre(k))+'</option>').join('');$('#c'+i).onchange=pintarVista}pintarVista()}
+function pintarVista(){const n=N();if(n>1)for(let i=0;i<n;i++)E.composicion[i]=+$('#c'+i).value;guardar();
+ $('#vista').innerHTML='<div class="in" style="grid-template-columns:repeat('+Math.min(n,2)+',1fr)">'+E.composicion.map(k=>'<figure>'+miniatura(k)+'<figcaption>'+esc(nombre(k))+'</figcaption></figure>').join('')+'</div>';
+ $('#vista').setAttribute('aria-label','Vista previa: '+E.composicion.map((k,i)=>POSTXT()[i]+', '+nombre(k)).join('; '))}
+// ---------- paso 4
+function final(){const ap=ACT().map((h,i)=>nombre(i));const lin=ACT().map(h=>h.galeria?'galeria:'+h.galeria:(h.linaje||'revision'));
+ const col=[...new Set(ACT().flatMap((h,i)=>colores(i)))];const piezas=[];
+ E.composicion.forEach((k,p)=>{const c=colores(k);(c.length?c:['por-definir']).forEach(es=>piezas.push({posicion:POS()[p],apellido:ap[k],linaje:lin[k],esmalte:es}))});
+ return {apellidos:ap,linajes:lin,colores:col,formato:VAR[E.formato].tam,variante:E.formato,ornamento:E.ornamento,piezas:piezas}}
+function pintarResumen(){$('#resumen').innerHTML=E.composicion.map((k,p)=>{const h=E.huecos[k],l=linajeSel(k);
+  return '<dt>'+POSTXT()[p]+'</dt><dd>'+esc(nombre(k))+' · '+(h.galeria?'escudo de la galería':(l?esc(l.nombre)+'<br><span class="sec">Fuente: '+esc(l.fuente)+'</span>':'revisión manual'))+'</dd>'}).join('');
+ const v=VAR[E.formato];$('#sin-precio').hidden=!!v.precio;$('#con-precio').hidden=!v.precio;$('#exportar').hidden=!v.precio;$('#siguiente').textContent=v.precio?CTA[4]:'Descargar el diseño para pedir precio';
+ const o=document.querySelector('input[name=ornamento]:checked');$('#resumen-orn').textContent='Formato: '+v.nombre+' · Ornamento: '+(o?o.closest('label').querySelector('b').textContent:'Sin ornamento');
+ $('#nota-revision').hidden=!ACT().some(h=>h.linaje==='revision');$('#json').textContent=JSON.stringify(final(),null,1)}
+$('#exportar').onclick=()=>{const b=new Blob([JSON.stringify(final(),null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='mi-cuadro.json';document.body.appendChild(a);a.click();a.remove()};
+// ---------- validación y navegación
+function validar(p){limpiarErr();const l=[];
+ if(p===1)ACT().forEach((h,i)=>{if(h.galeria)return;const v=h.texto.trim();if(!v)l.push(['a'+i,'Falta el '+ORD[i]+' escudo: escribe un apellido o trae uno de la galería.']);else if(!RE.test(v))l.push(['a'+i,'«'+v+'» tiene caracteres que no son letras. Usa solo letras, espacios, guiones o apóstrofos.'])});
+ if(p===2)ACT().forEach((h,i)=>{if(!h.galeria&&!h.linaje)l.push(['v'+i+'-0','Elige una opción para '+nombre(i)+'.'])});
+ if(p===3&&N()>1){const vis={};for(let i=0;i<N();i++){const k=+$('#c'+i).value;if(k in vis)l.push(['c'+i,nombre(k)+' está en dos huecos. Cada escudo va en un solo sitio.']);vis[k]=1}}
+ return errores(l)}
+function ir(p){E.paso=p;guardar();$$('.paso').forEach(f=>f.hidden=+f.dataset.paso!==p);
+ $$('.progreso li').forEach(li=>{const n=+li.dataset.p;li.classList.toggle('hecho',n<p);n===p?li.setAttribute('aria-current','step'):li.removeAttribute('aria-current')});
+ $('#siguiente').textContent=CTA[p];$('#atras').hidden=p===1;
+ if(p===1)pintarHuecos();if(p===2)pintarVariantes();if(p===3)pintarComposicion();if(p===4)pintarResumen();
+ const h=document.querySelector('.paso[data-paso="'+p+'"] h2');if(h)h.focus()}
+$('#form').onsubmit=e=>{e.preventDefault();if(!validar(E.paso))return;
+ if(E.paso<4){ir(E.paso+1);return}
+ if(!VAR[E.formato].precio){$('#exportar').click();return}
+ const b=$('#siguiente');b.setAttribute('aria-busy','true');
+ try{localStorage.setItem('carrito-v1',JSON.stringify([{producto:'CUADRO-'+E.formato.toUpperCase(),precio:VAR[E.formato].precio,diseno:final()}]))}catch(err){}
+ location.href='carrito.html'};
+$('#atras').onclick=()=>{limpiarErr();ir(Math.max(1,E.paso-1))};
+// escudo traído desde la galería
+const QS=new URLSearchParams(location.search);
+if(QS.get('formato')&&VAR[QS.get('formato')]){E.formato=QS.get('formato');ajustarComp()}
+const qa=QS.get('apellido');if(qa&&CAT[qa]){let i=ACT().findIndex(h=>!h.galeria&&!h.texto.trim());if(i<0)i=N()-1;E.huecos[i]={texto:CAT[qa].apellido,galeria:null,linaje:null};E.paso=1;guardar();
+ setTimeout(()=>{$('#msg-sorpresa').textContent=CAT[qa].apellido+' está en el escudo '+(i+1)+'.'},0)}
+if(QS.get('formato')||qa)history.replaceState(null,'',location.pathname);
+const q=QS.get('galeria');
+if(q&&gal(q)){let i=ACT().findIndex(h=>!h.galeria&&!h.texto.trim());if(i<0)i=N()-1;E.huecos[i]={texto:'',galeria:q,linaje:'galeria:'+q};E.paso=1;guardar();
+ history.replaceState(null,'',location.pathname);setTimeout(()=>{$('#msg-sorpresa').textContent=gal(q).nombre+' está en el escudo '+(i+1)+'.'},0)}
+ir(Math.min(E.paso||1,4));
 </script>
 </body>
 </html>

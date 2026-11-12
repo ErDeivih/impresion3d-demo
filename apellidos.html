@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="es-ES">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Directorio de apellidos con su escudo y su fuente · [PENDIENTE: MARCA]</title>
+<meta name="description" content="Busca tu apellido: linaje, blasón en castellano, fuentes citadas y qué puedes encargar. Si no hay escudo localizado, lo decimos.">
+<link rel="canonical" href="https://[PENDIENTE: DOMINIO]/apellidos.html">
+<style>
+:root{
+  --f-tit:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --f-txt:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --t1:32px;--t2:22px;--t3:17px;
+  --e1:4px;--e2:8px;--e3:12px;--e4:16px;--e5:24px;--e6:32px;--e7:48px;--e8:64px;
+  --papel:#f5efe4;--tinta:#1f1b16;--piedra:#5a5248;--granate:#7b1e2b;--oro:#9a7a2c;--campo:#fffdf8;
+  --radio:4px;--toque:48px;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:var(--e7)}
+body{margin:0;background:var(--papel);color:var(--tinta);font:400 var(--t3)/1.55 var(--f-txt)}
+img,svg{max-width:100%;height:auto}
+a{color:var(--granate);text-underline-offset:3px}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible,label:focus-within{outline:3px solid var(--tinta);outline-offset:3px}
+.envoltura{max-width:1040px;margin:0 auto;padding:0 var(--e4)}
+.estrecho{max-width:720px;margin:0 auto;padding:0 var(--e4)}
+h1,h2,h3{font-family:var(--f-tit);font-weight:600;line-height:1.15;margin:0 0 var(--e4);text-wrap:balance}
+h1{font-size:var(--t1)}h2{font-size:var(--t2)}h3{font-size:var(--t3);font-family:var(--f-txt)}
+p,ul,ol,dl,table{margin:0 0 var(--e4)}
+p,li{max-width:64ch}
+.sec{color:var(--piedra)}
+code,pre,kbd{font-size:var(--t3)}
+.pend{background:#fff3cd;color:#4a3300;padding:0 var(--e1);border-radius:2px}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+section{padding:var(--e7) 0;border-top:1px solid var(--oro)}
+section.envoltura,section.estrecho{padding:var(--e7) var(--e4)}
+/* cabecera y pie */
+.cab{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;min-height:56px;gap:0 var(--e4)}
+.cab nav{display:flex;flex-wrap:wrap}
+.marca{font:600 var(--t3)/1 var(--f-tit);color:var(--tinta);text-decoration:none;letter-spacing:.03em;min-height:44px;display:inline-flex;align-items:center}
+.cab nav a{min-height:44px;display:inline-flex;align-items:center;padding:0 var(--e2)}
+.pie{border-top:1px solid var(--oro);padding:var(--e6) var(--e4) var(--e8);color:var(--piedra)}
+.pie nav{display:flex;flex-wrap:wrap;gap:0 var(--e4);margin-bottom:var(--e4)}
+.pie nav a{min-height:44px;display:inline-flex;align-items:center}
+.borrador-pie{border-left:4px solid var(--oro);padding-left:var(--e3)}
+/* botones */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--e2);min-height:var(--toque);padding:0 var(--e5);
+  border-radius:var(--radio);border:2px solid var(--granate);font:600 var(--t3)/1.2 var(--f-txt);text-decoration:none;cursor:pointer;text-align:center}
+.btn-p{background:var(--granate);color:#fff}
+.btn-p:hover{background:#5f1621;border-color:#5f1621}
+.btn-p:active{transform:translateY(1px)}
+.btn-s{background:transparent;color:var(--granate)}
+.btn-s:hover{background:#ecdfd0}
+.btn[disabled],.btn[aria-disabled=true]{background:#e2d9cb;border-color:#e2d9cb;color:var(--piedra);cursor:not-allowed;transform:none}
+.btn[aria-busy=true]{position:relative;color:transparent}
+.btn[aria-busy=true]::after{content:"";position:absolute;width:18px;height:18px;border:2px solid #fff;border-right-color:transparent;border-radius:50%;animation:gira .7s linear infinite}
+@keyframes gira{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.ancho{display:flex;width:100%}
+.enlace{min-height:44px;display:inline-flex;align-items:center}
+/* formularios */
+.campo{margin-bottom:var(--e5)}
+.campo label,.campo legend{display:block;font-weight:600;margin-bottom:var(--e1)}
+.campo .ayuda{color:var(--piedra);margin:0 0 var(--e2)}
+input[type=text],input[type=email],input[type=tel],input[type=search],select,textarea{width:100%;min-height:var(--toque);padding:var(--e2) var(--e3);
+  border:2px solid var(--piedra);border-radius:var(--radio);background:var(--campo);color:var(--tinta);font:400 var(--t3)/1.4 var(--f-txt)}
+textarea{min-height:120px}
+[aria-invalid=true]{border-color:var(--granate)!important;border-width:3px!important}
+.error{color:var(--granate);font-weight:600;margin:var(--e1) 0 0}
+.error:empty{display:none}
+.error::before{content:"✕ "}
+.aviso{border:2px solid var(--granate);border-radius:var(--radio);padding:var(--e4);margin-bottom:var(--e5);background:var(--campo)}
+.aviso:empty{display:none}
+.casilla{display:flex;gap:var(--e3);align-items:flex-start;min-height:44px;padding:var(--e2) 0;cursor:pointer}
+.casilla input{width:24px;height:24px;margin:2px 0 0;flex:none;accent-color:var(--granate)}
+/* tarjetas y listas */
+.tarjeta{border:1px solid #d8ccb9;border-radius:var(--radio);padding:var(--e4);background:var(--campo)}
+.rejilla{display:grid;gap:var(--e4)}
+dl.datos{display:grid;grid-template-columns:auto 1fr;gap:var(--e2) var(--e5)}
+dl.datos dt{font-weight:600}dl.datos dd{margin:0}
+ul.marcas{list-style:none;padding:0}
+ul.marcas li{padding-left:28px;position:relative;margin-bottom:var(--e2)}
+ul.marcas li::before{content:"";position:absolute;left:4px;top:.55em;width:12px;height:6px;border:solid var(--granate);border-width:0 0 2px 2px;transform:rotate(-45deg)}
+details.faq{border-bottom:1px solid #d8ccb9}
+details.faq summary{min-height:52px;display:flex;align-items:center;justify-content:space-between;gap:var(--e4);cursor:pointer;font-weight:600;list-style:none}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::after{content:"+";font-size:var(--t2);color:var(--granate)}
+details.faq[open] summary::after{content:"−"}
+table.tabla{width:100%;border-collapse:collapse}
+table.tabla th,table.tabla td{text-align:left;padding:var(--e3) var(--e2);border-bottom:1px solid #d8ccb9;vertical-align:top}
+table.tabla th{font-weight:600}
+.fuente{border-top:1px solid var(--oro);margin-top:var(--e7);padding-top:var(--e4);color:var(--piedra)}
+/* barra fija móvil */
+.fija{position:fixed;left:0;right:0;bottom:0;background:var(--papel);border-top:1px solid var(--oro);padding:var(--e2) var(--e4);z-index:20}
+.con-fija{padding-bottom:88px}
+@media(min-width:820px){.rejilla.dos{grid-template-columns:1fr 1fr}.rejilla.tres{grid-template-columns:repeat(3,1fr)}.rejilla.cuatro{grid-template-columns:repeat(2,1fr)}}
+@media print{
+  body{background:#fff;color:#000}
+  .cab nav,.fija,.banner,.no-imprimir,button,.btn{display:none!important}
+  .con-fija{padding-bottom:0}
+  a{color:#000}
+  a[href^="http"]::after{content:" (" attr(href) ")";font-size:var(--t3)}
+  section{break-inside:avoid;padding:var(--e5) 0}
+  details{display:block}details>*{display:block}
+  .pend{background:none;border:1px dashed #000}
+}
+.intro{max-width:64ch}
+.busca{margin:var(--e4) 0}.busca label{display:block;font-weight:600;margin-bottom:var(--e1)}
+.letras{display:flex;flex-wrap:wrap;gap:var(--e1);margin:var(--e4) 0;position:sticky;top:0;background:var(--papel);padding:var(--e2) 0;z-index:5}
+.letras a{min-width:44px;min-height:44px;display:grid;place-items:center;border:1px solid #d8ccb9;border-radius:var(--radio);text-decoration:none;background:var(--campo)}
+.letra{padding:var(--e4) 0}.letra h2{margin-bottom:var(--e2)}
+.letra ul{list-style:none;margin:0;padding:0;display:grid;gap:0 var(--e4)}
+.letra li{display:flex;flex-wrap:wrap;align-items:center;gap:0 var(--e2);border-bottom:1px solid #e6dccb}
+.letra li a{min-height:44px;display:inline-flex;align-items:center}
+.est{color:var(--piedra)}.est-ok{color:var(--tinta);font-weight:600}.est-ok::before{content:"✓ "}
+.letra[hidden],.letra li[hidden]{display:none}
+@media(min-width:720px){.letra ul{grid-template-columns:1fr 1fr}}</style>
+
+</head>
+<body>
+<header class="envoltura cab">
+  <a class="marca" href="index.html">[PENDIENTE: MARCA]</a>
+  <nav aria-label="Principal"><a href="formatos.html">Formatos</a><a href="apellidos.html" aria-current="page">Apellidos</a><a href="galeria.html">Galería</a><a href="carrito.html">Carrito</a></nav>
+</header>
+<main id="contenido">
+
+<div class="envoltura">
+  <h1>Directorio de apellidos</h1>
+  <p class="sec intro">126 apellidos: los más frecuentes de España y de Salamanca, Madrid, Valladolid y Zamora (INE, 2025). De 7 tenemos un linaje con fuente comprobada y de 2 la fuente está por comprobar. Para el resto, <b>no hemos localizado escudo</b>: te hacemos un diseño original por encargo, y lo decimos así.</p>
+  <form class="busca" role="search" onsubmit="return false"><label for="q">Busca tu apellido</label><input type="search" id="q" autocomplete="off" aria-describedby="r"><p id="r" class="sec" role="status" aria-live="polite"></p></form>
+  <nav class="letras" aria-label="Ir a la inicial"><a href="#l-A">A</a><a href="#l-B">B</a><a href="#l-C">C</a><a href="#l-D">D</a><a href="#l-E">E</a><a href="#l-F">F</a><a href="#l-G">G</a><a href="#l-H">H</a><a href="#l-I">I</a><a href="#l-J">J</a><a href="#l-L">L</a><a href="#l-M">M</a><a href="#l-N">N</a><a href="#l-O">O</a><a href="#l-P">P</a><a href="#l-R">R</a><a href="#l-S">S</a><a href="#l-T">T</a><a href="#l-V">V</a></nav>
+  <section class="letra" id="l-A" aria-labelledby="h-A"><h2 id="h-A">A</h2><ul><li><a href="apellido-aguilar.html">Aguilar</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-alonso.html">Alonso</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-andres.html">Andrés</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-anton.html">Antón</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-arias.html">Arias</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-arranz.html">Arranz</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-alvarez.html">Álvarez</a> <span class="est est-sin">Sin escudo localizado</span></li></ul></section><section class="letra" id="l-B" aria-labelledby="h-B"><h2 id="h-B">B</h2><ul><li><a href="apellido-barbero.html">Barbero</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-benito.html">Benito</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-benitez.html">Benítez</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-bernal.html">Bernal</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-blanco.html">Blanco</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-blazquez.html">Blazquez</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-bravo.html">Bravo</a> <span class="est est-sin">Sin escudo localizado</span></li></ul></section><section class="letra" id="l-C" aria-labelledby="h-C"><h2 id="h-C">C</h2><ul><li><a href="apellido-caballero.html">Caballero</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-cabrera.html">Cabrera</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-calvo.html">Calvo</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-campos.html">Campos</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-cano.html">Cano</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-carmona.html">Carmona</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-carrasco.html">Carrasco</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-casado.html">Casado</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-castillo.html">Castillo</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-castro.html">Castro</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-cortes.html">Cortés</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-crespo.html">Crespo</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-cruz.html">Cruz</a> <span class="est est-sin">Sin escudo localizado</span></li></ul></section><section class="letra" id="l-D" aria-labelledby="h-D"><h2 id="h-D">D</h2><ul><li><a href="apellido-de la fuente.html">De la Fuente</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-delgado.html">Delgado</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-dominguez.html">Domínguez</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-duran.html">Durán</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-diaz.html">Díaz</a> <span class="est est-ok">Linaje con fuente</span></li><li><a href="apellido-diez.html">Díez</a> <span class="est est-sin">Sin escudo localizado</span></li></ul></section><section class="letra" id="l-E" aria-labelledby="h-E"><h2 id="h-E">E</h2><ul><li><a href="apellido-escudero.html">Escudero</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-esteban.html">Esteban</a> <span class="est est-sin">Sin escudo localizado</span></li></ul></section><section class="letra" id="l-F" aria-labelledby="h-F"><h2 id="h-F">F</h2><ul><li><a href="apellido-fernandez.html">Fernández</a> <span class="est est-ok">Linaje con fuente</span></li><li><a href="apellido-ferrer.html">Ferrer</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-ferrero.html">Ferrero</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-flores.html">Flores</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-fraile.html">Fraile</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-fuentes.html">Fuentes</a> <span class="est est-sin">Sin escudo localizado</span></li></ul></section><section class="letra" id="l-G" aria-labelledby="h-G"><h2 id="h-G">G</h2><ul><li><a href="apellido-gago.html">Gago</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-gallego.html">Gallego</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-garcia.html">García</a> <span class="est est-rev">Fuente por comprobar</span></li><li><a href="apellido-garrido.html">Garrido</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-gil.html">Gil</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-gimenez.html">Giménez</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-gonzalez.html">González</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-guerrero.html">Guerrero</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-gutierrez.html">Gutiérrez</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-gomez.html">Gómez</a> <span class="est est-ok">Linaje con fuente</span></li></ul></section><section class="letra" id="l-H" aria-labelledby="h-H"><h2 id="h-H">H</h2><ul><li><a href="apellido-hernandez.html">Hernández</a> <span class="est est-rev">Fuente por comprobar</span></li><li><a href="apellido-herrera.html">Herrera</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-herrero.html">Herrero</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-hidalgo.html">Hidalgo</a> <span class="est est-sin">Sin escudo localizado</span></li></ul></section><section class="letra" id="l-I" aria-labelledby="h-I"><h2 id="h-I">I</h2><ul><li><a href="apellido-ibanez.html">Ibáñez</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-iglesias.html">Iglesias</a> <span class="est est-sin">Sin escudo localizado</span></li></ul></section><section class="letra" id="l-J" aria-labelledby="h-J"><h2 id="h-J">J</h2><ul><li><a href="apellido-jimenez.html">Jiménez</a> <span class="est est-ok">Linaje con fuente</span></li></ul></section><section class="letra" id="l-L" aria-labelledby="h-L"><h2 id="h-L">L</h2><ul><li><a href="apellido-leon.html">León</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-lorenzo.html">Lorenzo</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-lozano.html">Lozano</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-lopez.html">López</a> <span class="est est-ok">Linaje con fuente</span></li></ul></section><section class="letra" id="l-M" aria-labelledby="h-M"><h2 id="h-M">M</h2><ul><li><a href="apellido-marcos.html">Marcos</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-martin.html">Martín</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-martinez.html">Martínez</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-marin.html">Marín</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-mateos.html">Mateos</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-medina.html">Medina</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-mendoza.html">Mendoza</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-merino.html">Merino</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-miguel.html">Miguel</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-molina.html">Molina</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-montero.html">Montero</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-mora.html">Mora</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-morales.html">Morales</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-moreno.html">Moreno</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-moro.html">Moro</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-moran.html">Morán</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-moya.html">Moya</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-munoz.html">Muñoz</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-marquez.html">Márquez</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-mendez.html">Méndez</a> <span class="est est-sin">Sin escudo localizado</span></li></ul></section><section class="letra" id="l-N" aria-labelledby="h-N"><h2 id="h-N">N</h2><ul><li><a href="apellido-navarro.html">Navarro</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-nieto.html">Nieto</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-nunez.html">Núñez</a> <span class="est est-sin">Sin escudo localizado</span></li></ul></section><section class="letra" id="l-O" aria-labelledby="h-O"><h2 id="h-O">O</h2><ul><li><a href="apellido-ortega.html">Ortega</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-ortiz.html">Ortiz</a> <span class="est est-sin">Sin escudo localizado</span></li></ul></section><section class="letra" id="l-P" aria-labelledby="h-P"><h2 id="h-P">P</h2><ul><li><a href="apellido-parra.html">Parra</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-pascual.html">Pascual</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-pastor.html">Pastor</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-pena.html">Peña</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-prieto.html">Prieto</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-perez.html">Pérez</a> <span class="est est-sin">Sin escudo localizado</span></li></ul></section><section class="letra" id="l-R" aria-labelledby="h-R"><h2 id="h-R">R</h2><ul><li><a href="apellido-ramos.html">Ramos</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-ramirez.html">Ramírez</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-redondo.html">Redondo</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-reyes.html">Reyes</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-rivas.html">Rivas</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-rivera.html">Rivera</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-rodriguez.html">Rodríguez</a> <span class="est est-ok">Linaje con fuente</span></li><li><a href="apellido-rojas.html">Rojas</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-romero.html">Romero</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-roman.html">Román</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-rubio.html">Rubio</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-ruiz.html">Ruiz</a> <span class="est est-ok">Linaje con fuente</span></li></ul></section><section class="letra" id="l-S" aria-labelledby="h-S"><h2 id="h-S">S</h2><ul><li><a href="apellido-salazar.html">Salazar</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-san jose.html">San José</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-santana.html">Santana</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-santiago.html">Santiago</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-santos.html">Santos</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-sanz.html">Sanz</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-serrano.html">Serrano</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-silva.html">Silva</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-soto.html">Soto</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-suarez.html">Suárez</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-sanchez.html">Sánchez</a> <span class="est est-sin">Sin escudo localizado</span></li></ul></section><section class="letra" id="l-T" aria-labelledby="h-T"><h2 id="h-T">T</h2><ul><li><a href="apellido-torres.html">Torres</a> <span class="est est-sin">Sin escudo localizado</span></li></ul></section><section class="letra" id="l-V" aria-labelledby="h-V"><h2 id="h-V">V</h2><ul><li><a href="apellido-vaquero.html">Vaquero</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-vara.html">Vara</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-vargas.html">Vargas</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-vega.html">Vega</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-velasco.html">Velasco</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-vicente.html">Vicente</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-vidal.html">Vidal</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-villar.html">Villar</a> <span class="est est-sin">Sin escudo localizado</span></li><li><a href="apellido-vazquez.html">Vázquez</a> <span class="est est-sin">Sin escudo localizado</span></li></ul></section>
+  <p class="sec">¿No está tu apellido? Escríbelo en el <a href="configurador.html">configurador</a>: lo buscamos a mano antes de preparar la prueba.</p>
+</div>
+</main>
+<footer class="pie envoltura">
+  <nav aria-label="Ocasiones"><a href="boda.html">Boda y aniversario</a><a href="navidad.html">Navidad</a><a href="regalo-padres.html">Para padres y abuelos</a><a href="precios.html">Precios y pagos</a></nav>
+  <nav aria-label="Información legal"><a href="aviso-legal.html">Aviso legal</a><a href="privacidad.html">Privacidad</a><a href="cookies.html">Cookies</a><a href="condiciones-venta.html">Condiciones de venta</a><a href="desistimiento.html">Desistimiento</a><a href="envios-y-devoluciones.html">Envíos y devoluciones</a></nav>
+  <p>Titular: <span class="pend">[PENDIENTE: RAZÓN SOCIAL]</span> · NIF <span class="pend">[PENDIENTE: NIF]</span> · <span class="pend">[PENDIENTE: DIRECCIÓN]</span></p>
+  <p class="borrador-pie">Borrador: la web aún no lleva los datos del titular. No se puede vender hasta completarlos.</p>
+  <p>Todos los precios de esta web llevan el IVA incluido.</p>
+</footer>
+<script>const q=document.getElementById('q'),r=document.getElementById('r');
+const n=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+q.oninput=()=>{const v=n(q.value.trim());let c=0;document.querySelectorAll('.letra').forEach(s=>{let k=0;s.querySelectorAll('li').forEach(li=>{const ok=!v||n(li.querySelector('a').textContent).startsWith(v);li.hidden=!ok;if(ok)k++});s.hidden=!k;c+=k});
+r.textContent=v?(c?c+(c===1?' apellido':' apellidos'):'No está en el directorio: lo buscamos a mano si lo escribes en el configurador.'):''};</script>
+</body>
+</html>

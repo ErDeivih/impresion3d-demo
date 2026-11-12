@@ -16,6 +16,7 @@
   --radio:4px;--toque:48px;
 }
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 html{-webkit-text-size-adjust:100%;scroll-padding-top:var(--e7)}
 body{margin:0;background:var(--papel);color:var(--tinta);font:400 var(--t3)/1.55 var(--f-txt)}
 img,svg{max-width:100%;height:auto}
@@ -34,12 +35,14 @@ code,pre,kbd{font-size:var(--t3)}
 section{padding:var(--e7) 0;border-top:1px solid var(--oro)}
 section.envoltura,section.estrecho{padding:var(--e7) var(--e4)}
 /* cabecera y pie */
-.cab{display:flex;justify-content:space-between;align-items:center;min-height:56px;gap:var(--e4)}
+.cab{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;min-height:56px;gap:0 var(--e4)}
+.cab nav{display:flex;flex-wrap:wrap}
 .marca{font:600 var(--t3)/1 var(--f-tit);color:var(--tinta);text-decoration:none;letter-spacing:.03em;min-height:44px;display:inline-flex;align-items:center}
 .cab nav a{min-height:44px;display:inline-flex;align-items:center;padding:0 var(--e2)}
 .pie{border-top:1px solid var(--oro);padding:var(--e6) var(--e4) var(--e8);color:var(--piedra)}
 .pie nav{display:flex;flex-wrap:wrap;gap:0 var(--e4);margin-bottom:var(--e4)}
 .pie nav a{min-height:44px;display:inline-flex;align-items:center}
+.borrador-pie{border-left:4px solid var(--oro);padding-left:var(--e3)}
 /* botones */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--e2);min-height:var(--toque);padding:0 var(--e5);
   border-radius:var(--radio);border:2px solid var(--granate);font:600 var(--t3)/1.2 var(--f-txt);text-decoration:none;cursor:pointer;text-align:center}
@@ -105,24 +108,24 @@ table.tabla th{font-weight:600}
 .heroe{display:grid;gap:var(--e5);padding:var(--e4) var(--e4) var(--e7)}
 .precio{font:600 var(--t2)/1.2 var(--f-tit);margin:0 0 var(--e3)}
 .nota{margin-top:var(--e2)}
-.foto{margin:0}.foto svg{display:block;max-width:300px;margin:0 auto}
+.foto{margin:0}.marco-cuadro{background:#3a2a1c;padding:12px;border-radius:4px;max-width:320px;margin:0 auto}.cuadro-escudos{display:grid;grid-template-columns:1fr 1fr;gap:8px;background:#efe6d6;padding:12px}.cuadro-escudos img{width:100%;height:auto;display:block}
 .ancho-movil{display:flex;width:100%}
 ol.pasos{list-style:none;padding:0;margin:0;display:grid;gap:var(--e5);counter-reset:p}
 ol.pasos li{counter-increment:p;display:grid;grid-template-columns:44px 1fr;column-gap:var(--e4)}
+.oc{padding-left:var(--e5)}.oc li{margin-bottom:var(--e2)}
 ol.pasos li::before{content:counter(p);grid-row:span 2;width:44px;height:44px;border:1px solid var(--oro);border-radius:50%;display:grid;place-items:center;font:600 var(--t3)/1 var(--f-tit)}
 .banner{position:fixed;left:var(--e4);right:var(--e4);bottom:96px;background:var(--campo);border:2px solid var(--tinta);border-radius:var(--radio);padding:var(--e4);z-index:30;display:flex;flex-wrap:wrap;gap:var(--e3);align-items:center}
 .banner[hidden]{display:none}.banner p{margin:0;flex:1 1 220px}
 body{padding-bottom:88px}
 @media(min-width:820px){.heroe{grid-template-columns:1.15fr .85fr;align-items:center;padding:var(--e7) var(--e4) var(--e8)}
  .ancho-movil{display:inline-flex;width:auto}ol.pasos{grid-template-columns:repeat(3,1fr)}.solo-movil{display:none}body{padding-bottom:0}.banner{bottom:var(--e4);max-width:560px}}
-.marco-cuadro{background:#3a2a1c;padding:12px;border-radius:5px;box-shadow:0 12px 28px #0002}.cuadro-escudos{display:grid;grid-template-columns:1fr 1fr;gap:8px;background:#efe6d6;padding:12px}.cuadro-escudos img{width:100%;height:auto;display:block;background:#fffdf8;border:1px solid #9a7a2c}
 </style>
 
 </head>
 <body>
 <header class="envoltura cab">
   <a class="marca" href="index.html">[PENDIENTE: MARCA]</a>
-  <nav aria-label="Principal"><a href="precios.html">Precios</a><a href="galeria.html">Galería</a><a href="carrito.html">Carrito</a></nav>
+  <nav aria-label="Principal"><a href="formatos.html">Formatos</a><a href="apellidos.html">Apellidos</a><a href="galeria.html">Galería</a><a href="carrito.html">Carrito</a></nav>
 </header>
 <main id="contenido">
 
@@ -135,13 +138,8 @@ body{padding-bottom:88px}
     <p class="sec nota">Hoy solo se paga la señal: 44,70 € IVA incluido.</p>
   </div>
   <figure class="foto">
-  <div class="marco-cuadro"><div class="cuadro-escudos">
-    <img src="img/escudos/hero-1.svg" alt="Escudo de Castilla, generado">
-    <img src="img/escudos/hero-2.svg" alt="Escudo de León, generado">
-    <img src="img/escudos/hero-3.svg" alt="Escudo de Castilla y León, generado">
-    <img src="img/escudos/hero-4.svg" alt="Escudo de palos de gules, generado">
-  </div></div>
-  <figcaption class="sec">Ilustración con escudos generados por heraldica.py. Foto del primer cuadro terminado: <span class="pend">pendiente</span>.</figcaption>
+  <div class="marco-cuadro"><div class="cuadro-escudos"><img src="img/escudos/g01.svg" width="200" height="236" alt="Escudo de Castilla, dibujado por nosotros" fetchpriority="high"><img src="img/escudos/g05.svg" width="200" height="236" alt="Escudo de lises de Francia, dibujado por nosotros"><img src="img/escudos/g03.svg" width="200" height="236" alt="Escudo de Castilla y León, dibujado por nosotros"><img src="img/escudos/g04.svg" width="200" height="236" alt="Escudo de palos de gules, dibujado por nosotros"></div></div>
+  <figcaption class="sec">Composición con cuatro escudos de nuestra <a href="galeria.html">galería</a>. Foto del primer cuadro terminado: <span class="pend">pendiente</span>.</figcaption>
 </figure>
 </div>
 
@@ -162,7 +160,7 @@ body{padding-bottom:88px}
       <li>Cada color, una pieza aparte encajada sobre una base común</li>
       <li>El apellido escrito bajo cada escudo</li>
       <li>Una hoja con la fuente de cada blasón</li>
-      <li>Marco y colgador: <span class="pend">por confirmar</span></li>
+      <li>Marco cajón de pino natural de 30×40 cm, sin cristal</li><li>Envío incluido a península</li>
     </ul>
   </div>
   <div>
@@ -170,6 +168,12 @@ body{padding-bottom:88px}
     <p>No es un certificado. Las armas son las de un linaje que lleva vuestro apellido según la fuente que citamos, y <b>no acreditan nobleza ni parentesco</b>.</p>
     <p>El dibujo es nuestro: no copiamos ilustraciones de otros.</p>
   </div>
+</section>
+
+<section class="envoltura" aria-labelledby="ocasiones">
+  <h2 id="ocasiones">Para cada ocasión</h2>
+  <ul class="oc"><li><a href="boda.html">Boda y aniversario</a>: las dos familias en un cuadro</li><li><a href="navidad.html">Navidad</a>: hasta cuándo encargarlo</li><li><a href="regalo-padres.html">Padres y abuelos</a>: sus cuatro apellidos</li></ul>
+  <p class="sec">¿Buscas un apellido? Mira el <a href="apellidos.html">directorio</a>. ¿Otro tamaño? Ver <a href="formatos.html">todos los formatos</a>.</p>
 </section>
 
 <section class="envoltura" aria-labelledby="resenas">
@@ -182,7 +186,7 @@ body{padding-bottom:88px}
 
 <section class="envoltura" aria-labelledby="preguntas">
   <h2 id="preguntas">Preguntas frecuentes</h2>
-  <details class="faq"><summary>¿Un apellido tiene un único escudo?</summary><p>Casi nunca. Un mismo apellido puede tener varios linajes, cada uno con sus armas. En el configurador os enseñamos los que tenemos documentados y la fuente de cada uno, y elegís vosotros.</p></details><details class="faq"><summary>¿Y si no encontramos el nuestro?</summary><p>Marcad «No sé cuál es el nuestro». Lo buscamos a mano antes de preparar la prueba; si no encontramos una fuente, os lo decimos y no seguimos.</p></details><details class="faq"><summary>¿Qué quiere decir que no acredita nobleza?</summary><p>Que el cuadro reproduce las armas de un linaje que lleva vuestro apellido, tal como aparecen en la fuente citada. No demuestra que vuestra familia descienda de ese linaje ni ningún título.</p></details><details class="faq"><summary>¿Qué pagáis hoy y qué después?</summary><p>Hoy, una señal de 44,70 € IVA incluido. Los 104,30 € IVA incluido restantes, cuando aprobéis la prueba.</p></details><details class="faq"><summary>¿Cómo es la prueba?</summary><p>Una imagen del cuadro completo, con los cuatro escudos en su sitio y sus colores. Os llega por correo y la aprobáis o pedís cambios desde el enlace.</p></details><details class="faq"><summary>¿Cuántos cambios puedo pedir?</summary><p>Número de rondas incluidas: por confirmar. No imprimimos nada hasta que aprobéis.</p></details><details class="faq"><summary>¿Cuánto tarda en llegar?</summary><p>Plazo de entrega: por confirmar. Os daremos una fecha cuando aprobéis la prueba.</p></details><details class="faq"><summary>¿Cuánto cuesta el envío?</summary><p>Por confirmar. Os lo diremos antes de cobrar nada.</p></details><details class="faq"><summary>¿Se puede devolver?</summary><p>Al estar hecho con vuestros apellidos, la ley excluye el desistimiento de 14 días en productos personalizados. Si llega con un defecto, tenéis la garantía legal de tres años. Lo explicamos en las condiciones de venta.</p></details><details class="faq"><summary>¿Puedo enviarlo a otra dirección para regalarlo?</summary><p>Sí: en el pedido podéis poner una dirección de entrega distinta de la vuestra. Si va en caja de regalo: por confirmar.</p></details>
+  <details class="faq"><summary>¿Un apellido tiene un único escudo?</summary><p>Casi nunca. Un mismo apellido puede tener varios linajes, cada uno con sus armas. En el configurador os enseñamos los que tenemos documentados y la fuente de cada uno, y elegís vosotros.</p></details><details class="faq"><summary>¿Y si no encontramos el nuestro?</summary><p>Marcad «No sé cuál es el nuestro». Lo buscamos a mano antes de preparar la prueba; si no encontramos una fuente, os lo decimos y no seguimos.</p></details><details class="faq"><summary>¿Qué quiere decir que no acredita nobleza?</summary><p>Que el cuadro reproduce las armas de un linaje que lleva vuestro apellido, tal como aparecen en la fuente citada. No demuestra que vuestra familia descienda de ese linaje ni ningún título.</p></details><details class="faq"><summary>¿Qué pagáis hoy y qué después?</summary><p>Hoy, una señal de 44,70 € IVA incluido. Los 104,30 € IVA incluido restantes, cuando aprobéis la prueba.</p></details><details class="faq"><summary>¿Cómo es la prueba?</summary><p>Una imagen del cuadro completo, con los cuatro escudos en su sitio y sus colores. Os llega por correo y la aprobáis o pedís cambios desde el enlace.</p></details><details class="faq"><summary>¿Cuántos cambios puedo pedir?</summary><p>Dos rondas de cambios incluidas. No imprimimos nada hasta que aprobéis.</p></details><details class="faq"><summary>¿Cuánto tarda en llegar?</summary><p>7–10 días laborables desde que aprobáis la prueba, más 1–3 días de transporte. Si hay retraso, os avisamos en 24 horas con una fecha nueva.</p></details><details class="faq"><summary>¿Cuánto cuesta el envío?</summary><p>Está incluido a península, a domicilio con Correos o en un punto de recogida SEUR. Baleares, Canarias, Ceuta y Melilla: consultadnos antes de pedir.</p></details><details class="faq"><summary>¿Se puede devolver?</summary><p>Al estar hecho con vuestros apellidos, la ley excluye el desistimiento de 14 días en productos personalizados. Si llega con un defecto, tenéis la garantía legal de tres años. Lo explicamos en las condiciones de venta.</p></details><details class="faq"><summary>¿Puedo enviarlo a otra dirección para regalarlo?</summary><p>Sí: en el pedido podéis poner una dirección de entrega distinta de la vuestra. Si va en caja de regalo: por confirmar.</p></details>
 </section>
 
 <div class="banner no-imprimir" id="aviso-cookies" role="region" aria-label="Aviso de almacenamiento" hidden>
@@ -193,8 +197,10 @@ body{padding-bottom:88px}
 
 </main>
 <footer class="pie envoltura">
+  <nav aria-label="Ocasiones"><a href="boda.html">Boda y aniversario</a><a href="navidad.html">Navidad</a><a href="regalo-padres.html">Para padres y abuelos</a><a href="precios.html">Precios y pagos</a></nav>
   <nav aria-label="Información legal"><a href="aviso-legal.html">Aviso legal</a><a href="privacidad.html">Privacidad</a><a href="cookies.html">Cookies</a><a href="condiciones-venta.html">Condiciones de venta</a><a href="desistimiento.html">Desistimiento</a><a href="envios-y-devoluciones.html">Envíos y devoluciones</a></nav>
   <p>Titular: <span class="pend">[PENDIENTE: RAZÓN SOCIAL]</span> · NIF <span class="pend">[PENDIENTE: NIF]</span> · <span class="pend">[PENDIENTE: DIRECCIÓN]</span></p>
+  <p class="borrador-pie">Borrador: la web aún no lleva los datos del titular. No se puede vender hasta completarlos.</p>
   <p>Todos los precios de esta web llevan el IVA incluido.</p>
 </footer>
 <script>

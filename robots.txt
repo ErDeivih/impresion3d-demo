@@ -7,6 +7,7 @@ Disallow: /error-pago.html
 Disallow: /estado-vacio.html
 Disallow: /mantenimiento.html
 Disallow: /sistema.html
+Disallow: /operador.html
 Disallow: /emails/
 
 Sitemap: https://[PENDIENTE: DOMINIO]/sitemap.xml

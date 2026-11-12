@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Ficha del cuadro de cuatro escudos · [PENDIENTE: MARCA]</title>
-<meta name="description" content="Medidas, materiales, plazos, garantía y comparativa del cuadro de cuatro escudos en relieve. 149 € IVA incluido.">
+<meta name="description" content="Qué recibes, renders reales de las piezas, los tres modos de impresión, por qué cuesta 149 € IVA incluido y comparativa honesta.">
 <link rel="canonical" href="https://[PENDIENTE: DOMINIO]/producto.html">
 <style>
 :root{
@@ -16,6 +16,7 @@
   --radio:4px;--toque:48px;
 }
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 html{-webkit-text-size-adjust:100%;scroll-padding-top:var(--e7)}
 body{margin:0;background:var(--papel);color:var(--tinta);font:400 var(--t3)/1.55 var(--f-txt)}
 img,svg{max-width:100%;height:auto}
@@ -34,12 +35,14 @@ code,pre,kbd{font-size:var(--t3)}
 section{padding:var(--e7) 0;border-top:1px solid var(--oro)}
 section.envoltura,section.estrecho{padding:var(--e7) var(--e4)}
 /* cabecera y pie */
-.cab{display:flex;justify-content:space-between;align-items:center;min-height:56px;gap:var(--e4)}
+.cab{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;min-height:56px;gap:0 var(--e4)}
+.cab nav{display:flex;flex-wrap:wrap}
 .marca{font:600 var(--t3)/1 var(--f-tit);color:var(--tinta);text-decoration:none;letter-spacing:.03em;min-height:44px;display:inline-flex;align-items:center}
 .cab nav a{min-height:44px;display:inline-flex;align-items:center;padding:0 var(--e2)}
 .pie{border-top:1px solid var(--oro);padding:var(--e6) var(--e4) var(--e8);color:var(--piedra)}
 .pie nav{display:flex;flex-wrap:wrap;gap:0 var(--e4);margin-bottom:var(--e4)}
 .pie nav a{min-height:44px;display:inline-flex;align-items:center}
+.borrador-pie{border-left:4px solid var(--oro);padding-left:var(--e3)}
 /* botones */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--e2);min-height:var(--toque);padding:0 var(--e5);
   border-radius:var(--radio);border:2px solid var(--granate);font:600 var(--t3)/1.2 var(--f-txt);text-decoration:none;cursor:pointer;text-align:center}
@@ -105,84 +108,116 @@ table.tabla th{font-weight:600}
 .migas{padding:var(--e2) 0}.migas a{min-height:44px;display:inline-flex;align-items:center}
 .precio{font:600 var(--t2)/1.3 var(--f-tit)}.precio .sec{font:400 var(--t3) var(--f-txt)}
 .galeria input{position:absolute;opacity:0;pointer-events:none}
-.vf{display:none;margin:0 0 var(--e3)}.vf svg{display:block;width:100%;max-width:420px;margin:0 auto;background:var(--campo)}
-#v1:checked~.vistas .v1,#v2:checked~.vistas .v2,#v3:checked~.vistas .v3{display:block}
-.selector{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--e2);margin-bottom:var(--e5)}
-.selector label{min-height:44px;display:grid;place-items:center;border:1px solid var(--piedra);border-radius:var(--radio);cursor:pointer}
-#v1:checked~.selector label[for=v1],#v2:checked~.selector label[for=v2],#v3:checked~.selector label[for=v3]{border:2px solid var(--granate);font-weight:600}
-#v1:focus-visible~.selector label[for=v1],#v2:focus-visible~.selector label[for=v2],#v3:focus-visible~.selector label[for=v3]{outline:3px solid var(--tinta);outline-offset:2px}
+.vf{display:none;margin:0 0 var(--e3)}.vf img{display:block;width:100%;max-width:520px;height:auto;margin:0 auto;background:#fff}
+#v1:checked~.vistas .v1,#v2:checked~.vistas .v2,#v3:checked~.vistas .v3,#v4:checked~.vistas .v4{display:block}
+.selector{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--e2);margin-bottom:var(--e3)}
+.selector label{min-height:44px;display:grid;place-items:center;border:1px solid var(--piedra);border-radius:var(--radio);cursor:pointer;background:var(--campo)}
+#v1:checked~.selector label[for=v1],#v2:checked~.selector label[for=v2],#v3:checked~.selector label[for=v3],#v4:checked~.selector label[for=v4]{border:2px solid var(--granate);font-weight:600}
+#v1:focus-visible~.selector label[for=v1],#v2:focus-visible~.selector label[for=v2],#v3:focus-visible~.selector label[for=v3],#v4:focus-visible~.selector label[for=v4]{outline:3px solid var(--tinta);outline-offset:2px}
+.aviso-render{margin-bottom:var(--e5)}
+.modos img{width:100%;height:auto;display:block;margin-bottom:var(--e3);background:#fff}
+.modos h3{margin-bottom:var(--e2)}
+.medidos{margin-top:var(--e6)}.desliza{overflow-x:auto}.desliza table{min-width:560px}
+.perfilado{border-left:4px solid var(--oro);padding-left:var(--e4);margin-top:var(--e5)}
 .cifra{font:600 var(--t2)/1.2 var(--f-tit);margin-bottom:var(--e2)}
 .nuestra{border:2px solid var(--granate)}
+@media(min-width:820px){.modos{grid-template-columns:repeat(3,1fr)}}
 @media print{.vf{display:block!important}}
-.marco-cuadro{background:#3a2a1c;padding:12px;border-radius:5px;box-shadow:0 12px 28px #0002}.cuadro-escudos{display:grid;grid-template-columns:1fr 1fr;gap:8px;background:#efe6d6;padding:12px}.cuadro-escudos img{width:100%;height:auto;display:block;background:#fffdf8;border:1px solid #9a7a2c}
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Product", "name": "Cuadro de cuatro escudos en relieve, 30×40 cm", "description": "Cuadro de 30×40 cm con los escudos de cuatro apellidos impresos en relieve, una pieza por color. Se aprueba una prueba antes de imprimir.", "image": ["https://[PENDIENTE: DOMINIO]/img/cuadro-frontal.jpg"], "sku": "CUADRO-4-30X40", "brand": {"@type": "Brand", "name": "[PENDIENTE: MARCA]"}, "offers": {"@type": "Offer", "url": "https://[PENDIENTE: DOMINIO]/producto.html", "priceCurrency": "EUR", "price": "149.00", "availability": "https://schema.org/MadeToOrder", "itemCondition": "https://schema.org/NewCondition", "seller": {"@type": "Organization", "name": "[PENDIENTE: RAZÓN SOCIAL]"}}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿De qué material es?", "acceptedAnswer": {"@type": "Answer", "text": "Las piezas se imprimen en plástico de impresión 3D. Material exacto y marca del filamento: por confirmar."}}, {"@type": "Question", "name": "¿Qué tamaño tiene cada escudo?", "acceptedAnswer": {"@type": "Answer", "text": "En el prototipo, unos 108×125 mm cada uno, con el nombre debajo. Puede variar unos milímetros según el blasón."}}, {"@type": "Question", "name": "¿Cómo se limpia?", "acceptedAnswer": {"@type": "Answer", "text": "Con un paño seco o un plumero. Sin productos ni agua. No lo pongas al sol directo ni junto a un radiador; temperatura máxima: por confirmar con el material definitivo."}}, {"@type": "Question", "name": "¿Se pueden cambiar los colores del blasón?", "acceptedAnswer": {"@type": "Answer", "text": "No: los colores son los de la fuente citada. Sí podéis elegir otro linaje del mismo apellido si tiene otros colores."}}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://[PENDIENTE: DOMINIO]/index.html"}, {"@type": "ListItem", "position": 2, "name": "Cuadro de cuatro escudos", "item": "https://[PENDIENTE: DOMINIO]/producto.html"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Product", "name": "Cuadro de cuatro escudos en relieve, 30×40 cm", "description": "Cuadro de 30×40 cm con los escudos de cuatro apellidos impresos en relieve, una pieza por color encajada en una base común. Se aprueba una prueba antes de imprimir.", "image": ["https://[PENDIENTE: DOMINIO]/img/render/castillo-encaje.webp", "https://[PENDIENTE: DOMINIO]/img/render/roel-montaje-piezas.webp"], "sku": "CUADRO-4-30X40", "brand": {"@type": "Brand", "name": "[PENDIENTE: MARCA]"}, "material": "PLA", "offers": {"@type": "Offer", "url": "https://[PENDIENTE: DOMINIO]/producto.html", "priceCurrency": "EUR", "price": "149.00", "availability": "https://schema.org/InStock", "itemCondition": "https://schema.org/NewCondition", "seller": {"@type": "Organization", "name": "[PENDIENTE: RAZÓN SOCIAL]"}, "shippingDetails": {"@type": "OfferShippingDetails", "shippingRate": {"@type": "MonetaryAmount", "value": "0", "currency": "EUR"}, "shippingDestination": {"@type": "DefinedRegion", "addressCountry": "ES", "postalCodeRange": [{"postalCodeBegin": "01000", "postalCodeEnd": "06999"}, {"postalCodeBegin": "08000", "postalCodeEnd": "34999"}, {"postalCodeBegin": "36000", "postalCodeEnd": "37999"}, {"postalCodeBegin": "39000", "postalCodeEnd": "50999"}]}, "deliveryTime": {"@type": "ShippingDeliveryTime", "handlingTime": {"@type": "QuantitativeValue", "minValue": 7, "maxValue": 10, "unitCode": "DAY"}, "transitTime": {"@type": "QuantitativeValue", "minValue": 1, "maxValue": 3, "unitCode": "DAY"}}}, "hasMerchantReturnPolicy": {"@type": "MerchantReturnPolicy", "applicableCountry": "ES", "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"}}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿De qué material es?", "acceptedAnswer": {"@type": "Answer", "text": "Las piezas se imprimen en PLA, un plástico de impresión 3D de origen vegetal. Marca y acabado del filamento: por confirmar."}}, {"@type": "Question", "name": "¿Qué tamaño tiene cada escudo?", "acceptedAnswer": {"@type": "Answer", "text": "Unos 110×125 mm cada uno, con el nombre debajo. Puede variar unos milímetros según el blasón."}}, {"@type": "Question", "name": "¿Cómo se limpia?", "acceptedAnswer": {"@type": "Answer", "text": "Con un paño seco o un plumero. Sin productos ni agua. Lejos del sol directo y de radiadores: el PLA se deforma con calor."}}, {"@type": "Question", "name": "¿Se pueden cambiar los colores del blasón?", "acceptedAnswer": {"@type": "Answer", "text": "No: los colores son los de la fuente citada. Sí podéis elegir otro linaje del mismo apellido si tiene otros colores."}}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://[PENDIENTE: DOMINIO]/index.html"}, {"@type": "ListItem", "position": 2, "name": "Cuadro de cuatro escudos", "item": "https://[PENDIENTE: DOMINIO]/producto.html"}]}</script>
 </head>
 <body>
 <header class="envoltura cab">
   <a class="marca" href="index.html">[PENDIENTE: MARCA]</a>
-  <nav aria-label="Principal"><a href="precios.html">Precios</a><a href="carrito.html">Carrito</a></nav>
+  <nav aria-label="Principal"><a href="formatos.html">Formatos</a><a href="apellidos.html">Apellidos</a><a href="galeria.html">Galería</a><a href="carrito.html">Carrito</a></nav>
 </header>
 <main id="contenido">
 
 <div class="estrecho">
   <nav aria-label="Migas de pan" class="migas"><a href="index.html">Inicio</a> <span aria-hidden="true">›</span> <span aria-current="page">Cuadro de cuatro escudos</span></nav>
   <h1>Cuadro de cuatro escudos en relieve, 30×40 cm</h1>
-  <p class="precio">149 € IVA incluido <span class="sec">· señal de 44,70 € IVA incluido</span></p>
+  <p class="precio">149 € IVA incluido <span class="sec">· hoy, señal de 44,70 € IVA incluido</span></p>
 
   <div class="galeria">
-    <input type="radio" name="vista" id="v1" checked><input type="radio" name="vista" id="v2"><input type="radio" name="vista" id="v3">
+    <input type="radio" name="vista" id="v1" checked><input type="radio" name="vista" id="v2"><input type="radio" name="vista" id="v3"><input type="radio" name="vista" id="v4">
     <div class="vistas">
-      <figure class="vf v1"><div class="marco-cuadro"><div class="cuadro-escudos">
-    <img src="img/escudos/hero-1.svg" alt="Escudo de Castilla, generado">
-    <img src="img/escudos/hero-2.svg" alt="Escudo de León, generado">
-    <img src="img/escudos/hero-3.svg" alt="Escudo de Castilla y León, generado">
-    <img src="img/escudos/hero-4.svg" alt="Escudo de palos de gules, generado">
-  </div></div></figure>
-      <figure class="vf v2"><svg viewBox="0 0 300 200" role="img" aria-label="Vista de canto: base, piezas de distinta altura y marco">
-  <rect x="10" y="150" width="280" height="30" fill="#3a2a1c"/>
-  <rect x="24" y="138" width="252" height="12" fill="#2a221e"/>
-  <rect x="24" y="118" width="40" height="20" fill="#8f2a2a"/><rect x="66" y="126" width="70" height="12" fill="#2c4a7a"/>
-  <rect x="88" y="110" width="30" height="16" fill="#d7b65a"/><rect x="138" y="126" width="70" height="12" fill="#2f5a3a"/>
-  <rect x="160" y="112" width="26" height="14" fill="#e8e1d3"/><rect x="210" y="126" width="24" height="12" fill="#2c4a7a"/><rect x="236" y="118" width="40" height="20" fill="#8f2a2a"/>
-  <g font-family="system-ui,sans-serif" font-size="13" fill="#1f1b16">
-   <text x="24" y="100">bordura</text><text x="84" y="100">figura</text><text x="200" y="196">base común</text></g>
-</svg><figcaption class="sec">Canto: cada nivel tiene su altura</figcaption></figure>
-      <figure class="vf v3"><svg viewBox="0 0 300 200" role="img" aria-label="Detalle ampliado de una junta entre dos colores y un pivote de encaje">
-  <rect width="300" height="200" fill="#efe6d6"/>
-  <rect x="20" y="40" width="124" height="120" fill="#2c4a7a"/><rect x="156" y="40" width="124" height="120" fill="#d7b65a"/>
-  <rect x="144" y="40" width="12" height="120" fill="#2a221e"/>
-  <circle cx="80" cy="100" r="16" fill="none" stroke="#e8e1d3" stroke-width="3" stroke-dasharray="5 4"/>
-  <g font-family="system-ui,sans-serif" font-size="13" fill="#1f1b16"><text x="104" y="30">junta entre colores</text><text x="40" y="186">pivote oculto (encaje)</text></g>
-</svg><figcaption class="sec">Detalle de una junta</figcaption></figure>
+      <figure class="vf v1"><img src="img/render/castillo-encaje.webp" width="516" height="463" alt="Render de un escudo con un castillo de oro sobre campo rojo, en relieve sobre una base negra" fetchpriority="high"><figcaption class="sec">Frontal. Render del escudo de prueba «castillo», 100 mm de ancho.</figcaption></figure>
+      <figure class="vf v2"><img src="img/render/castillo-canto.webp" width="640" height="176" alt="Corte del escudo: base negra abajo, campo rojo y castillo de oro más alto encima" loading="lazy"><figcaption class="sec">Perfil por el centro, con el relieve multiplicado por 4 para que se vea: la base, el campo a una altura y el castillo más alto.</figcaption></figure>
+      <figure class="vf v3"><img src="img/render/castillo-detalle-encaje.webp" width="630" height="202" alt="Detalle del encaje: un pivote de la base entra en el hueco de la pieza roja con holgura" loading="lazy"><figcaption class="sec">Detalle del encaje: cada pieza entra en sus pivotes con 0,30 mm de holgura y solo de una forma.</figcaption></figure>
+      <figure class="vf v4"><img src="img/render/roel-montaje-piezas.webp" width="516" height="480" alt="Escudo con las piezas levantadas sobre la base para ver cómo se montan" loading="lazy"><figcaption class="sec">Montaje por piezas: cada color se imprime aparte y se encaja en la base.</figcaption></figure>
     </div>
     <div class="selector no-imprimir" role="group" aria-label="Elegir vista">
-      <label for="v1">Frontal</label><label for="v2">Canto</label><label for="v3">Detalle</label>
+      <label for="v1">Frontal</label><label for="v2">Perfil</label><label for="v3">Encaje</label><label for="v4">Piezas</label>
     </div>
+    <p class="sec aviso-render">Son renders de nuestros archivos de impresión, no fotos. Fotos del primer cuadro: <span class="pend">pendiente</span>.</p>
   </div>
 
   <a class="btn btn-p ancho" href="configurador.html">Elegir nuestros apellidos</a>
 
+  <section aria-labelledby="recibes">
+    <h2 id="recibes">Qué recibes, en palabras sencillas</h2>
+    <p>Un cuadro con cuatro escudos, uno por apellido. Cada escudo no es una lámina pintada: es un pequeño relieve hecho de piezas de plástico, una por cada color, encajadas sobre una base. Las figuras (un castillo, un león, unas estrellas) sobresalen más que el fondo, así que se ven con luz y sombra.</p>
+    <p>Debajo de cada escudo va el apellido, y con el cuadro va una hoja que dice de qué libro o archivo sale cada blasón. <b>No acredita nobleza ni parentesco</b>: son las armas de un linaje que lleva vuestro apellido.</p>
+  </section>
+
+  <section aria-labelledby="modos">
+    <h2 id="modos">Tres formas de imprimir un escudo</h2>
+    <div class="rejilla modos">
+      <div class="tarjeta nuestra"><img src="img/render/castillo-encaje.webp" width="516" height="463" alt="" loading="lazy">
+        <h3>Piezas encajadas: la que usamos en el cuadro</h3><p>Cada color es una pieza aparte que entra a presión en una base con pivotes.</p><p class="sec">Para quien quiere más relieve y los colores bien separados. Escudo de prueba: 51,2 g y 125 min de impresión.</p></div>
+      <div class="tarjeta"><img src="img/render/castillo-multicolor.webp" width="516" height="441" alt="" loading="lazy">
+        <h3>Multicolor</h3><p>Todo el escudo sale de una vez en una impresora de varios colores.</p><p class="sec">Para quien quiere una sola pieza, sin montaje. Escudo de prueba: 60,9 g y 152 min. Disponibilidad: <span class="pend">por confirmar</span>.</p></div>
+      <div class="tarjeta"><img src="img/render/castillo-apilado.webp" width="516" height="430" alt="" loading="lazy">
+        <h3>Apilado</h3><p>Los colores van por alturas: se cambia de hilo al llegar a cada capa.</p><p class="sec">Para quien busca algo más ligero y sencillo; admite menos detalle. Escudo de prueba: 30,0 g y 70 min. Disponibilidad: <span class="pend">por confirmar</span>.</p></div>
+    </div>
+  
+    <h3 class="medidos">Medido en nuestros escudos de prueba</h3>
+    <div class="desliza" role="region" aria-label="Gramos y minutos por modo" tabindex="0"><table class="tabla">
+      <thead><tr><th scope="col">Modo</th><th scope="col">Roel, 80 mm</th><th scope="col">Castillo, 100 mm</th><th scope="col">Para quién</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Encaje</th><td>33,0 g · 85 min</td><td>51,2 g · 125 min</td><td>Quien quiere el relieve más marcado; es el del cuadro</td></tr>
+        <tr><th scope="row">Multicolor</th><td>42,5 g · 112 min</td><td>60,9 g · 152 min</td><td>Quien prefiere una sola pieza sin juntas</td></tr>
+        <tr><th scope="row">Apilado</th><td>20,0 g · 49 min</td><td>30,0 g · 70 min</td><td>Quien busca lo más ligero y sencillo</td></tr>
+      </tbody></table></div>
+    <p class="sec">Gramos de plástico y minutos de máquina de cada escudo, sacados del programa que prepara la impresión. Los dos escudos tienen 3 piezas.</p>
+    <div class="perfilado">
+      <h3>Lo que el relieve no lleva: el perfilado</h3>
+      <p>En un dibujo heráldico cada figura va rodeada de una línea negra fina. En un escudo de 11 cm esa línea mediría menos de 1 mm, y por debajo de 1 mm no podemos garantizar que la pieza salga bien. Por eso <b>el relieve no lleva el perfilado del dibujo</b>: las figuras se separan por el color y por la altura, no por una línea. Lo verás así en la prueba.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="porque">
+    <h2 id="porque">Por qué cuesta 149 € IVA incluido</h2>
+    <ul class="marcas">
+      <li>Buscamos y citamos la fuente de cada linaje, o la investigamos a mano si no la tenemos.</li>
+      <li>Dibujamos cada escudo desde su blasón; no compramos ni copiamos dibujos.</li>
+      <li>Imprimir los cuatro escudos lleva unas 8 horas de máquina (medido en el escudo de prueba) más el montaje pieza a pieza.</li>
+      <li>Te enseñamos la prueba y la corregimos antes de imprimir nada.</li>
+    </ul>
+    <p class="sec">Desglose de costes y margen: <span class="pend">por publicar cuando esté cerrado el proveedor de marcos</span>.</p>
+  </section>
+
   <section aria-labelledby="ficha">
     <h2 id="ficha">Ficha</h2>
     <dl class="datos">
-      <dt>Medidas</dt><dd>30×40 cm; grosor total: <span class="pend">por confirmar</span></dd>
-      <dt>Escudos</dt><dd>4, de unos 108×125 mm cada uno (medida del prototipo)</dd>
-      <dt>Material</dt><dd>Plástico de impresión 3D; tipo exacto: <span class="pend">por confirmar</span></dd>
-      <dt>Colores</dt><dd>Los del blasón, hasta 5 por escudo; cada color es una pieza</dd>
-      <dt>Acabado</dt><dd>Mate, con la textura fina de las capas de impresión; marco: <span class="pend">por confirmar</span></dd>
-      <dt>Documentación</dt><dd>Hoja con el blasón y la fuente de cada escudo</dd>
+      <dt>Medidas</dt><dd>30×40 cm; relieve de hasta 12 mm sobre el fondo</dd>
+      <dt>Escudos</dt><dd>4, de unos 110×125 mm cada uno</dd>
+      <dt>Material</dt><dd>PLA; marca y acabado: <span class="pend">por confirmar</span></dd>
+      <dt>Colores</dt><dd>Los del blasón; cada color es una pieza</dd>
+      <dt>Acabado</dt><dd>Mate, con la textura fina de las capas de impresión</dd>
+      <dt>Marco</dt><dd>Cajón de pino natural, perfil de 20×30 mm, sin cristal</dd><dt>Fondo</dt><dd>Lámina impresa a color sobre papel verjurado, pegada a un tablero de 3 mm</dd>
+      <dt>Peso del paquete</dt><dd>Unos 900 g (estimado, sin pesar todavía)</dd>
     </dl>
   </section>
 
   <section aria-labelledby="plazos">
-    <h2 id="plazos">Plazo, envío y garantía</h2>
+    <h2 id="plazos">Plazo, envío, garantía y devoluciones</h2>
     <dl class="datos">
-      <dt>Prueba</dt><dd><span class="pend">plazo por confirmar</span> desde la señal</dd>
-      <dt>Fabricación</dt><dd><span class="pend">plazo por confirmar</span> desde que apruebas</dd>
-      <dt>Envío</dt><dd>Península, Baleares, Canarias, Ceuta y Melilla; coste y plazo: <span class="pend">por confirmar</span>. <a href="envios-y-devoluciones.html">Zonas y condiciones</a></dd>
-      <dt>Garantía</dt><dd>La legal de tres años ante cualquier falta de conformidad</dd>
-      <dt>Desistimiento</dt><dd>No aplica a productos personalizados. <a href="condiciones-venta.html#desistimiento">Por qué y qué sí cubrimos</a></dd>
+      <dt>Prueba</dt><dd><span class="pend">plazo por confirmar</span> desde la señal; 2 rondas de cambios incluidas</dd>
+      <dt>Fabricación y transporte</dt><dd>7–10 días laborables desde que apruebas, más 1–3 de transporte</dd>
+      <dt>Envío</dt><dd>Incluido a península (Correos a domicilio o punto SEUR). Baleares, Canarias, Ceuta y Melilla: consultar. <a href="envios-y-devoluciones.html">Zonas y condiciones</a></dd>
+      <dt>Garantía</dt><dd>La legal de tres años ante cualquier defecto</dd>
+      <dt>Desistimiento</dt><dd><b>No aplica</b>: se fabrica con vuestros apellidos (art. 103.c TRLGDCU). <a href="condiciones-venta.html#desistimiento">Qué sí cubrimos</a></dd>
     </dl>
   </section>
 
@@ -190,22 +225,24 @@ table.tabla th{font-weight:600}
     <h2 id="comparar">Frente a otras formas de tener vuestro escudo</h2>
     <p class="sec">Precios publicados por cada tienda y consultados el 10/11/2026. Pueden haber cambiado.</p>
     <div class="rejilla">
-      <div class="tarjeta"><h3>Lámina impresa</h3><p class="cifra">47–67 € IVA incluido</p><p>Cuatro escudos en papel, planos. La opción más barata y rápida.</p><p class="sec">Tienda Heráldica · <span class="pend">[URL de la ficha]</span></p></div>
-      <div class="tarjeta nuestra"><h3>Este cuadro</h3><p class="cifra">149 € IVA incluido</p><p>Relieve con los colores del blasón, fuente de cada escudo y prueba antes de imprimir.</p></div>
-      <div class="tarjeta"><h3>Talla en madera</h3><p class="cifra">298,87 € IVA incluido</p><p>Hecha a mano y policromada; normalmente un solo escudo. Publicado como 247 € + IVA.</p><p class="sec">Arte23 · <span class="pend">[URL de la ficha]</span></p></div>
+      <div class="tarjeta"><h3>Lámina impresa</h3><p class="cifra">47–67 € IVA incluido</p><p>Cuatro escudos impresos en papel, planos. Más barata y más rápida; no tiene relieve.</p><p class="sec">Tienda Heráldica · <span class="pend">[PENDIENTE: URL de la ficha]</span></p></div>
+      <div class="tarjeta nuestra"><h3>Este cuadro</h3><p class="cifra">149 € IVA incluido</p><p>Relieve con los colores del blasón, fuente de cada escudo y prueba antes de imprimir. No es madera ni está hecho a mano.</p></div>
+      <div class="tarjeta"><h3>Talla en madera</h3><p class="cifra">298,87 € IVA incluido</p><p>Tallada a mano y pintada: más noble y más cara, y normalmente un solo escudo. Publicado como 247 € + IVA.</p><p class="sec">Arte23 · <span class="pend">[PENDIENTE: URL de la ficha]</span></p></div>
     </div>
   </section>
 
   <section aria-labelledby="dudas">
     <h2 id="dudas">Sobre el objeto</h2>
-    <details class="faq"><summary>¿De qué material es?</summary><p>Las piezas se imprimen en plástico de impresión 3D. Material exacto y marca del filamento: por confirmar.</p></details><details class="faq"><summary>¿Qué tamaño tiene cada escudo?</summary><p>En el prototipo, unos 108×125 mm cada uno, con el nombre debajo. Puede variar unos milímetros según el blasón.</p></details><details class="faq"><summary>¿Cómo se limpia?</summary><p>Con un paño seco o un plumero. Sin productos ni agua. No lo pongas al sol directo ni junto a un radiador; temperatura máxima: por confirmar con el material definitivo.</p></details><details class="faq"><summary>¿Se pueden cambiar los colores del blasón?</summary><p>No: los colores son los de la fuente citada. Sí podéis elegir otro linaje del mismo apellido si tiene otros colores.</p></details>
+    <details class="faq"><summary>¿De qué material es?</summary><p>Las piezas se imprimen en PLA, un plástico de impresión 3D de origen vegetal. Marca y acabado del filamento: por confirmar.</p></details><details class="faq"><summary>¿Qué tamaño tiene cada escudo?</summary><p>Unos 110×125 mm cada uno, con el nombre debajo. Puede variar unos milímetros según el blasón.</p></details><details class="faq"><summary>¿Cómo se limpia?</summary><p>Con un paño seco o un plumero. Sin productos ni agua. Lejos del sol directo y de radiadores: el PLA se deforma con calor.</p></details><details class="faq"><summary>¿Se pueden cambiar los colores del blasón?</summary><p>No: los colores son los de la fuente citada. Sí podéis elegir otro linaje del mismo apellido si tiene otros colores.</p></details>
   </section>
 </div>
 
 </main>
 <footer class="pie envoltura">
+  <nav aria-label="Ocasiones"><a href="boda.html">Boda y aniversario</a><a href="navidad.html">Navidad</a><a href="regalo-padres.html">Para padres y abuelos</a><a href="precios.html">Precios y pagos</a></nav>
   <nav aria-label="Información legal"><a href="aviso-legal.html">Aviso legal</a><a href="privacidad.html">Privacidad</a><a href="cookies.html">Cookies</a><a href="condiciones-venta.html">Condiciones de venta</a><a href="desistimiento.html">Desistimiento</a><a href="envios-y-devoluciones.html">Envíos y devoluciones</a></nav>
   <p>Titular: <span class="pend">[PENDIENTE: RAZÓN SOCIAL]</span> · NIF <span class="pend">[PENDIENTE: NIF]</span> · <span class="pend">[PENDIENTE: DIRECCIÓN]</span></p>
+  <p class="borrador-pie">Borrador: la web aún no lleva los datos del titular. No se puede vender hasta completarlos.</p>
   <p>Todos los precios de esta web llevan el IVA incluido.</p>
 </footer>
 

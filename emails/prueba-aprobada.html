@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es-ES" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="x-apple-disable-message-reformatting">
+<meta name="color-scheme" content="light">
+<title>Has aprobado la prueba v{{version}}: falta el pago del resto</title>
+<!-- ASUNTO: Has aprobado la prueba v{{version}}: falta el pago del resto -->
+<!-- PREHEADER: Paga el resto y empezamos a imprimir tu cuadro. -->
+<!-- TEXTO ALTERNATIVO (text/plain):
+Has aprobado la prueba v{{version}} del pedido {{numero}} el {{fecha_aprobacion}}. Esa versión es la que imprimimos.
+
+Resto del cuadro: 104,30 € IVA incluido
+Envío a {{zona}}: {{envio}}
+Total a pagar ahora: {{total_saldo}}
+
+En cuanto se complete el pago, empezamos a imprimir. Plazo estimado: {{plazo}}.
+
+Pagar el resto: {{url_pago_saldo}}
+-->
+</head>
+<body style="margin:0;padding:0;background:#f5efe4;">
+<div style="display:none;max-height:0;overflow:hidden;mso-hide:all;font-size:1px;line-height:1px;color:#f5efe4;">Paga el resto y empezamos a imprimir tu cuadro.&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#f5efe4;">
+<tr><td align="center" style="padding:16px 8px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:600px;width:100%;background:#fffdf8;border:1px solid #e2d9cb;">
+    <tr><td style="padding:20px 24px;border-bottom:1px solid #9a7a2c;font-family:Georgia,'Times New Roman',serif;font-size:17px;font-weight:bold;color:#1f1b16;letter-spacing:1px;">[PENDIENTE: MARCA]</td></tr>
+    <tr><td style="padding:24px 24px 8px 24px;font-family:Georgia,'Times New Roman',serif;font-size:24px;line-height:30px;font-weight:bold;color:#1f1b16;">Prueba aprobada</td></tr>
+    <tr><td style="padding:8px 24px 0 24px;font-family:Arial,Helvetica,sans-serif;font-size:17px;line-height:26px;color:#1f1b16;"><p style="margin:0 0 16px 0;">Has aprobado la prueba <b>v{{version}}</b> del pedido <b>{{numero}}</b> el {{fecha_aprobacion}}. Desde ahora esa versión queda cerrada: es la que imprimimos.</p><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 16px 0;"><tr><td style="padding:8px 0;border-bottom:1px solid #e2d9cb;font-family:Arial,Helvetica,sans-serif;font-size:17px;color:#1f1b16;">Resto del cuadro</td><td align="right" style="padding:8px 0;border-bottom:1px solid #e2d9cb;font-family:Arial,Helvetica,sans-serif;font-size:17px;color:#1f1b16;">104,30 € IVA incluido</td></tr><tr><td style="padding:8px 0;border-bottom:1px solid #e2d9cb;font-family:Arial,Helvetica,sans-serif;font-size:17px;color:#1f1b16;">Envío a {{zona}}</td><td align="right" style="padding:8px 0;border-bottom:1px solid #e2d9cb;font-family:Arial,Helvetica,sans-serif;font-size:17px;color:#1f1b16;">{{envio}}</td></tr><tr><td style="padding:8px 0;border-bottom:1px solid #e2d9cb;font-family:Arial,Helvetica,sans-serif;font-size:17px;color:#1f1b16;">Total a pagar ahora</td><td align="right" style="padding:8px 0;border-bottom:1px solid #e2d9cb;font-family:Arial,Helvetica,sans-serif;font-size:17px;color:#1f1b16;">{{total_saldo}}</td></tr></table><p style="margin:0 0 16px 0;">En cuanto se complete el pago, empezamos a imprimir. Plazo estimado de entrega: {{plazo}}.</p></td></tr>
+    <tr><td style="padding:16px 24px 24px 24px;">
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#7b1e2b" style="border-radius:4px;">
+        <a href="{{url_pago_saldo}}" style="display:inline-block;padding:14px 24px;font-family:Arial,Helvetica,sans-serif;font-size:17px;line-height:20px;font-weight:bold;color:#ffffff;text-decoration:none;border-radius:4px;">Pagar el resto</a>
+      </td></tr></table>
+    </td></tr>
+    <tr><td style="padding:16px 24px 24px 24px;border-top:1px solid #e2d9cb;font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:24px;color:#5a5248;">
+      [PENDIENTE: MARCA] · [PENDIENTE: RAZÓN SOCIAL] · NIF [PENDIENTE: NIF] · [PENDIENTE: DIRECCIÓN]<br>
+      Recibes este correo porque has hecho un pedido. Para cualquier duda, responde a este mensaje.<br>
+      <a href="{{url_privacidad}}" style="color:#7b1e2b;">Privacidad</a> · <a href="{{url_condiciones}}" style="color:#7b1e2b;">Condiciones de venta</a>
+    </td></tr>
+  </table>
+</td></tr>
+</table>
+</body>
+</html>

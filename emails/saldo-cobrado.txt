@@ -1,0 +1,17 @@
+Asunto: Pedido {{numero}}: pago completado, empezamos a imprimir
+
+Hemos cobrado el resto del pedido {{numero}} el {{fecha_pago}}.
+
+Base imponible del IVA (cuadro): 86,20 €
+IVA del cuadro (21 %): 18,10 €
+Resto del cuadro: 104,30 € IVA incluido
+Envío: {{envio}}
+Cobrado hoy: {{total_saldo}}
+Pagado en total por el cuadro: 149 € IVA incluido
+
+Empezamos a imprimir la versión v{{version}} que aprobaste.
+
+Ver el estado: {{url_pedido}}
+
+--
+[PENDIENTE: MARCA] · [PENDIENTE: RAZÓN SOCIAL] · NIF [PENDIENTE: NIF] · [PENDIENTE: DIRECCIÓN]

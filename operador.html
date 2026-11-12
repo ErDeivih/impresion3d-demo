@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="es-ES">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Consola del taller · [PENDIENTE: MARCA]</title>
+<meta name="description" content="Gestión interna de pedidos, pruebas, impresión y artefactos.">
+<link rel="canonical" href="https://[PENDIENTE: DOMINIO]/operador.html">
+<style>
+:root{
+  --f-tit:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --f-txt:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --t1:32px;--t2:22px;--t3:17px;
+  --e1:4px;--e2:8px;--e3:12px;--e4:16px;--e5:24px;--e6:32px;--e7:48px;--e8:64px;
+  --papel:#f5efe4;--tinta:#1f1b16;--piedra:#5a5248;--granate:#7b1e2b;--oro:#9a7a2c;--campo:#fffdf8;
+  --radio:4px;--toque:48px;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:var(--e7)}
+body{margin:0;background:var(--papel);color:var(--tinta);font:400 var(--t3)/1.55 var(--f-txt)}
+img,svg{max-width:100%;height:auto}
+a{color:var(--granate);text-underline-offset:3px}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible,label:focus-within{outline:3px solid var(--tinta);outline-offset:3px}
+.envoltura{max-width:1040px;margin:0 auto;padding:0 var(--e4)}
+.estrecho{max-width:720px;margin:0 auto;padding:0 var(--e4)}
+h1,h2,h3{font-family:var(--f-tit);font-weight:600;line-height:1.15;margin:0 0 var(--e4);text-wrap:balance}
+h1{font-size:var(--t1)}h2{font-size:var(--t2)}h3{font-size:var(--t3);font-family:var(--f-txt)}
+p,ul,ol,dl,table{margin:0 0 var(--e4)}
+p,li{max-width:64ch}
+.sec{color:var(--piedra)}
+code,pre,kbd{font-size:var(--t3)}
+.pend{background:#fff3cd;color:#4a3300;padding:0 var(--e1);border-radius:2px}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+section{padding:var(--e7) 0;border-top:1px solid var(--oro)}
+section.envoltura,section.estrecho{padding:var(--e7) var(--e4)}
+/* cabecera y pie */
+.cab{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;min-height:56px;gap:0 var(--e4)}
+.cab nav{display:flex;flex-wrap:wrap}
+.marca{font:600 var(--t3)/1 var(--f-tit);color:var(--tinta);text-decoration:none;letter-spacing:.03em;min-height:44px;display:inline-flex;align-items:center}
+.cab nav a{min-height:44px;display:inline-flex;align-items:center;padding:0 var(--e2)}
+.pie{border-top:1px solid var(--oro);padding:var(--e6) var(--e4) var(--e8);color:var(--piedra)}
+.pie nav{display:flex;flex-wrap:wrap;gap:0 var(--e4);margin-bottom:var(--e4)}
+.pie nav a{min-height:44px;display:inline-flex;align-items:center}
+.borrador-pie{border-left:4px solid var(--oro);padding-left:var(--e3)}
+/* botones */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--e2);min-height:var(--toque);padding:0 var(--e5);
+  border-radius:var(--radio);border:2px solid var(--granate);font:600 var(--t3)/1.2 var(--f-txt);text-decoration:none;cursor:pointer;text-align:center}
+.btn-p{background:var(--granate);color:#fff}
+.btn-p:hover{background:#5f1621;border-color:#5f1621}
+.btn-p:active{transform:translateY(1px)}
+.btn-s{background:transparent;color:var(--granate)}
+.btn-s:hover{background:#ecdfd0}
+.btn[disabled],.btn[aria-disabled=true]{background:#e2d9cb;border-color:#e2d9cb;color:var(--piedra);cursor:not-allowed;transform:none}
+.btn[aria-busy=true]{position:relative;color:transparent}
+.btn[aria-busy=true]::after{content:"";position:absolute;width:18px;height:18px;border:2px solid #fff;border-right-color:transparent;border-radius:50%;animation:gira .7s linear infinite}
+@keyframes gira{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.ancho{display:flex;width:100%}
+.enlace{min-height:44px;display:inline-flex;align-items:center}
+/* formularios */
+.campo{margin-bottom:var(--e5)}
+.campo label,.campo legend{display:block;font-weight:600;margin-bottom:var(--e1)}
+.campo .ayuda{color:var(--piedra);margin:0 0 var(--e2)}
+input[type=text],input[type=email],input[type=tel],input[type=search],select,textarea{width:100%;min-height:var(--toque);padding:var(--e2) var(--e3);
+  border:2px solid var(--piedra);border-radius:var(--radio);background:var(--campo);color:var(--tinta);font:400 var(--t3)/1.4 var(--f-txt)}
+textarea{min-height:120px}
+[aria-invalid=true]{border-color:var(--granate)!important;border-width:3px!important}
+.error{color:var(--granate);font-weight:600;margin:var(--e1) 0 0}
+.error:empty{display:none}
+.error::before{content:"✕ "}
+.aviso{border:2px solid var(--granate);border-radius:var(--radio);padding:var(--e4);margin-bottom:var(--e5);background:var(--campo)}
+.aviso:empty{display:none}
+.casilla{display:flex;gap:var(--e3);align-items:flex-start;min-height:44px;padding:var(--e2) 0;cursor:pointer}
+.casilla input{width:24px;height:24px;margin:2px 0 0;flex:none;accent-color:var(--granate)}
+/* tarjetas y listas */
+.tarjeta{border:1px solid #d8ccb9;border-radius:var(--radio);padding:var(--e4);background:var(--campo)}
+.rejilla{display:grid;gap:var(--e4)}
+dl.datos{display:grid;grid-template-columns:auto 1fr;gap:var(--e2) var(--e5)}
+dl.datos dt{font-weight:600}dl.datos dd{margin:0}
+ul.marcas{list-style:none;padding:0}
+ul.marcas li{padding-left:28px;position:relative;margin-bottom:var(--e2)}
+ul.marcas li::before{content:"";position:absolute;left:4px;top:.55em;width:12px;height:6px;border:solid var(--granate);border-width:0 0 2px 2px;transform:rotate(-45deg)}
+details.faq{border-bottom:1px solid #d8ccb9}
+details.faq summary{min-height:52px;display:flex;align-items:center;justify-content:space-between;gap:var(--e4);cursor:pointer;font-weight:600;list-style:none}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::after{content:"+";font-size:var(--t2);color:var(--granate)}
+details.faq[open] summary::after{content:"−"}
+table.tabla{width:100%;border-collapse:collapse}
+table.tabla th,table.tabla td{text-align:left;padding:var(--e3) var(--e2);border-bottom:1px solid #d8ccb9;vertical-align:top}
+table.tabla th{font-weight:600}
+.fuente{border-top:1px solid var(--oro);margin-top:var(--e7);padding-top:var(--e4);color:var(--piedra)}
+/* barra fija móvil */
+.fija{position:fixed;left:0;right:0;bottom:0;background:var(--papel);border-top:1px solid var(--oro);padding:var(--e2) var(--e4);z-index:20}
+.con-fija{padding-bottom:88px}
+@media(min-width:820px){.rejilla.dos{grid-template-columns:1fr 1fr}.rejilla.tres{grid-template-columns:repeat(3,1fr)}.rejilla.cuatro{grid-template-columns:repeat(2,1fr)}}
+@media print{
+  body{background:#fff;color:#000}
+  .cab nav,.fija,.banner,.no-imprimir,button,.btn{display:none!important}
+  .con-fija{padding-bottom:0}
+  a{color:#000}
+  a[href^="http"]::after{content:" (" attr(href) ")";font-size:var(--t3)}
+  section{break-inside:avoid;padding:var(--e5) 0}
+  details{display:block}details>*{display:block}
+  .pend{background:none;border:1px dashed #000}
+}
+
+.pestanas{display:flex;overflow-x:auto;gap:var(--e1);border-bottom:2px solid #d8ccb9;margin-bottom:var(--e5);position:sticky;top:0;background:var(--papel);z-index:5}
+.pestanas a{flex:none;padding:0 var(--e3);min-height:48px;display:grid;place-items:center;text-decoration:none;color:var(--piedra);border-bottom:4px solid transparent;margin-bottom:-2px}
+.pestanas a[aria-current]{color:var(--granate);border-color:var(--granate);font-weight:600}
+.pantalla{border-top:0;padding-top:0}
+.chips{display:flex;flex-wrap:wrap;gap:var(--e2);margin-bottom:var(--e4)}
+.chip{min-height:44px;padding:0 var(--e3);border:1px solid var(--piedra);border-radius:22px;background:var(--campo);font:inherit;color:var(--tinta);cursor:pointer}
+.chip[aria-pressed=true]{border:2px solid var(--granate);color:var(--granate);font-weight:600}
+.lista-ped,.cola-imp,.lista-art,.comp,.versiones,.tareas{list-style:none;margin:0 0 var(--e5);padding:0}
+.ped a{display:grid;gap:var(--e1);padding:var(--e3) var(--e4);margin-bottom:var(--e3);border:1px solid #d8ccb9;border-radius:var(--radio);background:var(--campo);color:var(--tinta);text-decoration:none}
+.ped[hidden]{display:none}
+.num{font-weight:600}
+.est{justify-self:start;border-radius:4px;padding:0 var(--e2);border:1px solid currentColor}
+.est-a,.est-b{color:var(--granate);font-weight:600}.est-c,.est-d,.est-e{color:var(--piedra)}
+.comp{display:grid;grid-template-columns:1fr 1fr;gap:var(--e2)}
+.comp li{display:grid;gap:var(--e1);border:1px solid #d8ccb9;border-radius:var(--radio);padding:var(--e3);background:var(--campo)}
+.estf{justify-self:start;border:1px dashed var(--piedra);border-radius:4px;padding:0 var(--e1);color:var(--piedra)}
+.versiones li{display:grid;grid-template-columns:44px 1fr;gap:var(--e1) var(--e3);padding:var(--e3) 0;border-bottom:1px solid #d8ccb9}
+.versiones .v{grid-row:span 2;width:44px;height:44px;border-radius:50%;border:2px solid var(--granate);display:grid;place-items:center;font-weight:600}
+.motivo{grid-column:2;border-left:3px solid var(--oro);padding-left:var(--e3)}
+.aprob{border:2px solid var(--tinta);border-radius:var(--radio);padding:var(--e4);margin-bottom:var(--e5);background:var(--campo)}
+.simular{margin-top:var(--e3)}
+dialog{border:2px solid var(--tinta);border-radius:var(--radio);padding:var(--e5);max-width:min(480px,calc(100vw - 32px));background:var(--campo);color:var(--tinta)}
+dialog::backdrop{background:#1f1b1680}
+.lista-var{list-style:none;margin:0 0 var(--e5);padding:0}.var{display:grid;gap:var(--e1);padding:var(--e3) var(--e4);margin-bottom:var(--e3);border:1px solid #d8ccb9;border-left:6px solid #d8ccb9;border-radius:var(--radio);background:var(--campo)}.var.activa{border-left-color:var(--granate)}
+.dos-campos{display:grid;grid-template-columns:1fr 1fr;gap:var(--e3)}
+.opciones-los{border:0;padding:0;margin:0 0 var(--e3)}.opciones-los legend{font-weight:600;margin-bottom:var(--e2)}
+.op-los{display:grid;grid-template-columns:24px 1fr;gap:var(--e3);padding:var(--e3);border:1px solid #d8ccb9;border-radius:var(--radio);margin-bottom:var(--e2);background:var(--campo);cursor:pointer}
+.op-los:has(input:checked){border:2px solid var(--granate)}.op-los input{width:22px;height:22px;margin:2px 0 0;accent-color:var(--granate)}.op-los .no{color:var(--granate)}
+#corte{display:block;margin:0 auto var(--e3)}
+.desliza{overflow-x:auto;margin-bottom:var(--e3)}.margen .fin{font-weight:600}.aviso-m{border-left:4px solid var(--oro);padding-left:var(--e4)}
+.dlg-acc{display:flex;gap:var(--e3);flex-wrap:wrap}.dlg-acc .btn-p{flex:1}
+.cola-imp li{display:grid;gap:var(--e1);padding:var(--e3) 0;border-bottom:1px solid #d8ccb9}
+.fil{display:flex;gap:var(--e2);align-items:center}
+.mota{display:inline-block;width:16px;height:16px;border-radius:50%;border:1px solid #1f1b1666;margin-right:var(--e1);vertical-align:-2px}
+.m-sable{background:#1c1c1e}.m-gules{background:#c8202c}.m-oro{background:#f2c230}.m-plata{background:#f2f2ec}.m-azur{background:#1b4fa8}
+.est-i{font-weight:600}
+.art{border:1px solid #d8ccb9;border-left:6px solid var(--piedra);border-radius:var(--radio);padding:var(--e3) var(--e4);margin-bottom:var(--e3);background:var(--campo)}
+.art.ok{border-left-color:var(--tinta)}.art.ko{border-left-color:var(--granate)}
+.art-cab{display:flex;justify-content:space-between;gap:var(--e3);margin-bottom:var(--e2)}
+.art.ko .ver{color:var(--granate);font-weight:600}.art.ok .ver::before{content:"✓ "}.art.ko .ver::before{content:"✕ "}
+</style>
+
+<meta name="robots" content="noindex">
+</head>
+<body>
+<header class="envoltura cab">
+  <a class="marca" href="index.html">[PENDIENTE: MARCA]</a>
+  <nav aria-label="Principal"><a href="formatos.html">Formatos</a><a href="apellidos.html">Apellidos</a><a href="galeria.html">Galería</a><a href="carrito.html">Carrito</a></nav>
+</header>
+<main id="contenido">
+
+<div class="estrecho">
+  <h1>Consola del taller</h1>
+  <nav class="pestanas" aria-label="Pantallas de la consola">
+    <a href="#cola" data-ir="cola" aria-current="page">Pedidos</a><a href="#variantes" data-ir="variantes">Variantes</a><a href="#pedido" data-ir="pedido">Pedido</a><a href="#impresion" data-ir="impresion">Impresión</a><a href="#losetas" data-ir="losetas">Losetas</a><a href="#coste" data-ir="coste">Coste</a><a href="#artefactos" data-ir="artefactos">Artefactos</a>
+  </nav>
+  
+<section class="pantalla" id="cola" aria-labelledby="h-cola">
+  <h2 id="h-cola">Cola de pedidos</h2>
+  <p class="sec">Ordenados por lo que hay que hacer, no por fecha. <span class="pend">Pedidos ficticios</span></p>
+  <div class="chips" role="group" aria-label="Filtrar por estado">
+    <button type="button" class="chip" aria-pressed="true" data-f="">Todos (5)</button>
+    <button type="button" class="chip" aria-pressed="false" data-f="a,b">Me toca (2)</button>
+    <button type="button" class="chip" aria-pressed="false" data-f="c">Espera al cliente (1)</button>
+    <button type="button" class="chip" aria-pressed="false" data-f="d">En taller (1)</button>
+  </div>
+  <ul class="lista-ped"><li class="ped" data-e="a"><a href="#pedido" data-ir="pedido"><span class="num">2026-0004</span><span class="est est-a">Señal pagada</span>
+<span class="sig"><b>Siguiente:</b> Documentar 2 linajes</span><span class="sec">Entró el 11/11 · espera hoy</span></a></li><li class="ped" data-e="b"><a href="#pedido" data-ir="pedido"><span class="num">2026-0001</span><span class="est est-b">Prueba rechazada</span>
+<span class="sig"><b>Siguiente:</b> Preparar y enviar la prueba v2</span><span class="sec">Entró el 09/11 · espera 2 días</span></a></li><li class="ped" data-e="c"><a href="#pedido" data-ir="pedido"><span class="num">2026-0003</span><span class="est est-c">Prueba enviada (v1)</span>
+<span class="sig"><b>Siguiente:</b> Esperar al cliente</span><span class="sec">Entró el 10/11 · espera 1 día</span></a></li><li class="ped" data-e="d"><a href="#pedido" data-ir="pedido"><span class="num">2026-0002</span><span class="est est-d">Aprobada (v2) · saldo cobrado</span>
+<span class="sig"><b>Siguiente:</b> Imprimir 6 piezas</span><span class="sec">Entró el 09/11 · espera 2 días</span></a></li><li class="ped" data-e="e"><a href="#pedido" data-ir="pedido"><span class="num">2026-0000</span><span class="est est-e">Enviado</span>
+<span class="sig"><b>Siguiente:</b> Nada: cerrar al entregar</span><span class="sec">Entró el 05/11 · espera —</span></a></li></ul>
+  <a class="btn btn-p ancho" href="#pedido" data-ir="pedido">Abrir el pedido que más espera</a>
+</section>
+<section class="pantalla" id="variantes" aria-labelledby="h-var" hidden>
+  <h2 id="h-var">Cola por variante</h2>
+  <p class="sec">Cuántos pedidos y consultas hay de cada formato. <span class="pend">Datos ficticios</span></p>
+  <ul class="lista-var"><li class="var activa"><b>4 escudos · 30×40</b><span>4 pedidos en cola · 0 consultas sin precio</span>
+<span class="sec">Precio: 149 € IVA incluido</span></li><li class="var activa"><b>2 escudos · 30×40</b><span>0 pedidos en cola · 1 consulta sin precio</span>
+<span class="sec">Sin precio publicado: responder con presupuesto</span></li><li class="var activa"><b>1 escudo · 30×40</b><span>0 pedidos en cola · 2 consultas sin precio</span>
+<span class="sec">Sin precio publicado: responder con presupuesto</span></li><li class="var activa"><b>Escudo grande · 4 losetas</b><span>0 pedidos en cola · 1 consulta sin precio</span>
+<span class="sec">Sin precio publicado: responder con presupuesto</span></li><li class="var"><b>Escudo grande · 2 losetas</b><span>0 pedidos en cola · 0 consultas sin precio</span>
+<span class="sec">Sin precio publicado: responder con presupuesto</span></li><li class="var"><b>1 escudo · 20×25</b><span>0 pedidos en cola · 0 consultas sin precio</span>
+<span class="sec">Sin precio publicado: responder con presupuesto</span></li><li class="var"><b>1 escudo · 40×50</b><span>0 pedidos en cola · 0 consultas sin precio</span>
+<span class="sec">Sin precio publicado: responder con presupuesto</span></li></ul>
+  <button class="btn btn-p ancho" type="button">Responder las 4 consultas sin precio</button>
+</section>
+<section class="pantalla" id="pedido" aria-labelledby="h-ped" hidden>
+  <p><a class="enlace" href="#cola" data-ir="cola">← Cola de pedidos</a></p>
+  <h2 id="h-ped">Pedido 2026-0001 · prueba rechazada</h2>
+  <p class="sec">Ana E. · Salamanca · entró el 09/11 · señal 44,70 € IVA incluido cobrada · <span class="pend">datos ficticios</span></p>
+
+  <h3>Composición 2×2</h3>
+  <ol class="comp"><li><b>Pérez</b><span>Revisión manual</span><span class="estf aviso">sin fuente</span></li><li><b>Mateos</b><span>Revisión manual</span><span class="estf aviso">sin fuente</span></li><li><b>Velasco</b><span>Velasco · solar de Burgos</span><span class="estf aviso">fuente por comprobar</span></li><li><b>Mateos</b><span>Revisión manual</span><span class="estf aviso">sin fuente</span></li></ol>
+  <p class="sec">Texto bajo el cuadro: PÉREZ · VELASCO · 2026</p>
+
+  <h3>Versiones de la prueba</h3>
+  <ol class="versiones">
+    <li><span class="v">v1</span><span>Enviada el 10/11 · <b>rechazada</b> el 11/11</span><span class="motivo">Motivo del cliente: «El castillo de Velasco tiene que ser de plata, como en el libro de mi abuelo».</span></li>
+    <li><span class="v">v2</span><span>Preparada el 12/11 · <b id="estado-v2">sin enviar</b></span><span class="sec">Cambios: castillo de plata en Velasco; fuente revisada.</span></li>
+  </ol>
+  <div class="aprob" id="aprob" hidden>
+    <h3>Aprobación</h3>
+    <dl class="datos"><dt>Versión aprobada</dt><dd>v2</dd><dt>Cuándo</dt><dd id="cuando">—</dd><dt>Cómo</dt><dd>Botón «Aprobar» del enlace del correo</dd><dt>Saldo</dt><dd>104,30 € IVA incluido + envío: pendiente de cobro</dd></dl>
+    <p class="sec">A partir de aquí la v2 queda congelada: cualquier cambio abre una v3 y una nueva aprobación.</p>
+  </div>
+
+  <h3>Tareas</h3>
+  <ul class="tareas">
+    <li><label class="casilla"><input type="checkbox" checked> Documentar blasones (Velasco por comprobar)</label></li>
+    <li><label class="casilla"><input type="checkbox" checked> Dibujar los 4 escudos</label></li>
+    <li><label class="casilla"><input type="checkbox"> Comprobar que las piezas son imprimibles</label></li>
+  </ul>
+
+  <button class="btn btn-p ancho" type="button" id="enviar">Enviar la prueba v2 al cliente</button>
+  <button class="btn btn-s ancho simular" type="button" id="simular" hidden>Simular que el cliente aprueba</button>
+
+  <dialog id="dlg" aria-labelledby="dlg-t">
+    <form method="dialog">
+      <h3 id="dlg-t">¿Enviar la prueba v2?</h3>
+      <p>Se manda el correo «Prueba lista para aprobar» a a***@ejemplo.es con el enlace de la v2. La v1 deja de poder aprobarse.</p>
+      <div class="dlg-acc"><button class="btn btn-s" value="no">Cancelar</button><button class="btn btn-p" value="si">Enviar ahora</button></div>
+    </form>
+  </dialog>
+</section>
+<section class="pantalla" id="impresion" aria-labelledby="h-imp" hidden>
+  <h2 id="h-imp">Cola de impresión</h2>
+  <p class="sec">Pedido 2026-0002 · modo piezas encajadas. Gramos y minutos de los informes reales de los escudos de prueba; el pedido es ficticio.</p>
+  <ul class="cola-imp"><li><span class="nombre"><b>Velasco (castillo)</b> · base</span><span class="fil"><span class="mota m-sable"></span>sable</span><span>27,1 g · 61 min</span><span class="est-i">Imprimiendo</span></li><li><span class="nombre"><b>Velasco (castillo)</b> · campo</span><span class="fil"><span class="mota m-gules"></span>gules</span><span>13,5 g · 30 min</span><span class="est-i">En cola</span></li><li><span class="nombre"><b>Velasco (castillo)</b> · figura</span><span class="fil"><span class="mota m-oro"></span>oro</span><span>10,5 g · 24 min</span><span class="est-i">En cola</span></li><li><span class="nombre"><b>Pérez (roel)</b> · base</span><span class="fil"><span class="mota m-sable"></span>sable</span><span>17,5 g · 41 min</span><span class="est-i">Hecha</span></li><li><span class="nombre"><b>Pérez (roel)</b> · campo</span><span class="fil"><span class="mota m-gules"></span>gules</span><span>6,5 g · 15 min</span><span class="est-i">En cola</span></li><li><span class="nombre"><b>Pérez (roel)</b> · figura</span><span class="fil"><span class="mota m-oro"></span>oro</span><span>9,0 g · 19 min</span><span class="est-i">En cola</span></li></ul>
+  <h3>Total por filamento</h3>
+  <table class="tabla"><thead><tr><th scope="col">Color</th><th scope="col">Gramos</th><th scope="col">Máquina</th></tr></thead><tbody><tr><th scope="row"><span class="mota m-sable"></span>sable</th><td>44,6 g</td><td>1,7 h</td></tr><tr><th scope="row"><span class="mota m-gules"></span>gules</th><td>20,1 g</td><td>0,8 h</td></tr><tr><th scope="row"><span class="mota m-oro"></span>oro</th><td>19,5 g</td><td>0,7 h</td></tr></tbody>
+  <tfoot><tr><th scope="row">Total</th><td>84,2 g</td><td>3,2 h</td></tr></tfoot></table>
+  <button class="btn btn-p ancho" type="button">Marcar la siguiente pieza como imprimiendo</button>
+</section>
+<section class="pantalla" id="losetas" aria-labelledby="h-los" hidden>
+  <h2 id="h-los">Losetas del escudo grande</h2>
+  <p class="sec">Cama de la impresora: 256×256 mm (Bambu Lab A1). Margen de seguridad por lado: 5 mm.</p>
+  <div class="dos-campos"><div class="campo"><label for="lw">Ancho del escudo (mm)</label><input type="text" inputmode="numeric" id="lw" value="330"></div>
+  <div class="campo"><label for="lh">Alto del escudo (mm)</label><input type="text" inputmode="numeric" id="lh" value="400"></div></div>
+  <fieldset class="opciones-los"><legend>Cómo partirlo</legend><div id="ops"></div></fieldset>
+  <svg id="corte" viewBox="0 0 200 240" width="200" height="240" role="img" aria-label="Escudo con las líneas de corte"></svg>
+  <p class="sec">Unión invisible por detrás: pivotes de Ø2,0 mm en taladros de Ø2,35 mm. Ninguna junta debe cortar una figura de menos de 8 mm (regla de pieza mínima): revisar en la prueba.</p>
+  <button class="btn btn-p ancho" type="button" id="usar-los">Usar este corte en el pedido</button>
+  <p class="sec" id="los-msg" aria-live="polite"></p>
+</section>
+<section class="pantalla" id="coste" aria-labelledby="h-cos" hidden>
+  <h2 id="h-cos">Coste real frente a precio · cuadro de 4 escudos 30×40</h2>
+  <p class="sec">Partidas de datos/costes_completos.json (sin IVA). «presupuesto» = cifra de trabajo, aún sin factura.</p>
+  <div class="desliza" role="region" aria-label="Partidas de coste" tabindex="0"><table class="tabla"><thead><tr><th scope="col">Partida</th><th scope="col">Importe</th><th scope="col">Estado</th></tr></thead>
+  <tbody><tr><th scope="row">Material PLA de los 4 escudos</th><td>3,78 € sin IVA</td><td>presupuesto</td></tr><tr><th scope="row">Impresión 3D en taller externo</th><td>34,00 € sin IVA</td><td>presupuesto</td></tr><tr><th scope="row">Marco cajón de pino, fondo y herrajes</th><td>16,51 € sin IVA</td><td>presupuesto</td></tr><tr><th scope="row">Gestión del pedido y boceto (15 min)</th><td>4,50 € sin IVA</td><td>presupuesto</td></tr><tr><th scope="row">Montaje y mano de obra (75 min)</th><td>18,00 € sin IVA</td><td>presupuesto</td></tr><tr><th scope="row">Embalaje reforzado</th><td>2,00 € sin IVA</td><td>presupuesto</td></tr><tr><th scope="row">Envío a domicilio (sin IVA)</th><td>14,13 € sin IVA</td><td>presupuesto</td></tr><tr><th scope="row">Reposición (2 %, provisional)</th><td>1,86 € sin IVA</td><td>pendiente</td></tr></tbody></table></div>
+  <div class="desliza" role="region" aria-label="Margen con cada precio" tabindex="0"><table class="tabla margen"><thead><tr><th scope="col"></th><th scope="col">Con 149 € IVA incluido (publicado)</th><th scope="col">Con 204 € IVA incluido</th></tr></thead>
+  <tbody><tr><th scope="row">Precio sin IVA</th><td>123,14 € sin IVA</td><td>168,60 € sin IVA</td></tr>
+  <tr><th scope="row">Comisión de pago (3 %)</th><td>3,69 € sin IVA</td><td>5,06 € sin IVA</td></tr>
+  <tr><th scope="row">Coste total</th><td>98,48 € sin IVA</td><td>99,85 € sin IVA</td></tr>
+  <tr class="fin"><th scope="row">Margen</th><td>24,66 € sin IVA (20,0 %)</td><td>68,75 € sin IVA (40,8 %)</td></tr></tbody></table></div>
+  <p class="aviso-m">Por debajo del 30 % de margen que pide datos/catalogo.json. Con impresora propia el coste baja a unos 60 € sin IVA (docs/IMPRESORA-PROPIA-Y-3D.md), sin contar mano de obra de montaje.</p>
+  <button class="btn btn-p ancho" type="button">Exportar el coste de este pedido</button>
+</section>
+<section class="pantalla" id="artefactos" aria-labelledby="h-art" hidden>
+  <h2 id="h-art">Estado de los artefactos</h2>
+  <p class="sec">Escalera de 6 escudos (docs/iteraciones). Apto = piezas cerradas, sin intersecciones, detalle de 1,0 mm o más y sin avisos.</p>
+  <p><b>3 de 6 aptos.</b> Los no aptos fallan por piezas demasiado finas, no por errores de geometría.</p>
+  <ul class="lista-art"><li class="art ok"><div class="art-cab"><b>01_roel</b><span class="ver">APTO</span></div>
+<dl class="datos"><dt>Versión</dt><dd>v1</dd><dt>Piezas cerradas</dt><dd>3/3</dd><dt>Detalle mínimo</dt><dd>≥1,0 mm</dd><dt>Avisos</dt><dd>0</dd><dt>Material y tiempo</dt><dd>33,0 g · 85 min</dd></dl>
+<p class="sec">SVG · STL por color · 3MF · informe</p></li><li class="art ok"><div class="art-cab"><b>04_partido</b><span class="ver">APTO</span></div>
+<dl class="datos"><dt>Versión</dt><dd>v1</dd><dt>Piezas cerradas</dt><dd>3/3</dd><dt>Detalle mínimo</dt><dd>≥1,0 mm</dd><dt>Avisos</dt><dd>0</dd><dt>Material y tiempo</dt><dd>31,9 g · 81 min</dd></dl>
+<p class="sec">SVG · STL por color · 3MF · informe</p></li><li class="art ok"><div class="art-cab"><b>07_castillo</b><span class="ver">APTO</span></div>
+<dl class="datos"><dt>Versión</dt><dd>v2</dd><dt>Piezas cerradas</dt><dd>3/3</dd><dt>Detalle mínimo</dt><dd>≥1,0 mm</dd><dt>Avisos</dt><dd>0</dd><dt>Material y tiempo</dt><dd>51,2 g · 125 min</dd></dl>
+<p class="sec">v1 no apto por detalle < 1,0 mm; v2 a 100 mm</p><p class="sec">SVG · STL por color · 3MF · informe</p></li><li class="art ko"><div class="art-cab"><b>06_fajado</b><span class="ver">NO APTO</span></div>
+<dl class="datos"><dt>Versión</dt><dd>v2</dd><dt>Piezas cerradas</dt><dd>7/7</dd><dt>Detalle mínimo</dt><dd><1,0 mm</dd><dt>Avisos</dt><dd>3</dd><dt>Material y tiempo</dt><dd>49,6 g · 120 min</dd></dl>
+<p class="sec">Bandas de oro: la pieza se parte</p><p class="sec">SVG · STL por color · 3MF · informe</p></li><li class="art ko"><div class="art-cab"><b>19_castilla_leon</b><span class="ver">NO APTO</span></div>
+<dl class="datos"><dt>Versión</dt><dd>v2</dd><dt>Piezas cerradas</dt><dd>26/26</dd><dt>Detalle mínimo</dt><dd><1,0 mm</dd><dt>Avisos</dt><dd>13</dd><dt>Material y tiempo</dt><dd>100,9 g · 270 min</dd></dl>
+<p class="sec">Islas de 1,5–4,6 mm² y cuellos finos</p><p class="sec">SVG · STL por color · 3MF · informe</p></li><li class="art ko"><div class="art-cab"><b>20_gran_cuartelado</b><span class="ver">NO APTO</span></div>
+<dl class="datos"><dt>Versión</dt><dd>v2</dd><dt>Piezas cerradas</dt><dd>20/20</dd><dt>Detalle mínimo</dt><dd><1,0 mm</dd><dt>Avisos</dt><dd>11</dd><dt>Material y tiempo</dt><dd>100,2 g · 258 min</dd></dl>
+<p class="sec">Islas y cuellos finos</p><p class="sec">SVG · STL por color · 3MF · informe</p></li></ul>
+  <button class="btn btn-p ancho" type="button">Reintentar los 3 no aptos a 140 mm</button>
+</section>
+</div>
+</main>
+<footer class="pie envoltura">
+  <nav aria-label="Ocasiones"><a href="boda.html">Boda y aniversario</a><a href="navidad.html">Navidad</a><a href="regalo-padres.html">Para padres y abuelos</a><a href="precios.html">Precios y pagos</a></nav>
+  <nav aria-label="Información legal"><a href="aviso-legal.html">Aviso legal</a><a href="privacidad.html">Privacidad</a><a href="cookies.html">Cookies</a><a href="condiciones-venta.html">Condiciones de venta</a><a href="desistimiento.html">Desistimiento</a><a href="envios-y-devoluciones.html">Envíos y devoluciones</a></nav>
+  <p>Titular: <span class="pend">[PENDIENTE: RAZÓN SOCIAL]</span> · NIF <span class="pend">[PENDIENTE: NIF]</span> · <span class="pend">[PENDIENTE: DIRECCIÓN]</span></p>
+  <p class="borrador-pie">Borrador: la web aún no lleva los datos del titular. No se puede vender hasta completarlos.</p>
+  <p>Todos los precios de esta web llevan el IVA incluido.</p>
+</footer>
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+function ver(id){$$('.pantalla').forEach(p=>p.hidden=p.id!==id);$$('.pestanas a').forEach(a=>a.dataset.ir===id?a.setAttribute('aria-current','page'):a.removeAttribute('aria-current'));
+ const h=document.querySelector('#'+id+' h2');if(h){h.tabIndex=-1;h.focus()}}
+$$('[data-ir]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();ver(a.dataset.ir);history.replaceState(null,'','#'+a.dataset.ir)}));
+$$('.chip').forEach(c=>c.onclick=()=>{$$('.chip').forEach(x=>x.setAttribute('aria-pressed',x===c));const f=c.dataset.f.split(',').filter(Boolean);
+ $$('.ped').forEach(p=>p.hidden=f.length&&!f.includes(p.dataset.e))});
+const dlg=$('#dlg');
+$('#enviar').onclick=()=>dlg.showModal();
+dlg.addEventListener('close',()=>{if(dlg.returnValue==='si'){$('#estado-v2').textContent='enviada ahora, esperando al cliente';const b=$('#enviar');b.disabled=true;b.textContent='Prueba v2 enviada';$('#simular').hidden=false;$('#simular').focus()}});
+$('#simular').onclick=()=>{$('#aprob').hidden=false;$('#cuando').textContent=new Date().toLocaleString('es-ES');$('#estado-v2').textContent='aprobada por el cliente';$('#simular').hidden=true;$('#aprob').scrollIntoView()};
+// losetas
+const CAMA=256,MARG=5,UTIL=CAMA-2*MARG,ESC='M10 6h180v126c0 54-39 87-90 99C39 219 10 186 10 132z';
+function losetas(){const w=+$('#lw').value.replace(',','.')||0,h=+$('#lh').value.replace(',','.')||0;
+ const ops=[[1,1],[1,2],[2,1],[2,2],[2,3],[3,3]].map(([c,f])=>({c,f,n:c*f,pw:Math.ceil(w/c),ph:Math.ceil(h/f)})).map(o=>({...o,ok:o.pw<=UTIL&&o.ph<=UTIL}));
+ const rec=ops.find(o=>o.ok);
+ $('#ops').innerHTML=ops.map((o,i)=>'<label class="op-los"><input type="radio" name="los" value="'+i+'"'+(o===rec?' checked':'')+(o.ok?'':' disabled')+'><span><b>'+o.n+(o.n===1?' pieza':' losetas')+'</b> ('+o.c+'×'+o.f+') · cada una de '+o.pw+'×'+o.ph+' mm '+(o.ok?(o===rec?'· recomendado':''):'<span class="no">· no cabe en la cama</span>')+'</span></label>').join('');
+ const dib=o=>{let l='';for(let i=1;i<o.c;i++)l+='<path d="M'+(10+180*i/o.c)+' 6V231" stroke="#7b1e2b" stroke-width="2.5" stroke-dasharray="6 4"/>';for(let j=1;j<o.f;j++)l+='<path d="M10 '+(6+225*j/o.f)+'H190" stroke="#7b1e2b" stroke-width="2.5" stroke-dasharray="6 4"/>';
+  $('#corte').innerHTML='<path d="'+ESC+'" fill="#f2c230" stroke="#1f1b16" stroke-width="2"/>'+l};
+ dib(rec||ops[ops.length-1]);$$('input[name=los]').forEach(r=>r.onchange=()=>dib(ops[+r.value]));window._ops=ops}
+['lw','lh'].forEach(id=>$('#'+id).addEventListener('input',losetas));losetas();
+$('#usar-los').onclick=()=>{const r=document.querySelector('input[name=los]:checked');$('#los-msg').textContent=r?'Guardado en el pedido: '+window._ops[+r.value].n+' losetas.':'Ninguna opción cabe: reduce el tamaño del escudo.'};
+const h=location.hash.slice(1);if(['cola','variantes','pedido','impresion','losetas','coste','artefactos'].includes(h))ver(h);
+</script>
+</body>
+</html>

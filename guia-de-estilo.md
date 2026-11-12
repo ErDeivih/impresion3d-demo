@@ -89,3 +89,29 @@ Una por pantalla, con verbo y objeto, y **ninguna se repite entre páginas**:
 | Carrito vacío | Empezar un cuadro |
 | Pago fallido | Intentar el pago otra vez |
 | Desistimiento | Imprimir el formulario |
+| Formatos | Encargar el de cuatro escudos |
+| Boda | Diseñar el cuadro de la boda |
+| Navidad | Empezar el regalo de Navidad |
+| Padres y abuelos | Diseñar el cuadro para mis padres |
+| Apellido X | Encargar un cuadro con X |
+| Consola: variantes | Responder las consultas sin precio |
+| Consola: losetas | Usar este corte en el pedido |
+| Consola: coste | Exportar el coste de este pedido |
+
+## Páginas por ocasión
+
+Misma estructura en todas: para quién es → formato y por qué → qué apellidos elegir (en orden) → cuándo encargarlo con fecha concreta → una llamada → dos preguntas → «no acredita nobleza ni parentesco».
+
+- Se habla de la ocasión, no del producto: «un regalo de boda que junta a las dos familias», no «cuadro heráldico premium».
+- Siempre una fecha límite o un plazo en días. «Con tiempo» no sirve.
+- Nada de urgencia falsa («¡últimas unidades!», cuentas atrás).
+
+## Apellidos sin escudo
+
+Se dice tal cual: «Sin escudo localizado: diseño original bajo encargo». Nunca se insinúa que el diseño original sea histórico.
+| Galería | (ninguna principal; «Quiero este» es secundaria en cada tarjeta) |
+| Ficha | Elegir nuestros apellidos |
+| Consola: pedidos | Abrir el pedido que más espera |
+| Consola: pedido | Enviar la prueba vN al cliente |
+| Consola: impresión | Marcar la siguiente pieza como imprimiendo |
+| Consola: artefactos | Reintentar los no aptos |
