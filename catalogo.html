@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es-ES">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tres productos, precios pendientes · [PENDIENTE: MARCA]</title>
+<meta name="description" content="Catálogo separado: cuadro de 4 escudos 30×40, cuadro 40×50 con ornamento y 40×50 en losetas. Precios por confirmar.">
+<style>
+:root{--tinta:#1f1b16;--papel:#f5efe4;--campo:#fffdf8;--linea:#d8cbb8;--granate:#7b1e2b;--texto:#5a5248}
+*{box-sizing:border-box}
+body{margin:0;background:var(--papel);color:var(--tinta);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+a{color:var(--granate)}
+header,main,footer{max-width:1050px;margin:0 auto;padding:16px}
+header{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;border-bottom:1px solid var(--linea)}
+header a{min-height:44px;display:inline-flex;align-items:center}
+h1,h2,h3{font-family:Georgia,serif;line-height:1.15}
+h1{font-size:32px;margin:18px 0 8px}
+h2{font-size:22px;margin:26px 0 8px}
+h3{font-size:22px;margin:0 0 6px}
+p{margin:0 0 16px}
+.intro{color:var(--texto);max-width:70ch}
+.aviso{border-left:4px solid #9a7a2c;background:#fff8e6;padding:12px 14px;margin:16px 0}
+.rejilla{display:grid;grid-template-columns:1fr;gap:16px}
+.ficha{background:var(--campo);border:1px solid var(--linea);padding:14px}
+.ficha img{width:100%;height:auto;display:block;background:#fdfaf4;margin-bottom:10px}
+.ficha p{color:var(--texto)}
+.precio{font-family:Georgia,serif;font-size:22px;color:var(--granate);margin:8px 0}
+footer{border-top:1px solid var(--linea);color:var(--texto);font-size:17px}
+footer a{min-height:44px;display:inline-flex;align-items:center;margin-right:14px}
+@media(min-width:720px){.rejilla{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<header>
+  <a href="index.html">← Volver a la portada</a>
+  <a href="configurador.html">Diseñar mi cuadro</a>
+</header>
+<main>
+  <h1>Tres productos, tres precios pendientes</h1>
+  <p class="intro">El catálogo está separado para no mezclar el cuadro de cuatro escudos de 30×40 con el escudo grande de 40×50. Los precios nuevos no se publican hasta que David los apruebe.</p>
+  <p class="aviso"><b>Precio por confirmar.</b> Esta página no muestra importes. La referencia anterior corresponde solo al cuadro de 4 escudos 30×40 y no se aplica al 40×50.</p>
+  <div class="rejilla">
+    <section class="ficha">
+      <img src="img/render/castillo-encaje.webp" alt="Cuadro de cuatro escudos con un castillo en relieve" loading="lazy">
+      <h2>4 escudos · 30×40</h2>
+      <p>Cuatro escudos en relieve, lámina y marco. El producto de la oferta anterior.</p>
+      <p class="precio">Precio por confirmar</p>
+      <p><a href="producto.html">Ver la ficha del cuadro de cuatro escudos</a></p>
+    </section>
+    <section class="ficha">
+      <img src="img/producto/relieve-ornamentos.png" alt="Renders de cartela, casco, orla y filacteria" loading="lazy">
+      <h2>1 escudo · 40×50 con ornamento</h2>
+      <p>Escudo grande con ornamento exterior: sin ornamento, cartela o casco con lambrequines. Tarifas de lanzamiento pendientes.</p>
+      <p class="precio">Precio por confirmar</p>
+      <p><a href="formatos.html#orn">Ver ornamentos y medidas</a></p>
+    </section>
+    <section class="ficha">
+      <img src="img/producto/relieve-losetas.png" alt="Cuatro losetas de un escudo 40×50 con llaves y retenedores" loading="lazy">
+      <h2>1 escudo · 40×50 en losetas</h2>
+      <p>Boca completa partida en cuatro losetas, con llaves y retenedores. Precio de loseta pendiente.</p>
+      <p class="precio">Precio por confirmar</p>
+      <p><a href="formatos.html">Ver formato y montaje</a></p>
+    </section>
+  </div>
+  <h2>Plazos</h2>
+  <p>El piloto son <b>10 unidades y 66 h de máquina</b>. El plazo de 7–10 días laborables queda <b>sujeto a cola de producción</b>; no se promete entrega inmediata.</p>
+  <p>Ficha de taller y medidas: <a href="ficha-taller.html">ficha-taller.html</a> en el repositorio. La ficha de producto enlaza las piezas y los renders.</p>
+</main>
+<footer>
+  <p>Precios pendientes de aprobación. Textos legales en borrador. [PENDIENTE: MARCA] · [PENDIENTE: NIF] · [PENDIENTE: DIRECCIÓN]</p>
+</footer>
+</body>
+</html>

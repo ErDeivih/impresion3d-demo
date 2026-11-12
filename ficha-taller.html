@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es-ES">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ficha de taller · relieve heráldico · [PENDIENTE: MARCA]</title>
+<meta name="description" content="Ficha de taller del relieve heráldico: junta, escalón, holgura, luz de marco, piezas y advertencias antes de imprimir.">
+<style>
+:root{--tinta:#1f1b16;--papel:#f5efe4;--campo:#fffdf8;--linea:#d8cbb8;--granate:#7b1e2b;--texto:#5a5248}
+*{box-sizing:border-box}
+body{margin:0;background:var(--papel);color:var(--tinta);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+a{color:var(--granate)}
+header,main,footer{max-width:900px;margin:0 auto;padding:16px}
+header{display:flex;flex-wrap:wrap;gap:8px 18px;border-bottom:1px solid var(--linea)}
+header a{min-height:44px;display:inline-flex;align-items:center}
+h1,h2{font-family:Georgia,serif;line-height:1.15}
+h1{font-size:32px;margin:18px 0 8px}
+h2{font-size:22px;margin:24px 0 8px}
+p{margin:0 0 16px}
+.aviso{border-left:4px solid #9a7a2c;background:#fff8e6;padding:12px 14px}
+table{width:100%;border-collapse:collapse;margin:12px 0 20px}
+th,td{text-align:left;padding:8px;border-bottom:1px solid var(--linea);vertical-align:top}
+th{font-weight:600}
+footer{border-top:1px solid var(--linea);color:var(--texto);margin-top:24px}
+</style>
+</head>
+<body>
+<header><a href="index.html">← Volver a la portada</a><a href="catalogo.html">Ver los tres productos</a><a href="producto.html">Ficha de producto</a></header>
+<main>
+<h1>Ficha de taller del relieve heráldico</h1>
+<p class="aviso"><b>Sin pieza física aprobada.</b> Los datos son de CAD y G-code; no hay una unidad impresa. No se vende como «apto» hasta medir la junta y el marco.</p>
+<h2>Medidas que mandan</h2>
+<table><tbody>
+<tr><th>Junta entre frentes</th><td>0,08 mm XY en CAD; escalón <b>0,00 mm en CAD</b></td></tr>
+<tr><th>Escalón real</th><td><b>&lt;0,15 mm</b>, sin línea brillante a 0,5 m</td></tr>
+<tr><th>Holgura de encaje</th><td>0,30 mm total · <b>0,15 mm por lado</b></td></tr>
+<tr><th>Luz útil del marco</th><td><b>400,6 × 500,6 mm</b>; no vale un 40×50 nominal</td></tr>
+<tr><th>Tablero</th><td>414 × 514 × 6 mm; 10 llaves y 8 retenedores</td></tr>
+<tr><th>Piloto</th><td>10 unidades · 66 h de máquina · 6,6 h/unidad</td></tr>
+</tbody></table>
+<h2>Las 10 trampas</h2>
+<ol>
+<li>No hay muestra física; no etiquetar como vendible.</li>
+<li>Gramos y minutos son del G-code, no de balanza/cronómetro.</li>
+<li>Perfil cerrado: A1, 0,4 mm, capa 0,20, PLA Basic, PEI texturizada.</li>
+<li>Roel de encaje y roel AMS son versiones distintas; no mezclar.</li>
+<li>Losetas monocolor y AMS no se mezclan.</li>
+<li>No mezclar mallas de juegos distintos.</li>
+<li>Holgura 0,30 total no es la junta de 0,08.</li>
+<li>Marco nominal 40×50 no garantiza luz útil.</li>
+<li>Profundidad: el relieve no debe tocar el cristal.</li>
+<li>Escalón 0,00 CAD no garantiza el físico; medir.</li>
+</ol>
+<h2>Primera impresión</h2>
+<p>Probeta 0,20/0,30/0,40 y roel de 80 mm. G-code del roel en <code>piezas/primera-impresion-roel-a1/</code>: 33,62 g y 62,68 min en encaje; AMS 27,53 g y 75,28 min.</p>
+<h2>Documento completo</h2>
+<p>La ficha de taller completa está en el repositorio, en <b>docs/TALLER.md</b>, con el protocolo físico, las piezas y las advertencias.</p>
+<p><a href="producto.html#renders-taller">Volver a los renders del producto</a></p>
+</main>
+<footer><p>Texto de taller en borrador. [PENDIENTE: MARCA] · [PENDIENTE: NIF] · [PENDIENTE: DIRECCIÓN]</p></footer>
+</body>
+</html>
