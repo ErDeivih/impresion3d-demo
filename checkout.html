@@ -179,18 +179,18 @@ dl.lineas{grid-template-columns:1fr auto;padding-bottom:var(--e4)}dl.lineas dd{t
     <label class="casilla"><input type="checkbox" id="acepto" aria-describedby="e-acepto"> <span>He leído las <a href="condiciones-venta.html">condiciones de venta</a> y la <a href="privacidad.html">política de privacidad</a>.</span></label>
     <label class="casilla"><input type="checkbox" id="personal" aria-describedby="e-personal"> <span>Entiendo que el cuadro se hace con mis apellidos y que, por eso, no tiene derecho de desistimiento (art. 103.c de la Ley General para la Defensa de los Consumidores). La garantía legal sí se mantiene.</span></label>
     <p class="error" id="e-acepto"></p><p class="error" id="e-personal"></p>
-    <div class="acciones"><button class="btn btn-s" type="button" data-ir="3">Volver</button><button class="btn btn-p" type="button" id="pagar">Confirmar y pagar 44,70 € IVA incluido</button></div>
+    <div class="acciones"><button class="btn btn-s" type="button" data-ir="3">Volver</button><button class="btn btn-p" type="button" id="pagar">Confirmar y pagar 56,70 € IVA incluido</button></div>
   </fieldset>
   </form>
 </div>
 
 <aside class="resumen" aria-label="Resumen del pedido">
-  <details id="det"><summary><span>Resumen</span><span>Hoy: 44,70 € IVA incluido</span></summary>
+  <details id="det"><summary><span>Resumen</span><span>Hoy: 56,70 € IVA incluido</span></summary>
 <dl class="datos lineas">
-  <dt>Cuadro de cuatro escudos</dt><dd>149 € IVA incluido</dd>
+  <dt>Cuadro de cuatro escudos</dt><dd>189 € IVA incluido</dd>
   <dt>Envío a península</dt><dd>Incluido</dd>
-  <dt>Pagas hoy (señal)</dt><dd><b>44,70 € IVA incluido</b></dd>
-  <dt>Al aprobar la prueba</dt><dd>104,30 € IVA incluido</dd>
+  <dt>Pagas hoy (señal)</dt><dd><b>56,70 € IVA incluido</b></dd>
+  <dt>Al aprobar la prueba</dt><dd>132,30 € IVA incluido</dd>
 </dl></details>
 </aside>
 
@@ -224,7 +224,7 @@ function validar(p){limpiar();const l=[];PASOS[p].forEach(id=>{const r=REGLAS[id
 function zona(){const cp=$('#cp').value.trim();let z='';if(/^(07)/.test(cp))z='Baleares';else if(/^(35|38)/.test(cp))z='Canarias: el envío y los impuestos se calculan aparte (sin IVA; puede haber IGIC y aduana).';else if(/^(51|52)/.test(cp))z='Ceuta o Melilla: el envío y los impuestos se calculan aparte.';else if(cp.length===5)z='Península';
  $('#zona').textContent=z?'Zona de envío: '+z:''}
 $('#cp').addEventListener('input',zona);
-function revision(){$('#revision').innerHTML='<dt>Contacto</dt><dd>'+esc(D.nombre)+'<br>'+esc(D.correo)+' · '+esc(D.tel)+'</dd><dt>Entrega</dt><dd>'+esc(D.dir)+'<br>'+esc(D.cp)+' '+esc(D.loc)+' ('+esc(D.prov)+')'+($('#regalo').checked?'<br>Regalo: sin precio en el paquete':'')+'</dd><dt>Hoy pagas</dt><dd>44,70 € IVA incluido</dd>'}
+function revision(){$('#revision').innerHTML='<dt>Contacto</dt><dd>'+esc(D.nombre)+'<br>'+esc(D.correo)+' · '+esc(D.tel)+'</dd><dt>Entrega</dt><dd>'+esc(D.dir)+'<br>'+esc(D.cp)+' '+esc(D.loc)+' ('+esc(D.prov)+')'+($('#regalo').checked?'<br>Regalo: sin precio en el paquete':'')+'</dd><dt>Hoy pagas</dt><dd>56,70 € IVA incluido</dd>'}
 function esc(s){return String(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
 function ir(p){if(p>paso&&!validar(paso))return;paso=p;$$('.paso').forEach(f=>f.hidden=+f.dataset.paso!==p);
  $$('.progreso li').forEach(li=>{const n=+li.dataset.p;li.classList.toggle('hecho',n<p);n===p?li.setAttribute('aria-current','step'):li.removeAttribute('aria-current')});

@@ -1,18 +1,18 @@
-Asunto: Pedido {{numero}} confirmado: señal de 44,70 € IVA incluido
+Asunto: Pedido {{numero}} confirmado: señal de 56,70 € IVA incluido
 
 Hola, {{nombre}}: hemos cobrado la señal del pedido {{numero}} el {{fecha_pago}}.
 
 Escudos: {{apellidos}}
 Formato: 30x40 cm, piezas encajadas
-Precio del cuadro: 149 € IVA incluido
+Precio del cuadro: 189 € IVA incluido
 
-Base imponible del IVA: 36,94 €
-IVA (21 %): 7,76 €
-Cobrado hoy: 44,70 € IVA incluido
+Base imponible del IVA: 46,86 €
+IVA (21 %): 9,84 €
+Cobrado hoy: 56,70 € IVA incluido
 Método: {{metodo_pago}}
 
 Ahora preparamos la prueba. No imprimimos nada hasta que la apruebes.
-Al aprobarla se cobran 104,30 € IVA incluido; el envío a península va incluido.
+Al aprobarla se cobran 132,30 € IVA incluido; el envío a península va incluido.
 
 Ver el pedido: {{url_pedido}}
 

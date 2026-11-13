@@ -2,7 +2,8 @@ Asunto: Has aprobado la prueba v{{version}}: falta el pago del resto
 
 Has aprobado la prueba v{{version}} del pedido {{numero}} el {{fecha_aprobacion}}. Esa versión es la que imprimimos.
 
-Resto del cuadro: 104,30 € IVA incluido
+Precio total del cuadro: 189 € IVA incluido
+Resto del cuadro: 132,30 € IVA incluido
 Envío a {{zona}}: {{envio}}
 Total a pagar ahora: {{total_saldo}}
 

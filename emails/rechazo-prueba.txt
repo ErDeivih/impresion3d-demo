@@ -4,7 +4,7 @@ Has pedido cambios en la prueba v{{version}} del pedido {{numero}}. Motivo:
 {{motivo}}
 
 Qué cambia: preparamos la v{{version_siguiente}} y te la mandamos en {{plazo_nueva_prueba}}. La v{{version}} ya no se puede aprobar.
-Qué no se cobra: el resto (104,30 € IVA incluido) no se cobra hasta que apruebes.
+Qué no se cobra: el resto (132,30 € IVA incluido) no se cobra hasta que apruebes. Precio total del cuadro: 189 € IVA incluido.
 
 Añadir algo más: {{url_prueba}}
 

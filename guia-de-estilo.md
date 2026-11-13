@@ -7,7 +7,7 @@ Para todo lo que se escribe en la web, los correos y los avisos de la tienda.
 - **Vosotros** cuando se habla del cuadro y de las familias: casi siempre es un regalo de pareja o familiar.
 - **Tú** en formularios, pagos, errores y textos legales: los rellena una persona.
 - Frases de menos de 25 palabras. Una idea por frase.
-- Castellano de España. Cifras con coma decimal y espacio antes de € y %: `149 €`, `30 %`.
+- Castellano de España. Cifras con coma decimal y espacio antes de € y %: `189 €`, `30 %`.
 - Todo precio lleva «IVA incluido» en la misma línea. La base imponible solo aparece en desgloses y se llama «Base imponible del IVA».
 - Lo que no sabemos se escribe «por confirmar», nunca una cifra aproximada.
 
@@ -82,8 +82,8 @@ Una por pantalla, con verbo y objeto, y **ninguna se repite entre páginas**:
 | Ficha | Elegir nuestros apellidos |
 | Precios | Configurar el de cuatro escudos |
 | Configurador | Ver las variantes → Colocar los escudos → Revisar el diseño → Añadir al carrito |
-| Carrito | Pagar la señal: 44,70 € IVA incluido |
-| Pedido | Seguir con la dirección → Seguir con el pago → Revisar el pedido → Confirmar y pagar 44,70 € IVA incluido |
+| Carrito | Pagar la señal: 56,70 € IVA incluido |
+| Pedido | Seguir con la dirección → Seguir con el pago → Revisar el pedido → Confirmar y pagar 56,70 € IVA incluido |
 | Gracias | Ver el estado del pedido |
 | 404 | Ir a la portada |
 | Carrito vacío | Empezar un cuadro |

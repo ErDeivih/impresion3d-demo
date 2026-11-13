@@ -3,71 +3,150 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Tres productos, precios pendientes · [PENDIENTE: MARCA]</title>
-<meta name="description" content="Catálogo separado: cuadro de 4 escudos 30×40, cuadro 40×50 con ornamento y 40×50 en losetas. Precios por confirmar.">
+<title>Catálogo: 4 escudos, casco y medallón · [PENDIENTE: MARCA]</title>
+<meta name="description" content="Los tres productos del taller con su precio: cuadro de 4 escudos 30×40 por 189 € IVA incluido, casco con lambrequines 40×50 por 249 € IVA incluido y medallón heráldico 45–50 mm por 12,90 € IVA incluido. Tarifas de referencia de servicios.">
+<link rel="canonical" href="https://[PENDIENTE: DOMINIO]/catalogo.html">
 <style>
-:root{--tinta:#1f1b16;--papel:#f5efe4;--campo:#fffdf8;--linea:#d8cbb8;--granate:#7b1e2b;--texto:#5a5248}
+:root{
+  --f-tit:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --f-txt:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --t1:32px;--t2:22px;--t3:17px;
+  --e1:4px;--e2:8px;--e3:12px;--e4:16px;--e5:24px;--e6:32px;--e7:48px;--e8:64px;
+  --papel:#f5efe4;--tinta:#1f1b16;--piedra:#5a5248;--granate:#7b1e2b;--oro:#9a7a2c;--campo:#fffdf8;
+  --radio:4px;--toque:48px;
+}
 *{box-sizing:border-box}
-body{margin:0;background:var(--papel);color:var(--tinta);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
-a{color:var(--granate)}
-header,main,footer{max-width:1050px;margin:0 auto;padding:16px}
-header{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;border-bottom:1px solid var(--linea)}
-header a{min-height:44px;display:inline-flex;align-items:center}
-h1,h2,h3{font-family:Georgia,serif;line-height:1.15}
-h1{font-size:32px;margin:18px 0 8px}
-h2{font-size:22px;margin:26px 0 8px}
-h3{font-size:22px;margin:0 0 6px}
-p{margin:0 0 16px}
-.intro{color:var(--texto);max-width:70ch}
-.aviso{border-left:4px solid #9a7a2c;background:#fff8e6;padding:12px 14px;margin:16px 0}
-.rejilla{display:grid;grid-template-columns:1fr;gap:16px}
-.ficha{background:var(--campo);border:1px solid var(--linea);padding:14px}
-.ficha img{width:100%;height:auto;display:block;background:#fdfaf4;margin-bottom:10px}
-.ficha p{color:var(--texto)}
-.precio{font-family:Georgia,serif;font-size:22px;color:var(--granate);margin:8px 0}
-footer{border-top:1px solid var(--linea);color:var(--texto);font-size:17px}
-footer a{min-height:44px;display:inline-flex;align-items:center;margin-right:14px}
-@media(min-width:720px){.rejilla{grid-template-columns:repeat(3,1fr)}}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:var(--e7)}
+body{margin:0;background:var(--papel);color:var(--tinta);font:400 var(--t3)/1.55 var(--f-txt);padding-bottom:88px}
+img,svg{max-width:100%;height:auto}
+a{color:var(--granate);text-underline-offset:3px}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid var(--tinta);outline-offset:3px}
+.envoltura{max-width:1040px;margin:0 auto;padding:0 var(--e4)}
+.estrecho{max-width:720px;margin:0 auto;padding:0 var(--e4)}
+h1,h2,h3{font-family:var(--f-tit);font-weight:600;line-height:1.15;margin:0 0 var(--e4);text-wrap:balance}
+h1{font-size:var(--t1)}h2{font-size:var(--t2)}h3{font-size:var(--t3);font-family:var(--f-txt)}
+p,ul,ol,dl,table{margin:0 0 var(--e4)}
+p,li{max-width:64ch}
+.sec{color:var(--piedra)}
+.pend{background:#fff3cd;color:#4a3300;padding:0 var(--e1);border-radius:2px}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+section{padding:var(--e7) 0;border-top:1px solid var(--oro)}
+section.envoltura{padding:var(--e7) var(--e4)}
+.cab{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;min-height:56px;gap:0 var(--e4)}
+.cab nav{display:flex;flex-wrap:wrap}
+.marca{font:600 var(--t3)/1 var(--f-tit);color:var(--tinta);text-decoration:none;letter-spacing:.03em;min-height:44px;display:inline-flex;align-items:center}
+.cab nav a{min-height:44px;display:inline-flex;align-items:center;padding:0 var(--e2)}
+.pie{border-top:1px solid var(--oro);padding:var(--e6) var(--e4) var(--e8);color:var(--piedra);margin-top:var(--e7)}
+.pie nav{display:flex;flex-wrap:wrap;gap:0 var(--e4);margin-bottom:var(--e4)}
+.pie nav a{min-height:44px;display:inline-flex;align-items:center}
+.borrador-pie{border-left:4px solid var(--oro);padding-left:var(--e3)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--e2);min-height:var(--toque);padding:0 var(--e5);
+  border-radius:var(--radio);border:2px solid var(--granate);font:600 var(--t3)/1.2 var(--f-txt);text-decoration:none;cursor:pointer;text-align:center}
+.btn-p{background:var(--granate);color:#fff}
+.btn-p:hover{background:#5f1621;border-color:#5f1621}
+.btn-s{background:transparent;color:var(--granate)}
+.btn-s:hover{background:#ecdfd0}
+.ancho-movil{display:flex;width:100%}
+.tarjeta{border:1px solid #d8ccb9;border-radius:var(--radio);padding:var(--e4);background:var(--campo);display:flex;flex-direction:column;gap:var(--e2)}
+.tarjeta p{margin:0}
+.tarjeta .cta-sec{margin-top:auto;padding-top:var(--e2)}
+.rejilla{display:grid;gap:var(--e4);margin-bottom:var(--e4)}
+.precio{font:600 var(--t2)/1.2 var(--f-tit);margin:0}
+.aviso{border:2px solid var(--granate);border-radius:var(--radio);padding:var(--e4);margin:0 0 var(--e5);background:var(--campo)}
+table.tabla{width:100%;border-collapse:collapse}
+table.tabla th,table.tabla td{text-align:left;padding:var(--e3) var(--e2);border-bottom:1px solid #d8ccb9;vertical-align:top}
+table.tabla th{font-weight:600}
+.desliza{overflow-x:auto}
+.fija{position:fixed;left:0;right:0;bottom:0;background:var(--papel);border-top:1px solid var(--oro);padding:var(--e2) var(--e4);z-index:20}
+@media(min-width:820px){.rejilla.tres{grid-template-columns:repeat(3,1fr)}.ancho-movil{display:inline-flex;width:auto}body{padding-bottom:0}.fija{display:none}}
+@media print{
+  body{background:#fff;color:#000;padding-bottom:0}
+  .cab nav,.fija,.no-imprimir,button,.btn{display:none!important}
+  a{color:#000}
+  section{break-inside:avoid;padding:var(--e5) 0}
+}
 </style>
 </head>
 <body>
-<header>
-  <a href="index.html">← Volver a la portada</a>
-  <a href="configurador.html">Diseñar mi cuadro</a>
+<header class="envoltura cab">
+  <a class="marca" href="index.html">[PENDIENTE: MARCA]</a>
+  <nav aria-label="Principal"><a href="index.html">Portada</a><a href="formatos.html">Formatos</a><a href="apellidos.html">Apellidos</a><a href="precios.html">Precios</a></nav>
 </header>
-<main>
-  <h1>Tres productos, tres precios pendientes</h1>
-  <p class="intro">El catálogo está separado para no mezclar el cuadro de cuatro escudos de 30×40 con el escudo grande de 40×50. Los precios nuevos no se publican hasta que David los apruebe.</p>
-  <p class="aviso"><b>Precio por confirmar.</b> Esta página no muestra importes. La referencia anterior corresponde solo al cuadro de 4 escudos 30×40 y no se aplica al 40×50.</p>
-  <div class="rejilla">
-    <section class="ficha">
-      <img src="img/render/castillo-encaje.webp" alt="Cuadro de cuatro escudos con un castillo en relieve" loading="lazy">
-      <h2>4 escudos · 30×40</h2>
-      <p>Cuatro escudos en relieve, lámina y marco. El producto de la oferta anterior.</p>
-      <p class="precio">Precio por confirmar</p>
-      <p><a href="producto.html">Ver la ficha del cuadro de cuatro escudos</a></p>
-    </section>
-    <section class="ficha">
-      <img src="img/producto/relieve-ornamentos.png" alt="Renders de cartela, casco, orla y filacteria" loading="lazy">
-      <h2>1 escudo · 40×50 con ornamento</h2>
-      <p>Escudo grande con ornamento exterior: sin ornamento, cartela o casco con lambrequines. Tarifas de lanzamiento pendientes.</p>
-      <p class="precio">Precio por confirmar</p>
-      <p><a href="formatos.html#orn">Ver ornamentos y medidas</a></p>
-    </section>
-    <section class="ficha">
-      <img src="img/producto/relieve-losetas.png" alt="Cuatro losetas de un escudo 40×50 con llaves y retenedores" loading="lazy">
-      <h2>1 escudo · 40×50 en losetas</h2>
-      <p>Boca completa partida en cuatro losetas, con llaves y retenedores. Precio de loseta pendiente.</p>
-      <p class="precio">Precio por confirmar</p>
-      <p><a href="formatos.html">Ver formato y montaje</a></p>
-    </section>
+<main id="contenido">
+
+<div class="envoltura">
+  <h1>Tres productos y tres tarifas de referencia</h1>
+  <p class="sec">Precios publicados el 13/11/2026. Todos los importes de esta página llevan el IVA incluido. La web está en prelanzamiento: la solicitud de información no cobra nada ni reserva el pedido.</p>
+  <p class="aviso">¿Quieres saber si la pieza que buscas encaja? <b>Pide información sin pagar nada</b> y te contestamos con el detalle de cada producto.</p>
+  <p><a class="btn btn-p ancho-movil" href="solicitud.html">Solicitar información sin pago</a></p>
+  <p class="sec">Acceso secundario: el configurador sigue disponible solo para el cuadro de cuatro escudos. <a href="configurador.html">Diseñar mi cuadro</a> · <a href="precios.html">Ver precios y formas de pago</a>.</p>
+</div>
+
+<section class="envoltura" id="productos" aria-labelledby="h-productos">
+  <h2 id="h-productos">Los tres productos</h2>
+  <div class="rejilla tres">
+    <div class="tarjeta">
+      <h3>Cuadro de 4 escudos · 30×40 cm</h3>
+      <p class="precio">189 € IVA incluido</p>
+      <p>Cuatro escudos en relieve, uno por apellido, sobre lámina y marco de pino. Es el producto principal y el único que se puede encargar por el configurador.</p>
+      <p class="sec">Prueba antes de imprimir y dos rondas de cambios incluidas.</p>
+      <p class="cta-sec"><a href="producto.html">Ver la ficha del cuadro</a></p>
+    </div>
+    <div class="tarjeta">
+      <h3>Casco con lambrequines · 40×50 cm</h3>
+      <p class="precio">249 € IVA incluido</p>
+      <p>Escudo grande con casco y lambrequines. Es la opción premium del taller: se hace por encargo y se consulta antes de aceptarlo.</p>
+      <p class="sec">Precio de referencia del producto con casco; cualquier cambio de ornamento se consulta.</p>
+      <p class="cta-sec"><a href="solicitud.html">Consultar el casco</a></p>
+    </div>
+    <div class="tarjeta">
+      <h3>Medallón heráldico 45–50 mm</h3>
+      <p class="precio">12,90 € IVA incluido</p>
+      <p>La entrada más sencilla: un medallón pequeño con un escudo, también por encargo.</p>
+      <p class="sec">Ideal para un detalle o una prueba del acabado antes de un cuadro grande.</p>
+      <p class="cta-sec"><a href="solicitud.html">Consultar el medallón</a></p>
+    </div>
   </div>
-  <h2>Plazos</h2>
-  <p>El piloto son <b>10 unidades y 66 h de máquina</b>. El plazo de 7–10 días laborables queda <b>sujeto a cola de producción</b>; no se promete entrega inmediata.</p>
-  <p>Ficha de taller y medidas: <a href="ficha-taller.html">ficha-taller.html</a> en el repositorio. La ficha de producto enlaza las piezas y los renders.</p>
+</section>
+
+<section class="envoltura" id="tarifas" aria-labelledby="h-tarifas">
+  <h2 id="h-tarifas">Tarifas de referencia de servicios</h2>
+  <p>Además de los tres productos, ofrecemos servicios de impresión y diseño. Estas son <b>tarifas de referencia</b>: no son productos del catálogo y el importe final depende de la pieza, el material y el tiempo de máquina.</p>
+  <div class="desliza" role="region" aria-label="Tarifas de referencia de servicios" tabindex="0">
+    <table class="tabla">
+      <caption class="sr">Tarifas de referencia de servicios</caption>
+      <thead><tr><th scope="col">Servicio</th><th scope="col">Tarifa de referencia</th></tr></thead>
+      <tbody>
+        <tr><td>Series de varias unidades</td><td>series desde 90 € + IVA</td></tr>
+        <tr><td>Prototipo de una pieza</td><td>prototipo desde 25 € + IVA</td></tr>
+        <tr><td>Diseño a medida</td><td>diseño 35 €/h + IVA</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="sec">Las tarifas de referencia no incluyen plazo: cada encargo se presupuesta antes de empezar y se confirma por correo.</p>
+  <p><a href="solicitud.html">Pedir información sin pago sobre un servicio</a></p>
+</section>
+
+<section class="envoltura" aria-labelledby="h-encargo">
+  <h2 id="h-encargo">Cómo se encarga cada cosa</h2>
+  <ul class="marcas">
+    <li><b>Cuadro de 4 escudos:</b> se configura y se encarga en la web; hoy solo se paga la señal de 56,70 € IVA incluido y el resto (132,30 € IVA incluido) al aprobar la prueba.</li>
+    <li><b>Casco con lambrequines y medallón:</b> se piden por consulta; te contestamos antes de cobrar nada.</li>
+    <li><b>Servicios de impresión y diseño:</b> se presupuestan según pieza y se confirman por escrito.</li>
+  </ul>
+  <p><a href="producto.html">Ficha del cuadro de cuatro escudos</a> · <a href="formatos.html">Formatos y ornamentos</a> · <a href="precios.html">Precios y pagos</a> · <a href="ficha-taller.html">Ficha de taller</a></p>
+</section>
+
+<div class="fija no-imprimir"><a class="btn btn-p ancho" href="solicitud.html" aria-hidden="true" tabindex="-1">Solicitar información sin pago</a></div>
+
 </main>
-<footer>
-  <p>Precios pendientes de aprobación. Textos legales en borrador. [PENDIENTE: MARCA] · [PENDIENTE: NIF] · [PENDIENTE: DIRECCIÓN]</p>
+<footer class="pie envoltura">
+  <nav aria-label="Ocasiones"><a href="boda.html">Boda y aniversario</a><a href="navidad.html">Navidad</a><a href="regalo-padres.html">Para padres y abuelos</a><a href="precios.html">Precios y pagos</a></nav>
+  <nav aria-label="Información legal"><a href="aviso-legal.html">Aviso legal</a><a href="privacidad.html">Privacidad</a><a href="cookies.html">Cookies</a><a href="condiciones-venta.html">Condiciones de venta</a><a href="desistimiento.html">Desistimiento</a><a href="envios-y-devoluciones.html">Envíos y devoluciones</a></nav>
+  <p>Titular: <span class="pend">[PENDIENTE: RAZÓN SOCIAL]</span> · NIF <span class="pend">[PENDIENTE: NIF]</span> · <span class="pend">[PENDIENTE: DIRECCIÓN]</span></p>
+  <p class="borrador-pie">Borrador: la web aún no lleva los datos del titular. Esta página no permite pagar.</p>
+  <p>Todos los precios de esta web llevan el IVA incluido.</p>
 </footer>
 </body>
 </html>

@@ -2,7 +2,7 @@ Asunto: Prueba v{{version}} del pedido {{numero}}: lista para aprobar
 
 La prueba v{{version}} del pedido {{numero}} está lista.
 
-Si te gusta, apruébala: se cobran los 104,30 € IVA incluido que faltan y empezamos a imprimir.
+Si te gusta, apruébala: se cobran los 132,30 € IVA incluido que faltan (precio total del cuadro: 189 € IVA incluido) y empezamos a imprimir.
 Si quieres cambiar algo, pide cambios en el mismo enlace.
 Solo se puede aprobar la última versión.
 
